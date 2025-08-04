@@ -36,8 +36,8 @@ const Header = () => {
         {
           category: "Automation",
           services: [
-            { name: "Process Automation", url: "#" },
-            { name: "Robotic Process Automation", url: "#" },
+            { name: "Process Automation", url: "/process-automation" },
+            { name: "Robotic Process Automation", url: "/robotic-process-automation" },
             { name: "Workflow Optimization", url: "#" },
             { name: "Business Intelligence", url: "#" }
           ]
@@ -100,6 +100,10 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
+            <a href="/" className="text-foreground hover:text-primary transition-colors">
+              Home
+            </a>
+            
             {menuItems.map((item) => (
               <div
                 key={item.title}
@@ -171,6 +175,8 @@ const Header = () => {
         {isMenuOpen && (
           <div className="lg:hidden bg-background border-t border-border">
             <div className="py-4 space-y-4">
+              <a href="/" className="block px-4 py-2 hover:text-primary">Home</a>
+              
               {menuItems.map((item) => (
                 <div key={item.title}>
                   <button

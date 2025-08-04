@@ -73,3 +73,6 @@ To connect a domain, navigate to Project > Settings > Domains and click Connect 
 Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
 
 Read Instructions form Instructions.MD file if there is any URL in instructions. 
+
+Read Instruction.MD file nd follow the instructions. 
+Read Actionable.MD file and follow the instructions.

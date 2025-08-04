@@ -12,6 +12,9 @@ import RealEstateSoftware from "./pages/RealEstateSoftware";
 import NaturalLanguageProcessing from "./pages/NaturalLanguageProcessing";
 import HIPAACompliant from "./pages/HIPAACompliant";
 import MachineLearningDevelopment from "./pages/MachineLearningDevelopment";
+import ProcessAutomation from "./pages/ProcessAutomation";
+import WhatIsProcessAutomation from "./pages/WhatIsProcessAutomation";
+import RoboticProcessAutomation from "./pages/RoboticProcessAutomation";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import CookiePolicy from "./pages/CookiePolicy";
@@ -37,6 +40,9 @@ const App = () => (
           <Route path="/natural-language-processing" element={<NaturalLanguageProcessing />} />
           <Route path="/hipaa-compliant" element={<HIPAACompliant />} />
           <Route path="/machine-learning-development" element={<MachineLearningDevelopment />} />
+          <Route path="/process-automation" element={<ProcessAutomation />} />
+          <Route path="/what-is-process-automation" element={<WhatIsProcessAutomation />} />
+          <Route path="/robotic-process-automation" element={<RoboticProcessAutomation />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
           <Route path="/cookie-policy" element={<CookiePolicy />} />

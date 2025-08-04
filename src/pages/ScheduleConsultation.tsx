@@ -85,6 +85,8 @@ const ScheduleConsultation = () => {
       form.setValue('serviceInterest', ['Automation Solutions']);
     } else if (source === 'analytics') {
       form.setValue('serviceInterest', ['Predictive Analytics']);
+    } else if (source === 'robotic-process-automation') {
+      form.setValue('serviceInterest', ['Robotic Process Automation']);
     } else if (source === 'home' && button === 'consult-now') {
       // User came from home page "Consult Now" button
       form.setValue('serviceInterest', ['AI Development', 'Automation Solutions']);
@@ -426,10 +428,10 @@ const ScheduleConsultation = () => {
                           <FormItem>
                             <FormLabel>Services of Interest * (Select all that apply)</FormLabel>
                             <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mt-2">
-                              {[
-                                'AI Development',
+                              {['AI Development',
                                 'Machine Learning',
                                 'Automation Solutions',
+                                'Robotic Process Automation',
                                 'Predictive Analytics',
                                 'Natural Language Processing',
                                 'Data Analytics',

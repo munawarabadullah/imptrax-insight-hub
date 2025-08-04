@@ -132,3 +132,28 @@ export const getComprehensiveTrackingData = async () => {
     timestamp: new Date().toISOString()
   };
 };
+
+// Event tracking function for user interactions
+export const trackEvent = (eventName: string, properties: Record<string, any> = {}) => {
+  try {
+    // In production, this would send data to analytics service
+    console.log('Event tracked:', {
+      event: eventName,
+      properties,
+      timestamp: new Date().toISOString(),
+      url: window.location.href
+    });
+    
+    // Store in sessionStorage for development purposes
+    const events = JSON.parse(sessionStorage.getItem('trackedEvents') || '[]');
+    events.push({
+      event: eventName,
+      properties,
+      timestamp: new Date().toISOString(),
+      url: window.location.href
+    });
+    sessionStorage.setItem('trackedEvents', JSON.stringify(events));
+  } catch (error) {
+    console.error('Error tracking event:', error);
+  }
+};

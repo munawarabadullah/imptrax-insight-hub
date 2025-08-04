@@ -72,6 +72,16 @@ const KnowledgeBase = () => {
           title: "Machine Learning Development",
           description: "Custom machine learning solutions including predictive analysis, deep learning, computer vision, speech recognition, and generative models",
           url: "/machine-learning-development"
+        },
+        {
+          title: "Process Automation",
+          description: "Transform your business with intelligent process automation solutions that streamline operations and reduce costs",
+          url: "/process-automation"
+        },
+        {
+          title: "What is Process Automation?",
+          description: "Comprehensive guide to understanding process automation, its benefits, implementation strategies, and real-world applications",
+          url: "/what-is-process-automation"
         }
       ]
     },
