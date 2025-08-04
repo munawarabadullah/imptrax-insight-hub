@@ -432,10 +432,7 @@ const BusinessIntelligence = () => {
                       </ul>
                     </div>
                     
-                    {/* Service Number Badge */}
-                    <div className="absolute top-4 right-4 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-sm group-hover:bg-accent/20 group-hover:text-accent transition-all duration-300">
-                      {String(index + 1).padStart(2, '0')}
-                    </div>
+
                   </CardContent>
                   
                   {/* Hover Border Effect */}
@@ -517,10 +514,7 @@ const BusinessIntelligence = () => {
                       </div>
                     </div>
                     
-                    {/* Expertise Number Badge */}
-                    <div className="absolute top-4 right-4 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-sm group-hover:bg-accent/20 group-hover:text-accent transition-all duration-300">
-                      {String(index + 1).padStart(2, '0')}
-                    </div>
+
                   </CardContent>
                   
                   {/* Hover Border Effect */}
