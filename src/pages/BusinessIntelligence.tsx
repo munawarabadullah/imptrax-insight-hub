@@ -327,7 +327,7 @@ const BusinessIntelligence = () => {
                   <CardHeader className="relative z-10 pb-4">
                     {/* Enhanced Icon */}
                     <div className="mx-auto w-16 h-16 bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl flex items-center justify-center text-primary mb-6 group-hover:scale-110 group-hover:bg-gradient-to-br group-hover:from-primary/20 group-hover:to-accent/20 transition-all duration-500 shadow-lg">
-                      <div className="w-8 h-8">
+                      <div className="w-8 h-8 flex items-center justify-center">
                         {challenge.icon}
                       </div>
                     </div>
@@ -401,7 +401,7 @@ const BusinessIntelligence = () => {
                     {/* Enhanced Header with Icon */}
                     <div className="flex items-start mb-6">
                       <div className="w-16 h-16 bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl flex items-center justify-center text-primary mr-6 group-hover:scale-110 group-hover:bg-gradient-to-br group-hover:from-primary/20 group-hover:to-accent/20 transition-all duration-500 shadow-lg flex-shrink-0">
-                        <div className="w-8 h-8">
+                        <div className="w-8 h-8 flex items-center justify-center">
                           {service.icon}
                         </div>
                       </div>
