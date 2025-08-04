@@ -154,14 +154,17 @@ const Footer = () => {
               © 2024 ImpTrax. All rights reserved.
             </div>
             <div className="flex space-x-6">
-              <a href="#" className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+              <a href="/privacy-policy" className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                 Privacy Policy
               </a>
-              <a href="#" className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+              <a href="/terms-of-service" className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                 Terms of Service
               </a>
-              <a href="#" className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+              <a href="/cookie-policy" className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                 Cookie Policy
+              </a>
+              <a href="/knowledge-base" className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                SiteMap
               </a>
             </div>
           </div>

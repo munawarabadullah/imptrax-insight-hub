@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -29,13 +29,16 @@ const Hero = () => {
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button variant="outline" size="xl" className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-                <Play className="w-5 h-5" />
-                Watch Demo
+                Consult Now!
               </Button>
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-8 pt-8 border-t border-primary-foreground/20">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-8 border-t border-primary-foreground/20">
+              <div className="text-center">
+                <div className="text-3xl font-bold">23+</div>
+                <div className="text-sm text-primary-foreground/80">Years of Experience</div>
+              </div>
               <div className="text-center">
                 <div className="text-3xl font-bold">500+</div>
                 <div className="text-sm text-primary-foreground/80">Projects Delivered</div>
