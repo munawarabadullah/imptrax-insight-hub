@@ -142,24 +142,19 @@ const MachineLearningDevelopment: React.FC = () => {
 
   const industries = [
     {
+      icon: <TrendingUp className="w-8 h-8 text-green-600" />,
+      title: "Finance & Banking",
+      description: "Fraud detection, algorithmic trading, risk assessment, and credit scoring solutions."
+    },
+    {
       icon: <Building2 className="w-8 h-8 text-blue-600" />,
       title: "Healthcare",
       description: "Medical imaging, drug discovery, patient monitoring, and diagnostic assistance systems."
     },
     {
-      icon: <TrendingUp className="w-8 h-8 text-green-600" />,
-      title: "Finance",
-      description: "Fraud detection, algorithmic trading, risk assessment, and credit scoring solutions."
-    },
-    {
-      icon: <Users className="w-8 h-8 text-purple-600" />,
-      title: "Retail & E-commerce",
-      description: "Recommendation engines, demand forecasting, inventory optimization, and customer analytics."
-    },
-    {
       icon: <Shield className="w-8 h-8 text-red-600" />,
-      title: "Manufacturing",
-      description: "Predictive maintenance, quality control, supply chain optimization, and process automation."
+      title: "Real Estate",
+      description: "Property valuation, market analysis, investment optimization, and predictive pricing models."
     }
   ];
 
@@ -329,7 +324,7 @@ const MachineLearningDevelopment: React.FC = () => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {industries.map((industry, index) => (
               <div key={index} className="text-center p-6 bg-gray-50 rounded-xl hover:shadow-lg transition-shadow duration-300">
                 <div className="mb-4 flex justify-center">{industry.icon}</div>
