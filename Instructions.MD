@@ -86,6 +86,7 @@ This document outlines the comprehensive guidelines for developing and maintaini
 
 ### LLMs.txt File
 - **Always document all information in LLMs.txt**
+- **Do NOT write reference URLs in LLMs.txt file**
 - Use Markdown format for consistency
 - Include:
   - Project updates and changes
