@@ -143,6 +143,159 @@ Three key strategic impacts:
 
 ---
 
+# Business Intelligence Page Documentation
+
+## Page Overview
+- **Page Name**: Business Intelligence
+- **Route**: `/business-intelligence`
+- **File Location**: `src/pages/BusinessIntelligence.tsx`
+- **Purpose**: Showcase ImpTrax's business intelligence services and drive consultation bookings
+- **Content Source**: Adapted from Intellias business intelligence services content (reference removed as per instructions)
+
+## SEO Implementation
+- **Title**: "Transform Data into Strategic Advantage | Business Intelligence Services | ImpTrax"
+- **Meta Description**: "Make data your business driver with comprehensive BI capabilities. Collect, process, analyze, and visualize data for actionable insights that drive growth."
+- **H1 Tag**: "Transform Data into Strategic Advantage"
+- **H2 Tags**: 
+  - "Challenges We Solve"
+  - "Our Business Intelligence Services"
+  - "Our BI Expertise"
+  - "Benefits of Our BI Solutions"
+  - "Industries We Serve"
+  - "Why Choose ImpTrax for Business Intelligence?"
+  - "Ready to Transform Your Data into Strategic Advantage?"
+
+## Content Structure
+
+### Hero Section
+- **Main Headline**: "Transform Data into Strategic Advantage"
+- **Business Intelligence Badge**: Indicates BI services focus
+- **Subheadline**: Emphasizes comprehensive BI capabilities and actionable insights
+- **Call-to-Action Buttons**: 
+  - "Start Your BI Journey" (primary)
+  - "Schedule Consultation" (secondary)
+
+### Statistics Section
+Three key metrics:
+1. **85%** - Decision Accuracy Improvement
+2. **60%** - Faster Data Processing
+3. **40%** - Cost Reduction
+
+### Challenges We Solve Section
+Three main business challenges:
+1. **Evidence-Based Decision Making** - Accurate insights from comprehensive data analysis
+2. **Enhanced Business Process Transparency** - Full visibility into enterprise performance
+3. **Preventive Issue Resolution** - Early detection and proactive responses
+
+### Our Business Intelligence Services Section
+Four core BI services:
+1. **Report Design** - Custom reports and self-service reporting
+2. **Analytical Reporting** - Pattern identification and predictive analytics
+3. **Operational Reporting** - Real-time system monitoring and insights
+4. **Real-Time Reporting** - Streaming data processing for instant decisions
+
+### Our BI Expertise Section
+Four areas of expertise:
+1. **Data Collection & Processing** - ETL pipelines, data lakes, cloud integration
+2. **Advanced Analytics** - Machine learning, statistical analysis, predictive modeling
+3. **Data Visualization** - Interactive dashboards, custom charts, mobile responsive
+4. **Business Intelligence Strategy** - BI roadmapping, ROI analysis, change management
+
+### Benefits Section
+Six key benefits:
+1. **Operational Efficiency** - Data-driven insights and process optimization
+2. **Process Visibility** - Comprehensive monitoring and reporting
+3. **Enhanced User Experience** - Better understanding of customer behavior
+4. **Strategic Decision Making** - Informed decisions based on accurate data
+5. **Data-Driven Culture** - Maximizing organizational data potential
+6. **Actionable Insights** - Clear guidance for business decisions
+
+### Industries We Serve Section
+Six key industries:
+1. **Automotive** - Supply chain optimization, quality control
+2. **Finance** - Risk assessment, fraud detection, compliance
+3. **Telecommunications** - Network performance, customer analytics
+4. **Retail** - Customer behavior analysis, inventory management
+5. **Healthcare** - Patient outcomes, operational efficiency
+6. **Manufacturing** - Production optimization, predictive maintenance
+
+### Why Choose ImpTrax Section
+- Positions ImpTrax as trusted BI partner with 20+ years expertise
+- Emphasizes comprehensive BI capabilities and strategic implementation
+- Highlights end-to-end business intelligence solutions
+
+### Call-to-Action Section
+- **Headline**: "Ready to Transform Your Data into Strategic Advantage?"
+- **Buttons**: 
+  - "Start Your BI Transformation"
+  - "Schedule Free Consultation"
+
+## Design Elements
+- **Color Scheme**: ImpTrax brand guidelines with gradient backgrounds
+- **Icons**: Lucide React icons (BarChart3, TrendingUp, Eye, Shield, Clock, Target, Database, FileText, Users, Zap, Brain, ArrowRight)
+- **Layout**: Responsive grid layouts with cards and gradient sections
+- **Visual Effects**: Hover animations, gradient text, shadow effects, backdrop blur
+
+## Technical Implementation
+- **Framework**: React with TypeScript
+- **Styling**: Tailwind CSS with custom gradient classes
+- **Components**: shadcn/ui components (Button, Card, Badge)
+- **Navigation**: useNavigate hook for consultation page routing
+- **Responsive**: Mobile-first responsive design
+- **Header/Footer**: Integrated with site navigation
+
+## Menu Integration
+- Updated Header.tsx to link Business Intelligence menu item
+- Located under Services > Automation category
+- Changed from placeholder "#" to "/business-intelligence"
+- Proper navigation structure maintained
+
+## Route Integration
+- Added to App.tsx routing configuration
+- Route path: "/business-intelligence"
+- Component import: BusinessIntelligence
+- Proper React Router integration
+
+## Brand Compliance
+- All content rewritten for ImpTrax branding
+- Removed all external references (Intellias company name)
+- Consistent use of "ImpTrax" throughout
+- Professional enterprise tone
+- No trademark information included
+- Adapted 20+ years expertise claim for ImpTrax
+
+## Consultation Integration
+- All CTA buttons route to `/schedule-consultation`
+- Proper source and button tracking parameters:
+  - `source=business-intelligence`
+  - `button=get-started|schedule-consultation`
+- Strategic positioning for lead generation
+
+## Content Quality
+- Elegant rewriting of Intellias reference material
+- Focus on ImpTrax's unique BI value propositions
+- Clear, professional, and engaging copy
+- Industry-appropriate BI terminology
+- Comprehensive service coverage
+- Strategic business focus
+
+## Accessibility Features
+- Semantic HTML structure
+- Proper heading hierarchy (H1, H2, H3)
+- Alt text considerations for icons
+- Keyboard navigation support
+- Screen reader friendly content
+- High contrast design elements
+
+## Performance Considerations
+- Optimized component structure
+- Efficient CSS classes
+- Minimal external dependencies
+- Fast loading design
+- Responsive images and icons
+
+---
+
 # Process Automation Page Documentation
 
 ## Page Overview

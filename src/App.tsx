@@ -15,6 +15,9 @@ import MachineLearningDevelopment from "./pages/MachineLearningDevelopment";
 import ProcessAutomation from "./pages/ProcessAutomation";
 import WhatIsProcessAutomation from "./pages/WhatIsProcessAutomation";
 import RoboticProcessAutomation from "./pages/RoboticProcessAutomation";
+import WorkflowOptimization from "./pages/WorkflowOptimization";
+import FinancialWorkflowProcess from "./pages/FinancialWorkflowProcess";
+import BusinessIntelligence from "./pages/BusinessIntelligence";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import CookiePolicy from "./pages/CookiePolicy";
@@ -43,6 +46,9 @@ const App = () => (
           <Route path="/process-automation" element={<ProcessAutomation />} />
           <Route path="/what-is-process-automation" element={<WhatIsProcessAutomation />} />
           <Route path="/robotic-process-automation" element={<RoboticProcessAutomation />} />
+          <Route path="/workflow-optimization" element={<WorkflowOptimization />} />
+          <Route path="/financial-workflow-process" element={<FinancialWorkflowProcess />} />
+          <Route path="/business-intelligence" element={<BusinessIntelligence />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
           <Route path="/cookie-policy" element={<CookiePolicy />} />

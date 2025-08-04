@@ -38,8 +38,8 @@ const Header = () => {
           services: [
             { name: "Process Automation", url: "/process-automation" },
             { name: "Robotic Process Automation", url: "/robotic-process-automation" },
-            { name: "Workflow Optimization", url: "#" },
-            { name: "Business Intelligence", url: "#" }
+            { name: "Workflow Optimization", url: "/workflow-optimization" },
+            { name: "Business Intelligence", url: "/business-intelligence" }
           ]
         },
         {

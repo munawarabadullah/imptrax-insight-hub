@@ -82,6 +82,11 @@ const KnowledgeBase = () => {
           title: "What is Process Automation?",
           description: "Comprehensive guide to understanding process automation, its benefits, implementation strategies, and real-world applications",
           url: "/what-is-process-automation"
+        },
+        {
+          title: "What is a Financial Workflow Process?",
+          description: "Understand financial workflow processes, their benefits, and how to streamline them for better efficiency.",
+          url: "/financial-workflow-process"
         }
       ]
     },
