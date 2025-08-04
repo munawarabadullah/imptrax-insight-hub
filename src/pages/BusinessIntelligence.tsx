@@ -575,7 +575,7 @@ const BusinessIntelligence = () => {
                     <div className="relative mb-6">
                       <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent rounded-2xl blur-lg opacity-20 group-hover:opacity-40 transition-opacity group-hover:scale-110 duration-300"></div>
                       <div className="relative mx-auto w-16 h-16 bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl flex items-center justify-center text-primary group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg group-hover:bg-gradient-to-br group-hover:from-primary/20 group-hover:to-accent/20">
-                        <div className="w-8 h-8">
+                        <div className="w-8 h-8 flex items-center justify-center">
                           {benefit.icon}
                         </div>
                       </div>
