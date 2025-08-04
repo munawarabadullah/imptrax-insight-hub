@@ -144,16 +144,18 @@ const Header = () => {
             <a href="#" className="text-foreground hover:text-primary transition-colors">
               About
             </a>
-            <a href="#" className="text-foreground hover:text-primary transition-colors">
+            <a href="/schedule-consultation" className="text-foreground hover:text-primary transition-colors">
               Contact
             </a>
           </nav>
 
           {/* CTA Button */}
           <div className="hidden lg:flex">
-            <Button variant="corporate" size="lg">
-              Get Started
-            </Button>
+            <a href="/schedule-consultation">
+              <Button variant="corporate" size="lg">
+                Schedule Consultation
+              </Button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -200,11 +202,13 @@ const Header = () => {
                 </div>
               ))}
               <a href="#" className="block px-4 py-2 hover:text-primary">About</a>
-              <a href="#" className="block px-4 py-2 hover:text-primary">Contact</a>
+              <a href="/schedule-consultation" className="block px-4 py-2 hover:text-primary">Contact</a>
               <div className="px-4 pt-4">
-                <Button variant="corporate" className="w-full">
-                  Get Started
-                </Button>
+                <a href="/schedule-consultation">
+                  <Button variant="corporate" className="w-full">
+                    Schedule Consultation
+                  </Button>
+                </a>
               </div>
             </div>
           </div>

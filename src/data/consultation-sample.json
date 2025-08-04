@@ -1,0 +1,147 @@
+{
+  "consultationRequest": {
+    "id": "cr_2024080415301234",
+    "submissionDate": "2024-08-04T15:30:12.456Z",
+    "status": "pending",
+    "formData": {
+      "contactInfo": {
+        "firstName": "John",
+        "lastName": "Smith", 
+        "email": "john.smith@example.com",
+        "phone": "+1-555-0123",
+        "jobTitle": "CTO",
+        "companyName": "TechCorp Industries",
+        "companySize": "500-1000",
+        "industry": "Financial Services",
+        "website": "https://www.techcorp.com"
+      },
+      "projectInfo": {
+        "serviceInterest": ["AI Development", "Automation Solutions"],
+        "projectDescription": "Looking to implement AI-powered customer service automation and predictive analytics for our financial products.",
+        "timeline": "3-6 months",
+        "budgetRange": "$100,000 - $500,000",
+        "urgency": "High",
+        "currentChallenges": "Manual processes, data silos, customer response times"
+      },
+      "consultationPreferences": {
+        "preferredContactMethod": "Email",
+        "bestTimeToCall": "9 AM - 12 PM EST",
+        "timezone": "America/New_York",
+        "meetingType": "Virtual",
+        "availableDates": ["2024-08-10", "2024-08-12", "2024-08-15"]
+      }
+    },
+    "tracking": {
+      "technical": {
+        "ipAddress": "192.168.1.1",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "browser": {
+          "name": "Chrome",
+          "version": "120.0",
+          "os": "Windows 10",
+          "language": "en-US",
+          "platform": "Win32",
+          "cookieEnabled": true,
+          "javaEnabled": false
+        },
+        "screen": {
+          "width": 1920,
+          "height": 1080,
+          "availWidth": 1920,
+          "availHeight": 1040,
+          "colorDepth": 24,
+          "pixelRatio": 1,
+          "windowWidth": 1200,
+          "windowHeight": 800
+        }
+      },
+      "location": {
+        "city": "New York",
+        "state": "NY",
+        "country": "United States",
+        "countryCode": "US",
+        "timezone": "America/New_York",
+        "latitude": 40.7128,
+        "longitude": -74.0060,
+        "isp": "Verizon Communications",
+        "organization": "TechCorp Industries"
+      },
+      "session": {
+        "sessionId": "session_1723043412456_abc123def",
+        "sessionStart": 1723043412456,
+        "sessionDuration": 180000,
+        "pageViews": 5,
+        "timeOnPage": 45000,
+        "isNewVisitor": false,
+        "isReturningUser": true,
+        "lastVisit": "2024-08-01T10:15:30.000Z"
+      },
+      "referral": {
+        "source": "ai-development-services",
+        "referrer": "https://imptrax.com/ai-development-services",
+        "landingPage": "/schedule-consultation",
+        "utmSource": "website",
+        "utmMedium": "internal-link",
+        "utmCampaign": "ai-services-cta",
+        "utmTerm": "schedule-consultation",
+        "utmContent": "hero-button"
+      },
+      "formInteraction": {
+        "formStartTime": "2024-08-04T15:28:30.123Z",
+        "formCompletionTime": 120000,
+        "fieldInteractions": {
+          "firstName": { "timeSpent": 3000, "changes": 1 },
+          "lastName": { "timeSpent": 2500, "changes": 1 },
+          "email": { "timeSpent": 8000, "changes": 2 },
+          "phone": { "timeSpent": 6000, "changes": 1 },
+          "companyName": { "timeSpent": 4000, "changes": 1 },
+          "projectDescription": { "timeSpent": 45000, "changes": 8 }
+        },
+        "captchaAttempts": 1,
+        "captchaSuccess": true,
+        "validationErrors": ["email", "phone"],
+        "abandonmentPoints": []
+      }
+    },
+    "leadScoring": {
+      "score": 85,
+      "factors": {
+        "companySize": 20,
+        "industry": 25,
+        "budgetRange": 25,
+        "urgency": 15,
+        "formCompleteness": 10,
+        "timeSpent": 5,
+        "referralSource": 15
+      },
+      "qualification": "High Priority",
+      "tags": ["Enterprise", "Financial Services", "AI Ready", "High Budget"]
+    },
+    "notifications": {
+      "emailSent": {
+        "confirmation": true,
+        "sentAt": "2024-08-04T15:30:15.789Z",
+        "template": "consultation-confirmation"
+      },
+      "internalNotifications": {
+        "salesTeam": true,
+        "solutionsArchitect": true,
+        "sentAt": "2024-08-04T15:30:13.123Z"
+      },
+      "followUp": {
+        "scheduled": true,
+        "scheduledFor": "2024-08-05T09:00:00.000Z",
+        "assignedTo": "sarah.johnson@imptrax.com",
+        "priority": "High"
+      }
+    },
+    "compliance": {
+      "privacyConsent": true,
+      "marketingConsent": false,
+      "dataRetentionPeriod": "7 years",
+      "gdprCompliant": true,
+      "ccpaCompliant": true,
+      "encryptionLevel": "AES-256"
+    }
+  }
+}
