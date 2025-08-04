@@ -30,12 +30,17 @@ const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Content */}
           <div className="space-y-6 sm:space-y-8 animate-fade-in-up">
+            {/* Trust Badge */}
+            <div className="inline-flex items-center px-4 py-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full border border-primary-foreground/20 animate-fade-in-up">
+              <span className="text-sm font-medium text-primary-foreground/90">Trusted By 100+ Enterprises</span>
+            </div>
+            
             <div className="space-y-4 sm:space-y-6">
               <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight tracking-tight">
                 <span className="block mb-2">Transform Your Business with</span>
-                <span className="block" style={{color: '#DEEDFF'}}>
+                <span className="block" style={{color: '#B3D9FF'}}>
                   <span className="relative inline-block">
-                    <span className="absolute inset-0 bg-gradient-to-r from-[#DEEDFF] to-white bg-clip-text text-transparent animate-pulse"></span>
+                    <span className="absolute inset-0 bg-gradient-to-r from-[#B3D9FF] to-white bg-clip-text text-transparent animate-pulse"></span>
                     <span className="relative z-10 drop-shadow-lg">AI & Automation</span>
                   </span>
                 </span>
