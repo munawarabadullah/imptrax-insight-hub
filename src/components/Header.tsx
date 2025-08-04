@@ -27,28 +27,28 @@ const Header = () => {
         {
           category: "AI Solutions",
           services: [
-            "Machine Learning Development",
-            "Natural Language Processing",
-            "Computer Vision",
-            "Predictive Analytics"
+            { name: "Machine Learning Development", url: "/ai-development-services" },
+            { name: "Natural Language Processing", url: "/ai-development-services" },
+            { name: "AI & Automation", url: "/ai-development-services" },
+            { name: "Predictive Analytics", url: "/predictive-analytics" }
           ]
         },
         {
           category: "Automation",
           services: [
-            "Process Automation",
-            "Robotic Process Automation",
-            "Workflow Optimization",
-            "Business Intelligence"
+            { name: "Process Automation", url: "#" },
+            { name: "Robotic Process Automation", url: "#" },
+            { name: "Workflow Optimization", url: "#" },
+            { name: "Business Intelligence", url: "#" }
           ]
         },
         {
           category: "Data Services",
           services: [
-            "Data Analytics",
-            "Data Migration",
-            "Data Warehousing",
-            "Real-time Analytics"
+            { name: "Data Analytics", url: "#" },
+            { name: "Data Migration", url: "#" },
+            { name: "Data Warehousing", url: "#" },
+            { name: "Real-time Analytics", url: "#" }
           ]
         }
       ]
@@ -59,28 +59,28 @@ const Header = () => {
         {
           category: "Financial Services",
           services: [
-            "Banking Solutions",
-            "Investment Management",
-            "Risk Assessment",
-            "Compliance Automation"
+            { name: "Banking Solutions", url: "#" },
+            { name: "Investment Management", url: "#" },
+            { name: "Risk Assessment", url: "#" },
+            { name: "Compliance Automation", url: "#" }
           ]
         },
         {
           category: "Healthcare",
           services: [
-            "Medical Data Analytics",
-            "Patient Management",
-            "Diagnostic AI",
-            "Healthcare Automation"
+            { name: "Medical Data Analytics", url: "#" },
+            { name: "Patient Management", url: "#" },
+            { name: "Diagnostic AI", url: "#" },
+            { name: "Healthcare Automation", url: "#" }
           ]
         },
         {
           category: "Real Estate",
           services: [
-            "Property Analytics",
-            "Market Intelligence",
-            "Portfolio Management",
-            "Investment Analysis"
+            { name: "Property Analytics", url: "#" },
+            { name: "Market Intelligence", url: "#" },
+            { name: "Portfolio Management", url: "#" },
+            { name: "Investment Analysis", url: "#" }
           ]
         }
       ]
@@ -121,12 +121,12 @@ const Header = () => {
                           </h3>
                           <ul className="space-y-2">
                             {category.services.map((service) => (
-                              <li key={service}>
+                              <li key={service.name}>
                                 <a
-                                  href="#"
+                                  href={service.url}
                                   className="text-muted-foreground hover:text-primary transition-colors text-sm"
                                 >
-                                  {service}
+                                  {service.name}
                                 </a>
                               </li>
                             ))}
@@ -184,9 +184,9 @@ const Header = () => {
                           <h4 className="font-medium text-primary mb-2">{category.category}</h4>
                           <ul className="space-y-1 ml-4">
                             {category.services.map((service) => (
-                              <li key={service}>
-                                <a href="#" className="text-sm text-muted-foreground hover:text-primary">
-                                  {service}
+                              <li key={service.name}>
+                                <a href={service.url} className="text-sm text-muted-foreground hover:text-primary">
+                                  {service.name}
                                 </a>
                               </li>
                             ))}

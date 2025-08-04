@@ -36,9 +36,6 @@ const Footer = () => {
               <Button variant="accent" size="xl">
                 Get Free Consultation
               </Button>
-              <Button variant="outline" size="xl" className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-                View Our Portfolio
-              </Button>
             </div>
           </div>
         </div>

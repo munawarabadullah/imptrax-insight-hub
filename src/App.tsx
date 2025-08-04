@@ -6,6 +6,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import AIDevelopmentServices from "./pages/AIDevelopmentServices";
 import AIConsulting from "./pages/AIConsulting";
+import PredictiveAnalytics from "./pages/PredictiveAnalytics";
+import WhyToPredictiveAnalytics from "./pages/WhyToPredictiveAnalytics";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import CookiePolicy from "./pages/CookiePolicy";
@@ -24,6 +26,8 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/ai-development-services" element={<AIDevelopmentServices />} />
           <Route path="/ai-consulting" element={<AIConsulting />} />
+          <Route path="/predictive-analytics" element={<PredictiveAnalytics />} />
+          <Route path="/why-to-use-predictive-analytics" element={<WhyToPredictiveAnalytics />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
           <Route path="/cookie-policy" element={<CookiePolicy />} />

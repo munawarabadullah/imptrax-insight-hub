@@ -42,6 +42,16 @@ const KnowledgeBase = () => {
           title: "AI Consulting Services",
           description: "Expert AI consulting and strategic guidance for artificial intelligence implementation",
           url: "/ai-consulting"
+        },
+        {
+          title: "Predictive Analytics",
+          description: "Transform your data into predictive insights with custom analytics solutions and forecasting models",
+          url: "/predictive-analytics"
+        },
+        {
+          title: "Why to use Predictive Analytics",
+          description: "Discover the key benefits, strategic advantages, and business reasons for implementing predictive analytics",
+          url: "/why-to-use-predictive-analytics"
         }
       ]
     },

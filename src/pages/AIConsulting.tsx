@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Brain, Users, Award, Shield, CheckCircle, Star, TrendingUp, Zap, Target, Clock, BarChart3, Heart, Building2, Home } from "lucide-react";
+import { ArrowRight, Brain, Users, Award, Shield, CheckCircle, Star, TrendingUp, Zap, Target, Clock, BarChart3, Heart, Building2, Home, Sparkles, MessageSquare, Bot, Eye, Cog, FileText } from "lucide-react";
 
 const AIConsulting = () => {
   useEffect(() => {
@@ -62,26 +62,32 @@ const AIConsulting = () => {
 
   const capabilities = [
     {
+      icon: Sparkles,
       title: "Generative AI",
       description: "Solutions that produce new forms of creative content including text, images, 3D models, audio, video, and computer code based on specified parameters."
     },
     {
+      icon: FileText,
       title: "Natural Language Processing",
       description: "AI systems that understand, interpret, and generate human language for text classification, sentiment analysis, entity recognition, and translation."
     },
     {
+      icon: Bot,
       title: "Conversational AI",
       description: "Chatbots and virtual assistants that rely on NLP and machine learning to understand and respond in natural, contextually relevant ways."
     },
     {
+      icon: BarChart3,
       title: "Predictive Analytics",
       description: "Software designed to handle data aggregation, processing, and analysis tasks to produce accurate forecasts and intelligent prescriptions."
     },
     {
+      icon: Eye,
       title: "Computer Vision",
       description: "Software that automatically captures and interprets information from image and video data with user-defined actions for visual recognition."
     },
     {
+      icon: Cog,
       title: "Business Automation",
       description: "Software employing machine learning and deep learning techniques to automate complex business workflows from data intake to decision making."
     }
@@ -98,7 +104,7 @@ const AIConsulting = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 bg-gradient-to-br from-background via-background to-muted/20">
+      <section className="relative py-20 lg:py-32" style={{backgroundColor: '#E0F3FF'}}>
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
@@ -119,9 +125,6 @@ const AIConsulting = () => {
               <Button size="lg" className="bg-primary hover:bg-primary/90">
                 Get AI Consultation
                 <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
-              <Button variant="outline" size="lg">
-                View Our Portfolio
               </Button>
             </div>
           </div>
@@ -184,12 +187,12 @@ const AIConsulting = () => {
       </section>
 
       {/* AI Capabilities Section */}
-      <section className="py-20 lg:py-32 bg-muted/30">
+      <section className="py-20 lg:py-32" style={{backgroundColor: '#D6EFFF'}}>
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">
               AI Software and Capabilities We{" "}
-              <span className="bg-gradient-primary bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
                 Specialize In
               </span>
             </h2>
@@ -200,16 +203,24 @@ const AIConsulting = () => {
           </div>
           
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {capabilities.map((capability, index) => (
-              <div key={index} className="bg-background border border-border rounded-lg p-6 hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-semibold text-foreground mb-3">
-                  {capability.title}
-                </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  {capability.description}
-                </p>
-              </div>
-            ))}
+            {capabilities.map((capability, index) => {
+              const IconComponent = capability.icon;
+              return (
+                <div key={index} className="group">
+                  <div className="bg-white/70 backdrop-blur-sm border border-blue-100/50 rounded-xl p-6 h-full hover:shadow-lg hover:shadow-blue-100/50 transition-all duration-300 hover:border-blue-200/60 hover:bg-white/80">
+                    <div className="bg-gradient-to-br from-blue-100 to-cyan-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4 group-hover:from-blue-200 group-hover:to-cyan-200 transition-all duration-300">
+                      <IconComponent className="w-6 h-6 text-blue-600" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-slate-800 mb-3">
+                      {capability.title}
+                    </h3>
+                    <p className="text-slate-600 text-sm leading-relaxed">
+                      {capability.description}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
