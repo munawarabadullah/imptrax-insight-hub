@@ -27,10 +27,10 @@ const Header = () => {
         {
           category: "AI Solutions",
           services: [
-            { name: "Machine Learning Development", url: "/ai-development-services" },
-            { name: "Natural Language Processing", url: "/ai-development-services" },
             { name: "AI & Automation", url: "/ai-development-services" },
-            { name: "Predictive Analytics", url: "/predictive-analytics" }
+            { name: "Predictive Analytics", url: "/predictive-analytics" },
+            { name: "Natural Language Processing", url: "/natural-language-processing" },
+            { name: "Machine Learning Development", url: "/machine-learning-development" }
           ]
         },
         {
@@ -48,6 +48,7 @@ const Header = () => {
             { name: "Data Analytics", url: "#" },
             { name: "Data Migration", url: "#" },
             { name: "Data Warehousing", url: "#" },
+            { name: "Real Estate Software", url: "/real-estate-software" },
             { name: "Real-time Analytics", url: "#" }
           ]
         }
@@ -71,7 +72,8 @@ const Header = () => {
             { name: "Medical Data Analytics", url: "#" },
             { name: "Patient Management", url: "#" },
             { name: "Diagnostic AI", url: "#" },
-            { name: "Healthcare Automation", url: "#" }
+            { name: "Healthcare Automation", url: "#" },
+            { name: "HIPAA Compliance", url: "/hipaa-compliant" }
           ]
         },
         {

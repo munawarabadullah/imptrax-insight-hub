@@ -52,6 +52,26 @@ const KnowledgeBase = () => {
           title: "Why to use Predictive Analytics",
           description: "Discover the key benefits, strategic advantages, and business reasons for implementing predictive analytics",
           url: "/why-to-use-predictive-analytics"
+        },
+        {
+          title: "Real Estate Software Development",
+          description: "Custom real estate software solutions including property management, CRM, mobile apps, and digital platforms",
+          url: "/real-estate-software"
+        },
+        {
+          title: "Natural Language Processing",
+          description: "Advanced NLP services including sentiment analysis, text processing, language translation, and speech recognition",
+          url: "/natural-language-processing"
+        },
+        {
+          title: "HIPAA Compliance Services",
+          description: "Comprehensive HIPAA compliance solutions including risk assessments, policy development, training programs, and audit management",
+          url: "/hipaa-compliant"
+        },
+        {
+          title: "Machine Learning Development",
+          description: "Custom machine learning solutions including predictive analysis, deep learning, computer vision, speech recognition, and generative models",
+          url: "/machine-learning-development"
         }
       ]
     },
