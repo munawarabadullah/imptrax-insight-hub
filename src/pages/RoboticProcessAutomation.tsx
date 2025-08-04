@@ -133,31 +133,45 @@ const RoboticProcessAutomation = () => {
       <Header />
       <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
         {/* Hero Section */}
-        <section className="relative py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+        <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+          {/* Animated Background Elements */}
+          <div className="absolute inset-0 overflow-hidden">
+            <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-purple-400/20 to-pink-400/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-blue-300/10 to-purple-300/10 rounded-full blur-3xl animate-spin-slow"></div>
+          </div>
+          
+          {/* Floating Elements */}
+          <div className="absolute top-20 left-10 w-4 h-4 bg-blue-500/30 rounded-full animate-float"></div>
+          <div className="absolute top-40 right-20 w-6 h-6 bg-purple-500/30 rounded-full animate-float-delayed"></div>
+          <div className="absolute bottom-20 left-20 w-3 h-3 bg-pink-500/30 rounded-full animate-float"></div>
+          <div className="absolute bottom-40 right-10 w-5 h-5 bg-blue-400/30 rounded-full animate-float-delayed"></div>
+          
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center">
-            <Badge variant="outline" className="mb-4 px-4 py-2 text-sm font-medium">
+            <Badge variant="outline" className="mb-4 px-4 py-2 text-sm font-medium backdrop-blur-sm bg-white/80 border-white/20 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
               Enterprise Automation Solutions
             </Badge>
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 animate-fade-in-up">
               Robotic Process
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600"> Automation</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 animate-gradient-x"> Automation</span>
             </h1>
-            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto animate-fade-in-up delay-200 leading-relaxed">
               Speed up business operations with ImpTrax's best-in-class RPA solutions. Our streamlined and personalized automation processes transform repetitive tasks into intelligent, efficient workflows.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-400">
               <Button 
                 size="lg" 
-                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+                className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105 transition-all duration-300 backdrop-blur-sm"
                 onClick={() => handleCTAClick('hero', 'get-started')}
               >
                 Get Started Today
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="ml-2 h-5 w-5 animate-bounce-x" />
               </Button>
               <Button 
                 variant="outline" 
                 size="lg"
+                className="backdrop-blur-sm bg-white/80 border-white/20 hover:bg-white/90 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
                 onClick={() => handleCTAClick('hero', 'schedule-consultation')}
               >
                 Schedule Consultation
@@ -168,27 +182,32 @@ const RoboticProcessAutomation = () => {
         </section>
 
         {/* Benefits Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-white via-blue-50/30 to-purple-50/30 relative overflow-hidden">
+          {/* Background Pattern */}
+          <div className="absolute inset-0 opacity-5">
+            <div className="absolute top-0 left-0 w-full h-full" style={{backgroundImage: 'radial-gradient(circle at 25% 25%, #3b82f6 2px, transparent 2px), radial-gradient(circle at 75% 75%, #8b5cf6 2px, transparent 2px)', backgroundSize: '50px 50px'}}></div>
+          </div>
+          
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 animate-fade-in-up">
               How RPA Can Be Advantageous to You
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto animate-fade-in-up delay-200">
               Robotic Process Automation technology has gained significant attention in organizations, enabling robots to work on enterprise software just like humans do.
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {benefits.map((benefit, index) => (
-              <Card key={index} className="text-center hover:shadow-lg transition-shadow duration-300">
+              <Card key={index} className="text-center glass hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 group border-0 animate-fade-in-up" style={{animationDelay: `${index * 0.1 + 0.3}s`}}>
                 <CardHeader>
-                  <div className="mx-auto mb-4">
+                  <div className="mx-auto mb-4 transform group-hover:scale-110 transition-transform duration-300">
                     {benefit.icon}
                   </div>
-                  <CardTitle className="text-xl">{benefit.title}</CardTitle>
+                  <CardTitle className="text-xl group-hover:text-blue-600 transition-colors duration-300">{benefit.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-gray-600">
+                  <CardDescription className="text-gray-600 group-hover:text-gray-700 transition-colors duration-300">
                     {benefit.description}
                   </CardDescription>
                 </CardContent>
@@ -199,30 +218,35 @@ const RoboticProcessAutomation = () => {
         </section>
 
         {/* Capabilities Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-purple-50">
-        <div className="max-w-7xl mx-auto">
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-purple-50 relative overflow-hidden">
+          {/* Floating Elements */}
+          <div className="absolute top-20 left-10 w-20 h-20 bg-blue-200/30 rounded-full blur-xl animate-float"></div>
+          <div className="absolute bottom-20 right-10 w-32 h-32 bg-purple-200/30 rounded-full blur-xl animate-float-delayed"></div>
+          <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-green-200/30 rounded-full blur-xl animate-float delay-1000"></div>
+          
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 animate-fade-in-up">
               Advanced RPA Business Solutions
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto animate-fade-in-up delay-200">
               ImpTrax delivers end-to-end business solutions that have driven success across hundreds of enterprises globally.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {capabilities.map((capability, index) => (
-              <Card key={index} className="hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+              <Card key={index} className="glass-dark hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 transform hover:scale-105 group border-0 animate-fade-in-up" style={{animationDelay: `${index * 0.15 + 0.4}s`}}>
                 <CardHeader>
-                  <CardTitle className="text-xl text-gray-900">{capability.title}</CardTitle>
-                  <CardDescription className="text-gray-600">
+                  <CardTitle className="text-xl text-gray-900 group-hover:text-blue-600 transition-colors duration-300">{capability.title}</CardTitle>
+                  <CardDescription className="text-gray-600 group-hover:text-gray-700 transition-colors duration-300">
                     {capability.description}
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2">
                     {capability.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center text-sm text-gray-700">
-                        <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
+                      <li key={featureIndex} className="flex items-center text-sm text-gray-700 group-hover:text-gray-800 transition-colors duration-300 animate-fade-in-up" style={{animationDelay: `${index * 0.15 + featureIndex * 0.05 + 0.6}s`}}>
+                        <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0 group-hover:text-green-600 transition-colors duration-300" />
                         {feature}
                       </li>
                     ))}
@@ -335,27 +359,31 @@ const RoboticProcessAutomation = () => {
         </section>
 
         {/* FAQ Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50/50 via-white to-purple-50/30 relative overflow-hidden">
+          {/* Background Elements */}
+          <div className="absolute top-10 right-10 w-24 h-24 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-2xl animate-pulse"></div>
+          <div className="absolute bottom-10 left-10 w-32 h-32 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-2xl animate-pulse delay-1000"></div>
+          
+          <div className="max-w-4xl mx-auto relative z-10">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 animate-fade-in-up">
                 Frequently Asked Questions
               </h2>
-              <p className="text-lg text-gray-600">
+              <p className="text-lg text-gray-600 animate-fade-in-up delay-200">
                 Get answers to the most common questions about Robotic Process Automation
               </p>
             </div>
             <div className="space-y-4">
               {faqs.map((faq, index) => (
-                <div key={index} className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-300">
+                <div key={index} className="glass border-0 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 animate-fade-in-up" style={{animationDelay: `${index * 0.1 + 0.3}s`}}>
                   <button
-                    className="w-full px-6 py-4 text-left bg-gradient-to-r from-gray-50 to-blue-50 hover:from-blue-50 hover:to-purple-50 transition-all duration-300 flex justify-between items-center group"
+                    className="w-full px-6 py-4 text-left hover:bg-white/30 transition-all duration-300 flex justify-between items-center group"
                     onClick={() => setOpenFAQ(openFAQ === index ? null : index)}
                   >
                     <span className="text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
                       {faq.question}
                     </span>
-                    <div className="ml-4 flex-shrink-0">
+                    <div className="ml-4 flex-shrink-0 transform group-hover:scale-110 transition-transform duration-300">
                       {openFAQ === index ? (
                         <Minus className="h-5 w-5 text-blue-600 transform transition-transform duration-300" />
                       ) : (
@@ -364,7 +392,7 @@ const RoboticProcessAutomation = () => {
                     </div>
                   </button>
                   {openFAQ === index && (
-                    <div className="px-6 py-4 bg-white border-t border-gray-100 animate-in slide-in-from-top-2 duration-300">
+                    <div className="px-6 py-4 bg-white/20 backdrop-blur-sm border-t border-white/30 animate-in slide-in-from-top-2 duration-300">
                       <p className="text-gray-700 leading-relaxed">
                         {faq.answer}
                       </p>
@@ -377,18 +405,28 @@ const RoboticProcessAutomation = () => {
         </section>
 
         {/* Final CTA Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-slate-900 to-blue-900">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700 relative overflow-hidden">
+          {/* Animated Background Elements */}
+          <div className="absolute inset-0">
+            <div className="absolute top-0 left-0 w-full h-full opacity-10">
+              <div className="absolute top-20 left-20 w-40 h-40 bg-white rounded-full blur-3xl animate-float"></div>
+              <div className="absolute bottom-20 right-20 w-60 h-60 bg-yellow-300 rounded-full blur-3xl animate-float-delayed"></div>
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-pink-300 rounded-full blur-3xl animate-pulse"></div>
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-600/90 to-purple-600/90"></div>
+          </div>
+          
+          <div className="max-w-4xl mx-auto text-center relative z-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 animate-fade-in-up">
               Ready to Transform Your Business?
             </h2>
-            <p className="text-xl text-blue-100 mb-8">
+            <p className="text-xl text-blue-100 mb-8 animate-fade-in-up delay-200">
               Start your RPA journey today and join thousands of businesses already benefiting from intelligent automation.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-400">
               <Button 
                 size="lg" 
-                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
+                className="bg-white text-blue-600 hover:bg-gray-100 hover:scale-105 px-8 py-3 text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl animate-bounce-x"
                 onClick={() => handleCTAClick('final', 'get-started')}
               >
                 <Zap className="mr-2 h-5 w-5" />
@@ -397,7 +435,7 @@ const RoboticProcessAutomation = () => {
               <Button 
                 size="lg" 
                 variant="outline"
-                className="border-white text-white hover:bg-white hover:text-slate-900"
+                className="border-white text-white hover:bg-white hover:text-blue-600 hover:scale-105 px-8 py-3 text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
                 onClick={() => handleCTAClick('final', 'contact-expert')}
               >
                 <Users className="mr-2 h-5 w-5" />
