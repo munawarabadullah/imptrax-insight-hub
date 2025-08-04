@@ -156,7 +156,7 @@ const WorkflowOptimization = () => {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-16 py-10 max-w-4xl mx-auto text-center">
               {stats.map((stat, index) => (
                 <div key={index} className="space-y-4 px-4">
-                  <div className="text-6xl sm:text-5xl font-bold text-yellow-300 mb-2 tracking-tight leading-none">
+                  <div className="text-6xl sm:text-5xl font-bold text-accent mb-2 tracking-tight leading-none">
                     {stat.number}
                   </div>
                   <div className="text-blue-100 font-medium tracking-wide">

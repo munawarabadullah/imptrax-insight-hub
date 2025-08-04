@@ -10,7 +10,7 @@ const COLORS = {
   red: 'bg-red-500',
   blue: 'bg-blue-500', 
   green: 'bg-green-500',
-  yellow: 'bg-yellow-500'
+  orange: 'bg-orange-500'
 } as const;
 
 type ColorKey = keyof typeof COLORS;
@@ -29,7 +29,7 @@ export const PatternCaptcha = ({ onVerify, className }: PatternCaptchaProps) => 
 
   // Generate random 4x4 grid
   const generateGrid = () => {
-    const colors: ColorKey[] = ['red', 'blue', 'green', 'yellow'];
+    const colors: ColorKey[] = ['red', 'blue', 'green', 'orange'];
     const newGrid: GridSquare[] = [];
     
     for (let i = 0; i < 16; i++) {
