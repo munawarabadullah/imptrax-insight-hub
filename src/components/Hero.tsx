@@ -88,29 +88,72 @@ const Hero = () => {
 
           {/* Visual */}
           <div className="relative mt-8 lg:mt-0 animate-fade-in-up delay-400">
-            <div className="relative bg-gradient-to-br from-card/95 to-[#DEEDFF]/5 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-elegant hover:shadow-2xl transition-all duration-500 transform hover:scale-105 border border-[#DEEDFF]/20">
+            <div className="relative bg-gradient-to-br from-primary/95 to-primary/90 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-elegant hover:shadow-2xl transition-all duration-500 transform hover:scale-105 border border-[#DEEDFF]/30">
               <div className="space-y-4 sm:space-y-6">
+                {/* Header with status indicators */}
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-3">
-                    <div className="w-3 h-3 bg-gradient-to-r from-accent to-[#DEEDFF] rounded-full animate-pulse"></div>
-                    <div className="w-3 h-3 bg-gradient-to-r from-[#DEEDFF] to-secondary rounded-full animate-pulse delay-200"></div>
-                    <div className="w-3 h-3 bg-gradient-to-r from-secondary to-[#DEEDFF] rounded-full animate-pulse delay-400"></div>
+                    <div className="w-2 h-2 bg-accent rounded-full animate-pulse shadow-lg shadow-accent/50"></div>
+                    <div className="w-2 h-2 bg-[#DEEDFF] rounded-full animate-pulse delay-200 shadow-lg shadow-[#DEEDFF]/50"></div>
+                    <div className="w-2 h-2 bg-secondary rounded-full animate-pulse delay-400 shadow-lg shadow-secondary/50"></div>
+                    <span className="text-xs text-accent font-mono ml-2">ONLINE</span>
                   </div>
-                  <div className="text-xs text-[#DEEDFF]/80 font-medium">Live Dashboard</div>
+                  <div className="text-xs text-[#DEEDFF] font-mono tracking-wider">LIVE DASHBOARD</div>
                 </div>
-                <div className="space-y-3">
-                  <div className="h-3 sm:h-4 bg-gradient-to-r from-primary via-[#DEEDFF] to-primary rounded-full w-3/4 animate-pulse shadow-sm"></div>
-                  <div className="h-3 sm:h-4 bg-gradient-to-r from-[#DEEDFF] to-secondary rounded-full w-1/2 animate-pulse delay-200 shadow-sm"></div>
-                  <div className="h-3 sm:h-4 bg-gradient-to-r from-secondary via-[#DEEDFF] to-accent rounded-full w-2/3 animate-pulse delay-400 shadow-sm"></div>
-                </div>
-                <div className="grid grid-cols-2 gap-3 sm:gap-4 pt-4">
-                  <div className="bg-gradient-to-br from-secondary/50 to-[#DEEDFF]/20 rounded-lg sm:rounded-xl p-3 sm:p-4 hover:from-secondary/60 hover:to-[#DEEDFF]/30 transition-all duration-300 border border-[#DEEDFF]/10">
-                    <div className="text-xs sm:text-sm font-medium text-card-foreground">AI Analytics</div>
-                    <div className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-primary to-[#DEEDFF] bg-clip-text text-transparent">+156%</div>
+                
+                {/* Corporate progress bars */}
+                <div className="space-y-4">
+                  {/* Neural Network Processing */}
+                  <div className="space-y-2">
+                    <div className="flex justify-between items-center">
+                      <span className="text-xs font-mono text-[#DEEDFF]/90">Neural Network</span>
+                      <span className="text-xs font-mono text-accent">87.3%</span>
+                    </div>
+                    <div className="relative h-2 bg-primary-foreground/10 rounded-full overflow-hidden">
+                      <div className="absolute inset-0 bg-gradient-to-r from-primary-foreground/5 to-primary-foreground/10 rounded-full"></div>
+                      <div className="relative h-full bg-gradient-to-r from-accent via-[#DEEDFF] to-secondary rounded-full w-[87%] animate-pulse shadow-lg shadow-accent/20"></div>
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer"></div>
+                    </div>
                   </div>
-                  <div className="bg-gradient-to-br from-accent/10 to-[#DEEDFF]/15 rounded-lg sm:rounded-xl p-3 sm:p-4 hover:from-accent/20 hover:to-[#DEEDFF]/25 transition-all duration-300 border border-[#DEEDFF]/10">
-                    <div className="text-xs sm:text-sm font-medium text-card-foreground">Automation</div>
-                    <div className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-accent to-[#DEEDFF] bg-clip-text text-transparent">87%</div>
+                  
+                  {/* Data Processing */}
+                  <div className="space-y-2">
+                    <div className="flex justify-between items-center">
+                      <span className="text-xs font-mono text-[#DEEDFF]/90">Data Processing</span>
+                      <span className="text-xs font-mono text-secondary">94.7%</span>
+                    </div>
+                    <div className="relative h-2 bg-primary-foreground/10 rounded-full overflow-hidden">
+                      <div className="absolute inset-0 bg-gradient-to-r from-primary-foreground/5 to-primary-foreground/10 rounded-full"></div>
+                      <div className="relative h-full bg-gradient-to-r from-secondary via-[#DEEDFF] to-primary-foreground rounded-full w-[95%] animate-pulse delay-200 shadow-lg shadow-secondary/20"></div>
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer delay-200"></div>
+                    </div>
+                  </div>
+                  
+                  {/* Model Training */}
+                  <div className="space-y-2">
+                    <div className="flex justify-between items-center">
+                      <span className="text-xs font-mono text-[#DEEDFF]/90">Model Training</span>
+                      <span className="text-xs font-mono text-[#DEEDFF]">73.2%</span>
+                    </div>
+                    <div className="relative h-2 bg-primary-foreground/10 rounded-full overflow-hidden">
+                      <div className="absolute inset-0 bg-gradient-to-r from-primary-foreground/5 to-primary-foreground/10 rounded-full"></div>
+                      <div className="relative h-full bg-gradient-to-r from-[#DEEDFF] via-secondary to-accent rounded-full w-[73%] animate-pulse delay-400 shadow-lg shadow-[#DEEDFF]/20"></div>
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer delay-400"></div>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Corporate metrics */}
+                <div className="grid grid-cols-2 gap-3 sm:gap-4 pt-4 border-t border-[#DEEDFF]/20">
+                  <div className="bg-gradient-to-br from-primary-foreground/10 to-[#DEEDFF]/10 rounded-lg sm:rounded-xl p-3 sm:p-4 hover:from-primary-foreground/15 hover:to-[#DEEDFF]/15 transition-all duration-300 border border-[#DEEDFF]/20">
+                    <div className="text-xs font-mono text-[#DEEDFF]/80 mb-1">ACCURACY</div>
+                    <div className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-accent to-[#DEEDFF] bg-clip-text text-transparent">98.7%</div>
+                    <div className="text-xs font-mono text-accent/70">↗ +2.3%</div>
+                  </div>
+                  <div className="bg-gradient-to-br from-primary-foreground/10 to-[#DEEDFF]/10 rounded-lg sm:rounded-xl p-3 sm:p-4 hover:from-primary-foreground/15 hover:to-[#DEEDFF]/15 transition-all duration-300 border border-[#DEEDFF]/20">
+                    <div className="text-xs font-mono text-[#DEEDFF]/80 mb-1">THROUGHPUT</div>
+                    <div className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-secondary to-[#DEEDFF] bg-clip-text text-transparent">1.2K/s</div>
+                    <div className="text-xs font-mono text-secondary/70">↗ +15%</div>
                   </div>
                 </div>
               </div>
