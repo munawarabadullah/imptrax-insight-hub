@@ -1,10 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Home, Search, Users, BarChart3, Shield, Smartphone, Globe, MapPin, Calendar, DollarSign, FileText, Camera, MessageSquare, Zap, Target, CheckCircle, TrendingUp, Building2, Key, Database } from "lucide-react";
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const RealEstateSoftware = () => {
+  const navigate = useNavigate();
+
   useEffect(() => {
     // SEO Meta Tags
     document.title = "Real Estate Software Development | ImpTrax - Custom Property Solutions";
@@ -19,6 +22,22 @@ const RealEstateSoftware = () => {
       document.head.appendChild(meta);
     }
   }, []);
+
+  const handleStartProjectClick = () => {
+    navigate('/schedule-consultation?source=real-estate&button=start-project');
+  };
+
+  const handleConsultExpertsClick = () => {
+    navigate('/schedule-consultation?source=real-estate&button=consult-experts');
+  };
+
+  const handleGetStartedTodayClick = () => {
+    navigate('/schedule-consultation?source=real-estate&button=get-started-today');
+  };
+
+  const handleScheduleConsultationClick = () => {
+    navigate('/schedule-consultation?source=real-estate&button=schedule-consultation');
+  };
 
   const services = [
     {
@@ -154,11 +173,11 @@ const RealEstateSoftware = () => {
               ImpTrax delivers cutting-edge real estate software solutions that transform how property professionals operate. From property management systems to mobile applications, we create digital experiences that drive business growth and enhance client satisfaction.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="accent" size="xl" className="group">
+              <Button variant="accent" size="xl" className="group" onClick={handleStartProjectClick}>
                 Start Your Project
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button variant="outline" size="xl" className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+              <Button variant="outline" size="xl" className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary" onClick={handleConsultExpertsClick}>
                 Consult Our Experts
               </Button>
             </div>
@@ -296,11 +315,11 @@ const RealEstateSoftware = () => {
               Partner with ImpTrax to develop cutting-edge real estate software solutions that drive growth, enhance efficiency, and deliver exceptional user experiences. Let's build the future of your property business together.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="accent" size="xl" className="group">
+              <Button variant="accent" size="xl" className="group" onClick={handleGetStartedTodayClick}>
                 Get Started Today
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button variant="outline" size="xl" className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+              <Button variant="outline" size="xl" className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary" onClick={handleScheduleConsultationClick}>
                 Schedule Consultation
               </Button>
             </div>

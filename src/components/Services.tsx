@@ -1,8 +1,18 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Brain, Cog, Database, TrendingUp, Shield, Zap } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Services = () => {
+  const navigate = useNavigate();
+
+  const handleLearnMoreClick = (serviceTitle: string) => {
+    navigate(`/schedule-consultation?source=services&button=learn-more&service=${encodeURIComponent(serviceTitle)}`);
+  };
+
+  const handleExploreAllClick = () => {
+    navigate('/schedule-consultation?source=services&button=explore-all');
+  };
   const services = [
     {
       icon: Brain,
@@ -82,7 +92,11 @@ const Services = () => {
                       </li>
                     ))}
                   </ul>
-                  <Button variant="outline" className="w-full mt-4 group-hover:bg-primary group-hover:text-primary-foreground">
+                  <Button 
+                    variant="outline" 
+                    className="w-full mt-4 group-hover:bg-primary group-hover:text-primary-foreground"
+                    onClick={() => handleLearnMoreClick(service.title)}
+                  >
                     Learn More
                   </Button>
                 </CardContent>
@@ -92,7 +106,11 @@ const Services = () => {
         </div>
 
         <div className="text-center mt-16">
-          <Button variant="corporate" size="xl">
+          <Button 
+            variant="corporate" 
+            size="xl"
+            onClick={handleExploreAllClick}
+          >
             Explore All Services
           </Button>
         </div>

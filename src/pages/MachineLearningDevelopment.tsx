@@ -178,14 +178,14 @@ const MachineLearningDevelopment: React.FC = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                to="/contact"
+                to="/schedule-consultation?source=machine-learning&button=start-ml-project"
                 className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-200 flex items-center justify-center"
               >
                 Start Your ML Project
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
               <Link
-                to="/ai-consulting"
+                to="/schedule-consultation?source=machine-learning&button=explore-ai-consulting"
                 className="border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-200"
               >
                 Explore AI Consulting
@@ -301,7 +301,7 @@ const MachineLearningDevelopment: React.FC = () => {
                 Let's discuss how our machine learning expertise can transform your business operations and drive growth.
               </p>
               <Link
-                to="/contact"
+                to="/schedule-consultation?source=machine-learning&button=schedule-consultation"
                 className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200 inline-flex items-center"
               >
                 Schedule Consultation
@@ -385,14 +385,14 @@ const MachineLearningDevelopment: React.FC = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              to="/contact"
+              to="/schedule-consultation?source=machine-learning&button=get-started-today"
               className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200 flex items-center justify-center"
             >
               Get Started Today
               <ArrowRight className="ml-2 w-5 h-5" />
             </Link>
             <Link
-              to="/knowledge-base"
+              to="/schedule-consultation?source=machine-learning&button=learn-more"
               className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 rounded-lg font-semibold transition-colors duration-200"
             >
               Learn More

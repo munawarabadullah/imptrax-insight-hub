@@ -2,9 +2,28 @@ import { useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 import { ArrowRight, BarChart3, TrendingUp, Target, Zap, Shield, CheckCircle, Brain, Database, LineChart, PieChart, Activity, Users, Settings } from "lucide-react";
 
 const PredictiveAnalytics = () => {
+  const navigate = useNavigate();
+
+  const handleExploreCustomSolutionsClick = () => {
+    navigate('/schedule-consultation?source=predictive-analytics&button=explore-custom-solutions');
+  };
+
+  const handleViewSuccessStoriesClick = () => {
+    navigate('/schedule-consultation?source=predictive-analytics&button=view-success-stories');
+  };
+
+  const handleStartProjectClick = () => {
+    navigate('/schedule-consultation?source=predictive-analytics&button=start-project');
+  };
+
+  const handleViewCaseStudiesClick = () => {
+    navigate('/schedule-consultation?source=predictive-analytics&button=view-case-studies');
+  };
+
   useEffect(() => {
     // SEO Meta Tags
     document.title = "Predictive Analytics Solutions | ImpTrax - Transform Data Into Insights";
@@ -358,11 +377,18 @@ const PredictiveAnalytics = () => {
                  Our custom predictive analytics software doesn't just analyze data—it transforms it into actionable insights that drive measurable business outcomes. From reducing operational costs by up to 30% to increasing revenue through better customer targeting, our solutions deliver ROI that speaks for itself.
                </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button className="bg-slate-800 hover:bg-slate-700 text-white">
+                <Button 
+                  className="bg-slate-800 hover:bg-slate-700 text-white"
+                  onClick={handleExploreCustomSolutionsClick}
+                >
                   Explore Custom Solutions
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
-                <Button variant="outline" className="border-slate-600 text-slate-700 hover:bg-slate-50">
+                <Button 
+                  variant="outline" 
+                  className="border-slate-600 text-slate-700 hover:bg-slate-50"
+                  onClick={handleViewSuccessStoriesClick}
+                >
                   View Success Stories
                 </Button>
               </div>
@@ -383,11 +409,21 @@ const PredictiveAnalytics = () => {
               Let ImpTrax help you turn data into competitive advantage and drive growth.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="secondary" size="lg" className="bg-background text-foreground hover:bg-background/90">
+              <Button 
+                variant="secondary" 
+                size="lg" 
+                className="bg-background text-foreground hover:bg-background/90"
+                onClick={handleStartProjectClick}
+              >
                 Start Your Project
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
-              <Button variant="outline" size="lg" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+                onClick={handleViewCaseStudiesClick}
+              >
                 View Case Studies
               </Button>
             </div>

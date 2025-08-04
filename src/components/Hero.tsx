@@ -1,7 +1,18 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
+  const navigate = useNavigate();
+
+  const handleConsultNowClick = () => {
+    navigate('/schedule-consultation?source=home&button=consult-now');
+  };
+
+  const handleStartTransformationClick = () => {
+    navigate('/schedule-consultation?source=home&button=start-transformation');
+  };
+
   return (
     <section className="relative bg-gradient-hero text-primary-foreground py-20 lg:py-32 overflow-hidden">
       {/* Background Pattern */}
@@ -24,11 +35,16 @@ const Hero = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="accent" size="xl" className="group">
+              <Button variant="accent" size="xl" className="group" onClick={handleStartTransformationClick}>
                 Start Your Digital Transformation
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button variant="outline" size="xl" className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+              <Button 
+                variant="outline" 
+                size="xl" 
+                className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+                onClick={handleConsultNowClick}
+              >
                 Consult Now!
               </Button>
             </div>

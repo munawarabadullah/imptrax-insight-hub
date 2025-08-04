@@ -1,8 +1,18 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Building2, Heart, Home } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Industries = () => {
+  const navigate = useNavigate();
+
+  const handleViewCaseStudiesClick = (industryTitle: string) => {
+    navigate(`/schedule-consultation?source=industries&button=view-case-studies&industry=${encodeURIComponent(industryTitle)}`);
+  };
+
+  const handleScheduleConsultationClick = () => {
+    navigate('/schedule-consultation?source=industries&button=schedule-consultation');
+  };
   const industries = [
     {
       icon: Building2,
@@ -105,7 +115,11 @@ const Industries = () => {
                     </div>
                   </div>
                   
-                  <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-primary-foreground">
+                  <Button 
+                    variant="outline" 
+                    className="w-full group-hover:bg-primary group-hover:text-primary-foreground"
+                    onClick={() => handleViewCaseStudiesClick(industry.title)}
+                  >
                     View Case Studies
                   </Button>
                 </CardContent>
@@ -118,7 +132,11 @@ const Industries = () => {
           <p className="text-lg text-muted-foreground mb-8">
             Ready to transform your industry with cutting-edge technology?
           </p>
-          <Button variant="corporate" size="xl">
+          <Button 
+            variant="corporate" 
+            size="xl"
+            onClick={handleScheduleConsultationClick}
+          >
             Schedule a Consultation
           </Button>
         </div>

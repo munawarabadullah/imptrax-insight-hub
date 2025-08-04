@@ -70,8 +70,10 @@ const ScheduleConsultation = () => {
     // Capture source information
     const urlParams = new URLSearchParams(window.location.search);
     const source = urlParams.get('source') || 'direct';
+    const button = urlParams.get('button') || '';
     setSourceInfo({
       source,
+      button,
       referrer: document.referrer,
       timestamp: new Date().toISOString()
     });
@@ -83,6 +85,9 @@ const ScheduleConsultation = () => {
       form.setValue('serviceInterest', ['Automation Solutions']);
     } else if (source === 'analytics') {
       form.setValue('serviceInterest', ['Predictive Analytics']);
+    } else if (source === 'home' && button === 'consult-now') {
+      // User came from home page "Consult Now" button
+      form.setValue('serviceInterest', ['AI Development', 'Automation Solutions']);
     }
   }, [form]);
 

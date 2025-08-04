@@ -2,8 +2,15 @@ import React, { useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Button } from '../components/ui/button';
+import { useNavigate } from 'react-router-dom';
 
 const HIPAACompliant: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleStartComplianceJourneyClick = () => {
+    navigate('/schedule-consultation?source=hipaa-compliance&button=start-compliance-journey');
+  };
+
   useEffect(() => {
     // SEO optimization
     document.title = "HIPAA Compliance Services & Solutions | ImpTrax";
@@ -227,7 +234,11 @@ const HIPAACompliant: React.FC = () => {
           <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
             Choose ImpTrax for a secure, compliant, and worry-free healthcare software environment. Let our experts guide you through the compliance process.
           </p>
-          <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3">
+          <Button 
+            size="lg" 
+            className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3"
+            onClick={handleStartComplianceJourneyClick}
+          >
             Start Your Compliance Journey
           </Button>
         </div>

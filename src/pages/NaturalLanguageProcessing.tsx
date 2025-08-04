@@ -2,9 +2,28 @@ import React, { useEffect } from 'react';
 import { Button } from '../components/ui/button';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { useNavigate } from 'react-router-dom';
 import { MessageSquare, Brain, FileText, Globe, BarChart3, Users, Mic, Tag } from 'lucide-react';
 
 const NaturalLanguageProcessing: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleStartNLPProjectClick = () => {
+    navigate('/schedule-consultation?source=nlp&button=start-nlp-project');
+  };
+
+  const handleConsultExpertsClick = () => {
+    navigate('/schedule-consultation?source=nlp&button=consult-experts');
+  };
+
+  const handleGetStartedTodayClick = () => {
+    navigate('/schedule-consultation?source=nlp&button=get-started-today');
+  };
+
+  const handleScheduleConsultationClick = () => {
+    navigate('/schedule-consultation?source=nlp&button=schedule-consultation');
+  };
+
   useEffect(() => {
     // SEO optimization
     document.title = "Natural Language Processing Services | ImpTrax - NLP Solutions";
@@ -121,10 +140,18 @@ const NaturalLanguageProcessing: React.FC = () => {
             Unlock the power of human language with ImpTrax's advanced NLP solutions. Transform unstructured text data into valuable insights and enable intelligent communication between humans and machines.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
+            <Button 
+              size="lg" 
+              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+              onClick={handleStartNLPProjectClick}
+            >
               Start Your NLP Project
             </Button>
-            <Button size="lg" variant="outline">
+            <Button 
+              size="lg" 
+              variant="outline"
+              onClick={handleConsultExpertsClick}
+            >
               Consult Our Experts
             </Button>
           </div>
@@ -242,10 +269,19 @@ const NaturalLanguageProcessing: React.FC = () => {
             Partner with ImpTrax to transform your text data into actionable insights and intelligent solutions that drive business growth.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100">
+            <Button 
+              size="lg" 
+              className="bg-white text-blue-600 hover:bg-gray-100"
+              onClick={handleGetStartedTodayClick}
+            >
               Get Started Today
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600">
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="border-white text-white hover:bg-white hover:text-blue-600"
+              onClick={handleScheduleConsultationClick}
+            >
               Schedule Consultation
             </Button>
           </div>

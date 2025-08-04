@@ -151,7 +151,7 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden lg:flex">
-            <a href="/schedule-consultation">
+            <a href="/schedule-consultation?source=header&button=schedule-consultation">
               <Button variant="corporate" size="lg">
                 Schedule Consultation
               </Button>
@@ -204,7 +204,7 @@ const Header = () => {
               <a href="#" className="block px-4 py-2 hover:text-primary">About</a>
               <a href="/schedule-consultation" className="block px-4 py-2 hover:text-primary">Contact</a>
               <div className="px-4 pt-4">
-                <a href="/schedule-consultation">
+                <a href="/schedule-consultation?source=header-mobile&button=schedule-consultation">
                   <Button variant="corporate" className="w-full">
                     Schedule Consultation
                   </Button>

@@ -1,10 +1,13 @@
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Brain, Users, Award, Shield, CheckCircle, Star, TrendingUp, Zap, Target, Clock, BarChart3, Heart, Building2, Home, Sparkles, MessageSquare, Bot, Eye, Cog, FileText } from "lucide-react";
 
 const AIConsulting = () => {
+  const navigate = useNavigate();
+
   useEffect(() => {
     // SEO Meta Tags
     document.title = "AI Consulting Services | ImpTrax - Expert Artificial Intelligence Guidance";
@@ -19,6 +22,18 @@ const AIConsulting = () => {
       document.head.appendChild(meta);
     }
   }, []);
+
+  const handleGetAIConsultationClick = () => {
+    navigate('/schedule-consultation?source=ai-consulting&button=get-ai-consultation');
+  };
+
+  const handleScheduleConsultationClick = () => {
+    navigate('/schedule-consultation?source=ai-consulting&button=schedule-consultation');
+  };
+
+  const handleDownloadAIGuideClick = () => {
+    navigate('/schedule-consultation?source=ai-consulting&button=download-ai-guide');
+  };
 
   const stats = [
     { number: "23+", label: "Years of Experience" },
@@ -122,7 +137,7 @@ const AIConsulting = () => {
               ImpTrax designs state-of-the-art solutions tailored to your unique needs, ensuring optimal project cost and minimized risks.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-primary hover:bg-primary/90">
+              <Button size="lg" className="bg-primary hover:bg-primary/90" onClick={handleGetAIConsultationClick}>
                 Get AI Consultation
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
@@ -271,11 +286,11 @@ const AIConsulting = () => {
               for your organization. Let's discuss your AI strategy today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="secondary" size="lg" className="bg-background text-foreground hover:bg-background/90">
+              <Button variant="secondary" size="lg" className="bg-background text-foreground hover:bg-background/90" onClick={handleScheduleConsultationClick}>
                 Schedule Consultation
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
-              <Button variant="outline" size="lg" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+              <Button variant="outline" size="lg" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary" onClick={handleDownloadAIGuideClick}>
                 Download AI Guide
               </Button>
             </div>

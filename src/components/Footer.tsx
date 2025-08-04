@@ -33,9 +33,11 @@ const Footer = () => {
               Let's discuss how our AI and automation solutions can drive innovation and growth for your organization.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="accent" size="xl">
-                Get Free Consultation
-              </Button>
+              <a href="/schedule-consultation?source=footer&button=get-free-consultation">
+                <Button variant="accent" size="xl">
+                  Get Free Consultation
+                </Button>
+              </a>
             </div>
           </div>
         </div>

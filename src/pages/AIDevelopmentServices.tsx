@@ -1,10 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Brain, Eye, MessageSquare, BarChart3, Heart, Building2, Home, Users, Zap, Cog, Shield, Target, Lightbulb, TrendingUp, CheckCircle, Settings, Bot, Database } from "lucide-react";
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const AIDevelopmentServices = () => {
+  const navigate = useNavigate();
+
   useEffect(() => {
     // SEO Meta Tags
     document.title = "AI & Automation Services | ImpTrax - Artificial Intelligence Solutions";
@@ -19,6 +22,22 @@ const AIDevelopmentServices = () => {
       document.head.appendChild(meta);
     }
   }, []);
+
+  const handleStartAIJourneyClick = () => {
+    navigate('/schedule-consultation?source=ai-development&button=start-ai-journey');
+  };
+
+  const handleConsultExpertsClick = () => {
+    navigate('/schedule-consultation?source=ai-development&button=consult-experts');
+  };
+
+  const handleGetStartedTodayClick = () => {
+    navigate('/schedule-consultation?source=ai-development&button=get-started-today');
+  };
+
+  const handleScheduleConsultationClick = () => {
+    navigate('/schedule-consultation?source=ai-development&button=schedule-consultation');
+  };
 
   const services = [
     {
@@ -149,11 +168,11 @@ const AIDevelopmentServices = () => {
               ImpTrax is a leading AI and automation service provider. We have developed cutting-edge AI automation solutions to help businesses cut costs and boost revenue streams by streamlining business processes. Our clients have benefited from AI automation to enhance employee productivity and gain a competitive advantage.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="accent" size="xl" className="group">
+              <Button variant="accent" size="xl" className="group" onClick={handleStartAIJourneyClick}>
                 Start Your AI Journey
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button variant="outline" size="xl" className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+              <Button variant="outline" size="xl" className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary" onClick={handleConsultExpertsClick}>
                 Consult Our Experts
               </Button>
             </div>
@@ -291,11 +310,11 @@ const AIDevelopmentServices = () => {
               Partner with ImpTrax to unlock the full potential of artificial intelligence and automation for your organization. Our expert team has developed a technological knack for delivering quicker business outcomes and adding strategic value to your business.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="accent" size="xl" className="group">
+              <Button variant="accent" size="xl" className="group" onClick={handleGetStartedTodayClick}>
                 Get Started Today
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button variant="outline" size="xl" className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+              <Button variant="outline" size="xl" className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary" onClick={handleScheduleConsultationClick}>
                 Schedule Consultation
               </Button>
             </div>

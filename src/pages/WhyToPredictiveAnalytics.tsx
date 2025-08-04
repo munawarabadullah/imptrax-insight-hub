@@ -1,10 +1,25 @@
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, TrendingUp, Target, Shield, Zap, Users, BarChart3, CheckCircle, Brain, DollarSign, Clock, Award } from "lucide-react";
 
 const WhyToPredictiveAnalytics = () => {
+  const navigate = useNavigate();
+
+  const handleStartAnalyticsJourneyClick = () => {
+    navigate('/schedule-consultation?source=why-predictive-analytics&button=start-analytics-journey');
+  };
+
+  const handleGetStartedTodayClick = () => {
+    navigate('/schedule-consultation?source=why-predictive-analytics&button=get-started-today');
+  };
+
+  const handleScheduleConsultationClick = () => {
+    navigate('/schedule-consultation?source=why-predictive-analytics&button=schedule-consultation');
+  };
+
   useEffect(() => {
     // SEO Meta Tags
     document.title = "Why Use Predictive Analytics | ImpTrax - Business Benefits & Advantages";
@@ -137,7 +152,7 @@ const WhyToPredictiveAnalytics = () => {
               reducing risks, and creating competitive advantages that drive sustainable growth and success.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-primary hover:bg-primary/90">
+              <Button size="lg" className="bg-primary hover:bg-primary/90" onClick={handleStartAnalyticsJourneyClick}>
                 Start Your Analytics Journey
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
@@ -305,11 +320,11 @@ const WhyToPredictiveAnalytics = () => {
               Let ImpTrax help you unlock the insights hidden in your data.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-primary hover:bg-primary/90">
+              <Button size="lg" className="bg-primary hover:bg-primary/90" onClick={handleGetStartedTodayClick}>
                 Get Started Today
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
-              <Button size="lg" variant="outline">
+              <Button size="lg" variant="outline" onClick={handleScheduleConsultationClick}>
                 Schedule Consultation
               </Button>
             </div>
