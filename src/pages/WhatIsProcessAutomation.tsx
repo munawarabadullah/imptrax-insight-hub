@@ -137,10 +137,10 @@ const WhatIsProcessAutomation = () => {
                 Understanding Process Automation
               </h2>
               <p className="text-lg text-gray-600 mb-6">
-                Process automation is the use of technology to automate repetitive and manual tasks within business processes. <mcreference link="https://appian.com/learn/topics/process-automation/what-is-process-automation" index="0">0</mcreference> It encompasses various technologies including robotic process automation (RPA), intelligent document processing (IDP), workflow orchestration, artificial intelligence (AI), system integrations, and business rules.
+                Process automation is the use of technology to automate repetitive and manual tasks within business processes. It encompasses various technologies including robotic process automation (RPA), intelligent document processing (IDP), workflow orchestration, artificial intelligence (AI), system integrations, and business rules.
               </p>
               <p className="text-lg text-gray-600 mb-6">
-                The primary goal is to reduce human intervention in time-consuming, routine tasks, creating more efficient and effective processes. <mcreference link="https://appian.com/learn/topics/process-automation/what-is-process-automation" index="0">0</mcreference> Think of it like a car wash: instead of manually washing each car, an automated system handles the entire process from start to finish, ensuring consistency, speed, and quality.
+                The primary goal is to reduce human intervention in time-consuming, routine tasks, creating more efficient and effective processes. Think of it like a car wash: instead of manually washing each car, an automated system handles the entire process from start to finish, ensuring consistency, speed, and quality.
               </p>
               <p className="text-lg text-gray-600">
                 At ImpTrax, we help organizations implement comprehensive process automation strategies that transform operations and drive competitive advantage.
@@ -173,7 +173,7 @@ const WhatIsProcessAutomation = () => {
               Why Choose Process Automation?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Process automation delivers measurable benefits that transform business operations and drive growth. <mcreference link="https://www.walkme.com/blog/process-automation/" index="1">1</mcreference>
+              Process automation delivers measurable benefits that transform business operations and drive growth.
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -238,7 +238,7 @@ const WhatIsProcessAutomation = () => {
               Our Implementation Process
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              ImpTrax follows a proven methodology to ensure successful automation implementation with minimal disruption. <mcreference link="https://appian.com/learn/topics/process-automation/what-is-process-automation" index="0">0</mcreference>
+              ImpTrax follows a proven methodology to ensure successful automation implementation with minimal disruption.
             </p>
           </div>
           <div className="grid md:grid-cols-5 gap-8">
@@ -268,7 +268,7 @@ const WhatIsProcessAutomation = () => {
                   Real-World Example: Employee Onboarding
                 </h2>
                 <p className="text-lg mb-6 text-blue-100">
-                  Consider a new employee onboarding process. <mcreference link="https://appian.com/learn/topics/process-automation/what-is-process-automation" index="0">0</mcreference> When HR enters a start date, automation triggers multiple coordinated actions:
+                  Consider a new employee onboarding process. When HR enters a start date, automation triggers multiple coordinated actions:
                 </p>
                 <ul className="space-y-3 text-blue-100">
                   <li className="flex items-start"><CheckCircle className="h-5 w-5 mr-3 mt-0.5 flex-shrink-0" />Creates personalized employee portal and sends automated welcome email</li>
@@ -299,7 +299,7 @@ const WhatIsProcessAutomation = () => {
               Strategic Business Impact
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Process automation creates operational excellence that drives competitive advantage and fuels innovation. <mcreference link="https://appian.com/learn/topics/process-automation/what-is-process-automation" index="3">3</mcreference>
+              Process automation creates operational excellence that drives competitive advantage and fuels innovation.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
@@ -310,7 +310,7 @@ const WhatIsProcessAutomation = () => {
               </CardHeader>
               <CardContent>
                 <CardDescription>
-                  Achieve consistent, standardized processes that eliminate variability and ensure predictable outcomes across your organization. <mcreference link="https://www.walkme.com/blog/process-automation/" index="1">1</mcreference>
+                  Achieve consistent, standardized processes that eliminate variability and ensure predictable outcomes across your organization.
                 </CardDescription>
               </CardContent>
             </Card>
@@ -321,7 +321,7 @@ const WhatIsProcessAutomation = () => {
               </CardHeader>
               <CardContent>
                 <CardDescription>
-                  Respond faster to market changes, deliver superior customer experiences, and outpace competitors through automated efficiency. <mcreference link="https://www.sap.com/products/technology-platform/process-automation/what-is-process-automation.html" index="2">2</mcreference>
+                  Respond faster to market changes, deliver superior customer experiences, and outpace competitors through automated efficiency.
                 </CardDescription>
               </CardContent>
             </Card>
@@ -332,7 +332,7 @@ const WhatIsProcessAutomation = () => {
               </CardHeader>
               <CardContent>
                 <CardDescription>
-                  Free your workforce from routine tasks to focus on strategic initiatives, creative problem-solving, and value-added activities. <mcreference link="https://www.impactmybiz.com/blog/advantages-of-process-automation/" index="5">5</mcreference>
+                  Free your workforce from routine tasks to focus on strategic initiatives, creative problem-solving, and value-added activities.
                 </CardDescription>
               </CardContent>
             </Card>
