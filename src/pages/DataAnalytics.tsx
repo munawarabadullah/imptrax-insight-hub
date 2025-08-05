@@ -19,7 +19,8 @@ import {
   ArrowRight,
   Lightbulb,
   Settings,
-  Globe
+  Globe,
+  Award
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
@@ -782,54 +783,153 @@ const DataAnalytics = () => {
       </section>
 
       {/* Why Choose ImpTrax */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
+      <section className="relative py-20 overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-10 left-20 w-32 h-32 bg-gradient-to-br from-blue-500/30 to-purple-600/30 rounded-full blur-3xl animate-float"></div>
+          <div className="absolute bottom-10 right-20 w-40 h-40 bg-gradient-to-br from-cyan-500/30 to-teal-600/30 rounded-full blur-3xl animate-float" style={{animationDelay: '3s'}}></div>
+          <div className="absolute top-1/3 right-1/4 w-24 h-24 bg-gradient-to-br from-indigo-500/30 to-blue-600/30 rounded-full blur-2xl animate-float" style={{animationDelay: '1.5s'}}></div>
+          <div className="absolute bottom-1/3 left-1/4 w-28 h-28 bg-gradient-to-br from-purple-500/30 to-pink-600/30 rounded-full blur-2xl animate-float" style={{animationDelay: '4.5s'}}></div>
+        </div>
+        
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-background/40 via-muted/20 to-background/40"></div>
+        
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">
-              Why Choose ImpTrax for Data Analytics?
+            {/* Section Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500/10 to-purple-600/10 rounded-full border border-blue-500/20 mb-6 animate-fade-in-up">
+              <Award className="w-4 h-4 text-blue-600" />
+              <span className="text-sm font-medium text-blue-600">Excellence</span>
+            </div>
+            
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6 animate-fade-in-up delay-100">
+              Why Choose ImpTrax for Data <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Analytics?</span>
             </h2>
-            <p className="text-xl text-muted-foreground mb-12">
-              Partner with ImpTrax to transform your data into a strategic asset that drives business growth and innovation.
+            <p className="text-xl text-muted-foreground mb-12 animate-fade-in-up delay-200">
+              Partner with ImpTrax to transform your data into a <span className="text-blue-600 font-medium">strategic asset</span> that drives business growth and innovation.
             </p>
             
+            {/* Decorative Line */}
+            <div className="flex items-center justify-center mb-16 animate-fade-in-up delay-300">
+              <div className="h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent w-32"></div>
+              <div className="mx-4 w-2 h-2 bg-blue-500 rounded-full"></div>
+              <div className="h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent w-32"></div>
+            </div>
+            
             <div className="grid md:grid-cols-2 gap-8 mb-12">
-              <div className="text-left">
-                <h3 className="text-xl font-bold text-foreground mb-4">Expert Team</h3>
-                <p className="text-muted-foreground mb-6">
-                  Our certified data scientists and analytics experts bring years of experience 
-                  across multiple industries and technologies.
-                </p>
+              <Card className="group relative overflow-hidden bg-background/90 backdrop-blur-sm border border-border/50 hover:border-blue-500/30 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 text-left animate-fade-in-up delay-400">
+                {/* Background Effects */}
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-full blur-xl group-hover:scale-150 transition-transform duration-700"></div>
                 
-                <h3 className="text-xl font-bold text-foreground mb-4">Proven Methodology</h3>
-                <p className="text-muted-foreground">
-                  We follow industry best practices and proven methodologies to ensure 
-                  successful implementation and measurable results.
-                </p>
-              </div>
+                <CardHeader className="relative z-10 p-8">
+                  {/* Expert Team */}
+                  <div className="mb-8">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="relative w-12 h-12 group-hover:scale-110 transition-transform duration-300">
+                        <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl rotate-3 group-hover:rotate-6 transition-transform duration-500"></div>
+                        <div className="relative w-full h-full bg-background rounded-xl flex items-center justify-center shadow-lg">
+                          <Users className="w-6 h-6 text-blue-600 group-hover:text-purple-600 transition-colors duration-300" />
+                        </div>
+                      </div>
+                      <h3 className="text-xl font-bold text-foreground group-hover:text-blue-600 transition-colors duration-300">Expert Team</h3>
+                    </div>
+                    <p className="text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors duration-300">
+                      Our certified data scientists and analytics experts bring years of experience 
+                      across multiple industries and technologies.
+                    </p>
+                  </div>
+                  
+                  {/* Proven Methodology */}
+                  <div>
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="relative w-12 h-12 group-hover:scale-110 transition-transform duration-300">
+                        <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl rotate-3 group-hover:rotate-6 transition-transform duration-500"></div>
+                        <div className="relative w-full h-full bg-background rounded-xl flex items-center justify-center shadow-lg">
+                          <Target className="w-6 h-6 text-blue-600 group-hover:text-purple-600 transition-colors duration-300" />
+                        </div>
+                      </div>
+                      <h3 className="text-xl font-bold text-foreground group-hover:text-blue-600 transition-colors duration-300">Proven Methodology</h3>
+                    </div>
+                    <p className="text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors duration-300">
+                      We follow industry best practices and proven methodologies to ensure 
+                      successful implementation and measurable results.
+                    </p>
+                  </div>
+                  
+                  {/* Bottom Accent Line */}
+                  <div className="mt-8 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-600 group-hover:w-full transition-all duration-700"></div>
+                </CardHeader>
+                
+                {/* Hover Shimmer Effect */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -skew-x-12 transform translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-1000"></div>
+                </div>
+              </Card>
               
-              <div className="text-left">
-                <h3 className="text-xl font-bold text-foreground mb-4">Scalable Solutions</h3>
-                <p className="text-muted-foreground mb-6">
-                  Our analytics solutions are designed to scale with your business, 
-                  from startup to enterprise-level requirements.
-                </p>
+              <Card className="group relative overflow-hidden bg-background/90 backdrop-blur-sm border border-border/50 hover:border-purple-500/30 hover:shadow-2xl hover:shadow-purple-500/10 transition-all duration-500 text-left animate-fade-in-up delay-500">
+                {/* Background Effects */}
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-purple-500/10 to-blue-500/10 rounded-full blur-xl group-hover:scale-150 transition-transform duration-700"></div>
                 
-                <h3 className="text-xl font-bold text-foreground mb-4">Ongoing Support</h3>
-                <p className="text-muted-foreground">
-                  We provide comprehensive support and maintenance to ensure your 
-                  analytics solutions continue to deliver value over time.
-                </p>
-              </div>
+                <CardHeader className="relative z-10 p-8">
+                  {/* Scalable Solutions */}
+                  <div className="mb-8">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="relative w-12 h-12 group-hover:scale-110 transition-transform duration-300">
+                        <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-blue-600 rounded-xl rotate-3 group-hover:rotate-6 transition-transform duration-500"></div>
+                        <div className="relative w-full h-full bg-background rounded-xl flex items-center justify-center shadow-lg">
+                          <Zap className="w-6 h-6 text-purple-600 group-hover:text-blue-600 transition-colors duration-300" />
+                        </div>
+                      </div>
+                      <h3 className="text-xl font-bold text-foreground group-hover:text-purple-600 transition-colors duration-300">Scalable Solutions</h3>
+                    </div>
+                    <p className="text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors duration-300">
+                      Our analytics solutions are designed to scale with your business, 
+                      from startup to enterprise-level requirements.
+                    </p>
+                  </div>
+                  
+                  {/* Ongoing Support */}
+                  <div>
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="relative w-12 h-12 group-hover:scale-110 transition-transform duration-300">
+                        <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-blue-600 rounded-xl rotate-3 group-hover:rotate-6 transition-transform duration-500"></div>
+                        <div className="relative w-full h-full bg-background rounded-xl flex items-center justify-center shadow-lg">
+                          <Shield className="w-6 h-6 text-purple-600 group-hover:text-blue-600 transition-colors duration-300" />
+                        </div>
+                      </div>
+                      <h3 className="text-xl font-bold text-foreground group-hover:text-purple-600 transition-colors duration-300">Ongoing Support</h3>
+                    </div>
+                    <p className="text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors duration-300">
+                      We provide comprehensive support and maintenance to ensure your 
+                      analytics solutions continue to deliver value over time.
+                    </p>
+                  </div>
+                  
+                  {/* Bottom Accent Line */}
+                  <div className="mt-8 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-blue-600 group-hover:w-full transition-all duration-700"></div>
+                </CardHeader>
+                
+                {/* Hover Shimmer Effect */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -skew-x-12 transform translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-1000"></div>
+                </div>
+              </Card>
             </div>
 
-            <Button 
-              variant="corporate" 
-              size="xl"
-              onClick={() => handleConsultationClick('why-choose-cta')}
-            >
-              Start Your Analytics Journey
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
+            <div className="text-center animate-fade-in-up delay-600">
+              <Button 
+                variant="corporate" 
+                size="xl"
+                className="group bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white border-0 shadow-lg hover:shadow-xl hover:shadow-blue-500/25 transition-all duration-300"
+                onClick={() => handleConsultationClick('why-choose-cta')}
+              >
+                Start Your Analytics Journey
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+              </Button>
+            </div>
           </div>
         </div>
       </section>
