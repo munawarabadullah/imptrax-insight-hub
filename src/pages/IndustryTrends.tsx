@@ -234,7 +234,7 @@ const IndustryTrends = () => {
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button 
-              onClick={() => navigate('/ai-consulting-services')}
+              onClick={() => navigate('/knowledge-base')}
               variant="outline" 
               size="lg"
             >
