@@ -263,28 +263,38 @@ const AIDevelopmentServices = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 lg:py-32">
+      <section className="py-20 lg:py-32 bg-slate-50/50">
         <div className="container mx-auto px-4">
-          <div className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl lg:text-5xl font-bold text-foreground">
-              Our AI and 
-              <span className="bg-gradient-primary bg-clip-text text-transparent">Automation Services</span>
+          {/* Section Header */}
+          <div className="text-center space-y-6 mb-20">
+            <div className="inline-flex items-center px-4 py-2 bg-blue-50 border border-blue-200 rounded-full text-blue-700 text-sm font-medium mb-4">
+              Our Expertise
+            </div>
+            <h2 className="text-4xl lg:text-6xl font-bold text-slate-900">
+              AI & Automation{" "}
+              <span className="bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">Services</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              ImpTrax offers comprehensive AI and automation solutions designed to transform your business operations and drive unprecedented growth.
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+              Transform your business operations with our comprehensive AI and automation solutions designed to drive unprecedented growth and efficiency.
             </p>
           </div>
 
+          {/* Services Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => {
               const IconComponent = service.icon;
               return (
-                <div key={index} className="group bg-card rounded-2xl p-8 shadow-elegant hover:shadow-2xl transition-all duration-300 border border-border hover:border-primary/20">
-                  <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                    <IconComponent className="w-8 h-8 text-primary-foreground" />
+                <div key={index} className="group relative bg-white rounded-xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 border border-slate-200/60 hover:border-blue-200">
+                  {/* Subtle watercolor accent */}
+                  <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-blue-100/40 to-transparent rounded-bl-3xl rounded-tr-xl opacity-60"></div>
+                  
+                  <div className="relative z-10">
+                    <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mb-6 group-hover:scale-105 transition-transform shadow-sm">
+                      <IconComponent className="w-7 h-7 text-white" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-slate-900 mb-3">{service.title}</h3>
+                    <p className="text-slate-600 leading-relaxed text-sm">{service.description}</p>
                   </div>
-                  <h3 className="text-2xl font-bold text-card-foreground mb-4">{service.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{service.description}</p>
                 </div>
               );
             })}
