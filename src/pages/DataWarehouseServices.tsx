@@ -190,34 +190,108 @@ const DataWarehouseServices = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32" style={{backgroundColor: '#E0F3FF'}}>
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
-              <Database className="w-4 h-4 mr-2" />
-              Enterprise Data Warehousing Solutions
+      <section className="relative py-24 lg:py-40 overflow-hidden" style={{backgroundColor: '#E0F3FF'}}>
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-br from-blue-200/40 to-cyan-200/40 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-br from-blue-300/30 to-cyan-300/30 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-br from-blue-100/20 to-cyan-100/20 rounded-full blur-3xl"></div>
+        </div>
+        
+        {/* Floating Elements */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-32 left-20 animate-float">
+            <div className="w-16 h-16 bg-white/60 backdrop-blur-sm rounded-2xl shadow-lg flex items-center justify-center">
+              <Database className="w-8 h-8 text-blue-600" />
             </div>
-            <h1 className="text-4xl lg:text-6xl font-bold text-foreground mb-6">
-              Data Warehouse{" "}
-              <span className="bg-gradient-primary bg-clip-text text-transparent">
+          </div>
+          <div className="absolute top-40 right-32 animate-float-delayed">
+            <div className="w-12 h-12 bg-white/50 backdrop-blur-sm rounded-xl shadow-lg flex items-center justify-center">
+              <Cloud className="w-6 h-6 text-cyan-600" />
+            </div>
+          </div>
+          <div className="absolute bottom-40 left-32 animate-float-slow">
+            <div className="w-14 h-14 bg-white/55 backdrop-blur-sm rounded-xl shadow-lg flex items-center justify-center">
+              <Server className="w-7 h-7 text-blue-700" />
+            </div>
+          </div>
+          <div className="absolute bottom-32 right-20 animate-float">
+            <div className="w-10 h-10 bg-white/45 backdrop-blur-sm rounded-lg shadow-lg flex items-center justify-center">
+              <BarChart3 className="w-5 h-5 text-cyan-700" />
+            </div>
+          </div>
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-5xl mx-auto text-center">
+            <div className="inline-flex items-center bg-white/80 backdrop-blur-sm text-blue-700 px-6 py-3 rounded-full text-sm font-semibold mb-8 shadow-lg border border-blue-200/50 hover:bg-white/90 transition-all duration-300">
+              <Database className="w-5 h-5 mr-3 text-blue-600" />
+              Enterprise Data Warehousing Solutions
+              <div className="ml-3 w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+            </div>
+            
+            <h1 className="text-5xl lg:text-7xl font-bold text-foreground mb-8 leading-tight">
+              <span className="block mb-2">Data Warehouse</span>
+              <span className="bg-gradient-to-r from-blue-600 via-cyan-600 to-blue-700 bg-clip-text text-transparent relative">
                 Services
+                <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full opacity-60"></div>
               </span>
             </h1>
-            <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+            
+            <p className="text-xl lg:text-2xl text-slate-700 mb-10 leading-relaxed max-w-4xl mx-auto font-medium">
               Transform your business with comprehensive data warehousing solutions. ImpTrax delivers 
               state-of-the-art data management strategies that enable powerful analytics, streamline operations, 
-              and drive measurable business growth with 23+ years of proven expertise.
+              and drive measurable business growth with{" "}
+              <span className="text-blue-700 font-semibold">23+ years of proven expertise</span>.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-primary hover:bg-primary/90" onClick={handleGetConsultationClick}>
+            
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+              <Button 
+                size="lg" 
+                className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-8 py-4 text-lg font-semibold shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 border-0" 
+                onClick={handleGetConsultationClick}
+              >
                 Get Data Warehouse Consultation
-                <ArrowRight className="w-5 h-5 ml-2" />
+                <ArrowRight className="w-6 h-6 ml-3" />
               </Button>
-              <Button size="lg" variant="outline" onClick={handleDownloadGuideClick}>
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="border-2 border-blue-600 text-blue-700 hover:bg-blue-50 px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 bg-white/80 backdrop-blur-sm" 
+                onClick={handleDownloadGuideClick}
+              >
+                <HardDrive className="w-5 h-5 mr-3" />
                 Download Implementation Guide
               </Button>
             </div>
+            
+            {/* Trust Indicators */}
+            <div className="mt-16 flex flex-wrap justify-center items-center gap-8 text-sm text-slate-600">
+              <div className="flex items-center gap-2">
+                <Shield className="w-5 h-5 text-green-600" />
+                <span className="font-medium">Enterprise Security</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle className="w-5 h-5 text-green-600" />
+                <span className="font-medium">99.9% Uptime SLA</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Users className="w-5 h-5 text-blue-600" />
+                <span className="font-medium">300+ Successful Projects</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Clock className="w-5 h-5 text-blue-600" />
+                <span className="font-medium">24/7 Support</span>
+              </div>
+            </div>
           </div>
+        </div>
+        
+        {/* Bottom Wave */}
+        <div className="absolute bottom-0 left-0 right-0">
+          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full h-16 fill-background">
+            <path d="M0,60 C300,120 900,0 1200,60 L1200,120 L0,120 Z"></path>
+          </svg>
         </div>
       </section>
 
