@@ -92,7 +92,7 @@ const Header = () => {
         {
           category: "Information Center",
           services: [
-            { name: "AI Consulting Services", url: "/ai-consulting-services" },
+            { name: "Knowledge Base", url: "/knowledge-base" },
             { name: "Case Studies", url: "/case-studies" }
           ]
         },
