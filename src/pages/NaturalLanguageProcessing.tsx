@@ -393,9 +393,11 @@ const NaturalLanguageProcessing: React.FC = () => {
               <span className="text-sm font-semibold text-gray-700 tracking-wide uppercase">Enterprise-Grade Capabilities</span>
             </div>
             
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-gray-900 via-blue-900 to-purple-900 bg-clip-text text-transparent mb-6 leading-tight">
-              Key Features &{' '}
-              <span className="relative">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+              <span className="bg-gradient-to-r from-gray-900 via-blue-900 to-purple-900 bg-clip-text text-transparent">
+                Key Features &{' '}
+              </span>
+              <span className="relative text-gray-900">
                 Capabilities
                 <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 rounded-full opacity-30" />
               </span>
