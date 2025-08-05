@@ -96,7 +96,7 @@ const Header = () => {
           ]
         },
         {
-          category: "AI Prompts",
+          category: "AI Pulse",
           services: [
             { name: "Generic Library", url: "/ai-prompts/generic-library" }
           ]
