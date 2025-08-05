@@ -96,6 +96,12 @@ const Header = () => {
           ]
         },
         {
+          category: "AI Prompts",
+          services: [
+            { name: "Generic Library", url: "/ai-prompts/generic-library" }
+          ]
+        },
+        {
           category: "News & Media",
           services: [
             { name: "Industry Trends", url: "/industry-trends" }
@@ -164,7 +170,7 @@ const Header = () => {
 
                 {/* Mega Menu Dropdown */}
                 {activeDropdown === item.title && (
-                  <div className={`absolute top-full left-0 mt-2 bg-white/95 backdrop-blur-sm border border-gray-200/50 rounded-xl shadow-2xl overflow-hidden ${item.title === 'Resources' ? 'w-[520px]' : 'w-[800px]'}`}>
+                  <div className={`absolute top-full left-0 mt-2 bg-white/95 backdrop-blur-sm border border-gray-200/50 rounded-xl shadow-2xl overflow-hidden ${item.title === 'Resources' ? 'w-[630px]' : 'w-[800px]'}`}>
                     {/* Gradient Header */}
                     <div className="bg-gradient-to-r from-blue-50 to-purple-50 px-6 py-4 border-b border-gray-100">
                       <h2 className="text-lg font-semibold text-gray-800">{item.title}</h2>
@@ -176,7 +182,7 @@ const Header = () => {
                     </div>
                     
                     <div className="p-6">
-                      <div className={`grid ${item.title === 'Resources' ? 'grid-cols-2 gap-6' : item.title === 'Industries' ? 'grid-cols-[1fr_1.4fr_1fr] gap-6' : 'grid-cols-3 gap-8'}`}>
+                      <div className={`grid ${item.title === 'Resources' ? 'grid-cols-3 gap-6' : item.title === 'Industries' ? 'grid-cols-[1fr_1.4fr_1fr] gap-6' : 'grid-cols-3 gap-8'}`}>
                         {item.items.map((category, categoryIndex) => (
                           <div key={category.category} className={`relative ${item.title === 'Resources' && categoryIndex > 0 ? 'border-l border-gray-200 pl-6' : ''} ${item.title === 'Industries' && categoryIndex === 1 ? 'border-l border-r border-gray-200 px-6' : item.title === 'Industries' && categoryIndex === 2 ? 'border-l border-gray-200 pl-6' : item.title !== 'Resources' && item.title !== 'Industries' && categoryIndex > 0 ? 'border-l border-gray-200 pl-8' : ''}`}>
                             <div className="bg-gradient-to-br from-blue-50/50 to-purple-50/50 rounded-lg p-4 mb-4 border border-blue-100/30">
