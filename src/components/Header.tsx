@@ -22,7 +22,7 @@ const Header = () => {
 
   const menuItems = [
     {
-      title: "Services",
+      title: "Consulting",
       items: [
         {
           category: "AI Solutions",
@@ -92,7 +92,7 @@ const Header = () => {
         {
           category: "Information Center",
           services: [
-            { name: "Knowledge Base", url: "/knowledge-base" },
+            { name: "AI Consulting Services", url: "/ai-consulting-services" },
             { name: "Case Studies", url: "/case-studies" }
           ]
         },

@@ -7,7 +7,7 @@ const Services = () => {
   const navigate = useNavigate();
 
   const handleLearnMoreClick = (serviceTitle: string) => {
-    navigate(`/schedule-consultation?source=services&button=learn-more&service=${encodeURIComponent(serviceTitle)}`);
+    navigate(`/schedule-consultation?source=consulting&button=learn-more&service=${encodeURIComponent(serviceTitle)}`);
   };
 
   const handleExploreAllClick = () => {

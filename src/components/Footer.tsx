@@ -162,7 +162,7 @@ const Footer = () => {
               <a href="/cookie-policy" className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                 Cookie Policy
               </a>
-              <a href="/knowledge-base" className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+              <a href="/ai-consulting-services" className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                 SiteMap
               </a>
             </div>

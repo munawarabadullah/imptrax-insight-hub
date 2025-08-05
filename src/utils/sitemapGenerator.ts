@@ -9,7 +9,7 @@ export const SITE_STRUCTURE = {
   main: [
     { url: '/', priority: 1.0, changefreq: 'weekly' },
     { url: '/contact', priority: 0.8, changefreq: 'monthly' },
-    { url: '/knowledge-base', priority: 0.7, changefreq: 'weekly' },
+    { url: '/ai-consulting-services', priority: 0.7, changefreq: 'weekly' },
     { url: '/ai-consulting', priority: 0.8, changefreq: 'monthly' }
   ],
 

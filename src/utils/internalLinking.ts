@@ -6,7 +6,7 @@
 // Define the site's page hierarchy and relationships
 export const SITE_STRUCTURE = {
   // Main service categories
-  services: {
+  consulting: {
     ai: {
       parent: '/ai-development-services',
       children: [
@@ -52,7 +52,7 @@ export const SITE_STRUCTURE = {
   },
   // Educational content
   resources: {
-    main: '/knowledge-base',
+    main: '/ai-consulting-services',
     educational: [
       '/what-is-process-automation',
       '/why-to-predictive-analytics',
@@ -87,15 +87,15 @@ export const generateBreadcrumbs = (currentPath: string) => {
   
   // Find the current page in the site structure
   for (const [category, structure] of Object.entries(SITE_STRUCTURE)) {
-    if (category === 'services') {
+    if (category === 'consulting') {
       for (const [serviceType, config] of Object.entries(structure)) {
         if (config.parent === currentPath) {
-          breadcrumbs.push({ name: 'Services', url: '/services' });
+          breadcrumbs.push({ name: 'Consulting', url: '/consulting' });
           breadcrumbs.push({ name: getPageTitle(currentPath), url: currentPath });
           return breadcrumbs;
         }
         if (config.children.includes(currentPath)) {
-          breadcrumbs.push({ name: 'Services', url: '/services' });
+          breadcrumbs.push({ name: 'Consulting', url: '/consulting' });
           breadcrumbs.push({ name: getPageTitle(config.parent), url: config.parent });
           breadcrumbs.push({ name: getPageTitle(currentPath), url: currentPath });
           return breadcrumbs;
@@ -113,7 +113,7 @@ export const getRelatedPages = (currentPath: string, limit: number = 3) => {
   
   // Find related pages based on site structure
   for (const [category, structure] of Object.entries(SITE_STRUCTURE)) {
-    if (category === 'services') {
+    if (category === 'consulting') {
       for (const [serviceType, config] of Object.entries(structure)) {
         if (config.parent === currentPath || config.children.includes(currentPath)) {
           config.related.forEach(url => {
@@ -167,7 +167,7 @@ const getPageTitle = (url: string): string => {
     '/hipaa-compliant': 'HIPAA Compliant Solutions',
     '/real-estate-software': 'Real Estate Software',
     '/financial-workflow-process': 'Financial Workflow Process',
-    '/knowledge-base': 'Knowledge Base'
+    '/ai-consulting-services': 'AI Consulting Services'
   };
   
   return titles[url] || url.replace(/\//g, '').replace(/-/g, ' ');
