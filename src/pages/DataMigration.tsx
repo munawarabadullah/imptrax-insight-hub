@@ -853,49 +853,6 @@ const DataMigration = () => {
       </section>
 
       {/* Migration Challenges */}
-      <section className="py-20 bg-background relative overflow-hidden">
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-16">
-            <Badge variant="outline" className="mb-6 px-4 py-2 bg-background/80 backdrop-blur-sm border-primary/20">
-              <AlertTriangle className="w-4 h-4 mr-2 text-primary" />
-              Migration Challenges
-            </Badge>
-            <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-6 tracking-wide">
-              Overcoming Migration
-              <span className="block text-primary">Challenges</span>
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Data migration projects face numerous challenges. Our expertise and proven methodologies ensure successful outcomes while mitigating risks.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {migrationChallenges.map((challenge, index) => {
-              const IconComponent = challenge.icon;
-              return (
-                <Card key={index} className="group hover:shadow-lg transition-all duration-300 hover:scale-105 border-border/50 hover:border-accent/30 bg-background/50 backdrop-blur-sm border-l-4 border-l-accent">
-                  <CardHeader>
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="p-3 bg-accent/10 rounded-lg group-hover:bg-accent/20 transition-colors duration-300">
-                        <IconComponent className="w-8 h-8 text-accent" />
-                      </div>
-                      <CardTitle className="text-xl font-medium text-foreground group-hover:text-accent transition-colors duration-300">
-                        {challenge.title}
-                      </CardTitle>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <CardDescription className="text-muted-foreground leading-relaxed">
-                      {challenge.description}
-                    </CardDescription>
-                  </CardContent>
-                </Card>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Challenges Section */}
       <section className="py-20 bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-800 relative overflow-hidden">
         {/* Enhanced Background Elements */}
         <div className="absolute inset-0">
@@ -916,23 +873,23 @@ const DataMigration = () => {
           <div className="text-center mb-20">
             {/* Enhanced Badge */}
             <Badge variant="outline" className="mb-8 px-6 py-3 bg-white/70 dark:bg-slate-800/70 backdrop-blur-md border-red-200/50 dark:border-red-400/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-              <Target className="w-5 h-5 mr-3 text-red-600 dark:text-red-400" />
+              <AlertTriangle className="w-5 h-5 mr-3 text-red-600 dark:text-red-400" />
               <span className="text-red-700 dark:text-red-300 font-medium">Migration Challenges</span>
             </Badge>
             
             {/* Enhanced Heading */}
             <h2 className="text-4xl lg:text-6xl font-bold mb-8 tracking-tight">
               <span className="bg-gradient-to-r from-slate-900 via-slate-700 to-slate-900 dark:from-white dark:via-slate-200 dark:to-white bg-clip-text text-transparent">
-                Overcome Data Migration
+                Overcoming Migration
               </span>
               <span className="block bg-gradient-to-r from-red-600 via-orange-600 to-yellow-600 bg-clip-text text-transparent animate-gradient-x">
-                Complexities
+                Challenges
               </span>
             </h2>
             
             {/* Enhanced Description */}
             <p className="text-xl lg:text-2xl text-slate-600 dark:text-slate-300 max-w-4xl mx-auto leading-relaxed">
-              Navigate the complexities of data migration with our proven methodologies and expert guidance to ensure seamless transitions.
+              Data migration projects face numerous challenges. Our expertise and proven methodologies ensure successful outcomes while mitigating risks.
             </p>
             
             {/* Decorative line */}
@@ -941,7 +898,7 @@ const DataMigration = () => {
           
           {/* Enhanced Cards Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {challenges.map((challenge, index) => {
+            {migrationChallenges.map((challenge, index) => {
               const IconComponent = challenge.icon;
               return (
                 <Card 
@@ -1007,6 +964,8 @@ const DataMigration = () => {
           </div>
         </div>
       </section>
+
+
 
       {/* Migration Services Section */}
       <section className="py-20 bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-800 relative overflow-hidden">
