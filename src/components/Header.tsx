@@ -48,7 +48,7 @@ const Header = () => {
             { name: "Real-time Analytics", url: "#" },
             { name: "Data Analytics", url: "/data-analytics" },
             { name: "Data Migration", url: "/data-migration" },
-            { name: "Data Warehousing", url: "#" }
+            { name: "Data Warehousing", url: "/data-warehouse-services" }
           ]
         }
       ]
