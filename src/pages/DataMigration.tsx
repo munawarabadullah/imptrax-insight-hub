@@ -120,7 +120,7 @@ const DataMigration = () => {
     {
       icon: Shield,
       title: "Regulatory Compliance",
-      description: "Ensuring data storage and processing meet evolving regulatory requirements including GDPR, HIPAA, SOX, and industry-specific compliance standards."
+      description: "Ensuring data storage and processing meet evolving regulatory requirements, including GDPR, HIPAA, SOX, and industry-specific compliance standards."
     },
     {
       icon: TrendingUp,
@@ -207,35 +207,35 @@ const DataMigration = () => {
   const faqData = [
     {
       question: "How long does a typical data migration project take?",
-      answer: "Data migration timelines vary significantly based on data volume, complexity, and system requirements. Simple migrations can be completed in 2-4 weeks, while complex enterprise migrations may take 3-6 months. Our team provides detailed project timelines during the initial assessment phase, considering factors like data volume, system complexity, testing requirements, and business constraints."
+      answer: "Data migration timelines vary significantly based on data volume, complexity, and system requirements. Simple migrations can be completed in 2-4 weeks, while complex enterprise migrations may take 3-6 months. Our team provides detailed project timelines during the initial assessment phase, considering factors such as data volume, system complexity, testing requirements, and business constraints."
     },
     {
       question: "What measures do you take to ensure data security during migration?",
-      answer: "We implement multiple layers of security including end-to-end encryption, secure transfer protocols (SFTP, HTTPS), access controls, and comprehensive audit logging. All data is encrypted both in transit and at rest. Our team follows industry best practices including GDPR, HIPAA, and SOX compliance requirements. We also conduct security assessments and provide detailed security reports throughout the migration process."
+      answer: "We implement multiple layers of security, including end-to-end encryption, secure transfer protocols (SFTP, HTTPS), access controls, and comprehensive audit logging. All data is encrypted both in transit and at rest. Our team follows industry best practices, including GDPR, HIPAA, and SOX compliance requirements. We also conduct security assessments and provide detailed security reports throughout the migration process."
     },
     {
       question: "Can you guarantee zero data loss during migration?",
-      answer: "Yes, we guarantee zero data loss through our proven methodologies including comprehensive data validation, checksums, backup strategies, and rollback procedures. We perform extensive pre-migration testing, implement parallel processing where possible, and conduct thorough post-migration validation to ensure 100% data integrity. Our track record shows 99.9% success rate with zero data loss."
+      answer: "Yes, we guarantee zero data loss through our proven methodologies, including comprehensive data validation, checksums, backup strategies, and rollback procedures. We perform extensive pre-migration testing, implement parallel processing where possible, and conduct thorough post-migration validation to ensure 100% data integrity. Our track record shows a 99.9% success rate with zero data loss."
     },
     {
       question: "How do you minimize downtime during migration?",
-      answer: "We employ various strategies to minimize downtime including parallel migration processing, phased implementations, and real-time synchronization techniques. For critical systems, we can achieve near-zero downtime through live migration strategies, database replication, and careful timing of cutover processes. Most migrations are scheduled during off-peak hours to further reduce business impact."
+      answer: "We employ various strategies to minimize downtime, including parallel migration processing, phased implementations, and real-time synchronization techniques. For critical systems, we can achieve near-zero downtime through live migration strategies, database replication, and careful timing of cutover processes. Most migrations are scheduled during off-peak hours to further reduce business impact."
     },
     {
       question: "What types of databases and systems can you migrate?",
-      answer: "We support migration for all major database platforms including Oracle, SQL Server, MySQL, PostgreSQL, MongoDB, and cloud databases (AWS RDS, Azure SQL, Google Cloud SQL). We also handle application migrations, file systems, email systems, and complete data center relocations. Our expertise covers both on-premises to cloud and cloud-to-cloud migrations."
+      answer: "We support migration for all major database platforms, including Oracle, SQL Server, MySQL, PostgreSQL, MongoDB, and cloud databases (AWS RDS, Azure SQL, Google Cloud SQL). We also handle application migrations, file systems, email systems, and complete data center relocations. Our expertise covers both on-premises to cloud and cloud-to-cloud migrations."
     },
     {
       question: "Do you provide post-migration support and optimization?",
-      answer: "Absolutely. We provide comprehensive post-migration support including performance optimization, troubleshooting, user training, and ongoing maintenance. Our support packages include 24/7 monitoring, regular health checks, performance tuning, and assistance with any migration-related issues. We also offer long-term optimization services to ensure your new environment performs at peak efficiency."
+      answer: "Absolutely. We provide comprehensive post-migration support, including performance optimization, troubleshooting, user training, and ongoing maintenance. Our support packages include 24/7 monitoring, regular health checks, performance tuning, and assistance with any migration-related issues. We also offer long-term optimization services to ensure your new environment performs at peak efficiency."
     },
     {
       question: "How much does data migration cost?",
-      answer: "Migration costs depend on factors like data volume, complexity, timeline, and specific requirements. We offer transparent pricing with detailed cost breakdowns during the assessment phase. Our pricing models include fixed-price projects for standard migrations and flexible pricing for complex custom requirements. We provide cost estimates within 48 hours of initial consultation and guarantee no hidden fees."
+      answer: "Migration costs depend on factors such as data volume, complexity, timeline, and specific requirements. We offer transparent pricing with detailed cost breakdowns during the assessment phase. Our pricing models include fixed-price projects for standard migrations and flexible pricing for complex custom requirements. We provide cost estimates within 48 hours of initial consultation and guarantee no hidden fees."
     },
     {
       question: "What happens if something goes wrong during migration?",
-      answer: "We have comprehensive contingency plans including automated rollback procedures, real-time monitoring, and immediate response protocols. Our team maintains complete backups and can quickly restore systems to their original state if needed. We also provide 24/7 support during migration windows and have experienced engineers on standby to address any issues immediately."
+      answer: "We have comprehensive contingency plans, including automated rollback procedures, real-time monitoring, and immediate response protocols. Our team maintains complete backups and can quickly restore systems to their original state if needed. We also provide 24/7 support during migration windows and have experienced engineers on standby to address any issues immediately."
     }
   ];
 
