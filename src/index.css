@@ -358,4 +358,9 @@ All colors MUST be HSL.
   .animate-float {
     animation: float 3s ease-in-out infinite;
   }
+
+  /* Radial gradient utility */
+  .bg-gradient-radial {
+    background: radial-gradient(circle, var(--tw-gradient-stops));
+  }
 }
