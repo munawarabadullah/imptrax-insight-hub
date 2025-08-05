@@ -453,10 +453,10 @@ const DataMigration = () => {
             
             {/* Modern Description */}
             <p className="text-xl lg:text-2xl text-slate-600 dark:text-slate-300 mb-12 max-w-4xl mx-auto leading-relaxed font-light">
-              Transform your business with enterprise-grade data migration solutions. 
-              <span className="font-medium text-slate-700 dark:text-slate-200">Zero downtime</span>, 
-              <span className="font-medium text-slate-700 dark:text-slate-200">complete security</span>, and 
-              <span className="font-medium text-slate-700 dark:text-slate-200">proven methodologies</span> 
+              Transform your business with enterprise-grade data migration solutions.{' '}
+              <span className="font-medium text-slate-700 dark:text-slate-200">Zero downtime</span>, {' '}
+              <span className="font-medium text-slate-700 dark:text-slate-200">complete security</span>, and {' '}
+              <span className="font-medium text-slate-700 dark:text-slate-200">proven methodologies</span> {' '}
               ensure seamless transitions to modern platforms.
             </p>
             
@@ -539,7 +539,7 @@ const DataMigration = () => {
             
             {/* Enhanced Description */}
             <p className="text-xl lg:text-2xl text-slate-600 dark:text-slate-300 max-w-4xl mx-auto leading-relaxed font-light">
-              Our track record speaks for itself. With 
+              Our track record speaks for itself. With{' '}
               <span className="font-semibold text-blue-700 dark:text-blue-300">hundreds of successful migrations</span>, 
               we deliver results that exceed expectations.
             </p>
