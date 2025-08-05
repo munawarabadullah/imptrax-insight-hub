@@ -32,6 +32,7 @@ import KnowledgeBase from "./pages/KnowledgeBase";
 import ScheduleConsultation from "./pages/ScheduleConsultation";
 import BankingSolutions from "./pages/BankingSolutions";
 import InvestmentManagement from "./pages/InvestmentManagement";
+import RiskAssessment from "./pages/RiskAssessment";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -72,6 +73,7 @@ const App = () => (
           <Route path="/schedule-consultation" element={<ScheduleConsultation />} />
           <Route path="/banking-solutions" element={<BankingSolutions />} />
           <Route path="/investment-management" element={<InvestmentManagement />} />
+          <Route path="/risk-assessment" element={<RiskAssessment />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -61,7 +61,7 @@ const Header = () => {
           services: [
             { name: "Banking Solutions", url: "/banking-solutions" },
             { name: "Investment Management", url: "/investment-management" },
-            { name: "Risk Assessment", url: "#" },
+            { name: "Risk Assessment", url: "/risk-assessment" },
             { name: "Compliance Automation", url: "#" }
           ]
         },
