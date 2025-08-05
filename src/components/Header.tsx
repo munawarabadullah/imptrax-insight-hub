@@ -62,12 +62,13 @@ const Header = () => {
             { name: "Banking Solutions", url: "/banking-solutions" },
             { name: "Investment Management", url: "/investment-management" },
             { name: "Risk Assessment", url: "/risk-assessment" },
-            { name: "Compliance Automation", url: "#" }
+            { name: "Compliance Management", url: "/compliance-management" }
           ]
         },
         {
           category: "Healthcare",
           services: [
+            { name: "Revenue Cycle Management", url: "/revenue-cycle-management" },
             { name: "Medical Data Analytics", url: "#" },
             { name: "Patient Management", url: "#" },
             { name: "Diagnostic AI", url: "#" },
