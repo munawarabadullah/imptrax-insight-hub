@@ -148,37 +148,113 @@ const DataAnalytics = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 bg-gradient-to-br from-primary/5 via-background to-accent/5">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <Badge variant="outline" className="mb-6 px-4 py-2">
-              Data Analytics Solutions
-            </Badge>
-            <h1 className="text-4xl lg:text-6xl font-bold text-foreground mb-6">
-              Transform Data into 
-              <span className="text-primary"> Strategic Insights</span>
+      <section className="relative py-20 lg:py-32 bg-gradient-to-br from-primary/5 via-background to-accent/5 overflow-hidden">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-accent/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-primary/5 to-accent/5 rounded-full blur-3xl animate-spin-slow"></div>
+        </div>
+        
+        {/* Floating Data Visualization Elements */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-20 left-10 animate-float">
+            <BarChart3 className="w-8 h-8 text-primary/30" />
+          </div>
+          <div className="absolute top-40 right-20 animate-float-delayed">
+            <TrendingUp className="w-6 h-6 text-accent/30" />
+          </div>
+          <div className="absolute bottom-40 left-20 animate-float">
+            <Database className="w-7 h-7 text-primary/20" />
+          </div>
+          <div className="absolute bottom-20 right-10 animate-float-delayed">
+            <Brain className="w-8 h-8 text-accent/25" />
+          </div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-5xl mx-auto text-center">
+            {/* Enhanced Badge with Animation */}
+            <div className="inline-flex items-center justify-center mb-8">
+              <Badge variant="outline" className="mb-0 px-6 py-3 text-sm font-medium bg-background/80 backdrop-blur-sm border-primary/20 hover:border-primary/40 transition-all duration-300 animate-fade-in">
+                <BarChart3 className="w-4 h-4 mr-2 text-primary" />
+                Data Analytics Solutions
+              </Badge>
+            </div>
+            
+            {/* Enhanced Heading with Gradient Text */}
+            <h1 className="text-4xl lg:text-7xl font-bold text-foreground mb-8 animate-fade-in-up">
+              Transform Data into{' '}
+              <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-gradient-x">
+                Strategic Insights
+              </span>
             </h1>
-            <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Unlock the power of your data with ImpTrax's advanced analytics solutions. 
+            
+            {/* Enhanced Description */}
+            <p className="text-xl lg:text-2xl text-muted-foreground mb-10 max-w-4xl mx-auto leading-relaxed animate-fade-in-up delay-200">
+              Unlock the power of your data with ImpTrax's{' '}
+              <span className="text-primary font-semibold">advanced analytics solutions</span>. 
               Drive informed decision-making, optimize performance, and gain competitive advantage 
               through comprehensive data intelligence.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            
+            {/* Enhanced Statistics Row */}
+            <div className="flex flex-wrap justify-center gap-8 mb-12 animate-fade-in-up delay-300">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-primary mb-1">500+</div>
+                <div className="text-sm text-muted-foreground">Data Sources Integrated</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-accent mb-1">99.9%</div>
+                <div className="text-sm text-muted-foreground">Data Accuracy</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-primary mb-1">24/7</div>
+                <div className="text-sm text-muted-foreground">Real-time Monitoring</div>
+              </div>
+            </div>
+            
+            {/* Enhanced CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-400">
               <Button 
                 variant="corporate" 
                 size="xl"
+                className="group relative overflow-hidden bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
                 onClick={() => handleConsultationClick('hero-get-started')}
               >
-                Get Started Today
-                <ArrowRight className="ml-2 w-5 h-5" />
+                <span className="relative z-10 flex items-center">
+                  Get Started Today
+                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-accent to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </Button>
               <Button 
                 variant="outline" 
                 size="xl"
+                className="group border-2 border-primary/20 hover:border-primary/40 hover:bg-primary/5 transition-all duration-300 transform hover:scale-105"
                 onClick={() => handleConsultationClick('hero-learn-more')}
               >
-                Learn More
+                <span className="flex items-center">
+                  Learn More
+                  <Globe className="ml-2 w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
+                </span>
               </Button>
+            </div>
+            
+            {/* Trust Indicators */}
+            <div className="mt-16 animate-fade-in-up delay-500">
+              <p className="text-sm text-muted-foreground mb-4">Trusted by industry leaders</p>
+              <div className="flex justify-center items-center space-x-8 opacity-60">
+                <div className="w-20 h-8 bg-muted rounded flex items-center justify-center">
+                  <span className="text-xs font-medium">Enterprise</span>
+                </div>
+                <div className="w-20 h-8 bg-muted rounded flex items-center justify-center">
+                  <span className="text-xs font-medium">Fortune 500</span>
+                </div>
+                <div className="w-20 h-8 bg-muted rounded flex items-center justify-center">
+                  <span className="text-xs font-medium">Startups</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
