@@ -429,7 +429,7 @@ const DataMigration = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-6xl mx-auto text-center">
             {/* Modern Badge */}
-            <div className="inline-flex items-center justify-center mb-8">
+            <div className="inline-flex items-center justify-center mb-8 animate-fade-in-up">
               <Badge className="px-4 py-2 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border border-blue-200/50 dark:border-blue-800/50 text-blue-700 dark:text-blue-300 hover:bg-white dark:hover:bg-slate-800 transition-all duration-300 shadow-sm">
                 <Database className="w-4 h-4 mr-2" />
                 Enterprise Data Migration
@@ -437,7 +437,7 @@ const DataMigration = () => {
             </div>
             
             {/* Modern Heading */}
-            <h1 className="text-5xl lg:text-7xl xl:text-8xl font-bold text-slate-900 dark:text-white mb-6 leading-[1.1] tracking-tight">
+            <h1 className="text-5xl lg:text-7xl xl:text-8xl font-bold text-slate-900 dark:text-white mb-6 leading-[1.1] tracking-tight animate-fade-in-up" style={{animationDelay: '0.2s'}}>
               Seamless Data
               <br className="hidden sm:block" />
               <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent">
@@ -446,7 +446,7 @@ const DataMigration = () => {
             </h1>
             
             {/* Modern Description */}
-            <p className="text-xl lg:text-2xl text-slate-600 dark:text-slate-300 mb-12 max-w-4xl mx-auto leading-relaxed font-light">
+            <p className="text-xl lg:text-2xl text-slate-600 dark:text-slate-300 mb-12 max-w-4xl mx-auto leading-relaxed font-light animate-fade-in-up" style={{animationDelay: '0.4s'}}>
               Transform your business with enterprise-grade data migration solutions.{' '}
               <span className="font-medium text-slate-700 dark:text-slate-200">Zero downtime</span>, {' '}
               <span className="font-medium text-slate-700 dark:text-slate-200">complete security</span>, and {' '}
@@ -455,19 +455,19 @@ const DataMigration = () => {
             </p>
             
             {/* Modern CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up" style={{animationDelay: '0.6s'}}>
               <Button 
                 size="lg" 
-                className="px-8 py-4 text-lg font-semibold bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] border-0 rounded-xl"
+                className="px-8 py-4 text-lg font-semibold bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border-0 rounded-xl group"
                 onClick={() => handleConsultationClick('hero-primary')}
               >
                 Start Migration Project
-                <ArrowRight className="ml-2 w-5 h-5" />
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="px-8 py-4 text-lg font-semibold border-2 border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:border-slate-400 dark:hover:border-slate-500 transition-all duration-300 hover:scale-[1.02] rounded-xl"
+                className="px-8 py-4 text-lg font-semibold border-2 border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:border-slate-400 dark:hover:border-slate-500 transition-all duration-300 hover:scale-105 rounded-xl"
                 onClick={() => handleConsultationClick('hero-secondary')}
               >
                 View Case Studies
@@ -476,18 +476,18 @@ const DataMigration = () => {
             </div>
             
             {/* Trust Indicators */}
-            <div className="mt-16 pt-8 border-t border-slate-200 dark:border-slate-700">
+            <div className="mt-16 pt-8 border-t border-slate-200 dark:border-slate-700 animate-fade-in-up" style={{animationDelay: '0.8s'}}>
               <p className="text-sm text-slate-500 dark:text-slate-400 mb-4 font-medium">Trusted by industry leaders</p>
               <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
-                <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400">
+                <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 transition-colors duration-300">
                   <CheckCircle className="w-4 h-4 text-green-600" />
                   <span className="text-sm font-medium">99.9% Success Rate</span>
                 </div>
-                <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400">
+                <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 transition-colors duration-300">
                   <Shield className="w-4 h-4 text-blue-600" />
                   <span className="text-sm font-medium">Enterprise Security</span>
                 </div>
-                <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400">
+                <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 transition-colors duration-300">
                   <Award className="w-4 h-4 text-purple-600" />
                   <span className="text-sm font-medium">Industry Certified</span>
                 </div>
@@ -515,14 +515,14 @@ const DataMigration = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-20">
             {/* Modern Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border border-blue-200/50 dark:border-slate-600/50 rounded-full mb-8 shadow-lg">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border border-blue-200/50 dark:border-slate-600/50 rounded-full mb-8 shadow-lg animate-fade-in-up">
               <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
               <BarChart3 className="w-4 h-4 text-blue-600 dark:text-blue-400" />
               <span className="text-sm font-semibold text-slate-700 dark:text-slate-300">Proven Excellence</span>
             </div>
             
             {/* Enhanced Heading */}
-            <h2 className="text-4xl lg:text-6xl font-bold mb-6 tracking-tight">
+            <h2 className="text-4xl lg:text-6xl font-bold mb-6 tracking-tight animate-fade-in-up" style={{animationDelay: '0.2s'}}>
               <span className="bg-gradient-to-r from-slate-900 via-blue-800 to-slate-900 dark:from-white dark:via-blue-200 dark:to-white bg-clip-text text-transparent">
                 Migration Success
               </span>
@@ -532,7 +532,7 @@ const DataMigration = () => {
             </h2>
             
             {/* Enhanced Description */}
-            <p className="text-xl lg:text-2xl text-slate-600 dark:text-slate-300 max-w-4xl mx-auto leading-relaxed font-light">
+            <p className="text-xl lg:text-2xl text-slate-600 dark:text-slate-300 max-w-4xl mx-auto leading-relaxed font-light animate-fade-in-up" style={{animationDelay: '0.4s'}}>
               Our track record speaks for itself. With{' '}
               <span className="font-semibold text-blue-700 dark:text-blue-300">hundreds of successful migrations</span>, 
               we deliver results that exceed expectations.
@@ -546,11 +546,11 @@ const DataMigration = () => {
               return (
                 <div 
                   key={index} 
-                  className="group relative"
-                  style={{ animationDelay: `${index * 150}ms` }}
+                  className="group relative animate-fade-in-up"
+                  style={{ animationDelay: `${0.6 + index * 0.1}s` }}
                 >
                   {/* Card with enhanced styling */}
-                  <div className="relative bg-white/70 dark:bg-slate-800/70 backdrop-blur-xl border border-white/20 dark:border-slate-700/50 rounded-2xl p-8 text-center transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/10 dark:hover:shadow-blue-400/10 group-hover:border-blue-300/50 dark:group-hover:border-blue-500/50">
+                  <div className="relative bg-white/70 dark:bg-slate-800/70 backdrop-blur-xl border border-white/20 dark:border-slate-700/50 rounded-2xl p-8 text-center transition-all duration-500 hover:scale-105 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/10 dark:hover:shadow-blue-400/10 group-hover:border-blue-300/50 dark:group-hover:border-blue-500/50">
                     {/* Hover gradient overlay */}
                     <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-cyan-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     
@@ -622,13 +622,13 @@ const DataMigration = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-20">
             {/* Enhanced Badge */}
-            <Badge variant="outline" className="mb-8 px-6 py-3 bg-white/70 dark:bg-slate-800/70 backdrop-blur-md border-blue-200/50 dark:border-blue-400/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+            <Badge variant="outline" className="mb-8 px-6 py-3 bg-white/70 dark:bg-slate-800/70 backdrop-blur-md border-blue-200/50 dark:border-blue-400/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 animate-fade-in-up">
               <HelpCircle className="w-5 h-5 mr-3 text-blue-600 dark:text-blue-400" />
               <span className="text-blue-700 dark:text-blue-300 font-medium">Migration Drivers</span>
             </Badge>
             
             {/* Enhanced Heading */}
-            <h2 className="text-4xl lg:text-6xl font-bold mb-8 tracking-tight">
+            <h2 className="text-4xl lg:text-6xl font-bold mb-8 tracking-tight animate-fade-in-up" style={{animationDelay: '0.2s'}}>
               <span className="bg-gradient-to-r from-slate-900 via-slate-700 to-slate-900 dark:from-white dark:via-slate-200 dark:to-white bg-clip-text text-transparent">
                 When is Data Migration
               </span>
@@ -638,7 +638,7 @@ const DataMigration = () => {
             </h2>
             
             {/* Enhanced Description */}
-            <p className="text-xl lg:text-2xl text-slate-600 dark:text-slate-300 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl lg:text-2xl text-slate-600 dark:text-slate-300 max-w-4xl mx-auto leading-relaxed animate-fade-in-up" style={{animationDelay: '0.4s'}}>
               Data migration becomes essential when businesses need to modernize infrastructure, improve performance, or adapt to changing technological landscapes.
             </p>
             
@@ -653,8 +653,8 @@ const DataMigration = () => {
               return (
                 <Card 
                   key={index} 
-                  className={`group hover:shadow-2xl transition-all duration-500 hover:scale-105 border-0 bg-white/80 dark:bg-slate-800/80 backdrop-blur-md overflow-hidden relative animate-fade-in-up`}
-                  style={{ animationDelay: `${index * 150}ms` }}
+                  className={`group hover:shadow-2xl transition-all duration-500 hover:scale-105 hover:-translate-y-2 border-0 bg-white/80 dark:bg-slate-800/80 backdrop-blur-md overflow-hidden relative animate-fade-in-up`}
+                  style={{ animationDelay: `${0.6 + index * 0.1}s` }}
                 >
                   {/* Card background gradient */}
                   <div className="absolute inset-0 bg-gradient-to-br from-white via-blue-50/30 to-purple-50/30 dark:from-slate-800 dark:via-slate-700/30 dark:to-slate-600/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -739,13 +739,13 @@ const DataMigration = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-20">
             {/* Enhanced Badge */}
-            <Badge variant="outline" className="mb-8 px-6 py-3 bg-white/70 dark:bg-slate-800/70 backdrop-blur-md border-blue-200/50 dark:border-blue-400/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+            <Badge variant="outline" className="mb-8 px-6 py-3 bg-white/70 dark:bg-slate-800/70 backdrop-blur-md border-blue-200/50 dark:border-blue-400/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 animate-fade-in-up">
               <Layers className="w-5 h-5 mr-3 text-blue-600 dark:text-blue-400" />
               <span className="text-blue-700 dark:text-blue-300 font-medium">Migration Types</span>
             </Badge>
             
             {/* Enhanced Heading */}
-            <h2 className="text-4xl lg:text-6xl font-bold mb-8 tracking-tight">
+            <h2 className="text-4xl lg:text-6xl font-bold mb-8 tracking-tight animate-fade-in-up" style={{animationDelay: '0.2s'}}>
               <span className="bg-gradient-to-r from-slate-900 via-slate-700 to-slate-900 dark:from-white dark:via-slate-200 dark:to-white bg-clip-text text-transparent">
                 Comprehensive Migration
               </span>
@@ -755,7 +755,7 @@ const DataMigration = () => {
             </h2>
             
             {/* Enhanced Description */}
-            <p className="text-xl lg:text-2xl text-slate-600 dark:text-slate-300 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl lg:text-2xl text-slate-600 dark:text-slate-300 max-w-4xl mx-auto leading-relaxed animate-fade-in-up" style={{animationDelay: '0.4s'}}>
               We specialize in all types of data migration, from simple storage transfers to complex enterprise-wide transformations.
             </p>
             
@@ -769,8 +769,8 @@ const DataMigration = () => {
               return (
                 <Card 
                   key={index} 
-                  className={`group hover:shadow-2xl transition-all duration-500 hover:scale-105 border-0 bg-white/80 dark:bg-slate-800/80 backdrop-blur-md overflow-hidden relative animate-fade-in-up`}
-                  style={{ animationDelay: `${index * 150}ms` }}
+                  className={`group hover:shadow-2xl transition-all duration-500 hover:scale-105 hover:-translate-y-2 border-0 bg-white/80 dark:bg-slate-800/80 backdrop-blur-md overflow-hidden relative animate-fade-in-up`}
+                  style={{ animationDelay: `${0.6 + index * 0.1}s` }}
                 >
                   {/* Card background gradient */}
                   <div className="absolute inset-0 bg-gradient-to-br from-white via-blue-50/30 to-purple-50/30 dark:from-slate-800 dark:via-slate-700/30 dark:to-slate-600/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -866,13 +866,13 @@ const DataMigration = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-20">
             {/* Enhanced Badge */}
-            <Badge variant="outline" className="mb-8 px-6 py-3 bg-white/70 dark:bg-slate-800/70 backdrop-blur-md border-red-200/50 dark:border-red-400/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+            <Badge variant="outline" className="mb-8 px-6 py-3 bg-white/70 dark:bg-slate-800/70 backdrop-blur-md border-red-200/50 dark:border-red-400/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 animate-fade-in-up">
               <AlertTriangle className="w-5 h-5 mr-3 text-red-600 dark:text-red-400" />
               <span className="text-red-700 dark:text-red-300 font-medium">Migration Challenges</span>
             </Badge>
             
             {/* Enhanced Heading */}
-            <h2 className="text-4xl lg:text-6xl font-bold mb-8 tracking-tight">
+            <h2 className="text-4xl lg:text-6xl font-bold mb-8 tracking-tight animate-fade-in-up" style={{animationDelay: '0.2s'}}>
               <span className="bg-gradient-to-r from-slate-900 via-slate-700 to-slate-900 dark:from-white dark:via-slate-200 dark:to-white bg-clip-text text-transparent">
                 Overcoming Migration
               </span>
@@ -882,7 +882,7 @@ const DataMigration = () => {
             </h2>
             
             {/* Enhanced Description */}
-            <p className="text-xl lg:text-2xl text-slate-600 dark:text-slate-300 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl lg:text-2xl text-slate-600 dark:text-slate-300 max-w-4xl mx-auto leading-relaxed animate-fade-in-up" style={{animationDelay: '0.4s'}}>
               Data migration projects face numerous challenges. Our expertise and proven methodologies ensure successful outcomes while mitigating risks.
             </p>
             
@@ -897,8 +897,8 @@ const DataMigration = () => {
               return (
                 <Card 
                   key={index} 
-                  className={`group hover:shadow-2xl transition-all duration-500 hover:scale-105 border-0 bg-white/80 dark:bg-slate-800/80 backdrop-blur-md overflow-hidden relative animate-fade-in-up`}
-                  style={{ animationDelay: `${index * 150}ms` }}
+                  className={`group hover:shadow-2xl transition-all duration-500 hover:scale-105 hover:-translate-y-2 border-0 bg-white/80 dark:bg-slate-800/80 backdrop-blur-md overflow-hidden relative animate-fade-in-up`}
+                  style={{ animationDelay: `${0.6 + index * 0.1}s` }}
                 >
                   {/* Card background gradient */}
                   <div className="absolute inset-0 bg-gradient-to-br from-white via-red-50/30 to-orange-50/30 dark:from-slate-800 dark:via-slate-700/30 dark:to-slate-600/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>

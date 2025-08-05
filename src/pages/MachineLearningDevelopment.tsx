@@ -106,25 +106,21 @@ const MachineLearningDevelopment: React.FC = () => {
 
   const developmentProcess = [
     {
-      step: "01",
       title: "Data Preparation and Exploration",
       description: "Comprehensive data analysis, cleaning, preprocessing, and feature engineering to ensure high-quality training datasets.",
       icon: <Database className="w-8 h-8 text-blue-600" />
     },
     {
-      step: "02",
       title: "Model Building and Training",
       description: "Custom model architecture design, algorithm selection, hyperparameter tuning, and training optimization for optimal performance.",
       icon: <Brain className="w-8 h-8 text-purple-600" />
     },
     {
-      step: "03",
       title: "Model Evaluation and Validation",
       description: "Rigorous testing, cross-validation, performance metrics analysis, and bias detection to ensure model reliability.",
       icon: <Target className="w-8 h-8 text-green-600" />
     },
     {
-      step: "04",
       title: "Deployment and Maintenance",
       description: "Production deployment, monitoring, continuous integration, and ongoing maintenance for sustained performance.",
       icon: <Cloud className="w-8 h-8 text-orange-600" />
@@ -262,10 +258,9 @@ const MachineLearningDevelopment: React.FC = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {developmentProcess.map((step, index) => (
               <div key={index} className="text-center">
-                <div className="bg-gradient-to-br from-blue-500 to-purple-600 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
-                  {step.step}
+                <div className="bg-gradient-to-br from-blue-50 to-purple-50 border-2 border-blue-200 w-20 h-20 rounded-xl flex items-center justify-center mx-auto mb-6 hover:shadow-lg transition-all duration-300">
+                  <div className="transform scale-125">{step.icon}</div>
                 </div>
-                <div className="mb-4">{step.icon}</div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-3">{step.title}</h3>
                 <p className="text-gray-600 text-sm">{step.description}</p>
               </div>
