@@ -487,30 +487,103 @@ const DataAnalytics = () => {
       </section>
 
       {/* Analytics Solutions */}
-      <section className="py-20 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">
-              Analytics Solutions That Transform
+      <section className="relative py-20 bg-gradient-to-br from-muted/20 via-background to-muted/30 overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-16 left-16 w-28 h-28 border border-primary/20 rounded-xl rotate-45"></div>
+          <div className="absolute top-32 right-20 w-20 h-20 border border-accent/20 rounded-full"></div>
+          <div className="absolute bottom-32 left-1/3 w-24 h-24 border border-primary/15 rounded-lg -rotate-12"></div>
+          <div className="absolute bottom-16 right-16 w-32 h-32 border border-accent/15 rounded-xl rotate-12"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-gradient-to-r from-primary/5 to-accent/5 rounded-full blur-2xl"></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-20">
+            {/* Section Badge */}
+            <div className="inline-flex items-center justify-center mb-6">
+              <Badge variant="outline" className="px-4 py-2 bg-background/80 backdrop-blur-sm border-primary/20 animate-fade-in">
+                <Lightbulb className="w-4 h-4 mr-2 text-primary" />
+                Solutions Portfolio
+              </Badge>
+            </div>
+            
+            <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-8 animate-fade-in-up">
+              Analytics{' '}
+              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                Solutions
+              </span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Specialized analytics solutions tailored to address your unique business challenges and opportunities.
+            <p className="text-xl lg:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed animate-fade-in-up delay-200">
+              Tailored analytics solutions designed to address your{' '}
+              <span className="text-primary font-semibold">specific business challenges</span>{' '}
+              and drive measurable outcomes.
             </p>
+            
+            {/* Decorative Line */}
+            <div className="flex justify-center mt-8 animate-fade-in-up delay-300">
+              <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent rounded-full"></div>
+            </div>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {solutions.map((solution, index) => (
-              <Card key={index} className="group hover:shadow-elegant transition-all duration-300">
-                <CardHeader>
-                  <CardTitle className="text-lg font-bold text-foreground mb-2">
+              <Card 
+                key={index} 
+                className={`group relative overflow-hidden bg-background/80 backdrop-blur-sm border-0 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate-fade-in-up`}
+                style={{ animationDelay: `${(index + 1) * 100}ms` }}
+              >
+                {/* Card Gradient Border */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/15 via-transparent to-accent/15 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                {/* Floating Background Element */}
+                <div className="absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-br from-primary/10 to-accent/10 rounded-full blur-xl group-hover:scale-150 transition-transform duration-700"></div>
+                
+
+                
+                <CardHeader className="relative z-10 p-6">
+                  {/* Solution Icon */}
+                  <div className="mb-4">
+                    <div className="relative w-12 h-12">
+                      <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg rotate-3 group-hover:rotate-6 transition-transform duration-500"></div>
+                      <div className="relative w-full h-full bg-background rounded-lg flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow duration-300">
+                        <TrendingUp className="w-6 h-6 text-primary group-hover:text-accent transition-colors duration-300 group-hover:scale-110 transform" />
+                      </div>
+                      {/* Pulse Ring */}
+                      <div className="absolute inset-0 rounded-lg border border-primary/20 animate-pulse group-hover:border-accent/40 transition-colors duration-300"></div>
+                    </div>
+                  </div>
+                  
+                  <CardTitle className="text-lg lg:text-xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors duration-300 leading-tight">
                     {solution.title}
                   </CardTitle>
-                  <CardDescription className="text-muted-foreground">
+                  <CardDescription className="text-muted-foreground leading-relaxed text-sm group-hover:text-foreground/80 transition-colors duration-300">
                     {solution.description}
                   </CardDescription>
+                  
+                  {/* Bottom Accent Line */}
+                  <div className="mt-6 w-0 h-0.5 bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all duration-700"></div>
                 </CardHeader>
+                
+                {/* Hover Shimmer Effect */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -skew-x-12 transform translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-1000"></div>
+                </div>
               </Card>
             ))}
+          </div>
+          
+          {/* Bottom CTA */}
+          <div className="text-center mt-16 animate-fade-in-up delay-1000">
+            <p className="text-muted-foreground mb-6">Looking for a custom solution?</p>
+            <Button 
+              variant="outline" 
+              size="lg"
+              className="group border-primary/30 hover:border-primary hover:bg-primary/5 transition-all duration-300"
+              onClick={() => handleConsultationClick('solutions-cta')}
+            >
+              Explore Custom Solutions
+              <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+            </Button>
           </div>
         </div>
       </section>
