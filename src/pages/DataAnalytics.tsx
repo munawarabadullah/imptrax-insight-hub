@@ -685,38 +685,98 @@ const DataAnalytics = () => {
       </section>
 
       {/* Benefits */}
-      <section className="py-20 bg-muted/30">
-        <div className="container mx-auto px-4">
+      <section className="relative py-20 bg-muted/30 overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-10 left-20 w-28 h-28 bg-gradient-to-br from-green-500/30 to-blue-600/30 rounded-full blur-3xl animate-float"></div>
+          <div className="absolute bottom-10 right-20 w-36 h-36 bg-gradient-to-br from-purple-500/30 to-pink-600/30 rounded-full blur-3xl animate-float" style={{animationDelay: '3s'}}></div>
+          <div className="absolute top-1/3 right-1/4 w-20 h-20 bg-gradient-to-br from-cyan-500/30 to-teal-600/30 rounded-full blur-2xl animate-float" style={{animationDelay: '1.5s'}}></div>
+          <div className="absolute bottom-1/3 left-1/4 w-24 h-24 bg-gradient-to-br from-orange-500/30 to-red-600/30 rounded-full blur-2xl animate-float" style={{animationDelay: '4.5s'}}></div>
+        </div>
+        
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-muted/40 via-background/20 to-muted/40"></div>
+        
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">
-              Benefits of Our Data Analytics Solutions
+            {/* Section Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-green-500/10 to-blue-600/10 rounded-full border border-green-500/20 mb-6 animate-fade-in-up">
+              <CheckCircle className="w-4 h-4 text-green-600" />
+              <span className="text-sm font-medium text-green-600">Business Value</span>
+            </div>
+            
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6 animate-fade-in-up delay-100">
+              Benefits of Our Data Analytics <span className="bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">Solutions</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Unlock measurable business value through advanced data analytics and intelligent insights.
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto animate-fade-in-up delay-200">
+              Unlock <span className="text-green-600 font-medium">measurable business value</span> through advanced data analytics and intelligent insights.
             </p>
+            
+            {/* Decorative Line */}
+            <div className="flex items-center justify-center mt-8 animate-fade-in-up delay-300">
+              <div className="h-px bg-gradient-to-r from-transparent via-green-500/50 to-transparent w-32"></div>
+              <div className="mx-4 w-2 h-2 bg-green-500 rounded-full"></div>
+              <div className="h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent w-32"></div>
+            </div>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {benefits.map((benefit, index) => {
               const IconComponent = benefit.icon;
               return (
-                <Card key={index} className="group hover:shadow-elegant transition-all duration-300 text-center">
-                  <CardHeader>
-                    <div className="relative mx-auto w-16 h-16 bg-gradient-primary rounded-full mb-6 flex items-center justify-center">
-                      <div className="w-8 h-8 flex items-center justify-center">
-                        <IconComponent className="w-8 h-8 text-primary-foreground" />
+                <Card 
+                  key={index} 
+                  className={`group relative overflow-hidden bg-background/90 backdrop-blur-sm border border-border/50 hover:border-green-500/30 hover:shadow-2xl hover:shadow-green-500/10 transition-all duration-500 text-center animate-fade-in-up`}
+                  style={{animationDelay: `${(index + 1) * 150}ms`}}
+                >
+                  {/* Background Effects */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 via-transparent to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-br from-green-500/10 to-blue-500/10 rounded-full blur-xl group-hover:scale-150 transition-transform duration-700"></div>
+                  
+                  <CardHeader className="relative z-10 p-6">
+                    {/* Enhanced Icon Container */}
+                    <div className="relative mx-auto w-18 h-18 mb-6 group-hover:scale-110 transition-transform duration-300">
+                      {/* Icon Background with Gradient */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-green-500 to-blue-600 rounded-2xl rotate-3 group-hover:rotate-6 transition-transform duration-500"></div>
+                      <div className="relative w-full h-full bg-background rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+                        <IconComponent className="w-9 h-9 text-green-600 group-hover:text-blue-600 transition-colors duration-300 group-hover:scale-110 transform" />
                       </div>
+                      {/* Pulse Ring */}
+                      <div className="absolute inset-0 rounded-2xl border border-green-500/20 animate-pulse group-hover:border-blue-500/40 transition-colors duration-300"></div>
                     </div>
-                    <CardTitle className="text-lg font-bold text-foreground mb-4">
+                    
+                    <CardTitle className="text-lg font-bold text-foreground mb-4 group-hover:text-green-600 transition-colors duration-300 leading-tight">
                       {benefit.title}
                     </CardTitle>
-                    <CardDescription className="text-muted-foreground">
+                    <CardDescription className="text-muted-foreground leading-relaxed text-sm group-hover:text-foreground/80 transition-colors duration-300">
                       {benefit.description}
                     </CardDescription>
+                    
+                    {/* Bottom Accent Line */}
+                    <div className="mt-6 w-0 h-0.5 bg-gradient-to-r from-green-500 to-blue-600 group-hover:w-full transition-all duration-700 mx-auto"></div>
                   </CardHeader>
+                  
+                  {/* Hover Shimmer Effect */}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -skew-x-12 transform translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-1000"></div>
+                  </div>
                 </Card>
               );
             })}
+          </div>
+          
+          {/* Bottom CTA */}
+          <div className="text-center mt-16 animate-fade-in-up delay-1200">
+            <p className="text-muted-foreground mb-6">Ready to unlock these benefits for your business?</p>
+            <Button 
+              variant="outline" 
+              size="lg"
+              className="group border-green-500/30 hover:border-green-500 hover:bg-green-500/5 transition-all duration-300"
+              onClick={() => handleConsultationClick('benefits-cta')}
+            >
+              Discover Your ROI Potential
+              <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+            </Button>
           </div>
         </div>
       </section>
