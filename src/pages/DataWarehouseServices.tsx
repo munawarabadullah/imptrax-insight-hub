@@ -368,271 +368,912 @@ const DataWarehouseServices = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 lg:py-32">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">
-              Data Warehousing Services We Provide
+      <section className="py-24 lg:py-32 relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-20 left-10 w-40 h-40 bg-blue-100/40 rounded-full blur-3xl animate-float-slow"></div>
+          <div className="absolute bottom-20 right-10 w-32 h-32 bg-cyan-100/40 rounded-full blur-2xl animate-float-delayed"></div>
+          <div className="absolute top-1/3 right-1/4 w-24 h-24 bg-blue-200/30 rounded-full blur-xl animate-float"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl mx-auto text-center mb-20">
+            <div className="inline-flex items-center gap-2 bg-blue-50/80 backdrop-blur-sm border border-blue-200/50 rounded-full px-6 py-2 mb-8">
+              <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+              <span className="text-sm font-medium text-blue-700">Comprehensive Solutions</span>
+            </div>
+            
+            <h2 className="text-4xl lg:text-5xl font-bold text-slate-800 mb-8 leading-tight">
+              Data Warehousing Services
+              <span className="block bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+                We Provide
+              </span>
             </h2>
-            <p className="text-xl text-muted-foreground">
+            
+            <p className="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
               From strategic consulting to complete implementation, ImpTrax offers comprehensive 
               data warehousing services tailored to your unique business requirements and growth objectives.
             </p>
+            
+            {/* Decorative Elements */}
+            <div className="flex justify-center mt-8">
+              <div className="flex items-center gap-2">
+                <div className="w-12 h-px bg-gradient-to-r from-transparent to-blue-300"></div>
+                <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                <div className="w-8 h-px bg-blue-300"></div>
+                <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
+                <div className="w-12 h-px bg-gradient-to-l from-transparent to-cyan-300"></div>
+              </div>
+            </div>
           </div>
           
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
             {services.map((service, index) => {
               const IconComponent = service.icon;
               return (
                 <div key={index} className="group">
-                  <div className="bg-card border border-border rounded-lg p-8 h-full hover:shadow-lg transition-all duration-300 hover:border-primary/50">
-                    <div className="bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
-                      <IconComponent className="w-6 h-6 text-primary" />
+                  <div className="bg-white/90 backdrop-blur-sm border border-blue-100/60 rounded-2xl p-8 h-full hover:shadow-2xl hover:shadow-blue-100/40 transition-all duration-500 hover:border-blue-200/80 hover:bg-white relative overflow-hidden hover:scale-105">
+                    {/* Shimmer Effect */}
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent transform -skew-x-12 animate-shimmer"></div>
                     </div>
-                    <h3 className="text-xl font-semibold text-foreground mb-4">
-                      {service.title}
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {service.description}
-                    </p>
+                    
+                    {/* Background Pattern */}
+                    <div className="absolute top-0 right-0 w-20 h-20 opacity-10 group-hover:opacity-20 transition-opacity duration-300">
+                      <div className="w-full h-full bg-gradient-to-br from-blue-200 to-cyan-200 rounded-bl-3xl"></div>
+                    </div>
+                    
+                    <div className="relative z-10">
+                      <div className="bg-gradient-to-br from-blue-100 to-cyan-100 w-16 h-16 rounded-2xl flex items-center justify-center mb-8 group-hover:from-blue-200 group-hover:to-cyan-200 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
+                        <IconComponent className="w-8 h-8 text-blue-600 group-hover:text-blue-700 transition-colors duration-300" />
+                      </div>
+                      
+                      <h3 className="text-xl font-bold text-slate-800 mb-4 group-hover:text-blue-800 transition-colors duration-300">
+                        {service.title}
+                      </h3>
+                      
+                      <p className="text-slate-600 leading-relaxed group-hover:text-slate-700 transition-colors duration-300">
+                        {service.description}
+                      </p>
+                      
+                      {/* Hover Arrow */}
+                      <div className="mt-6 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                        <div className="inline-flex items-center text-blue-600 font-medium text-sm">
+                          <span>Learn More</span>
+                          <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Floating Particles */}
+                    <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                      <div className="absolute top-8 right-8 w-1 h-1 bg-blue-400 rounded-full animate-float"></div>
+                      <div className="absolute bottom-12 left-12 w-1.5 h-1.5 bg-cyan-400 rounded-full animate-float-delayed"></div>
+                      <div className="absolute top-16 left-20 w-1 h-1 bg-blue-500 rounded-full animate-float-slow"></div>
+                    </div>
                   </div>
                 </div>
               );
             })}
+          </div>
+          
+          {/* Bottom CTA */}
+          <div className="text-center mt-16">
+            <div className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-50 to-cyan-50 border border-blue-200/50 rounded-full px-8 py-4 hover:shadow-lg hover:shadow-blue-100/30 transition-all duration-300 cursor-pointer group">
+              <div className="w-3 h-3 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full group-hover:scale-110 transition-transform duration-300"></div>
+              <span className="text-slate-700 font-medium">Need a custom solution? Let's discuss your requirements</span>
+              <svg className="w-5 h-5 text-blue-600 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Deployment Options Section */}
-      <section className="py-20 lg:py-32" style={{backgroundColor: '#D6EFFF'}}>
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">
+      <section className="py-24 lg:py-32 relative overflow-hidden" style={{backgroundColor: '#D6EFFF'}}>
+        {/* Enhanced Background Elements */}
+        <div className="absolute inset-0 opacity-40">
+          <div className="absolute top-16 left-16 w-48 h-48 bg-white/30 rounded-full blur-3xl animate-float-slow"></div>
+          <div className="absolute bottom-16 right-16 w-36 h-36 bg-blue-200/40 rounded-full blur-2xl animate-float-delayed"></div>
+          <div className="absolute top-1/2 left-1/3 w-28 h-28 bg-cyan-200/30 rounded-full blur-xl animate-float"></div>
+          <div className="absolute bottom-1/3 left-20 w-20 h-20 bg-blue-300/20 rounded-full blur-lg animate-float-slow"></div>
+        </div>
+        
+        {/* Geometric Patterns */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-20 right-20 w-32 h-32 border border-blue-300 rounded-lg rotate-45 animate-float"></div>
+          <div className="absolute bottom-32 left-32 w-24 h-24 border border-cyan-300 rounded-full animate-float-delayed"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl mx-auto text-center mb-20">
+            <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-blue-200/60 rounded-full px-6 py-3 mb-8 shadow-lg shadow-blue-100/30">
+              <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full animate-pulse"></div>
+              <span className="text-sm font-semibold text-blue-800">Flexible Infrastructure</span>
+            </div>
+            
+            <h2 className="text-4xl lg:text-5xl font-bold text-slate-800 mb-8 leading-tight">
               Data Warehouse{" "}
               <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
                 Deployment Options
               </span>
             </h2>
-            <p className="text-xl text-muted-foreground">
+            
+            <p className="text-xl text-slate-700 leading-relaxed max-w-3xl mx-auto">
               Choose the deployment strategy that best fits your infrastructure, security requirements, 
               and business objectives with our flexible data warehousing solutions.
             </p>
+            
+            {/* Enhanced Decorative Elements */}
+            <div className="flex justify-center mt-10">
+              <div className="flex items-center gap-3">
+                <div className="w-16 h-px bg-gradient-to-r from-transparent via-blue-400 to-blue-300"></div>
+                <div className="w-3 h-3 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full shadow-lg"></div>
+                <div className="w-12 h-px bg-blue-300"></div>
+                <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
+                <div className="w-12 h-px bg-cyan-300"></div>
+                <div className="w-3 h-3 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full shadow-lg"></div>
+                <div className="w-16 h-px bg-gradient-to-l from-transparent via-cyan-400 to-cyan-300"></div>
+              </div>
+            </div>
           </div>
           
-          <div className="grid gap-8 lg:grid-cols-3">
+          <div className="grid gap-10 lg:grid-cols-3 max-w-7xl mx-auto">
             {deploymentOptions.map((option, index) => {
               const IconComponent = option.icon;
               return (
                 <div key={index} className="group">
-                  <div className="bg-white/70 backdrop-blur-sm border border-blue-100/50 rounded-xl p-8 h-full hover:shadow-lg hover:shadow-blue-100/50 transition-all duration-300 hover:border-blue-200/60 hover:bg-white/80">
-                    <div className="bg-gradient-to-br from-blue-100 to-cyan-100 w-16 h-16 rounded-lg flex items-center justify-center mb-6 group-hover:from-blue-200 group-hover:to-cyan-200 transition-all duration-300">
-                      <IconComponent className="w-8 h-8 text-blue-600" />
+                  <div className="bg-white/90 backdrop-blur-sm border border-blue-200/60 rounded-3xl p-10 h-full hover:shadow-2xl hover:shadow-blue-200/40 transition-all duration-500 hover:border-blue-300/80 hover:bg-white relative overflow-hidden hover:scale-105">
+                    {/* Enhanced Shimmer Effect */}
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent transform -skew-x-12 animate-shimmer"></div>
                     </div>
-                    <h3 className="text-xl font-semibold text-slate-800 mb-4">
-                      {option.title}
-                    </h3>
-                    <p className="text-slate-600 mb-6 leading-relaxed">
-                      {option.description}
-                    </p>
-                    <ul className="space-y-2">
-                      {option.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center text-sm text-slate-700">
-                          <CheckCircle className="w-4 h-4 text-green-600 mr-2 flex-shrink-0" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
+                    
+                    {/* Premium Background Pattern */}
+                    <div className="absolute top-0 right-0 w-24 h-24 opacity-10 group-hover:opacity-20 transition-opacity duration-300">
+                      <div className="w-full h-full bg-gradient-to-br from-blue-300 to-cyan-300 rounded-bl-3xl"></div>
+                    </div>
+                    
+                    {/* Floating Ring */}
+                    <div className="absolute -top-2 -right-2 w-16 h-16 border-2 border-blue-200/30 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:scale-110"></div>
+                    
+                    <div className="relative z-10">
+                      <div className="bg-gradient-to-br from-blue-100 to-cyan-100 w-20 h-20 rounded-3xl flex items-center justify-center mb-8 group-hover:from-blue-200 group-hover:to-cyan-200 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 shadow-lg shadow-blue-100/50">
+                        <IconComponent className="w-10 h-10 text-blue-600 group-hover:text-blue-700 transition-colors duration-300" />
+                      </div>
+                      
+                      <h3 className="text-2xl font-bold text-slate-800 mb-6 group-hover:text-blue-800 transition-colors duration-300">
+                        {option.title}
+                      </h3>
+                      
+                      <p className="text-slate-600 mb-8 leading-relaxed text-lg group-hover:text-slate-700 transition-colors duration-300">
+                        {option.description}
+                      </p>
+                      
+                      <ul className="space-y-4">
+                        {option.features.map((feature, idx) => (
+                          <li key={idx} className="flex items-start text-slate-700 group-hover:text-slate-800 transition-colors duration-300">
+                            <div className="bg-green-100 rounded-full p-1 mr-3 mt-0.5 group-hover:bg-green-200 transition-colors duration-300">
+                              <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
+                            </div>
+                            <span className="font-medium">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      
+                      {/* Enhanced Hover CTA */}
+                      <div className="mt-8 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                        <div className="inline-flex items-center text-blue-600 font-semibold text-sm bg-blue-50 rounded-full px-4 py-2 hover:bg-blue-100 transition-colors duration-200">
+                          <span>Explore {option.title}</span>
+                          <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Enhanced Floating Particles */}
+                    <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                      <div className="absolute top-10 right-10 w-1.5 h-1.5 bg-blue-400 rounded-full animate-float"></div>
+                      <div className="absolute bottom-16 left-16 w-2 h-2 bg-cyan-400 rounded-full animate-float-delayed"></div>
+                      <div className="absolute top-20 left-24 w-1 h-1 bg-blue-500 rounded-full animate-float-slow"></div>
+                      <div className="absolute bottom-24 right-20 w-1.5 h-1.5 bg-cyan-500 rounded-full animate-float"></div>
+                    </div>
                   </div>
                 </div>
               );
             })}
+          </div>
+          
+          {/* Enhanced Bottom Section */}
+          <div className="text-center mt-20">
+            <div className="inline-flex items-center gap-4 bg-white/90 backdrop-blur-sm border border-blue-200/60 rounded-full px-10 py-5 hover:shadow-xl hover:shadow-blue-200/40 transition-all duration-300 cursor-pointer group">
+              <div className="w-4 h-4 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full group-hover:scale-125 transition-transform duration-300 shadow-lg"></div>
+              <span className="text-slate-800 font-semibold text-lg">Not sure which option fits? Get personalized recommendations</span>
+              <svg className="w-6 h-6 text-blue-600 group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Implementation Process Section */}
-      <section className="py-20 lg:py-32">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">
+      <section className="py-24 lg:py-32 relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-20 right-20 w-44 h-44 bg-blue-100/40 rounded-full blur-3xl animate-float-slow"></div>
+          <div className="absolute bottom-20 left-20 w-36 h-36 bg-cyan-100/40 rounded-full blur-2xl animate-float-delayed"></div>
+          <div className="absolute top-1/2 right-1/3 w-28 h-28 bg-blue-200/30 rounded-full blur-xl animate-float"></div>
+        </div>
+        
+        {/* Process Flow Lines */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-1/2 left-1/4 right-1/4 h-px bg-gradient-to-r from-blue-300 via-cyan-300 to-blue-300 transform -translate-y-1/2 hidden lg:block"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl mx-auto text-center mb-20">
+            <div className="inline-flex items-center gap-2 bg-blue-50/80 backdrop-blur-sm border border-blue-200/50 rounded-full px-6 py-3 mb-8">
+              <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full animate-pulse"></div>
+              <span className="text-sm font-semibold text-blue-700">Proven Methodology</span>
+            </div>
+            
+            <h2 className="text-4xl lg:text-5xl font-bold text-slate-800 mb-8 leading-tight">
               Our Data Warehouse{" "}
-              <span className="bg-gradient-primary bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
                 Implementation Process
               </span>
             </h2>
-            <p className="text-xl text-muted-foreground">
+            
+            <p className="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
               Our proven methodology ensures successful data warehouse implementation with minimal 
               disruption to your business operations and maximum value delivery.
             </p>
+            
+            {/* Process Timeline Indicator */}
+            <div className="flex justify-center mt-10">
+              <div className="flex items-center gap-2">
+                <div className="w-14 h-px bg-gradient-to-r from-transparent to-blue-300"></div>
+                <div className="w-3 h-3 bg-blue-400 rounded-full shadow-lg"></div>
+                <div className="w-8 h-px bg-blue-300"></div>
+                <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
+                <div className="w-8 h-px bg-cyan-300"></div>
+                <div className="w-3 h-3 bg-cyan-400 rounded-full shadow-lg"></div>
+                <div className="w-14 h-px bg-gradient-to-l from-transparent to-cyan-300"></div>
+              </div>
+            </div>
           </div>
           
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 max-w-7xl mx-auto">
             {implementationSteps.map((step, index) => {
               const IconComponent = step.icon;
               return (
-                <div key={index} className="group text-center">
-                  <div className="bg-card border border-border rounded-lg p-6 h-full hover:shadow-lg transition-all duration-300 hover:border-primary/50">
-                    <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/20 transition-colors">
-                      <IconComponent className="w-8 h-8 text-primary" />
+                <div key={index} className="group text-center relative">
+                  {/* Connection Line */}
+                  {index < implementationSteps.length - 1 && (
+                    <div className="hidden lg:block absolute top-20 left-full w-8 h-px bg-gradient-to-r from-blue-300 to-cyan-300 transform translate-x-0 z-0 opacity-40 group-hover:opacity-60 transition-opacity duration-300"></div>
+                  )}
+                  
+                  <div className="bg-white/90 backdrop-blur-sm border border-blue-100/60 rounded-2xl p-8 h-full hover:shadow-2xl hover:shadow-blue-100/40 transition-all duration-500 hover:border-blue-200/80 hover:bg-white relative overflow-hidden hover:scale-105">
+                    {/* Shimmer Effect */}
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent transform -skew-x-12 animate-shimmer"></div>
                     </div>
-                    <div className="text-sm font-medium text-primary mb-2">Step {index + 1}</div>
-                    <h3 className="text-lg font-semibold text-foreground mb-4">
-                      {step.title}
-                    </h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
-                      {step.description}
-                    </p>
+                    
+                    {/* Step Number Background */}
+                    <div className="absolute top-4 right-4 w-8 h-8 bg-gradient-to-br from-blue-100 to-cyan-100 rounded-lg opacity-60 group-hover:opacity-80 transition-opacity duration-300 flex items-center justify-center">
+                      <span className="text-xs font-bold text-blue-600">{index + 1}</span>
+                    </div>
+                    
+                    <div className="relative z-10">
+                      <div className="bg-gradient-to-br from-blue-100 to-cyan-100 w-20 h-20 rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:from-blue-200 group-hover:to-cyan-200 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 shadow-lg shadow-blue-100/50">
+                        <IconComponent className="w-10 h-10 text-blue-600 group-hover:text-blue-700 transition-colors duration-300" />
+                      </div>
+                      
+                      <div className="inline-flex items-center gap-2 bg-blue-50 rounded-full px-4 py-2 mb-4 group-hover:bg-blue-100 transition-colors duration-300">
+                        <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                        <span className="text-sm font-bold text-blue-700">Step {index + 1}</span>
+                      </div>
+                      
+                      <h3 className="text-xl font-bold text-slate-800 mb-6 group-hover:text-blue-800 transition-colors duration-300">
+                        {step.title}
+                      </h3>
+                      
+                      <p className="text-slate-600 leading-relaxed group-hover:text-slate-700 transition-colors duration-300">
+                        {step.description}
+                      </p>
+                      
+                      {/* Progress Indicator */}
+                      <div className="mt-6 h-1 bg-blue-100 rounded-full overflow-hidden">
+                        <div 
+                          className="h-full bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-1000 ease-out"
+                          style={{ animationDelay: `${index * 150}ms` }}
+                        ></div>
+                      </div>
+                      
+                      {/* Hover Details */}
+                      <div className="mt-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                        <div className="text-xs text-blue-600 font-medium bg-blue-50 rounded-lg px-3 py-2">
+                          Duration: {index === 0 ? '1-2 weeks' : index === 1 ? '2-4 weeks' : index === 2 ? '4-8 weeks' : '1-2 weeks'}
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Floating Particles */}
+                    <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                      <div className="absolute top-8 right-8 w-1 h-1 bg-blue-400 rounded-full animate-float"></div>
+                      <div className="absolute bottom-12 left-12 w-1.5 h-1.5 bg-cyan-400 rounded-full animate-float-delayed"></div>
+                      <div className="absolute top-16 left-16 w-1 h-1 bg-blue-500 rounded-full animate-float-slow"></div>
+                    </div>
                   </div>
                 </div>
               );
             })}
+          </div>
+          
+          {/* Process Summary */}
+          <div className="text-center mt-20">
+            <div className="inline-flex items-center gap-4 bg-gradient-to-r from-blue-50 to-cyan-50 border border-blue-200/50 rounded-full px-10 py-5 hover:shadow-xl hover:shadow-blue-100/30 transition-all duration-300 cursor-pointer group">
+              <div className="w-4 h-4 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full group-hover:scale-125 transition-transform duration-300 shadow-lg"></div>
+              <span className="text-slate-800 font-semibold text-lg">Typical implementation: 8-16 weeks from start to production</span>
+              <svg className="w-6 h-6 text-blue-600 group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Industries Section */}
-      <section className="py-20 lg:py-32 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">
+      <section className="py-24 lg:py-32 bg-gradient-to-br from-slate-50 to-blue-50/40 relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-20 left-20 w-40 h-40 bg-blue-100/40 rounded-full blur-3xl animate-float-slow"></div>
+          <div className="absolute bottom-20 right-20 w-36 h-36 bg-cyan-100/40 rounded-full blur-2xl animate-float-delayed"></div>
+          <div className="absolute top-1/3 right-1/4 w-28 h-28 bg-blue-200/30 rounded-full blur-xl animate-float"></div>
+          <div className="absolute bottom-1/3 left-1/4 w-24 h-24 bg-cyan-200/30 rounded-full blur-lg animate-float-slow"></div>
+        </div>
+        
+        {/* Industry Network Pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-blue-400 rounded-full"></div>
+          <div className="absolute top-1/3 right-1/3 w-1.5 h-1.5 bg-cyan-400 rounded-full"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-2 h-2 bg-blue-500 rounded-full"></div>
+          <div className="absolute bottom-1/3 left-1/3 w-1.5 h-1.5 bg-cyan-500 rounded-full"></div>
+          {/* Connecting lines */}
+          <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <path d="M25,25 Q50,15 75,33" stroke="rgb(59 130 246 / 0.2)" strokeWidth="0.1" fill="none" />
+            <path d="M75,33 Q85,50 75,67" stroke="rgb(6 182 212 / 0.2)" strokeWidth="0.1" fill="none" />
+            <path d="M75,67 Q50,85 25,67" stroke="rgb(59 130 246 / 0.2)" strokeWidth="0.1" fill="none" />
+            <path d="M25,67 Q15,50 25,25" stroke="rgb(6 182 212 / 0.2)" strokeWidth="0.1" fill="none" />
+          </svg>
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl mx-auto text-center mb-20">
+            <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-blue-200/50 rounded-full px-6 py-3 mb-8 shadow-lg shadow-blue-100/30">
+              <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full animate-pulse"></div>
+              <span className="text-sm font-semibold text-blue-700">Cross-Industry Expertise</span>
+            </div>
+            
+            <h2 className="text-4xl lg:text-5xl font-bold text-slate-800 mb-8 leading-tight">
               Industries We{" "}
-              <span className="bg-gradient-primary bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
                 Serve
               </span>
             </h2>
-            <p className="text-xl text-muted-foreground">
+            
+            <p className="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
               With 23+ years of cross-industry expertise, ImpTrax delivers specialized data warehousing 
               solutions tailored to the unique requirements of various business sectors.
             </p>
+            
+            {/* Industry Stats */}
+            <div className="flex justify-center mt-10">
+              <div className="flex items-center gap-6">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-blue-600">23+</div>
+                  <div className="text-sm text-slate-600">Years</div>
+                </div>
+                <div className="w-px h-8 bg-blue-200"></div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-cyan-600">8</div>
+                  <div className="text-sm text-slate-600">Industries</div>
+                </div>
+                <div className="w-px h-8 bg-cyan-200"></div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-blue-600">500+</div>
+                  <div className="text-sm text-slate-600">Projects</div>
+                </div>
+              </div>
+            </div>
           </div>
           
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 max-w-7xl mx-auto">
             {industries.map((industry, index) => {
               const IconComponent = industry.icon;
               return (
                 <div key={index} className="group">
-                  <div className="bg-card border border-border rounded-lg p-6 text-center h-full hover:shadow-lg transition-all duration-300 hover:border-primary/50">
-                    <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
-                      <IconComponent className="w-8 h-8 text-primary" />
+                  <div className="bg-white/90 backdrop-blur-sm border border-blue-100/60 rounded-2xl p-8 text-center h-full hover:shadow-2xl hover:shadow-blue-100/40 transition-all duration-500 hover:border-blue-200/80 hover:bg-white relative overflow-hidden hover:scale-105">
+                    {/* Shimmer Effect */}
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent transform -skew-x-12 animate-shimmer"></div>
                     </div>
-                    <h3 className="text-lg font-semibold text-foreground mb-3">
-                      {industry.name}
-                    </h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
-                      {industry.description}
-                    </p>
+                    
+                    {/* Industry Badge */}
+                    <div className="absolute top-4 right-4 w-6 h-6 bg-gradient-to-br from-blue-100 to-cyan-100 rounded-full opacity-60 group-hover:opacity-80 transition-opacity duration-300 flex items-center justify-center">
+                      <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                    </div>
+                    
+                    {/* Background Pattern */}
+                    <div className="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-blue-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    
+                    <div className="relative z-10">
+                      <div className="bg-gradient-to-br from-blue-100 to-cyan-100 w-20 h-20 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:from-blue-200 group-hover:to-cyan-200 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 shadow-lg shadow-blue-100/50">
+                        <IconComponent className="w-10 h-10 text-blue-600 group-hover:text-blue-700 transition-colors duration-300" />
+                      </div>
+                      
+                      <h3 className="text-xl font-bold text-slate-800 mb-4 group-hover:text-blue-800 transition-colors duration-300">
+                        {industry.name}
+                      </h3>
+                      
+                      <p className="text-slate-600 leading-relaxed group-hover:text-slate-700 transition-colors duration-300">
+                        {industry.description}
+                      </p>
+                      
+                      {/* Expertise Indicator */}
+                      <div className="mt-6 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                        <div className="inline-flex items-center gap-2 bg-blue-50 rounded-full px-4 py-2 text-xs font-medium text-blue-700">
+                          <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                          <span>Specialized Solutions</span>
+                        </div>
+                      </div>
+                      
+                      {/* Progress Bar */}
+                      <div className="mt-4 h-1 bg-blue-100 rounded-full overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        <div 
+                          className="h-full bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-1000 ease-out"
+                          style={{ animationDelay: `${index * 100}ms` }}
+                        ></div>
+                      </div>
+                    </div>
+                    
+                    {/* Floating Particles */}
+                    <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                      <div className="absolute top-8 right-8 w-1 h-1 bg-blue-400 rounded-full animate-float"></div>
+                      <div className="absolute bottom-12 left-12 w-1.5 h-1.5 bg-cyan-400 rounded-full animate-float-delayed"></div>
+                      <div className="absolute top-16 left-16 w-1 h-1 bg-blue-500 rounded-full animate-float-slow"></div>
+                    </div>
                   </div>
                 </div>
               );
             })}
+          </div>
+          
+          {/* Industry Expertise CTA */}
+          <div className="text-center mt-20">
+            <div className="inline-flex items-center gap-4 bg-white/90 backdrop-blur-sm border border-blue-200/60 rounded-full px-10 py-5 hover:shadow-xl hover:shadow-blue-200/40 transition-all duration-300 cursor-pointer group">
+              <div className="w-4 h-4 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full group-hover:scale-125 transition-transform duration-300 shadow-lg"></div>
+              <span className="text-slate-800 font-semibold text-lg">Don't see your industry? We adapt to any sector's requirements</span>
+              <svg className="w-6 h-6 text-blue-600 group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 lg:py-32">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">
-              Benefits of Data Warehousing
+      <section className="py-24 lg:py-32 bg-gradient-to-br from-white to-slate-50 relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-32 left-32 w-48 h-48 bg-blue-100/50 rounded-full blur-3xl animate-float-slow"></div>
+          <div className="absolute bottom-32 right-32 w-40 h-40 bg-cyan-100/50 rounded-full blur-2xl animate-float-delayed"></div>
+          <div className="absolute top-1/2 left-1/4 w-32 h-32 bg-blue-200/40 rounded-full blur-xl animate-float"></div>
+          <div className="absolute bottom-1/4 right-1/3 w-28 h-28 bg-cyan-200/40 rounded-full blur-lg animate-float-slow"></div>
+        </div>
+        
+        {/* Benefits Network Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-1/4 left-1/5 w-3 h-3 bg-blue-500 rounded-full"></div>
+          <div className="absolute top-1/3 right-1/4 w-2 h-2 bg-cyan-500 rounded-full"></div>
+          <div className="absolute bottom-1/3 left-1/3 w-2.5 h-2.5 bg-blue-600 rounded-full"></div>
+          <div className="absolute bottom-1/4 right-1/5 w-2 h-2 bg-cyan-600 rounded-full"></div>
+          {/* Benefit connections */}
+          <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <path d="M20,25 Q40,10 60,25 Q80,40 60,55 Q40,70 20,55 Q10,40 20,25" stroke="rgb(59 130 246 / 0.15)" strokeWidth="0.2" fill="none" strokeDasharray="2,2" />
+            <circle cx="20" cy="25" r="0.5" fill="rgb(59 130 246 / 0.3)" />
+            <circle cx="60" cy="25" r="0.5" fill="rgb(6 182 212 / 0.3)" />
+            <circle cx="60" cy="55" r="0.5" fill="rgb(59 130 246 / 0.3)" />
+            <circle cx="20" cy="55" r="0.5" fill="rgb(6 182 212 / 0.3)" />
+          </svg>
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl mx-auto text-center mb-20">
+            <div className="inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm border border-blue-200/50 rounded-full px-6 py-3 mb-8 shadow-lg shadow-blue-100/30">
+              <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full animate-pulse"></div>
+              <span className="text-sm font-semibold text-blue-700">Measurable Business Impact</span>
+            </div>
+            
+            <h2 className="text-4xl lg:text-5xl font-bold text-slate-800 mb-8 leading-tight">
+              Benefits of{" "}
+              <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+                Data Warehousing
+              </span>
             </h2>
-            <p className="text-xl text-muted-foreground">
+            
+            <p className="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
               Transform your business operations with measurable benefits that drive growth, 
               improve decision-making, and enhance operational excellence.
             </p>
+            
+            {/* Value Metrics */}
+            <div className="flex justify-center mt-10">
+              <div className="flex items-center gap-6">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-blue-600">10x</div>
+                  <div className="text-sm text-slate-600">Faster Queries</div>
+                </div>
+                <div className="w-px h-8 bg-blue-200"></div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-cyan-600">85%</div>
+                  <div className="text-sm text-slate-600">Better Decisions</div>
+                </div>
+                <div className="w-px h-8 bg-cyan-200"></div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-blue-600">60%</div>
+                  <div className="text-sm text-slate-600">Time Savings</div>
+                </div>
+              </div>
+            </div>
           </div>
           
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 max-w-7xl mx-auto">
             {benefits.map((benefit, index) => {
               const IconComponent = benefit.icon;
               return (
                 <div key={index} className="group text-center">
-                  <div className="bg-card border border-border rounded-lg p-6 h-full hover:shadow-lg transition-all duration-300 hover:border-primary/50">
-                    <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/20 transition-colors">
-                      <IconComponent className="w-8 h-8 text-primary" />
+                  <div className="bg-white/95 backdrop-blur-sm border border-blue-100/60 rounded-2xl p-8 h-full hover:shadow-2xl hover:shadow-blue-100/40 transition-all duration-500 hover:border-blue-200/80 hover:bg-white relative overflow-hidden hover:scale-105">
+                    {/* Shimmer Effect */}
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent transform -skew-x-12 animate-shimmer"></div>
                     </div>
-                    <h3 className="text-lg font-semibold text-foreground mb-4">
-                      {benefit.title}
-                    </h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
-                      {benefit.description}
-                    </p>
+                    
+                    {/* Benefit Badge */}
+                    <div className="absolute top-4 right-4 w-8 h-8 bg-gradient-to-br from-blue-100 to-cyan-100 rounded-full opacity-60 group-hover:opacity-80 transition-opacity duration-300 flex items-center justify-center">
+                      <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+                    </div>
+                    
+                    {/* Background Glow */}
+                    <div className="absolute -top-4 -left-4 w-16 h-16 bg-gradient-to-br from-blue-200/30 to-cyan-200/30 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    <div className="relative z-10">
+                      <div className="bg-gradient-to-br from-blue-100 to-cyan-100 w-20 h-20 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:from-blue-200 group-hover:to-cyan-200 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 shadow-lg shadow-blue-100/50">
+                        <IconComponent className="w-10 h-10 text-blue-600 group-hover:text-blue-700 transition-colors duration-300" />
+                      </div>
+                      
+                      <h3 className="text-xl font-bold text-slate-800 mb-4 group-hover:text-blue-800 transition-colors duration-300">
+                        {benefit.title}
+                      </h3>
+                      
+                      <p className="text-slate-600 leading-relaxed group-hover:text-slate-700 transition-colors duration-300">
+                        {benefit.description}
+                      </p>
+                      
+                      {/* Value Indicator */}
+                      <div className="mt-6 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                        <div className="inline-flex items-center gap-2 bg-blue-50 rounded-full px-4 py-2 text-xs font-medium text-blue-700">
+                          <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                          </svg>
+                          <span>Proven Results</span>
+                        </div>
+                      </div>
+                      
+                      {/* Impact Meter */}
+                      <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        <div className="flex items-center gap-2 text-xs text-slate-500">
+                          <span>Impact:</span>
+                          <div className="flex-1 h-1 bg-blue-100 rounded-full overflow-hidden">
+                            <div 
+                              className="h-full bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-1000 ease-out"
+                              style={{ animationDelay: `${index * 150}ms` }}
+                            ></div>
+                          </div>
+                          <span className="text-blue-600 font-medium">High</span>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Floating Elements */}
+                    <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                      <div className="absolute top-6 right-6 w-1 h-1 bg-blue-400 rounded-full animate-float"></div>
+                      <div className="absolute bottom-8 left-8 w-1.5 h-1.5 bg-cyan-400 rounded-full animate-float-delayed"></div>
+                      <div className="absolute top-12 left-12 w-1 h-1 bg-blue-500 rounded-full animate-float-slow"></div>
+                      <div className="absolute bottom-16 right-16 w-1 h-1 bg-cyan-500 rounded-full animate-float"></div>
+                    </div>
                   </div>
                 </div>
               );
             })}
           </div>
+          
+          {/* Benefits Summary CTA */}
+          <div className="text-center mt-20">
+            <div className="max-w-4xl mx-auto bg-gradient-to-r from-blue-50 to-cyan-50 rounded-3xl p-12 border border-blue-200/50 shadow-xl shadow-blue-100/30">
+              <div className="flex items-center justify-center gap-4 mb-6">
+                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center shadow-lg">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-slate-800">Ready to Unlock These Benefits?</h3>
+              </div>
+              <p className="text-lg text-slate-600 mb-8 max-w-2xl mx-auto">
+                Join hundreds of companies that have transformed their operations with data warehousing solutions.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <button className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-blue-700 hover:to-cyan-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105">
+                  Start Your Transformation
+                </button>
+                <button className="bg-white text-slate-800 px-8 py-4 rounded-xl font-semibold border border-blue-200 hover:bg-blue-50 transition-all duration-300 shadow-lg hover:shadow-xl">
+                  View Case Studies
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 lg:py-32" style={{backgroundColor: '#E0F3FF'}}>
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">
+      <section className="py-24 lg:py-32 bg-gradient-to-br from-blue-600 via-blue-700 to-cyan-700 relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-20 left-20 w-64 h-64 bg-white/10 rounded-full blur-3xl animate-float-slow"></div>
+          <div className="absolute bottom-20 right-20 w-48 h-48 bg-cyan-300/20 rounded-full blur-2xl animate-float-delayed"></div>
+          <div className="absolute top-1/2 left-1/3 w-40 h-40 bg-white/15 rounded-full blur-xl animate-float"></div>
+          <div className="absolute bottom-1/3 right-1/4 w-32 h-32 bg-cyan-200/25 rounded-full blur-lg animate-float-slow"></div>
+        </div>
+        
+        {/* Geometric Pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <defs>
+              <pattern id="ctaGrid" width="10" height="10" patternUnits="userSpaceOnUse">
+                <path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" strokeWidth="0.5"/>
+              </pattern>
+            </defs>
+            <rect width="100" height="100" fill="url(#ctaGrid)" />
+          </svg>
+        </div>
+        
+        {/* Floating Icons */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-1/4 left-1/6 w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center animate-float">
+            <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
+            </svg>
+          </div>
+          <div className="absolute top-1/3 right-1/5 w-6 h-6 bg-cyan-300/30 rounded-full flex items-center justify-center animate-float-delayed">
+            <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V4a2 2 0 00-2-2H6zm1 2a1 1 0 000 2h6a1 1 0 100-2H7zm6 7a1 1 0 011 1v3a1 1 0 11-2 0v-3a1 1 0 011-1zm-3 3a1 1 0 100 2h.01a1 1 0 100-2H10zm-4 1a1 1 0 011-1h.01a1 1 0 110 2H7a1 1 0 01-1-1zm1-4a1 1 0 100 2h.01a1 1 0 100-2H7zm2 0a1 1 0 100 2h.01a1 1 0 100-2H9zm2 0a1 1 0 100 2h.01a1 1 0 100-2H11z" clipRule="evenodd" />
+            </svg>
+          </div>
+          <div className="absolute bottom-1/4 left-1/4 w-7 h-7 bg-white/15 rounded-lg flex items-center justify-center animate-float-slow">
+            <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+            </svg>
+          </div>
+          <div className="absolute bottom-1/3 right-1/3 w-5 h-5 bg-cyan-200/40 rounded-full animate-float"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-5xl mx-auto text-center">
+            {/* Trust Badge */}
+            <div className="inline-flex items-center gap-3 bg-white/20 backdrop-blur-sm border border-white/30 rounded-full px-8 py-4 mb-10 shadow-xl">
+              <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse shadow-lg"></div>
+              <span className="text-white font-semibold text-lg">Trusted by 500+ Companies Worldwide</span>
+              <div className="flex -space-x-2">
+                <div className="w-8 h-8 bg-white/30 rounded-full border-2 border-white/50"></div>
+                <div className="w-8 h-8 bg-cyan-300/40 rounded-full border-2 border-white/50"></div>
+                <div className="w-8 h-8 bg-blue-300/40 rounded-full border-2 border-white/50"></div>
+              </div>
+            </div>
+            
+            <h2 className="text-4xl lg:text-6xl font-bold text-white mb-8 leading-tight">
               Ready to Transform Your{" "}
-              <span className="bg-gradient-primary bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-cyan-300 to-white bg-clip-text text-transparent">
                 Data Infrastructure?
               </span>
             </h2>
-            <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+            
+            <p className="text-xl lg:text-2xl text-blue-100 mb-12 leading-relaxed max-w-4xl mx-auto">
               Partner with ImpTrax to build a robust, scalable data warehouse that drives business intelligence 
               and accelerates your digital transformation journey. Our experts are ready to help you unlock 
               the full potential of your data.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-primary hover:bg-primary/90" onClick={handleScheduleConsultationClick}>
+            
+            {/* Value Props */}
+            <div className="grid md:grid-cols-3 gap-8 mb-12 max-w-4xl mx-auto">
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-white font-semibold text-lg mb-2">Quick Implementation</h3>
+                <p className="text-blue-100 text-sm">Get started in weeks, not months</p>
+              </div>
+              
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-white font-semibold text-lg mb-2">Proven Results</h3>
+                <p className="text-blue-100 text-sm">99.9% uptime guarantee</p>
+              </div>
+              
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M12 2.25a9.75 9.75 0 109.75 9.75c0-5.385-4.365-9.75-9.75-9.75z" />
+                  </svg>
+                </div>
+                <h3 className="text-white font-semibold text-lg mb-2">24/7 Support</h3>
+                <p className="text-blue-100 text-sm">Expert assistance when you need it</p>
+              </div>
+            </div>
+            
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+              <Button 
+                size="lg" 
+                className="bg-white text-blue-700 hover:bg-blue-50 px-10 py-6 text-lg font-semibold rounded-2xl shadow-2xl hover:shadow-white/20 transition-all duration-300 hover:scale-105 border-0" 
+                onClick={handleScheduleConsultationClick}
+              >
+                <svg className="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
                 Schedule Free Consultation
-                <ArrowRight className="w-5 h-5 ml-2" />
+                <ArrowRight className="w-6 h-6 ml-3" />
               </Button>
-              <Button size="lg" variant="outline" onClick={handleDownloadGuideClick}>
+              
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="bg-transparent text-white border-2 border-white/50 hover:bg-white/10 px-10 py-6 text-lg font-semibold rounded-2xl backdrop-blur-sm transition-all duration-300 hover:scale-105" 
+                onClick={handleDownloadGuideClick}
+              >
+                <svg className="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
                 Download Data Warehouse Guide
               </Button>
+            </div>
+            
+            {/* Contact Info */}
+            <div className="mt-12 pt-8 border-t border-white/20">
+              <p className="text-blue-100 text-lg mb-4">Need immediate assistance?</p>
+              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                <a href="tel:+1-555-0123" className="flex items-center gap-3 text-white hover:text-cyan-300 transition-colors duration-300">
+                  <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                  </div>
+                  <span className="font-semibold text-lg">Call: +1 (555) 123-4567</span>
+                </a>
+                
+                <a href="mailto:info@imptrax.com" className="flex items-center gap-3 text-white hover:text-cyan-300 transition-colors duration-300">
+                  <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                  <span className="font-semibold text-lg">Email: info@imptrax.com</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 lg:py-32">
-        <div className="container mx-auto px-4">
+      <section className="py-24 lg:py-32 bg-gradient-to-br from-slate-50 to-blue-50/30 relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-20 left-20 w-40 h-40 bg-blue-100/40 rounded-full blur-3xl animate-float-slow"></div>
+          <div className="absolute bottom-20 right-20 w-36 h-36 bg-cyan-100/40 rounded-full blur-2xl animate-float-delayed"></div>
+          <div className="absolute top-1/3 right-1/4 w-28 h-28 bg-blue-200/30 rounded-full blur-xl animate-float"></div>
+          <div className="absolute bottom-1/3 left-1/4 w-24 h-24 bg-cyan-200/30 rounded-full blur-lg animate-float-slow"></div>
+        </div>
+        
+        {/* FAQ Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-blue-400 rounded-full"></div>
+          <div className="absolute top-1/3 right-1/3 w-1.5 h-1.5 bg-cyan-400 rounded-full"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-2 h-2 bg-blue-500 rounded-full"></div>
+          <div className="absolute bottom-1/3 left-1/3 w-1.5 h-1.5 bg-cyan-500 rounded-full"></div>
+          {/* Question mark pattern */}
+          <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <text x="20" y="30" fontSize="8" fill="rgb(59 130 246 / 0.1)" fontFamily="serif">?</text>
+            <text x="70" y="50" fontSize="6" fill="rgb(6 182 212 / 0.1)" fontFamily="serif">?</text>
+            <text x="40" y="70" fontSize="7" fill="rgb(59 130 246 / 0.1)" fontFamily="serif">?</text>
+          </svg>
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">
+            <div className="text-center mb-20">
+              <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-blue-200/50 rounded-full px-6 py-3 mb-8 shadow-lg shadow-blue-100/30">
+                <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full animate-pulse"></div>
+                <span className="text-sm font-semibold text-blue-700">Expert Answers</span>
+              </div>
+              
+              <h2 className="text-4xl lg:text-5xl font-bold text-slate-800 mb-8 leading-tight">
                 Frequently Asked{" "}
-                <span className="bg-gradient-primary bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
                   Questions
                 </span>
               </h2>
-              <p className="text-xl text-muted-foreground">
+              
+              <p className="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
                 Get answers to the most common questions about data warehouse services and implementation.
               </p>
             </div>
             
-            <div className="space-y-4">
+            <div className="space-y-6">
               {faqs.map((faq, index) => (
-                <div key={index} className="bg-card border border-border rounded-lg overflow-hidden">
+                <div key={index} className="bg-white/90 backdrop-blur-sm border border-blue-100/60 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group">
                   <button
                     onClick={() => toggleFAQ(index)}
-                    className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-muted/50 transition-colors"
+                    className="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-blue-50/50 transition-all duration-300 group-hover:bg-blue-50/30"
                   >
-                    <h3 className="text-lg font-semibold text-foreground pr-4">
-                      {faq.question}
-                    </h3>
+                    <div className="flex items-center gap-4">
+                      <div className="w-10 h-10 bg-gradient-to-br from-blue-100 to-cyan-100 rounded-xl flex items-center justify-center group-hover:from-blue-200 group-hover:to-cyan-200 transition-all duration-300">
+                        <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                      </div>
+                      <h3 className="text-lg font-semibold text-slate-800 pr-4 group-hover:text-blue-800 transition-colors duration-300">
+                        {faq.question}
+                      </h3>
+                    </div>
                     <div className="flex-shrink-0">
-                      {openFAQ === index ? (
-                        <Minus className="w-5 h-5 text-primary" />
-                      ) : (
-                        <Plus className="w-5 h-5 text-primary" />
-                      )}
+                      <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center group-hover:bg-blue-200 transition-all duration-300">
+                        {openFAQ === index ? (
+                          <Minus className="w-4 h-4 text-blue-600 transition-transform duration-300" />
+                        ) : (
+                          <Plus className="w-4 h-4 text-blue-600 transition-transform duration-300" />
+                        )}
+                      </div>
                     </div>
                   </button>
+                  
                   {openFAQ === index && (
-                    <div className="px-6 pb-4">
-                      <div className="border-t border-border pt-4">
-                        <p className="text-muted-foreground leading-relaxed">
-                          {faq.answer}
-                        </p>
+                    <div className="px-8 pb-6 animate-fade-in-up">
+                      <div className="border-t border-blue-100 pt-6">
+                        <div className="bg-blue-50/50 rounded-xl p-6">
+                          <p className="text-slate-700 leading-relaxed">
+                            {faq.answer}
+                          </p>
+                          
+                          {/* Answer indicator */}
+                          <div className="flex items-center gap-2 mt-4 pt-4 border-t border-blue-100">
+                            <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
+                              <svg className="w-3 h-3 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                              </svg>
+                            </div>
+                            <span className="text-sm text-slate-600 font-medium">Answered by our experts</span>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   )}
@@ -640,14 +1281,62 @@ const DataWarehouseServices = () => {
               ))}
             </div>
             
-            <div className="text-center mt-12">
-              <p className="text-muted-foreground mb-6">
-                Have more questions? Our data warehouse experts are here to help.
-              </p>
-              <Button onClick={handleScheduleConsultationClick} className="bg-primary hover:bg-primary/90">
-                Schedule a Consultation
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
+            {/* FAQ CTA */}
+            <div className="text-center mt-16">
+              <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-3xl p-10 border border-blue-200/50 shadow-xl shadow-blue-100/30">
+                <div className="flex items-center justify-center gap-3 mb-6">
+                  <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center shadow-lg">
+                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-bold text-slate-800">Still Have Questions?</h3>
+                </div>
+                
+                <p className="text-lg text-slate-600 mb-8 max-w-2xl mx-auto">
+                  Our data warehouse experts are here to help. Get personalized answers to your specific questions.
+                </p>
+                
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Button 
+                    onClick={handleScheduleConsultationClick} 
+                    className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+                  >
+                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    Schedule a Consultation
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </Button>
+                  
+                  <button className="bg-white text-slate-800 px-8 py-4 rounded-xl font-semibold border border-blue-200 hover:bg-blue-50 transition-all duration-300 shadow-lg hover:shadow-xl">
+                    <svg className="w-5 h-5 mr-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    Contact Support
+                  </button>
+                </div>
+                
+                {/* Quick contact */}
+                <div className="mt-8 pt-6 border-t border-blue-200">
+                  <p className="text-sm text-slate-600 mb-3">Or reach out directly:</p>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center items-center text-sm">
+                    <a href="tel:+1-555-0123" className="flex items-center gap-2 text-blue-600 hover:text-blue-700 transition-colors">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                      </svg>
+                      <span className="font-medium">+1 (555) 123-4567</span>
+                    </a>
+                    <div className="hidden sm:block w-px h-4 bg-blue-200"></div>
+                    <a href="mailto:info@imptrax.com" className="flex items-center gap-2 text-blue-600 hover:text-blue-700 transition-colors">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      </svg>
+                      <span className="font-medium">info@imptrax.com</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
