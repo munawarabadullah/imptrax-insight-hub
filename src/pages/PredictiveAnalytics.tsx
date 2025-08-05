@@ -123,28 +123,35 @@ const PredictiveAnalytics = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32" style={{backgroundColor: '#E0F3FF'}}>
-        <div className="container mx-auto px-4">
+      <section className="relative py-20 lg:py-32 overflow-hidden" style={{backgroundColor: '#E0F3FF'}}>
+        {/* Floating Background Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-20 left-10 w-32 h-32 bg-blue-200/20 rounded-full blur-xl animate-pulse"></div>
+          <div className="absolute top-40 right-20 w-24 h-24 bg-cyan-200/20 rounded-full blur-lg animate-pulse" style={{animationDelay: '1s'}}></div>
+          <div className="absolute bottom-20 left-1/4 w-40 h-40 bg-blue-100/30 rounded-full blur-2xl animate-pulse" style={{animationDelay: '2s'}}></div>
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <div className="inline-flex items-center bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6 animate-fade-in-up">
               <BarChart3 className="w-4 h-4 mr-2" />
               Predictive Analytics Solutions
             </div>
-            <h1 className="text-4xl lg:text-6xl font-bold text-foreground mb-6">
+            <h1 className="text-4xl lg:text-6xl font-bold text-foreground mb-6 animate-fade-in-up" style={{animationDelay: '0.2s'}}>
               Transform Your Data Into{" "}
               <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
                 Predictive Insights
               </span>
             </h1>
-            <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+            <p className="text-xl text-muted-foreground mb-8 leading-relaxed animate-fade-in-up" style={{animationDelay: '0.4s'}}>
               Unlock the power of your data with our custom predictive analytics solutions. 
               ImpTrax develops sophisticated forecasting models and business intelligence systems 
               that transform raw data into actionable insights for strategic decision-making.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-primary hover:bg-primary/90">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up" style={{animationDelay: '0.6s'}}>
+              <Button size="lg" className="bg-primary hover:bg-primary/90 hover:scale-105 transition-all duration-300">
                 Get Analytics Consultation
-                <ArrowRight className="w-5 h-5 ml-2" />
+                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
             </div>
           </div>
@@ -156,8 +163,8 @@ const PredictiveAnalytics = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-3xl lg:text-4xl font-bold text-primary mb-2">
+              <div key={index} className="text-center group animate-fade-in-up" style={{animationDelay: `${index * 0.1}s`}}>
+                <div className="text-3xl lg:text-4xl font-bold text-primary mb-2 group-hover:scale-110 transition-transform duration-300">
                   {stat.number}
                 </div>
                 <div className="text-muted-foreground font-medium">
@@ -189,10 +196,10 @@ const PredictiveAnalytics = () => {
             {services.map((service, index) => {
               const IconComponent = service.icon;
               return (
-                <div key={index} className="group">
-                  <div className="bg-card border border-border rounded-lg p-8 h-full hover:shadow-lg transition-all duration-300 hover:border-primary/50">
-                    <div className="bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
-                      <IconComponent className="w-6 h-6 text-primary" />
+                <div key={index} className="group animate-fade-in-up" style={{animationDelay: `${index * 0.1}s`}}>
+                  <div className="bg-card border border-border rounded-lg p-8 h-full hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 hover:border-primary/50 hover:-translate-y-2">
+                    <div className="bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
+                      <IconComponent className="w-6 h-6 text-primary group-hover:scale-110 transition-transform" />
                     </div>
                     <h3 className="text-xl font-semibold text-foreground mb-4">
                       {service.title}
@@ -228,10 +235,10 @@ const PredictiveAnalytics = () => {
             {capabilities.map((capability, index) => {
               const IconComponent = capability.icon;
               return (
-                <div key={index} className="group">
-                  <div className="bg-white/70 backdrop-blur-sm border border-blue-100/50 rounded-xl p-6 h-full hover:shadow-lg hover:shadow-blue-100/50 transition-all duration-300 hover:border-blue-200/60 hover:bg-white/80">
-                    <div className="bg-gradient-to-br from-blue-100 to-cyan-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4 group-hover:from-blue-200 group-hover:to-cyan-200 transition-all duration-300">
-                      <IconComponent className="w-6 h-6 text-blue-600" />
+                <div key={index} className="group animate-fade-in-up" style={{animationDelay: `${index * 0.1}s`}}>
+                  <div className="bg-white/70 backdrop-blur-sm border border-blue-100/50 rounded-xl p-6 h-full hover:shadow-lg hover:shadow-blue-100/50 transition-all duration-300 hover:border-blue-200/60 hover:bg-white/80 hover:-translate-y-1">
+                    <div className="bg-gradient-to-br from-blue-100 to-cyan-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4 group-hover:from-blue-200 group-hover:to-cyan-200 group-hover:scale-110 transition-all duration-300">
+                      <IconComponent className="w-6 h-6 text-blue-600 group-hover:scale-110 transition-transform" />
                     </div>
                     <h3 className="text-lg font-semibold text-slate-800 mb-3">
                       {capability.title}
@@ -265,7 +272,7 @@ const PredictiveAnalytics = () => {
           
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {industries.map((industry, index) => (
-              <div key={index} className="bg-card border border-border rounded-lg p-6 hover:shadow-md transition-shadow">
+              <div key={index} className="bg-card border border-border rounded-lg p-6 hover:shadow-md hover:shadow-primary/5 transition-all duration-300 hover:-translate-y-1 animate-fade-in-up" style={{animationDelay: `${index * 0.1}s`}}>
                 <h3 className="text-lg font-semibold text-foreground mb-3">
                   {industry.name}
                 </h3>
@@ -279,24 +286,31 @@ const PredictiveAnalytics = () => {
       </section>
 
       {/* Custom Predictive Analytics Benefits Section */}
-      <section className="py-20 lg:py-32" style={{backgroundColor: '#56E4C8'}}>
-        <div className="container mx-auto px-4">
+      <section className="py-20 lg:py-32 relative overflow-hidden" style={{backgroundColor: '#56E4C8'}}>
+        {/* Floating Background Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-10 right-10 w-28 h-28 bg-emerald-300/20 rounded-full blur-xl animate-pulse"></div>
+          <div className="absolute bottom-20 left-20 w-36 h-36 bg-teal-200/30 rounded-full blur-2xl animate-pulse" style={{animationDelay: '1.5s'}}></div>
+          <div className="absolute top-1/2 left-1/2 w-20 h-20 bg-emerald-200/25 rounded-full blur-lg animate-pulse" style={{animationDelay: '3s'}}></div>
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-slate-800 mb-6">
+            <h2 className="text-3xl lg:text-4xl font-bold text-slate-800 mb-6 animate-fade-in-up">
               Custom Predictive Analytics Software Can{" "}
               <span className="bg-gradient-to-r from-slate-700 to-slate-900 bg-clip-text text-transparent">
                 Support Your Business in Many Ways
               </span>
             </h2>
-            <p className="text-xl text-slate-700 leading-relaxed">
+            <p className="text-xl text-slate-700 leading-relaxed animate-fade-in-up" style={{animationDelay: '0.2s'}}>
               Unlock the transformative power of data-driven insights with our tailored predictive analytics solutions. 
               Discover how custom software can revolutionize your business operations and drive unprecedented growth.
             </p>
           </div>
           
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            <div className="bg-white/80 backdrop-blur-sm border border-emerald-100/50 rounded-xl p-6 hover:shadow-lg hover:shadow-emerald-100/50 transition-all duration-300 hover:border-emerald-200/60 hover:bg-white/90">
-              <div className="bg-gradient-to-br from-emerald-100 to-teal-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+            <div className="bg-white/80 backdrop-blur-sm border border-emerald-100/50 rounded-xl p-6 hover:shadow-lg hover:shadow-emerald-100/50 transition-all duration-300 hover:border-emerald-200/60 hover:bg-white/90 hover:-translate-y-2 animate-fade-in-up" style={{animationDelay: '0.1s'}}>
+              <div className="bg-gradient-to-br from-emerald-100 to-teal-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                 <Target className="w-6 h-6 text-emerald-600" />
               </div>
               <h3 className="text-lg font-semibold text-slate-800 mb-3">
@@ -307,8 +321,8 @@ const PredictiveAnalytics = () => {
               </p>
             </div>
 
-            <div className="bg-white/80 backdrop-blur-sm border border-emerald-100/50 rounded-xl p-6 hover:shadow-lg hover:shadow-emerald-100/50 transition-all duration-300 hover:border-emerald-200/60 hover:bg-white/90">
-              <div className="bg-gradient-to-br from-emerald-100 to-teal-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+            <div className="bg-white/80 backdrop-blur-sm border border-emerald-100/50 rounded-xl p-6 hover:shadow-lg hover:shadow-emerald-100/50 transition-all duration-300 hover:border-emerald-200/60 hover:bg-white/90 hover:-translate-y-2 animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+              <div className="bg-gradient-to-br from-emerald-100 to-teal-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                 <Users className="w-6 h-6 text-emerald-600" />
               </div>
               <h3 className="text-lg font-semibold text-slate-800 mb-3">
@@ -319,8 +333,8 @@ const PredictiveAnalytics = () => {
               </p>
             </div>
 
-            <div className="bg-white/80 backdrop-blur-sm border border-emerald-100/50 rounded-xl p-6 hover:shadow-lg hover:shadow-emerald-100/50 transition-all duration-300 hover:border-emerald-200/60 hover:bg-white/90">
-              <div className="bg-gradient-to-br from-emerald-100 to-teal-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+            <div className="bg-white/80 backdrop-blur-sm border border-emerald-100/50 rounded-xl p-6 hover:shadow-lg hover:shadow-emerald-100/50 transition-all duration-300 hover:border-emerald-200/60 hover:bg-white/90 hover:-translate-y-2 animate-fade-in-up" style={{animationDelay: '0.3s'}}>
+              <div className="bg-gradient-to-br from-emerald-100 to-teal-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                 <Shield className="w-6 h-6 text-emerald-600" />
               </div>
               <h3 className="text-lg font-semibold text-slate-800 mb-3">
@@ -331,8 +345,8 @@ const PredictiveAnalytics = () => {
               </p>
             </div>
 
-            <div className="bg-white/80 backdrop-blur-sm border border-emerald-100/50 rounded-xl p-6 hover:shadow-lg hover:shadow-emerald-100/50 transition-all duration-300 hover:border-emerald-200/60 hover:bg-white/90">
-              <div className="bg-gradient-to-br from-emerald-100 to-teal-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+            <div className="bg-white/80 backdrop-blur-sm border border-emerald-100/50 rounded-xl p-6 hover:shadow-lg hover:shadow-emerald-100/50 transition-all duration-300 hover:border-emerald-200/60 hover:bg-white/90 hover:-translate-y-2 animate-fade-in-up" style={{animationDelay: '0.4s'}}>
+              <div className="bg-gradient-to-br from-emerald-100 to-teal-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                 <Settings className="w-6 h-6 text-emerald-600" />
               </div>
               <h3 className="text-lg font-semibold text-slate-800 mb-3">
@@ -343,8 +357,8 @@ const PredictiveAnalytics = () => {
               </p>
             </div>
 
-            <div className="bg-white/80 backdrop-blur-sm border border-emerald-100/50 rounded-xl p-6 hover:shadow-lg hover:shadow-emerald-100/50 transition-all duration-300 hover:border-emerald-200/60 hover:bg-white/90">
-              <div className="bg-gradient-to-br from-emerald-100 to-teal-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+            <div className="bg-white/80 backdrop-blur-sm border border-emerald-100/50 rounded-xl p-6 hover:shadow-lg hover:shadow-emerald-100/50 transition-all duration-300 hover:border-emerald-200/60 hover:bg-white/90 hover:-translate-y-2 animate-fade-in-up" style={{animationDelay: '0.5s'}}>
+              <div className="bg-gradient-to-br from-emerald-100 to-teal-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                 <TrendingUp className="w-6 h-6 text-emerald-600" />
               </div>
               <h3 className="text-lg font-semibold text-slate-800 mb-3">
@@ -355,8 +369,8 @@ const PredictiveAnalytics = () => {
               </p>
             </div>
 
-            <div className="bg-white/80 backdrop-blur-sm border border-emerald-100/50 rounded-xl p-6 hover:shadow-lg hover:shadow-emerald-100/50 transition-all duration-300 hover:border-emerald-200/60 hover:bg-white/90">
-              <div className="bg-gradient-to-br from-emerald-100 to-teal-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+            <div className="bg-white/80 backdrop-blur-sm border border-emerald-100/50 rounded-xl p-6 hover:shadow-lg hover:shadow-emerald-100/50 transition-all duration-300 hover:border-emerald-200/60 hover:bg-white/90 hover:-translate-y-2 animate-fade-in-up" style={{animationDelay: '0.6s'}}>
+              <div className="bg-gradient-to-br from-emerald-100 to-teal-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                 <Zap className="w-6 h-6 text-emerald-600" />
               </div>
               <h3 className="text-lg font-semibold text-slate-800 mb-3">
@@ -369,7 +383,7 @@ const PredictiveAnalytics = () => {
           </div>
 
           <div className="mt-16 text-center">
-            <div className="bg-white/60 backdrop-blur-sm border border-emerald-200/50 rounded-2xl p-8 max-w-3xl mx-auto">
+            <div className="bg-white/60 backdrop-blur-sm border border-emerald-200/50 rounded-2xl p-8 max-w-3xl mx-auto animate-fade-in-up" style={{animationDelay: '0.8s'}}>
               <h3 className="text-2xl font-bold text-slate-800 mb-4">
                 Transform Your Business with Predictive Intelligence
               </h3>
@@ -378,15 +392,15 @@ const PredictiveAnalytics = () => {
                </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button 
-                  className="bg-slate-800 hover:bg-slate-700 text-white"
+                  className="bg-slate-800 hover:bg-slate-700 text-white hover:scale-105 transition-all duration-300 group"
                   onClick={handleExploreCustomSolutionsClick}
                 >
                   Explore Custom Solutions
-                  <ArrowRight className="w-4 h-4 ml-2" />
+                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
                 <Button 
                   variant="outline" 
-                  className="border-slate-600 text-slate-700 hover:bg-slate-50"
+                  className="border-slate-600 text-slate-700 hover:bg-slate-50 hover:scale-105 transition-all duration-300"
                   onClick={handleViewSuccessStoriesClick}
                 >
                   View Success Stories
