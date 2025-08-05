@@ -1536,8 +1536,7 @@ const DataMigration = () => {
               Frequently Asked Questions
             </Badge>
             <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-6 tracking-wide">
-              Common Migration
-              <span className="block text-primary">Questions</span>
+              Common Migration <span className="text-primary">Questions</span>
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto mb-8 rounded-full"></div>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
