@@ -60,7 +60,7 @@ const Header = () => {
           category: "Financial Services",
           services: [
             { name: "Banking Solutions", url: "/banking-solutions" },
-            { name: "Investment Management", url: "#" },
+            { name: "Investment Management", url: "/investment-management" },
             { name: "Risk Assessment", url: "#" },
             { name: "Compliance Automation", url: "#" }
           ]
