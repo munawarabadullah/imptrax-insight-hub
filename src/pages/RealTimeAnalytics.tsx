@@ -291,9 +291,9 @@ const RealTimeAnalytics = () => {
             </div>
             
             {/* Enhanced Heading with Better Typography */}
-            <h1 className="text-5xl md:text-6xl lg:text-8xl font-extrabold text-foreground mb-12 animate-fade-in-up tracking-tight leading-[0.9] relative">
+            <h1 className="text-5xl md:text-6xl lg:text-8xl font-extrabold text-foreground mb-12 animate-fade-in-up tracking-tight leading-normal relative overflow-visible">
               <span className="block mb-4">Harness the Power of</span>
-              <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-gradient-x drop-shadow-2xl relative inline-block">
+              <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-gradient-x drop-shadow-2xl relative inline-block pb-4 pt-2 overflow-visible">
                 Real-time Insights
                 <div className="absolute -inset-4 bg-gradient-to-r from-primary/10 to-accent/10 blur-2xl opacity-30 animate-pulse"></div>
               </span>
