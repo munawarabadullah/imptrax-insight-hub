@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -10,6 +10,43 @@ import Footer from "@/components/Footer";
 const BusinessIntelligence = () => {
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("overview");
+
+  useEffect(() => {
+    // SEO Meta Tags
+    document.title = "Business Intelligence Services | Data Analytics & BI Solutions | ImpTrax";
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Transform data into strategic advantage with ImpTrax Business Intelligence services. Expert BI solutions, data analytics, reporting, and visualization for enterprise growth.');
+    } else {
+      const meta = document.createElement('meta');
+      meta.name = 'description';
+      meta.content = 'Transform data into strategic advantage with ImpTrax Business Intelligence services. Expert BI solutions, data analytics, reporting, and visualization for enterprise growth.';
+      document.head.appendChild(meta);
+    }
+
+    // Keywords meta tag
+    const metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (metaKeywords) {
+      metaKeywords.setAttribute('content', 'business intelligence, data analytics, BI solutions, data visualization, reporting, dashboard, data warehouse, predictive analytics, enterprise analytics');
+    } else {
+      const keywordsMeta = document.createElement('meta');
+      keywordsMeta.name = 'keywords';
+      keywordsMeta.content = 'business intelligence, data analytics, BI solutions, data visualization, reporting, dashboard, data warehouse, predictive analytics, enterprise analytics';
+      document.head.appendChild(keywordsMeta);
+    }
+
+    // Open Graph tags
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) {
+      ogTitle.setAttribute('content', 'Business Intelligence Services | Data Analytics & BI Solutions | ImpTrax');
+    }
+
+    const ogDescription = document.querySelector('meta[property="og:description"]');
+    if (ogDescription) {
+      ogDescription.setAttribute('content', 'Transform data into strategic advantage with ImpTrax Business Intelligence services. Expert BI solutions, data analytics, reporting, and visualization for enterprise growth.');
+    }
+  }, []);
 
   const handleGetStartedClick = () => {
     navigate("/schedule-consultation?source=business-intelligence&button=get-started");
@@ -177,9 +214,9 @@ const BusinessIntelligence = () => {
               
               {/* Enhanced Title with Better Typography */}
               <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-8 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent leading-[1.2] pb-4">
-                Transform Data into
+                Business Intelligence Services
                 <span className="block bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
-                  Strategic Advantage
+                  Transform Data into Strategic Advantage
                 </span>
               </h1>
               

@@ -78,10 +78,28 @@ const Header = () => {
         {
           category: "Real Estate",
           services: [
-            { name: "Property Analytics", url: "#" },
-            { name: "Market Intelligence", url: "#" },
-            { name: "Portfolio Management", url: "#" },
-            { name: "Investment Analysis", url: "#" }
+            { name: "Real Estate Software", url: "/real-estate-software" },
+            { name: "Property Analytics", url: "/real-estate-software#analytics" },
+            { name: "Market Intelligence", url: "/real-estate-software#intelligence" },
+            { name: "Investment Analysis", url: "/real-estate-software#investment" }
+          ]
+        }
+      ]
+    },
+    {
+      title: "Resources",
+      items: [
+        {
+          category: "Information Center",
+          services: [
+            { name: "Knowledge Base", url: "/knowledge-base" },
+            { name: "Case Studies", url: "/case-studies" }
+          ]
+        },
+        {
+          category: "News & Media",
+          services: [
+            { name: "Industry Trends", url: "/industry-trends" }
           ]
         }
       ]
@@ -117,8 +135,12 @@ const Header = () => {
 
                 {/* Mega Menu Dropdown */}
                 {activeDropdown === item.title && (
-                  <div className="absolute top-full left-0 mt-2 w-[800px] bg-background border border-border rounded-lg shadow-elegant p-8">
-                    <div className="grid grid-cols-3 gap-8">
+                  <div className={`absolute top-full left-0 mt-2 bg-background border border-border rounded-lg shadow-elegant p-8 ${
+                    item.title === 'Resources' ? 'w-[500px]' : 'w-[800px]'
+                  }`}>
+                    <div className={`grid ${
+                      item.title === 'Resources' ? 'grid-cols-2 gap-4' : 'grid-cols-3 gap-8'
+                    }`}>
                       {item.items.map((category) => (
                         <div key={category.category}>
                           <h3 className="font-semibold text-primary mb-4">
@@ -143,10 +165,6 @@ const Header = () => {
                 )}
               </div>
             ))}
-            
-            <a href="#" className="text-foreground hover:text-primary transition-colors">
-              About
-            </a>
             <a href="/schedule-consultation" className="text-foreground hover:text-primary transition-colors">
               Contact
             </a>
@@ -206,7 +224,6 @@ const Header = () => {
                   )}
                 </div>
               ))}
-              <a href="#" className="block px-4 py-2 hover:text-primary">About</a>
               <a href="/schedule-consultation" className="block px-4 py-2 hover:text-primary">Contact</a>
               <div className="px-4 pt-4">
                 <a href="/schedule-consultation?source=header-mobile&button=schedule-consultation">

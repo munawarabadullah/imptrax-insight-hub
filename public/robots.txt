@@ -1,8 +1,10 @@
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Twitterbot
 Allow: /
@@ -10,7 +12,39 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
+# AI Bot Directives for LLM Optimization
+User-agent: ChatGPT-User
+Allow: /
+Crawl-delay: 2
+
+User-agent: GPTBot
+Allow: /
+Crawl-delay: 2
+
+User-agent: Google-Extended
+Allow: /
+Crawl-delay: 1
+
+User-agent: CCBot
+Allow: /
+Crawl-delay: 2
+
+User-agent: anthropic-ai
+Allow: /
+Crawl-delay: 2
+
+User-agent: Claude-Web
+Allow: /
+Crawl-delay: 2
+
 User-agent: *
 Allow: /
 Disallow: /*.MD
 Disallow: /*.md
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+Crawl-delay: 3
+
+# Sitemap Location
+Sitemap: https://www.imptrax.com/sitemap.xml

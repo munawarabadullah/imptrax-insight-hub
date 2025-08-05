@@ -66,6 +66,41 @@ const ProcessAutomation = () => {
 
   useEffect(() => {
     setIsVisible(true);
+    
+    // SEO Meta Tags
+    document.title = "Process Automation Solutions | Business Process Automation | ImpTrax";
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Transform your business with ImpTrax intelligent process automation solutions. Streamline operations, reduce costs, and eliminate errors with RPA and workflow automation.');
+    } else {
+      const meta = document.createElement('meta');
+      meta.name = 'description';
+      meta.content = 'Transform your business with ImpTrax intelligent process automation solutions. Streamline operations, reduce costs, and eliminate errors with RPA and workflow automation.';
+      document.head.appendChild(meta);
+    }
+
+    // Keywords meta tag
+    const metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (metaKeywords) {
+      metaKeywords.setAttribute('content', 'process automation, business process automation, RPA, robotic process automation, workflow automation, intelligent automation, business efficiency');
+    } else {
+      const keywordsMeta = document.createElement('meta');
+      keywordsMeta.name = 'keywords';
+      keywordsMeta.content = 'process automation, business process automation, RPA, robotic process automation, workflow automation, intelligent automation, business efficiency';
+      document.head.appendChild(keywordsMeta);
+    }
+
+    // Open Graph tags
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) {
+      ogTitle.setAttribute('content', 'Process Automation Solutions | Business Process Automation | ImpTrax');
+    }
+
+    const ogDescription = document.querySelector('meta[property="og:description"]');
+    if (ogDescription) {
+      ogDescription.setAttribute('content', 'Transform your business with ImpTrax intelligent process automation solutions. Streamline operations, reduce costs, and eliminate errors with RPA and workflow automation.');
+    }
   }, []);
 
   const handleGetStartedClick = () => {
@@ -163,7 +198,7 @@ const ProcessAutomation = () => {
                 <Sparkles className="w-4 h-4 ml-2 animate-spin" style={{animationDuration: '3s'}} />
               </Badge>
               <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent animate-gradient-x">
-                Transform Your Business with Intelligent Process Automation
+                Process Automation Solutions - Transform Your Business with Intelligent Automation
               </h1>
               <p className={`text-xl text-muted-foreground mb-8 leading-relaxed transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
                 Streamline operations, reduce costs, and eliminate errors with ImpTrax's comprehensive process automation solutions. 

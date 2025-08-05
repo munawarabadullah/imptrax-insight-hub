@@ -21,10 +21,13 @@ import BusinessIntelligence from "./pages/BusinessIntelligence";
 import DataAnalytics from "./pages/DataAnalytics";
 import DataMigration from "./pages/DataMigration";
 import DataWarehouseServices from "./pages/DataWarehouseServices";
+import RealTimeAnalytics from "./pages/RealTimeAnalytics";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import CookiePolicy from "./pages/CookiePolicy";
 import KnowledgeBase from "./pages/KnowledgeBase";
+import CaseStudies from "./pages/CaseStudies";
+import IndustryTrends from "./pages/IndustryTrends";
 import ScheduleConsultation from "./pages/ScheduleConsultation";
 import NotFound from "./pages/NotFound";
 
@@ -55,10 +58,13 @@ const App = () => (
           <Route path="/data-analytics" element={<DataAnalytics />} />
           <Route path="/data-migration" element={<DataMigration />} />
           <Route path="/data-warehouse-services" element={<DataWarehouseServices />} />
+          <Route path="/real-time-analytics" element={<RealTimeAnalytics />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
           <Route path="/cookie-policy" element={<CookiePolicy />} />
           <Route path="/knowledge-base" element={<KnowledgeBase />} />
+          <Route path="/case-studies" element={<CaseStudies />} />
+          <Route path="/industry-trends" element={<IndustryTrends />} />
           <Route path="/schedule-consultation" element={<ScheduleConsultation />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

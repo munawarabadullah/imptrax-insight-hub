@@ -675,7 +675,7 @@ const DataMigration = () => {
                       
                       {/* Enhanced Title */}
                       <div className="flex-1">
-                        <CardTitle className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 leading-normal">
+                        <CardTitle className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 leading-tight mb-3">
                           {reason.title}
                         </CardTitle>
                       </div>
@@ -790,7 +790,7 @@ const DataMigration = () => {
                       </div>
                       
                       {/* Enhanced Title */}
-                      <CardTitle className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 leading-normal">
+                      <CardTitle className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 leading-tight mb-3">
                         {type.title}
                       </CardTitle>
                     </div>
@@ -917,7 +917,7 @@ const DataMigration = () => {
                     </div>
                     
                     {/* Enhanced Title */}
-                    <CardTitle className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors duration-300 leading-normal">
+                    <CardTitle className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors duration-300 leading-tight mb-4">
                       {challenge.title}
                     </CardTitle>
                   </CardHeader>
@@ -1034,7 +1034,7 @@ const DataMigration = () => {
                       
                       {/* Enhanced Title */}
                       <div className="flex-1">
-                        <CardTitle className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 leading-normal mb-3">
+                        <CardTitle className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 leading-tight mb-4">
                           {service.title}
                         </CardTitle>
                         <CardDescription className="text-slate-600 dark:text-slate-300 leading-relaxed text-base group-hover:text-slate-700 dark:group-hover:text-slate-200 transition-colors duration-300">
@@ -1165,14 +1165,14 @@ const DataMigration = () => {
                     </div>
                     
                     {/* Enhanced Title */}
-                    <CardTitle className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 leading-normal mb-3">
+                    <CardTitle className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 leading-tight mb-4">
                       {process.title}
                     </CardTitle>
                   </CardHeader>
                   
                   <CardContent className="relative z-10 pt-0">
                     {/* Enhanced Description */}
-                    <CardDescription className="text-slate-600 dark:text-slate-300 leading-relaxed text-base group-hover:text-slate-700 dark:group-hover:text-slate-200 transition-colors duration-300">
+                    <CardDescription className="text-slate-600 dark:text-slate-300 leading-relaxed text-base group-hover:text-slate-700 dark:group-hover:text-slate-200 transition-colors duration-300 mb-4">
                       {process.description}
                     </CardDescription>
                     
@@ -1258,7 +1258,7 @@ const DataMigration = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-500/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out"></div>
                 
                 <CardHeader className="relative z-10">
-                  <CardTitle className="text-lg font-semibold text-foreground group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 leading-normal">
+                  <CardTitle className="text-lg font-semibold text-foreground group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 leading-tight mb-3">
                     {approach.title}
                   </CardTitle>
                 </CardHeader>
@@ -1326,7 +1326,7 @@ const DataMigration = () => {
                     <div className="mx-auto mb-4 p-4 bg-primary/10 rounded-full w-fit group-hover:bg-primary/20 transition-colors duration-300 group-hover:scale-110 transform">
                       <IconComponent className="w-10 h-10 text-primary" />
                     </div>
-                    <CardTitle className="text-xl font-medium text-foreground group-hover:text-primary transition-colors duration-300 leading-normal">
+                    <CardTitle className="text-xl font-medium text-foreground group-hover:text-primary transition-colors duration-300 leading-tight mb-3">
                       {industry.title}
                     </CardTitle>
                   </CardHeader>
@@ -1379,12 +1379,12 @@ const DataMigration = () => {
                     <div className="mx-auto mb-4 p-3 bg-primary/10 rounded-full w-fit group-hover:bg-primary/20 transition-colors duration-300">
                       <IconComponent className="w-8 h-8 text-primary" />
                     </div>
-                    <CardTitle className="text-lg font-medium text-foreground group-hover:text-primary transition-colors duration-300 leading-normal">
+                    <CardTitle className="text-lg font-medium text-foreground group-hover:text-primary transition-colors duration-300 leading-tight mb-3">
                       {benefit.title}
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="relative z-10">
-                    <CardDescription className="text-muted-foreground leading-relaxed">
+                    <CardDescription className="text-muted-foreground leading-relaxed min-h-[2.5rem]">
                       {benefit.description}
                     </CardDescription>
                   </CardContent>
@@ -1434,7 +1434,7 @@ const DataMigration = () => {
                     <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors duration-300">
                       <Users className="w-8 h-8 text-primary" />
                     </div>
-                    <CardTitle className="text-xl font-medium text-foreground group-hover:text-primary transition-colors duration-300 leading-normal">
+                    <CardTitle className="text-xl font-medium text-foreground group-hover:text-primary transition-colors duration-300 leading-tight mb-3">
                       Expert Team
                     </CardTitle>
                   </div>
@@ -1455,13 +1455,13 @@ const DataMigration = () => {
                     <div className="p-3 bg-accent/10 rounded-lg group-hover:bg-accent/20 transition-colors duration-300">
                       <CheckCircle className="w-8 h-8 text-accent" />
                     </div>
-                    <CardTitle className="text-xl font-medium text-foreground group-hover:text-accent transition-colors duration-300 leading-normal">
+                    <CardTitle className="text-xl font-medium text-foreground group-hover:text-accent transition-colors duration-300 leading-tight mb-3">
                       Proven Methodology
                     </CardTitle>
                   </div>
                 </CardHeader>
                 <CardContent className="relative z-10">
-                  <CardDescription className="text-muted-foreground leading-relaxed">
+                  <CardDescription className="text-muted-foreground leading-relaxed min-h-[3rem]">
                     Time-tested migration processes that ensure data integrity and minimize business disruption.
                   </CardDescription>
                 </CardContent>
@@ -1478,13 +1478,13 @@ const DataMigration = () => {
                     <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors duration-300">
                       <Globe className="w-8 h-8 text-primary" />
                     </div>
-                    <CardTitle className="text-xl font-medium text-foreground group-hover:text-primary transition-colors duration-300 leading-normal">
+                    <CardTitle className="text-xl font-medium text-foreground group-hover:text-primary transition-colors duration-300 leading-tight mb-3">
                       Scalable Solutions
                     </CardTitle>
                   </div>
                 </CardHeader>
                 <CardContent className="relative z-10">
-                  <CardDescription className="text-muted-foreground leading-relaxed">
+                  <CardDescription className="text-muted-foreground leading-relaxed min-h-[3rem]">
                     Future-ready migration solutions that scale with your business growth and evolving needs.
                   </CardDescription>
                 </CardContent>
@@ -1499,13 +1499,13 @@ const DataMigration = () => {
                     <div className="p-3 bg-accent/10 rounded-lg group-hover:bg-accent/20 transition-colors duration-300">
                       <Shield className="w-8 h-8 text-accent" />
                     </div>
-                    <CardTitle className="text-xl font-medium text-foreground group-hover:text-accent transition-colors duration-300 leading-normal">
+                    <CardTitle className="text-xl font-medium text-foreground group-hover:text-accent transition-colors duration-300 leading-tight mb-3">
                       Ongoing Support
                     </CardTitle>
                   </div>
                 </CardHeader>
                 <CardContent className="relative z-10">
-                  <CardDescription className="text-muted-foreground leading-relaxed">
+                  <CardDescription className="text-muted-foreground leading-relaxed min-h-[3rem]">
                     Comprehensive post-migration support and monitoring to ensure optimal performance and security.
                   </CardDescription>
                 </CardContent>
@@ -1553,7 +1553,7 @@ const DataMigration = () => {
                     onClick={() => toggleFaq(index)}
                   >
                     <div className="flex items-center justify-between">
-                      <CardTitle className="text-lg font-medium text-foreground group-hover:text-primary transition-colors duration-300 text-left leading-normal">
+                      <CardTitle className="text-lg font-medium text-foreground group-hover:text-primary transition-colors duration-300 text-left leading-tight">
                         {faq.question}
                       </CardTitle>
                       <div className="flex-shrink-0 ml-4">

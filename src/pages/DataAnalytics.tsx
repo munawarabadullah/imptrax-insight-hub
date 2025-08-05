@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -26,6 +27,43 @@ import { useNavigate } from "react-router-dom";
 
 const DataAnalytics = () => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    // SEO Meta Tags
+    document.title = "Data Analytics Services | Advanced Analytics Solutions | ImpTrax";
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Transform data into strategic insights with ImpTrax advanced data analytics services. Expert data warehousing, predictive analytics, and real-time reporting solutions.');
+    } else {
+      const meta = document.createElement('meta');
+      meta.name = 'description';
+      meta.content = 'Transform data into strategic insights with ImpTrax advanced data analytics services. Expert data warehousing, predictive analytics, and real-time reporting solutions.';
+      document.head.appendChild(meta);
+    }
+
+    // Keywords meta tag
+    const metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (metaKeywords) {
+      metaKeywords.setAttribute('content', 'data analytics, advanced analytics, data warehousing, predictive analytics, real-time analytics, data visualization, business intelligence, machine learning analytics');
+    } else {
+      const keywordsMeta = document.createElement('meta');
+      keywordsMeta.name = 'keywords';
+      keywordsMeta.content = 'data analytics, advanced analytics, data warehousing, predictive analytics, real-time analytics, data visualization, business intelligence, machine learning analytics';
+      document.head.appendChild(keywordsMeta);
+    }
+
+    // Open Graph tags
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) {
+      ogTitle.setAttribute('content', 'Data Analytics Services | Advanced Analytics Solutions | ImpTrax');
+    }
+
+    const ogDescription = document.querySelector('meta[property="og:description"]');
+    if (ogDescription) {
+      ogDescription.setAttribute('content', 'Transform data into strategic insights with ImpTrax advanced data analytics services. Expert data warehousing, predictive analytics, and real-time reporting solutions.');
+    }
+  }, []);
 
   const handleConsultationClick = (source: string) => {
     navigate(`/schedule-consultation?source=data-analytics&button=${source}`);
@@ -190,9 +228,9 @@ const DataAnalytics = () => {
             
             {/* Enhanced Heading with Gradient Text and Subtle Effects */}
             <h1 className="text-4xl lg:text-7xl font-bold text-foreground mb-8 animate-fade-in-up tracking-wide leading-tight">
-              Transform Data into<br/>
+              Data Analytics Services<br/>
               <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-gradient-x drop-shadow-sm animate-pulse-subtle">
-                Strategic Insights
+                Transform Data into Strategic Insights
               </span>
             </h1>
             
