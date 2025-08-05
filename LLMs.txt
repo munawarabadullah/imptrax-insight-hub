@@ -1800,3 +1800,154 @@ Three key industries:
 
 *Last Updated: Created as part of ImpTrax website development*
 *Page Status: Active and accessible at /ai-development-services and /ai-consulting*
+
+---
+
+# Data Migration Page Documentation
+
+## Page Overview
+- **Page Name**: Data Migration
+- **Route**: `/data-migration`
+- **File Location**: `src/pages/DataMigration.tsx`
+- **Purpose**: Showcase ImpTrax's data migration services and drive consultation bookings
+- **Content Source**: Adapted from Intellias data migration services content (reference removed as per instructions)
+
+## SEO Implementation
+- **Title**: "Data Migration Services | ImpTrax - Seamless Data Transfer Solutions"
+- **Meta Description**: "Expert data migration services from ImpTrax. Seamlessly transfer your data with zero downtime, complete security, and full integrity preservation."
+- **H1 Tag**: "Data Migration Services"
+- **H2 Tags**: 
+  - "Challenges We Solve"
+  - "Our Data Migration Services"
+  - "Our Migration Solutions"
+  - "Industries We Serve"
+  - "Benefits of Our Migration Services"
+  - "Why Choose ImpTrax for Data Migration?"
+  - "Ready to Migrate Your Data?"
+
+## Content Structure
+
+### Hero Section
+- **Main Headline**: "Data Migration Services"
+- **Data Migration Badge**: Indicates specialized migration services
+- **Subheadline**: Emphasizes seamless data transfer with zero downtime
+- **Call-to-Action Buttons**: 
+  - "Start Migration" (primary)
+  - "Schedule Consultation" (secondary)
+
+### Statistics Section
+Three key metrics:
+1. **99.9%** - Data Integrity Preserved
+2. **Zero** - Downtime Migration
+3. **50%** - Faster Implementation
+
+### Challenges We Solve Section
+Three main business challenges:
+1. **Legacy System Modernization** - Outdated infrastructure transformation
+2. **Data Security & Compliance** - Secure transfer with regulatory compliance
+3. **Business Continuity** - Uninterrupted operations during migration
+
+### Our Data Migration Services Section
+Four core migration services:
+1. **Database Migration** - Complete database transfer and optimization
+2. **Cloud Migration** - Seamless cloud platform transitions
+3. **Application Data Migration** - Zero business disruption transfers
+4. **Enterprise Data Migration** - Large-scale enterprise solutions
+
+### Our Migration Solutions Section
+Four solution approaches:
+1. **Assessment & Planning** - Comprehensive migration strategy
+2. **Data Mapping & Transformation** - Accurate data structure conversion
+3. **Testing & Validation** - Thorough quality assurance
+4. **Go-Live Support** - 24/7 migration assistance
+
+### Industries We Serve Section
+Four key industries:
+1. **Healthcare** - Patient data and medical records
+2. **Financial Services** - Secure financial data transfer
+3. **E-commerce** - Customer and transaction data
+4. **Manufacturing** - Operational and supply chain data
+
+### Benefits Section
+Four key benefits:
+1. **Zero Data Loss** - Complete data integrity preservation
+2. **Minimal Downtime** - Business continuity maintenance
+3. **Enhanced Security** - Advanced encryption and protection
+4. **Cost Efficiency** - Optimized migration processes
+
+### Why Choose ImpTrax Section
+Four competitive advantages:
+1. **Proven Expertise** - 15+ years migration experience
+2. **Advanced Tools** - Cutting-edge migration technology
+3. **24/7 Support** - Round-the-clock assistance
+4. **Risk Mitigation** - Comprehensive backup strategies
+
+### Call-to-Action Section
+- **Headline**: "Ready to Migrate Your Data?"
+- **Description**: Partnership invitation for seamless migration
+- **Buttons**: 
+  - "Get Migration Quote"
+  - "Schedule Consultation"
+
+## Design Elements
+- **Color Scheme**: ImpTrax brand guidelines with gradient backgrounds
+- **Icons**: Lucide React icons (Database, Cloud, ArrowUpDown, Server, HardDrive, Shield, Clock, CheckCircle, Users, Building2, ShoppingCart, Factory, Lock, RefreshCw, Headphones, TrendingUp)
+- **Layout**: Responsive grid layouts with cards and gradient sections
+- **Visual Effects**: Hover animations, gradient text, shadow effects, backdrop blur, floating animations
+- **Background**: Animated background elements with floating icons
+
+## Technical Implementation
+- **Framework**: React with TypeScript
+- **Styling**: Tailwind CSS with custom gradient classes and animations
+- **Components**: shadcn/ui components (Button, Card, Badge)
+- **Navigation**: useNavigate hook for consultation page routing
+- **Responsive**: Mobile-first responsive design
+- **Animations**: Custom CSS animations for floating elements
+
+## Navigation Integration
+- **Menu Path**: Services > Data Services > Data Migration
+- **Header.tsx**: Updated URL from "#" to "/data-migration"
+- **App.tsx**: Added route configuration and component import
+- **Position**: Third position in Data Services menu
+
+## Brand Compliance
+- All content rewritten for ImpTrax branding
+- Removed all external references and company names
+- Consistent use of "ImpTrax" throughout
+- Professional enterprise tone
+- No trademark information included
+
+## Content Quality
+- Elegant rewriting of reference material
+- Focus on ImpTrax's unique value propositions
+- Clear, professional, and engaging copy
+- Industry-appropriate terminology
+- Comprehensive service coverage
+- Real-world business scenarios
+
+## Accessibility Features
+- Semantic HTML structure
+- Proper heading hierarchy (H1, H2, H3)
+- Alt text considerations for icons
+- Keyboard navigation support
+- Screen reader friendly content
+- High contrast design elements
+
+## Performance Considerations
+- Optimized component structure
+- Efficient CSS classes and animations
+- Minimal external dependencies
+- Fast loading design
+- Responsive images and icons
+
+## File Dependencies
+- **UI Components**: Button, Card, Badge components from shadcn/ui
+- **Icons**: Comprehensive Lucide React icon set
+- **Routing**: Added to App.tsx routing configuration
+- **Styling**: Tailwind CSS with custom animations
+- **SEO**: Dynamic meta tag management
+
+---
+
+*Last Updated: Created as part of ImpTrax website development*
+*Page Status: Active and accessible at /data-migration*
