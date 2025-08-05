@@ -176,7 +176,7 @@ const BusinessIntelligence = () => {
               </Badge>
               
               {/* Enhanced Title with Better Typography */}
-              <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-8 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent leading-tight">
+              <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-8 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent leading-[1.2] pb-4">
                 Transform Data into
                 <span className="block bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
                   Strategic Advantage
