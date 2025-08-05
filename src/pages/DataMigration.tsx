@@ -396,77 +396,108 @@ const DataMigration = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 bg-gradient-to-br from-primary/5 via-background to-accent/5 overflow-hidden">
-        {/* Animated Background Elements */}
+      <section className="relative py-24 lg:py-32 bg-gradient-to-br from-slate-50 via-white to-blue-50/30 dark:from-slate-900 dark:via-slate-800 dark:to-blue-950/30 overflow-hidden">
+        {/* Modern Background Pattern */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-accent/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-primary/5 to-accent/5 rounded-full blur-3xl animate-spin-slow"></div>
+          {/* Geometric Grid Pattern */}
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#8882_1px,transparent_1px),linear-gradient(to_bottom,#8882_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
           
-          {/* Subtle Floating Particles */}
-          <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-primary/20 rounded-full animate-ping delay-500"></div>
-          <div className="absolute top-3/4 right-1/4 w-1 h-1 bg-accent/30 rounded-full animate-ping delay-1000"></div>
-          <div className="absolute top-1/2 right-1/3 w-1.5 h-1.5 bg-primary/15 rounded-full animate-ping delay-1500"></div>
+          {/* Subtle Gradient Orbs */}
+          <div className="absolute top-0 -right-4 w-72 h-72 bg-gradient-to-br from-blue-400/20 to-purple-600/20 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob" />
+          <div className="absolute -top-4 -left-4 w-72 h-72 bg-gradient-to-br from-yellow-400/20 to-pink-600/20 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000" />
+          <div className="absolute -bottom-8 left-20 w-72 h-72 bg-gradient-to-br from-green-400/20 to-blue-600/20 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000" />
         </div>
         
-        {/* Enhanced Floating Data Migration Elements */}
+        {/* Floating Tech Icons */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-20 left-10 animate-float group cursor-pointer">
-            <Database className="w-8 h-8 text-primary/30 hover:text-primary/50 hover:scale-110 transition-all duration-300" />
+          <div className="absolute top-20 left-[10%] opacity-30">
+            <div className="animate-float">
+              <Database className="w-8 h-8 text-blue-600 drop-shadow-sm" />
+            </div>
           </div>
-          <div className="absolute top-40 right-20 animate-float-delayed group cursor-pointer">
-            <Cloud className="w-6 h-6 text-accent/30 hover:text-accent/50 hover:scale-110 hover:rotate-12 transition-all duration-300" />
+          <div className="absolute top-32 right-[15%] opacity-25">
+            <div className="animate-float animation-delay-1000">
+              <Cloud className="w-6 h-6 text-purple-600 drop-shadow-sm" />
+            </div>
           </div>
-          <div className="absolute bottom-40 left-20 animate-float group cursor-pointer">
-            <ArrowUpDown className="w-7 h-7 text-primary/20 hover:text-primary/40 hover:scale-110 transition-all duration-300" />
+          <div className="absolute bottom-32 left-[20%] opacity-20">
+            <div className="animate-float animation-delay-2000">
+              <ArrowUpDown className="w-7 h-7 text-green-600 drop-shadow-sm" />
+            </div>
           </div>
-          <div className="absolute bottom-20 right-10 animate-float-delayed group cursor-pointer">
-            <Server className="w-8 h-8 text-accent/25 hover:text-accent/45 hover:scale-110 hover:rotate-6 transition-all duration-300" />
+          <div className="absolute bottom-20 right-[10%] opacity-30">
+            <div className="animate-float animation-delay-3000">
+              <Server className="w-8 h-8 text-indigo-600 drop-shadow-sm" />
+            </div>
           </div>
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-5xl mx-auto text-center">
-            {/* Enhanced Badge with Subtle Glow */}
+          <div className="max-w-6xl mx-auto text-center">
+            {/* Modern Badge */}
             <div className="inline-flex items-center justify-center mb-8">
-              <Badge variant="outline" className="mb-0 px-6 py-3 text-sm font-medium bg-background/80 backdrop-blur-sm border-primary/20 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 animate-fade-in">
-                <Database className="w-4 h-4 mr-2 text-primary" />
-                Data Migration Solutions
+              <Badge className="px-4 py-2 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border border-blue-200/50 dark:border-blue-800/50 text-blue-700 dark:text-blue-300 hover:bg-white dark:hover:bg-slate-800 transition-all duration-300 shadow-sm">
+                <Database className="w-4 h-4 mr-2" />
+                Enterprise Data Migration
               </Badge>
             </div>
             
-            {/* Enhanced Heading with Gradient Text and Subtle Effects */}
-            <h1 className="text-4xl lg:text-7xl font-bold text-foreground mb-8 animate-fade-in-up tracking-wide leading-tight">
-              Seamless Data<br/>
-              <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-gradient-x drop-shadow-sm animate-pulse-subtle">
-                Migration Services
+            {/* Modern Heading */}
+            <h1 className="text-5xl lg:text-7xl xl:text-8xl font-bold text-slate-900 dark:text-white mb-6 leading-[1.1] tracking-tight">
+              Seamless Data
+              <br className="hidden sm:block" />
+              <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent">
+                Migration
               </span>
             </h1>
             
-            {/* Enhanced Description with Better Typography */}
-            <p className="text-xl lg:text-2xl text-muted-foreground mb-10 max-w-4xl mx-auto leading-loose animate-fade-in-up delay-150 tracking-wide">
-              Transform your business with seamless data migration to modern platforms. Zero downtime, complete security, and proven methodologies ensure your critical data transitions smoothly to cloud-native environments.
+            {/* Modern Description */}
+            <p className="text-xl lg:text-2xl text-slate-600 dark:text-slate-300 mb-12 max-w-4xl mx-auto leading-relaxed font-light">
+              Transform your business with enterprise-grade data migration solutions. 
+              <span className="font-medium text-slate-700 dark:text-slate-200">Zero downtime</span>, 
+              <span className="font-medium text-slate-700 dark:text-slate-200">complete security</span>, and 
+              <span className="font-medium text-slate-700 dark:text-slate-200">proven methodologies</span> 
+              ensure seamless transitions to modern platforms.
             </p>
             
-            {/* Enhanced CTA Buttons with Improved Styling */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up delay-300">
+            {/* Modern CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button 
                 size="lg" 
-                className="px-8 py-4 text-lg font-medium bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl hover:shadow-primary/25 transition-all duration-300 hover:scale-105 group"
+                className="px-8 py-4 text-lg font-semibold bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] border-0 rounded-xl"
                 onClick={() => handleConsultationClick('hero-primary')}
               >
-                Start Your Migration
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                Start Migration Project
+                <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="px-8 py-4 text-lg font-medium border-2 border-primary/20 hover:border-primary/40 hover:bg-primary/5 transition-all duration-300 hover:scale-105 group"
+                className="px-8 py-4 text-lg font-semibold border-2 border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:border-slate-400 dark:hover:border-slate-500 transition-all duration-300 hover:scale-[1.02] rounded-xl"
                 onClick={() => handleConsultationClick('hero-secondary')}
               >
-                Learn More
-                <Lightbulb className="ml-2 w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
+                View Case Studies
+                <FileText className="ml-2 w-5 h-5" />
               </Button>
+            </div>
+            
+            {/* Trust Indicators */}
+            <div className="mt-16 pt-8 border-t border-slate-200 dark:border-slate-700">
+              <p className="text-sm text-slate-500 dark:text-slate-400 mb-4 font-medium">Trusted by industry leaders</p>
+              <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
+                <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400">
+                  <CheckCircle className="w-4 h-4 text-green-600" />
+                  <span className="text-sm font-medium">99.9% Success Rate</span>
+                </div>
+                <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400">
+                  <Shield className="w-4 h-4 text-blue-600" />
+                  <span className="text-sm font-medium">Enterprise Security</span>
+                </div>
+                <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400">
+                  <Award className="w-4 h-4 text-purple-600" />
+                  <span className="text-sm font-medium">Industry Certified</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
