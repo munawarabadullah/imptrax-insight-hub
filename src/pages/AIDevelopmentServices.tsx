@@ -153,14 +153,14 @@ const AIDevelopmentServices = () => {
     <div className="min-h-screen bg-background">
       <Header />
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 text-white py-24 lg:py-40 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-slate-900 via-blue-900 to-emerald-900 text-white py-24 lg:py-40 overflow-hidden">
         {/* Animated Background Elements */}
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 animate-pulse"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-emerald-600/20 animate-pulse"></div>
           <div className="absolute top-0 left-0 w-full h-full">
-            <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl animate-float"></div>
-            <div className="absolute top-40 right-20 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-float-delayed"></div>
-            <div className="absolute bottom-20 left-1/3 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl animate-float-slow"></div>
+            <div className="absolute top-20 left-10 w-72 h-72 bg-blue-600/10 rounded-full blur-3xl animate-float"></div>
+            <div className="absolute top-40 right-20 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl animate-float-delayed"></div>
+             <div className="absolute bottom-20 left-1/3 w-80 h-80 bg-emerald-400/10 rounded-full blur-3xl animate-float-slow"></div>
           </div>
           <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
         </div>
@@ -168,8 +168,8 @@ const AIDevelopmentServices = () => {
         {/* Floating Particles */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-blue-400 rounded-full animate-ping"></div>
-          <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-purple-400 rounded-full animate-ping animation-delay-1000"></div>
-          <div className="absolute bottom-1/4 left-1/2 w-1.5 h-1.5 bg-indigo-400 rounded-full animate-ping animation-delay-2000"></div>
+          <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-emerald-400 rounded-full animate-ping animation-delay-1000"></div>
+           <div className="absolute bottom-1/4 left-1/2 w-1.5 h-1.5 bg-emerald-300 rounded-full animate-ping animation-delay-2000"></div>
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
@@ -183,7 +183,7 @@ const AIDevelopmentServices = () => {
             {/* Main Heading */}
             <h1 className="text-5xl lg:text-7xl xl:text-8xl font-bold leading-tight animate-fade-in-up animation-delay-200">
               <span className="block mb-2">Artificial Intelligence</span>
-              <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent animate-gradient-x">
+              <span className="bg-gradient-to-r from-blue-400 via-emerald-400 to-emerald-300 bg-clip-text text-transparent animate-gradient-x">
                 Development Services
               </span>
             </h1>
@@ -192,8 +192,8 @@ const AIDevelopmentServices = () => {
             <p className="text-xl lg:text-2xl text-white/90 leading-relaxed max-w-4xl mx-auto animate-fade-in-up animation-delay-400">
               Transform your business with cutting-edge AI automation solutions. We help enterprises {' '}
               <span className="text-blue-300 font-semibold">reduce costs</span>, {' '}
-              <span className="text-purple-300 font-semibold">boost revenue</span>, and {' '}
-              <span className="text-indigo-300 font-semibold">gain competitive advantage</span> {' '}
+              <span className="text-emerald-300 font-semibold">boost revenue</span>, and {' '}
+               <span className="text-emerald-200 font-semibold">gain competitive advantage</span> {' '}
               through intelligent process automation.
             </p>
             
@@ -204,11 +204,11 @@ const AIDevelopmentServices = () => {
                 <div className="text-sm text-white/70">Projects Delivered</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl lg:text-4xl font-bold text-purple-400">98%</div>
-                <div className="text-sm text-white/70">Client Satisfaction</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl lg:text-4xl font-bold text-indigo-400">24/7</div>
+                <div className="text-3xl lg:text-4xl font-bold text-emerald-400">98%</div>
+                 <div className="text-sm text-white/70">Client Satisfaction</div>
+               </div>
+               <div className="text-center">
+                 <div className="text-3xl lg:text-4xl font-bold text-emerald-300">24/7</div>
                 <div className="text-sm text-white/70">Expert Support</div>
               </div>
             </div>
@@ -218,7 +218,7 @@ const AIDevelopmentServices = () => {
               <Button 
                 variant="accent" 
                 size="xl" 
-                className="group bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white border-0 shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105 transition-all duration-300" 
+                className="group bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 text-white border-0 shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105 transition-all duration-300" 
                 onClick={handleStartAIJourneyClick}
               >
                 <span className="flex items-center">
@@ -229,7 +229,7 @@ const AIDevelopmentServices = () => {
               <Button 
                 variant="outline" 
                 size="xl" 
-                className="bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white hover:text-slate-900 transform hover:scale-105 transition-all duration-300 shadow-lg" 
+                className="bg-white/10 backdrop-blur-sm border-emerald-300/30 text-white hover:bg-white hover:text-slate-900 transform hover:scale-105 transition-all duration-300 shadow-lg" 
                 onClick={handleConsultExpertsClick}
               >
                 <span className="flex items-center">
