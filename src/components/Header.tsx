@@ -59,7 +59,7 @@ const Header = () => {
         {
           category: "Financial Services",
           services: [
-            { name: "Banking Solutions", url: "#" },
+            { name: "Banking Solutions", url: "/banking-solutions" },
             { name: "Investment Management", url: "#" },
             { name: "Risk Assessment", url: "#" },
             { name: "Compliance Automation", url: "#" }
@@ -135,31 +135,55 @@ const Header = () => {
 
                 {/* Mega Menu Dropdown */}
                 {activeDropdown === item.title && (
-                  <div className={`absolute top-full left-0 mt-2 bg-background border border-border rounded-lg shadow-elegant p-8 ${
-                    item.title === 'Resources' ? 'w-[500px]' : 'w-[800px]'
-                  }`}>
-                    <div className={`grid ${
-                      item.title === 'Resources' ? 'grid-cols-2 gap-4' : 'grid-cols-3 gap-8'
-                    }`}>
-                      {item.items.map((category) => (
-                        <div key={category.category}>
-                          <h3 className="font-semibold text-primary mb-4">
-                            {category.category}
-                          </h3>
-                          <ul className="space-y-2">
-                            {category.services.map((service) => (
-                              <li key={service.name}>
-                                <a
-                                  href={service.url}
-                                  className="text-muted-foreground hover:text-primary transition-colors text-sm"
-                                >
-                                  {service.name}
-                                </a>
-                              </li>
-                            ))}
-                          </ul>
+                  <div className={`absolute top-full left-0 mt-2 bg-white/95 backdrop-blur-sm border border-gray-200/50 rounded-xl shadow-2xl overflow-hidden ${item.title === 'Resources' ? 'w-[520px]' : 'w-[800px]'}`}>
+                    {/* Gradient Header */}
+                    <div className="bg-gradient-to-r from-blue-50 to-purple-50 px-6 py-4 border-b border-gray-100">
+                      <h2 className="text-lg font-semibold text-gray-800">{item.title}</h2>
+                      <p className="text-sm text-gray-600 mt-1">
+                        {item.title === 'Resources' ? 'Explore our knowledge center and insights' : 
+                         item.title === 'Consulting' ? 'Comprehensive AI and automation solutions' :
+                         'Industry-specific expertise and solutions'}
+                      </p>
+                    </div>
+                    
+                    <div className="p-6">
+                      <div className={`grid ${item.title === 'Resources' ? 'grid-cols-2 gap-6' : 'grid-cols-3 gap-8'}`}>
+                        {item.items.map((category, categoryIndex) => (
+                          <div key={category.category} className={`relative ${item.title === 'Resources' && categoryIndex > 0 ? 'border-l border-gray-200 pl-6' : ''} ${item.title !== 'Resources' && categoryIndex > 0 ? 'border-l border-gray-200 pl-8' : ''}`}>
+                            <div className="bg-gradient-to-br from-blue-50/50 to-purple-50/50 rounded-lg p-4 mb-4 border border-blue-100/30">
+                              <h3 className="font-semibold text-blue-900 mb-1 text-sm uppercase tracking-wide">
+                                {category.category}
+                              </h3>
+                              <div className="w-8 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full"></div>
+                            </div>
+                            <ul className="space-y-3">
+                              {category.services.map((service) => (
+                                <li key={service.name}>
+                                  <a
+                                    href={service.url}
+                                    className="group flex items-center text-gray-600 hover:text-blue-600 transition-all duration-200 text-sm py-2 px-3 rounded-lg hover:bg-blue-50/50 hover:shadow-sm"
+                                  >
+                                    <div className="w-1.5 h-1.5 bg-gray-300 rounded-full mr-3 group-hover:bg-blue-400 transition-colors duration-200"></div>
+                                    <span className="group-hover:translate-x-1 transition-transform duration-200">{service.name}</span>
+                                  </a>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
+                      </div>
+                      
+                      {/* Bottom CTA for Resources */}
+                      {item.title === 'Resources' && (
+                        <div className="mt-6 pt-6 border-t border-gray-100">
+                          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg p-4 text-center">
+                            <p className="text-white text-sm font-medium mb-2">Need Expert Guidance?</p>
+                            <a href="/schedule-consultation" className="inline-flex items-center text-white/90 hover:text-white text-xs font-medium transition-colors">
+                              Schedule a Free Consultation →
+                            </a>
+                          </div>
                         </div>
-                      ))}
+                      )}
                     </div>
                   </div>
                 )}
