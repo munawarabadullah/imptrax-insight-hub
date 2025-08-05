@@ -159,36 +159,50 @@ const MachineLearningDevelopment: React.FC = () => {
       <Header />
       <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-purple-900 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-purple-900 text-white py-24 md:py-32 overflow-hidden">
+        {/* Subtle background pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white to-transparent transform -skew-y-12 translate-y-32"></div>
+        </div>
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Elevating Your Enterprise with
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
-                ImpTrax's Custom ML Services
-              </span>
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 max-w-4xl mx-auto text-blue-100">
-              Transform your business with cutting-edge machine learning solutions. From predictive analytics to deep learning, 
-              we deliver custom ML services that drive innovation and competitive advantage.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="animate-fade-in-up">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight">
+                <span className="block mb-2">Elevating Your Enterprise with</span>
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-blue-400 to-purple-400 drop-shadow-sm">
+                  ImpTrax's Custom ML Services
+                </span>
+              </h1>
+            </div>
+            
+            <div className="animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+              <p className="text-xl md:text-2xl mb-12 max-w-4xl mx-auto text-blue-100 leading-relaxed font-light">
+                Transform your business with cutting-edge machine learning solutions. From predictive analytics to deep learning, 
+                we deliver custom ML services that drive innovation and competitive advantage.
+              </p>
+            </div>
+            
+            <div className="animate-fade-in-up flex flex-col sm:flex-row gap-6 justify-center" style={{animationDelay: '0.4s'}}>
               <Link
                 to="/schedule-consultation?source=machine-learning&button=start-ml-project"
-                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-200 flex items-center justify-center"
+                className="group bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               >
                 Start Your ML Project
-                <ArrowRight className="ml-2 w-5 h-5" />
+                <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
               </Link>
               <Link
                 to="/schedule-consultation?source=machine-learning&button=explore-ai-consulting"
-                className="border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-200"
+                className="group border-2 border-blue-300 text-blue-300 hover:bg-blue-300 hover:text-blue-900 px-10 py-5 rounded-xl font-semibold transition-all duration-300 backdrop-blur-sm hover:backdrop-blur-none"
               >
                 Explore AI Consulting
               </Link>
             </div>
           </div>
         </div>
+        
+        {/* Decorative elements */}
+        <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-gray-50 to-transparent"></div>
       </section>
 
       {/* ML Capabilities Section */}
