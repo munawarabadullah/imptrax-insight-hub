@@ -69,9 +69,8 @@ const Header = () => {
           category: "Healthcare",
           services: [
             { name: "Revenue Cycle Management", url: "/revenue-cycle-management" },
-            { name: "Medical Data Analytics", url: "#" },
-            { name: "Diagnostic AI", url: "#" },
             { name: "Healthcare Automation", url: "#" },
+            { name: "Diagnostic AI", url: "#" },
             { name: "HIPAA Compliance", url: "/hipaa-compliant" }
           ]
         },
