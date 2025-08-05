@@ -70,7 +70,7 @@ const Header = () => {
           services: [
             { name: "Revenue Cycle Management", url: "/revenue-cycle-management" },
             { name: "Healthcare Automation", url: "/healthcare-automation" },
-            { name: "AI Driven Transformation", url: "#" },
+            { name: "AI Driven Transformation", url: "/ai-driven-transformation" },
             { name: "HIPAA Compliance", url: "/hipaa-compliant" }
           ]
         },

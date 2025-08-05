@@ -36,6 +36,7 @@ import RiskAssessment from "./pages/RiskAssessment";
 import ComplianceManagement from "./pages/ComplianceManagement";
 import RevenueCycleManagement from "./pages/RevenueCycleManagement";
 import HealthcareAutomation from "./pages/HealthcareAutomation";
+import AIDrivenTransformation from "./pages/AIDrivenTransformation";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -80,6 +81,7 @@ const App = () => (
           <Route path="/compliance-management" element={<ComplianceManagement />} />
           <Route path="/revenue-cycle-management" element={<RevenueCycleManagement />} />
           <Route path="/healthcare-automation" element={<HealthcareAutomation />} />
+          <Route path="/ai-driven-transformation" element={<AIDrivenTransformation />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
