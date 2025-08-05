@@ -189,7 +189,7 @@ const DataAnalytics = () => {
             </div>
             
             {/* Enhanced Heading with Gradient Text and Subtle Effects */}
-            <h1 className="text-4xl lg:text-7xl font-bold text-foreground mb-8 animate-fade-in-up tracking-tight leading-tight">
+            <h1 className="text-4xl lg:text-7xl font-bold text-foreground mb-8 animate-fade-in-up tracking-wide leading-tight">
               Transform Data into<br/>
               <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-gradient-x drop-shadow-sm animate-pulse-subtle">
                 Strategic Insights
@@ -197,7 +197,7 @@ const DataAnalytics = () => {
             </h1>
             
             {/* Enhanced Description with Better Typography */}
-            <p className="text-xl lg:text-2xl text-muted-foreground mb-10 max-w-4xl mx-auto leading-relaxed animate-fade-in-up delay-200 tracking-wide">
+            <p className="text-xl lg:text-2xl text-muted-foreground mb-10 max-w-4xl mx-auto leading-loose animate-fade-in-up delay-150 tracking-wide">
               Unlock the power of your data with ImpTrax's{' '}
               <span className="text-primary font-semibold hover:text-primary/80 transition-colors duration-300">advanced analytics solutions</span>. 
               Drive informed decision-making, optimize performance, and gain competitive advantage 
@@ -290,15 +290,15 @@ const DataAnalytics = () => {
               </Badge>
             </div>
             
-            <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-8 animate-fade-in-up">
+            <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-8 animate-fade-in-up tracking-wide">
               Challenges We{' '}
               <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                 Solve
               </span>
             </h2>
-            <p className="text-xl lg:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed animate-fade-in-up delay-200">
+            <p className="text-xl lg:text-2xl text-muted-foreground max-w-4xl mx-auto leading-loose animate-fade-in-up delay-150">
               Transform your business operations with{' '}
-              <span className="text-primary font-semibold">evidence-based insights</span>{' '}
+              <span className="text-primary font-medium">evidence-based insights</span>{' '}
               and comprehensive data intelligence.
             </p>
             
@@ -315,7 +315,7 @@ const DataAnalytics = () => {
                 <Card 
                   key={index} 
                   className={`group relative overflow-hidden bg-background/80 backdrop-blur-sm border-0 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate-fade-in-up`}
-                  style={{ animationDelay: `${(index + 1) * 200}ms` }}
+                  style={{ animationDelay: `${(index + 1) * 120}ms` }}
                 >
                   {/* Card Gradient Border */}
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -390,15 +390,15 @@ const DataAnalytics = () => {
               </Badge>
             </div>
             
-            <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-8 animate-fade-in-up">
+            <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-8 animate-fade-in-up tracking-wide">
               Our Data Analytics{' '}
               <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                 Services
               </span>
             </h2>
-            <p className="text-xl lg:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed animate-fade-in-up delay-200">
+            <p className="text-xl lg:text-2xl text-muted-foreground max-w-4xl mx-auto leading-loose animate-fade-in-up delay-150">
               Comprehensive analytics solutions designed to{' '}
-              <span className="text-primary font-semibold">unlock the full potential</span>{' '}
+              <span className="text-primary font-medium">unlock the full potential</span>{' '}
               of your data and drive business transformation.
             </p>
             
@@ -517,15 +517,15 @@ const DataAnalytics = () => {
               </Badge>
             </div>
             
-            <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-8 animate-fade-in-up">
+            <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-8 animate-fade-in-up tracking-wide">
               Analytics{' '}
               <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                 Solutions
               </span>
             </h2>
-            <p className="text-xl lg:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed animate-fade-in-up delay-200">
+            <p className="text-xl lg:text-2xl text-muted-foreground max-w-4xl mx-auto leading-loose animate-fade-in-up delay-150">
               Tailored analytics solutions designed to address your{' '}
-              <span className="text-primary font-semibold">specific business challenges</span>{' '}
+              <span className="text-primary font-medium">specific business challenges</span>{' '}
               and drive measurable outcomes.
             </p>
             
@@ -540,7 +540,7 @@ const DataAnalytics = () => {
               <Card 
                 key={index} 
                 className={`group relative overflow-hidden bg-background/80 backdrop-blur-sm border-0 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate-fade-in-up`}
-                style={{ animationDelay: `${(index + 1) * 100}ms` }}
+                style={{ animationDelay: `${(index + 1) * 80}ms` }}
               >
                 {/* Card Gradient Border */}
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/15 via-transparent to-accent/15 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -618,10 +618,10 @@ const DataAnalytics = () => {
               <span className="text-sm font-medium text-primary">Industry Expertise</span>
             </div>
             
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6 animate-fade-in-up delay-100">
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6 animate-fade-in-up delay-100 tracking-wide">
               Industries We <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Serve</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto animate-fade-in-up delay-200">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto animate-fade-in-up delay-150 leading-relaxed">
               Specialized data analytics solutions tailored for <span className="text-primary font-medium">industry-specific challenges</span> and opportunities.
             </p>
             
@@ -640,7 +640,7 @@ const DataAnalytics = () => {
                 <Card 
                   key={index} 
                   className={`group relative overflow-hidden bg-background/80 backdrop-blur-sm border border-border/50 hover:border-primary/30 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 text-center animate-fade-in-up`}
-                  style={{animationDelay: `${(index + 1) * 100}ms`}}
+                  style={{animationDelay: `${(index + 1) * 80}ms`}}
                 >
                   {/* Background Effects */}
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -715,11 +715,11 @@ const DataAnalytics = () => {
               <span className="text-sm font-medium text-green-600">Business Value</span>
             </div>
             
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6 animate-fade-in-up delay-100">
-              Benefits of Our Data Analytics <span className="bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">Solutions</span>
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6 animate-fade-in-up delay-100 tracking-wide">
+              Benefits of Our Data Analytics <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Solutions</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto animate-fade-in-up delay-200">
-              Unlock <span className="text-green-600 font-medium">measurable business value</span> through advanced data analytics and intelligent insights.
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto animate-fade-in-up delay-150 leading-relaxed">
+              Unlock <span className="text-primary font-medium">measurable business value</span> through advanced data analytics and intelligent insights.
             </p>
             
             {/* Decorative Line */}
@@ -736,11 +736,11 @@ const DataAnalytics = () => {
               return (
                 <Card 
                   key={index} 
-                  className={`group relative overflow-hidden bg-background/90 backdrop-blur-sm border border-border/50 hover:border-green-500/30 hover:shadow-2xl hover:shadow-green-500/10 transition-all duration-500 text-center animate-fade-in-up`}
-                  style={{animationDelay: `${(index + 1) * 150}ms`}}
+                  className={`group relative overflow-hidden bg-background/90 backdrop-blur-sm border border-border/50 hover:border-primary/30 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 text-center animate-fade-in-up`}
+                  style={{animationDelay: `${(index + 1) * 120}ms`}}
                 >
                   {/* Background Effects */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 via-transparent to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   <div className="absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-br from-green-500/10 to-blue-500/10 rounded-full blur-xl group-hover:scale-150 transition-transform duration-700"></div>
                   
                   <CardHeader className="relative z-10 p-6">
@@ -812,11 +812,11 @@ const DataAnalytics = () => {
               <span className="text-sm font-medium text-blue-600">Excellence</span>
             </div>
             
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6 animate-fade-in-up delay-100">
-              Why Choose ImpTrax for Data <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Analytics?</span>
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6 animate-fade-in-up delay-100 tracking-wide">
+              Why Choose ImpTrax for Data <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Analytics?</span>
             </h2>
-            <p className="text-xl text-muted-foreground mb-12 animate-fade-in-up delay-200">
-              Partner with ImpTrax to transform your data into a <span className="text-blue-600 font-medium">strategic asset</span> that drives business growth and innovation.
+            <p className="text-xl text-muted-foreground mb-12 animate-fade-in-up delay-150 leading-relaxed">
+              Partner with ImpTrax to transform your data into a <span className="text-primary font-medium">strategic asset</span> that drives business growth and innovation.
             </p>
             
             {/* Decorative Line */}
@@ -827,7 +827,7 @@ const DataAnalytics = () => {
             </div>
             
             <div className="grid md:grid-cols-2 gap-8 mb-12">
-              <Card className="group relative overflow-hidden bg-background/90 backdrop-blur-sm border border-border/50 hover:border-blue-500/30 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 text-left animate-fade-in-up delay-400">
+              <Card className="group relative overflow-hidden bg-background/90 backdrop-blur-sm border border-border/50 hover:border-primary/30 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 text-left animate-fade-in-up delay-300">
                 {/* Background Effects */}
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-full blur-xl group-hover:scale-150 transition-transform duration-700"></div>
@@ -877,7 +877,7 @@ const DataAnalytics = () => {
                 </div>
               </Card>
               
-              <Card className="group relative overflow-hidden bg-background/90 backdrop-blur-sm border border-border/50 hover:border-purple-500/30 hover:shadow-2xl hover:shadow-purple-500/10 transition-all duration-500 text-left animate-fade-in-up delay-500">
+              <Card className="group relative overflow-hidden bg-background/90 backdrop-blur-sm border border-border/50 hover:border-accent/30 hover:shadow-2xl hover:shadow-accent/10 transition-all duration-500 text-left animate-fade-in-up delay-400">
                 {/* Background Effects */}
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-purple-500/10 to-blue-500/10 rounded-full blur-xl group-hover:scale-150 transition-transform duration-700"></div>
