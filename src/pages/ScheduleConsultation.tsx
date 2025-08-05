@@ -302,7 +302,7 @@ const ScheduleConsultation = () => {
                             <FormItem>
                               <FormLabel>Phone Number *</FormLabel>
                               <FormControl>
-                                <Input placeholder="+1 (555) 123-4567" {...field} />
+                                <Input placeholder="+1 212.233.0300" {...field} />
                               </FormControl>
                               <FormMessage />
                             </FormItem>
