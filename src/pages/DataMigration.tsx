@@ -354,37 +354,31 @@ const DataMigration = () => {
 
   const migrationProcess = [
     {
-      step: "01",
       title: "Assessment & Planning",
       description: "Comprehensive evaluation of existing infrastructure and migration requirements.",
       icon: Target
     },
     {
-      step: "02",
       title: "Strategy Design",
       description: "Development of detailed migration strategy and timeline with risk mitigation.",
       icon: Lightbulb
     },
     {
-      step: "03",
       title: "Environment Setup",
       description: "Preparation of target environment with security, networking, and monitoring.",
       icon: Settings
     },
     {
-      step: "04",
       title: "Data Migration",
       description: "Secure transfer of data with validation, testing, and quality assurance.",
       icon: RefreshCw
     },
     {
-      step: "05",
       title: "Testing & Validation",
       description: "Comprehensive testing to ensure data integrity and system functionality.",
       icon: CheckCircle
     },
     {
-      step: "06",
       title: "Go-Live & Support",
       description: "Deployment with ongoing monitoring and support for optimal performance.",
       icon: Award
@@ -1158,10 +1152,7 @@ const DataMigration = () => {
                   {/* Glass morphism effect */}
                   <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-white/10 dark:from-slate-700/40 dark:to-slate-800/10 backdrop-blur-sm border border-white/20 dark:border-slate-600/20 rounded-lg"></div>
                   
-                  {/* Enhanced Step Number Badge */}
-                  <div className="absolute top-4 right-4 w-12 h-12 bg-gradient-to-br from-blue-500/20 to-purple-500/20 dark:from-blue-400/30 dark:to-purple-400/30 rounded-full flex items-center justify-center group-hover:from-blue-500/30 group-hover:to-purple-500/30 transition-all duration-300 group-hover:scale-110 shadow-lg">
-                    <span className="text-blue-700 dark:text-blue-300 font-bold text-sm group-hover:text-purple-700 dark:group-hover:text-purple-300 transition-colors duration-300">{process.step}</span>
-                  </div>
+
                   
                   <CardHeader className="relative z-10 pb-4">
                     {/* Enhanced Icon Container */}
