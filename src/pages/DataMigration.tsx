@@ -1291,16 +1291,24 @@ const DataMigration = () => {
 
       {/* Industries Section */}
       <section className="py-20 bg-background relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
+          <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-primary/3 rounded-full blur-2xl -translate-x-1/2 -translate-y-1/2"></div>
+        </div>
+        
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <Badge variant="outline" className="mb-6 px-4 py-2 bg-background/80 backdrop-blur-sm border-primary/20">
+            <Badge variant="outline" className="mb-6 px-4 py-2 bg-background/80 backdrop-blur-sm border-primary/20 hover:border-primary/40 transition-colors duration-300">
               <Building2 className="w-4 h-4 mr-2 text-primary" />
-              Industries We Serve
+              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent font-medium">Industries We Serve</span>
             </Badge>
             <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-6 tracking-wide">
               Specialized Migration
-              <span className="block text-primary">Expertise</span>
+              <span className="block bg-gradient-to-r from-primary via-primary/80 to-accent bg-clip-text text-transparent">Expertise</span>
             </h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto mb-8 rounded-full"></div>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Industry-specific migration solutions designed to meet unique compliance and operational requirements.
             </p>
@@ -1310,16 +1318,19 @@ const DataMigration = () => {
             {industries.map((industry, index) => {
               const IconComponent = industry.icon;
               return (
-                <Card key={index} className="group hover:shadow-lg transition-all duration-300 hover:scale-105 border-border/50 hover:border-primary/30 bg-background/50 backdrop-blur-sm text-center">
-                  <CardHeader>
-                    <div className="mx-auto mb-4 p-4 bg-primary/10 rounded-full w-fit group-hover:bg-primary/20 transition-colors duration-300">
+                <Card key={index} className="group hover:shadow-lg transition-all duration-300 hover:scale-105 border-border/50 hover:border-primary/30 bg-background/80 backdrop-blur-sm text-center relative overflow-hidden">
+                  {/* Shimmer Effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out"></div>
+                  
+                  <CardHeader className="relative z-10">
+                    <div className="mx-auto mb-4 p-4 bg-primary/10 rounded-full w-fit group-hover:bg-primary/20 transition-colors duration-300 group-hover:scale-110 transform">
                       <IconComponent className="w-10 h-10 text-primary" />
                     </div>
                     <CardTitle className="text-xl font-medium text-foreground group-hover:text-primary transition-colors duration-300">
                       {industry.title}
                     </CardTitle>
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="relative z-10">
                     <CardDescription className="text-muted-foreground leading-relaxed">
                       {industry.description}
                     </CardDescription>
@@ -1333,16 +1344,24 @@ const DataMigration = () => {
 
       {/* Benefits Section */}
       <section className="py-20 bg-gradient-to-b from-background to-primary/5 relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-0 right-0 w-80 h-80 bg-accent/5 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3"></div>
+          <div className="absolute bottom-0 left-0 w-80 h-80 bg-primary/5 rounded-full blur-3xl -translate-x-1/3 translate-y-1/3"></div>
+          <div className="absolute top-1/3 right-1/4 w-48 h-48 bg-accent/3 rounded-full blur-2xl"></div>
+        </div>
+        
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <Badge variant="outline" className="mb-6 px-4 py-2 bg-background/80 backdrop-blur-sm border-primary/20">
+            <Badge variant="outline" className="mb-6 px-4 py-2 bg-background/80 backdrop-blur-sm border-primary/20 hover:border-primary/40 transition-colors duration-300">
               <Award className="w-4 h-4 mr-2 text-primary" />
-              Migration Benefits
+              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent font-medium">Migration Benefits</span>
             </Badge>
             <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-6 tracking-wide">
               Transform Your
-              <span className="block text-primary">Data Infrastructure</span>
+              <span className="block bg-gradient-to-r from-primary via-primary/80 to-accent bg-clip-text text-transparent">Data Infrastructure</span>
             </h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto mb-8 rounded-full"></div>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Unlock the full potential of modern data infrastructure with our comprehensive migration services.
             </p>
@@ -1378,21 +1397,24 @@ const DataMigration = () => {
 
       {/* Why Choose ImpTrax Section */}
       <section className="py-20 bg-background relative overflow-hidden">
-        {/* Background Pattern */}
+        {/* Background Elements */}
         <div className="absolute inset-0">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
+          <div className="absolute top-2/3 left-1/3 w-64 h-64 bg-primary/3 rounded-full blur-2xl"></div>
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_30%,rgba(120,119,198,0.1),transparent_70%)] animate-pulse"></div>
           <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_80%_70%,rgba(255,107,107,0.1),transparent_70%)] animate-pulse delay-1000"></div>
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <Badge variant="outline" className="mb-6 px-4 py-2 bg-background/80 backdrop-blur-sm border-primary/20">
+            <Badge variant="outline" className="mb-6 px-4 py-2 bg-background/80 backdrop-blur-sm border-primary/20 hover:border-primary/40 transition-colors duration-300">
               <Award className="w-4 h-4 mr-2 text-primary" />
-              Why Choose ImpTrax
+              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent font-medium">Why Choose ImpTrax</span>
             </Badge>
             <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-6 tracking-wide">
               Your Trusted Migration
-              <span className="block text-primary">Partner</span>
+              <span className="block bg-gradient-to-r from-primary via-primary/80 to-accent bg-clip-text text-transparent">Partner</span>
             </h2>
             {/* Decorative Line */}
             <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto mb-8 rounded-full"></div>
