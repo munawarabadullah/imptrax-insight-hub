@@ -258,7 +258,7 @@ const BusinessIntelligence = () => {
               {stats.map((stat, index) => (
                 <div key={index} className="text-center group">
                   {/* Stat Card */}
-                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-500 hover:scale-105 hover:shadow-2xl">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-500 hover:scale-105 hover:shadow-2xl h-80 flex flex-col justify-center">
                     {/* Icon Background */}
                     <div className="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-accent/30 transition-colors duration-300">
                       {index === 0 && <Target className="w-8 h-8 text-accent" />}
@@ -267,12 +267,12 @@ const BusinessIntelligence = () => {
                     </div>
                     
                     {/* Number */}
-                    <div className="text-5xl md:text-6xl lg:text-7xl font-bold text-accent mb-4 tracking-tight leading-none group-hover:scale-110 transition-transform duration-300">
+                    <div className="text-5xl md:text-6xl font-bold text-accent mb-4 tracking-tight leading-none group-hover:scale-110 transition-transform duration-300">
                       {stat.number}
                     </div>
                     
                     {/* Label */}
-                    <div className="text-blue-100 font-medium text-lg tracking-wide leading-relaxed">
+                    <div className="text-blue-100 font-medium text-base md:text-lg tracking-wide leading-tight min-h-[3rem] flex items-center justify-center px-2">
                       {stat.label}
                     </div>
                     
