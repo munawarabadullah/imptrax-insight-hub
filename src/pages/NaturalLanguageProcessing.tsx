@@ -574,7 +574,7 @@ const NaturalLanguageProcessing: React.FC = () => {
             <Button 
               size="lg" 
               variant="outline" 
-              className="border-white text-white hover:bg-white hover:text-blue-600"
+              className="border-white text-white hover:bg-white hover:text-blue-600 bg-white/10 backdrop-blur-sm"
               onClick={handleScheduleConsultationClick}
             >
               Schedule Consultation
