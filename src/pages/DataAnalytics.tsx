@@ -261,38 +261,101 @@ const DataAnalytics = () => {
       </section>
 
       {/* Challenges We Solve */}
-      <section className="py-20 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">
-              Challenges We Solve
+      <section className="relative py-20 bg-gradient-to-br from-muted/20 via-background to-muted/30 overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-10 left-10 w-32 h-32 border border-primary/20 rounded-lg rotate-12"></div>
+          <div className="absolute top-40 right-20 w-24 h-24 border border-accent/20 rounded-full"></div>
+          <div className="absolute bottom-20 left-1/4 w-20 h-20 border border-primary/15 rounded-lg -rotate-12"></div>
+          <div className="absolute bottom-40 right-10 w-28 h-28 border border-accent/15 rounded-full"></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-20">
+            {/* Section Badge */}
+            <div className="inline-flex items-center justify-center mb-6">
+              <Badge variant="outline" className="px-4 py-2 bg-background/80 backdrop-blur-sm border-primary/20 animate-fade-in">
+                <Target className="w-4 h-4 mr-2 text-primary" />
+                Business Challenges
+              </Badge>
+            </div>
+            
+            <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-8 animate-fade-in-up">
+              Challenges We{' '}
+              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                Solve
+              </span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Transform your business operations with evidence-based insights and comprehensive data intelligence.
+            <p className="text-xl lg:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed animate-fade-in-up delay-200">
+              Transform your business operations with{' '}
+              <span className="text-primary font-semibold">evidence-based insights</span>{' '}
+              and comprehensive data intelligence.
             </p>
+            
+            {/* Decorative Line */}
+            <div className="flex justify-center mt-8 animate-fade-in-up delay-300">
+              <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent rounded-full"></div>
+            </div>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
             {challenges.map((challenge, index) => {
               const IconComponent = challenge.icon;
               return (
-                <Card key={index} className="group hover:shadow-elegant transition-all duration-300">
-                  <CardHeader className="text-center">
-                    <div className="relative mx-auto w-16 h-16 bg-gradient-primary rounded-full mb-6 flex items-center justify-center">
-                      <div className="w-8 h-8 flex items-center justify-center">
-                        <IconComponent className="w-8 h-8 text-primary-foreground" />
+                <Card 
+                  key={index} 
+                  className={`group relative overflow-hidden bg-background/80 backdrop-blur-sm border-0 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate-fade-in-up`}
+                  style={{ animationDelay: `${(index + 1) * 200}ms` }}
+                >
+                  {/* Card Gradient Border */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  
+                  {/* Floating Icon Background */}
+                  <div className="absolute -top-8 -right-8 w-24 h-24 bg-gradient-to-br from-primary/10 to-accent/10 rounded-full blur-xl group-hover:scale-150 transition-transform duration-700"></div>
+                  
+                  <CardHeader className="text-center relative z-10 p-8">
+                    {/* Enhanced Icon Container */}
+                    <div className="relative mx-auto w-20 h-20 mb-8">
+                      <div className="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-2xl rotate-6 group-hover:rotate-12 transition-transform duration-500"></div>
+                      <div className="relative w-full h-full bg-background rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+                        <IconComponent className="w-10 h-10 text-primary group-hover:text-accent transition-colors duration-300 group-hover:scale-110 transform" />
                       </div>
+                      {/* Pulse Ring */}
+                      <div className="absolute inset-0 rounded-2xl border-2 border-primary/30 animate-pulse group-hover:border-accent/50 transition-colors duration-300"></div>
                     </div>
-                    <CardTitle className="text-xl font-bold text-primary mb-4">
+                    
+                    <CardTitle className="text-xl lg:text-2xl font-bold text-foreground mb-6 group-hover:text-primary transition-colors duration-300">
                       {challenge.title}
                     </CardTitle>
-                    <CardDescription className="text-muted-foreground">
+                    <CardDescription className="text-muted-foreground leading-relaxed text-base group-hover:text-foreground/80 transition-colors duration-300">
                       {challenge.description}
                     </CardDescription>
+                    
+                    {/* Bottom Accent Line */}
+                    <div className="mt-6 mx-auto w-0 h-0.5 bg-gradient-to-r from-primary to-accent group-hover:w-16 transition-all duration-500"></div>
                   </CardHeader>
+                  
+                  {/* Hover Shimmer Effect */}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -skew-x-12 transform translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-1000"></div>
+                  </div>
                 </Card>
               );
             })}
+          </div>
+          
+          {/* Bottom CTA */}
+          <div className="text-center mt-16 animate-fade-in-up delay-1000">
+            <p className="text-muted-foreground mb-6">Ready to overcome these challenges?</p>
+            <Button 
+              variant="outline" 
+              size="lg"
+              className="group border-primary/30 hover:border-primary hover:bg-primary/5 transition-all duration-300"
+              onClick={() => handleConsultationClick('challenges-cta')}
+            >
+              Discover Our Solutions
+              <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+            </Button>
           </div>
         </div>
       </section>
