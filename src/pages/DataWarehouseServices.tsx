@@ -296,19 +296,73 @@ const DataWarehouseServices = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-3xl lg:text-4xl font-bold text-primary mb-2">
-                  {stat.number}
+      <section className="py-20 lg:py-24 bg-gradient-to-br from-slate-50 to-blue-50/30 relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 opacity-40">
+          <div className="absolute top-10 left-20 w-32 h-32 bg-blue-200/30 rounded-full blur-2xl animate-float-slow"></div>
+          <div className="absolute bottom-10 right-20 w-40 h-40 bg-cyan-200/30 rounded-full blur-2xl animate-float-delayed"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-blue-100/20 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-4">
+                Trusted by Industry Leaders
+              </h2>
+              <p className="text-slate-600 max-w-2xl mx-auto">
+                Our proven track record speaks for itself with measurable results across enterprise clients
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+              {stats.map((stat, index) => (
+                <div key={index} className="group">
+                  <div className="bg-white/80 backdrop-blur-sm border border-blue-100/50 rounded-2xl p-8 text-center hover:shadow-xl hover:shadow-blue-100/30 transition-all duration-500 hover:scale-105 hover:bg-white/90 relative overflow-hidden">
+                    {/* Shimmer Effect */}
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 animate-shimmer"></div>
+                    </div>
+                    
+                    {/* Icon Background */}
+                    <div className="absolute top-4 right-4 w-8 h-8 bg-gradient-to-br from-blue-100 to-cyan-100 rounded-lg opacity-60 group-hover:opacity-80 transition-opacity duration-300"></div>
+                    
+                    <div className="relative z-10">
+                      <div className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent mb-3 group-hover:from-blue-700 group-hover:to-cyan-700 transition-all duration-300">
+                        {stat.number}
+                      </div>
+                      <div className="text-slate-600 font-semibold text-sm lg:text-base leading-tight">
+                        {stat.label}
+                      </div>
+                      
+                      {/* Progress Bar */}
+                      <div className="mt-4 h-1 bg-blue-100 rounded-full overflow-hidden">
+                        <div 
+                          className="h-full bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-1000 ease-out"
+                          style={{ animationDelay: `${index * 200}ms` }}
+                        ></div>
+                      </div>
+                    </div>
+                    
+                    {/* Floating Particles */}
+                    <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                      <div className="absolute top-6 left-6 w-1 h-1 bg-blue-400 rounded-full animate-float"></div>
+                      <div className="absolute bottom-8 right-8 w-1.5 h-1.5 bg-cyan-400 rounded-full animate-float-delayed"></div>
+                      <div className="absolute top-12 right-12 w-1 h-1 bg-blue-500 rounded-full animate-float-slow"></div>
+                    </div>
+                  </div>
                 </div>
-                <div className="text-muted-foreground font-medium">
-                  {stat.label}
-                </div>
+              ))}
+            </div>
+            
+            {/* Bottom Accent */}
+            <div className="mt-16 text-center">
+              <div className="inline-flex items-center gap-2 text-sm text-slate-500">
+                <div className="w-8 h-px bg-gradient-to-r from-transparent to-blue-300"></div>
+                <span className="font-medium">Delivering Excellence Since 2001</span>
+                <div className="w-8 h-px bg-gradient-to-l from-transparent to-cyan-300"></div>
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>
