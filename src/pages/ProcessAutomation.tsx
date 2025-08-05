@@ -397,7 +397,7 @@ const ProcessAutomation = () => {
                 size="lg" 
                 variant="outline" 
                 onClick={handleLearnMoreClick}
-                className="text-lg px-8 py-6 border-white text-white hover:bg-white hover:text-primary transform hover:scale-105 transition-all duration-300 hover:shadow-2xl"
+                className="text-lg px-8 py-6 border-white text-white bg-white/10 backdrop-blur-sm hover:bg-white hover:text-primary transform hover:scale-105 transition-all duration-300 hover:shadow-2xl"
               >
                 Learn More
               </Button>
