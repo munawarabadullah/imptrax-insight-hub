@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button } from '../components/ui/button';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { useNavigate } from 'react-router-dom';
-import { MessageSquare, Brain, FileText, Globe, BarChart3, Users, Mic, Tag } from 'lucide-react';
+import { MessageSquare, Brain, FileText, Globe, BarChart3, Users, Mic, Tag, Plus, Minus } from 'lucide-react';
 
 const NaturalLanguageProcessing: React.FC = () => {
   const navigate = useNavigate();
@@ -578,6 +578,90 @@ const NaturalLanguageProcessing: React.FC = () => {
               onClick={handleScheduleConsultationClick}
             >
               Schedule Consultation
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Get answers to common questions about our Natural Language Processing solutions
+            </p>
+          </div>
+          
+          <div className="space-y-4">
+            {[
+              {
+                question: "What types of text data can your NLP solutions process?",
+                answer: "Our NLP solutions can process various types of text data including emails, documents, social media posts, customer reviews, chat logs, legal documents, medical records, and more. We support multiple languages and can handle both structured and unstructured text data from various sources and formats."
+              },
+              {
+                question: "How accurate are your sentiment analysis and text classification models?",
+                answer: "Our NLP models achieve industry-leading accuracy rates of 95%+ for sentiment analysis and 92%+ for text classification tasks. We continuously train and fine-tune our models using domain-specific data to ensure optimal performance for your specific use case and industry requirements."
+              },
+              {
+                question: "Can you integrate NLP capabilities with our existing systems?",
+                answer: "Yes, our NLP solutions are designed for seamless integration with existing systems through RESTful APIs, webhooks, and custom connectors. We support integration with popular platforms like Salesforce, Microsoft Office 365, Slack, and can work with your existing databases and workflow management systems."
+              },
+              {
+                question: "What security measures do you have in place for sensitive text data?",
+                answer: "We implement enterprise-grade security including end-to-end encryption, secure data transmission, role-based access controls, and compliance with GDPR, HIPAA, and SOC 2 standards. Your data is processed in secure, isolated environments with comprehensive audit trails and data governance protocols."
+              },
+              {
+                question: "How long does it take to implement and see results from NLP solutions?",
+                answer: "Implementation timelines vary based on project complexity, but most clients see initial results within 2-4 weeks. Simple integrations can be completed in days, while complex custom solutions may take 6-12 weeks. We provide phased rollouts to ensure you start benefiting from NLP capabilities as quickly as possible."
+              }
+            ].map((faq, index) => {
+              const [isOpen, setIsOpen] = useState(false);
+              
+              return (
+                <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                  <button
+                    className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-inset"
+                    onClick={() => setIsOpen(!isOpen)}
+                  >
+                    <span className="text-lg font-semibold text-gray-900 pr-4">
+                      {faq.question}
+                    </span>
+                    <div className="flex-shrink-0">
+                      {isOpen ? (
+                        <Minus className="w-5 h-5 text-blue-600" />
+                      ) : (
+                        <Plus className="w-5 h-5 text-gray-400" />
+                      )}
+                    </div>
+                  </button>
+                  
+                  {isOpen && (
+                    <div className="px-6 pb-4">
+                      <div className="border-t border-gray-100 pt-4">
+                        <p className="text-gray-600 leading-relaxed">
+                          {faq.answer}
+                        </p>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+          
+          <div className="text-center mt-12">
+            <p className="text-gray-600 mb-4">
+              Have more questions about our NLP solutions?
+            </p>
+            <Button 
+              variant="outline" 
+              className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white"
+              onClick={handleScheduleConsultationClick}
+            >
+              Contact Our Experts
             </Button>
           </div>
         </div>
