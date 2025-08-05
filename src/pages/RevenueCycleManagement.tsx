@@ -3,6 +3,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 import {
   DollarSign,
   TrendingUp,
@@ -134,7 +136,9 @@ const RevenueCycleManagement = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+    <div className="min-h-screen">
+      <Header />
+      <div className="bg-gradient-to-br from-blue-50 via-white to-purple-50">
         {/* Hero Section */}
         <section className="relative py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
@@ -531,7 +535,9 @@ const RevenueCycleManagement = () => {
           </div>
         </section>
       </div>
-    );
+      <Footer />
+    </div>
+  );
 };
 
 export default RevenueCycleManagement;

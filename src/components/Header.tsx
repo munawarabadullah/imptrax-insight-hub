@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { ChevronDown, Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X, Search, Phone } from "lucide-react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -70,7 +70,6 @@ const Header = () => {
           services: [
             { name: "Revenue Cycle Management", url: "/revenue-cycle-management" },
             { name: "Medical Data Analytics", url: "#" },
-            { name: "Patient Management", url: "#" },
             { name: "Diagnostic AI", url: "#" },
             { name: "Healthcare Automation", url: "#" },
             { name: "HIPAA Compliance", url: "/hipaa-compliant" }
@@ -109,6 +108,36 @@ const Header = () => {
 
   return (
     <header className="bg-background border-b border-border sticky top-0 z-50 shadow-card">
+      {/* Top Utility Bar */}
+      <div className="bg-gray-50 border-b border-gray-200 hidden lg:block">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between h-10 text-sm">
+            <div className="flex items-center space-x-6 text-gray-600">
+              <div className="flex items-center space-x-2">
+                <Phone className="w-4 h-4" />
+                <span>+1 212.233.0300</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <span>📧 info@ImpTrax.com</span>
+              </div>
+            </div>
+            <div className="flex items-center space-x-4">
+              <div className="flex items-center space-x-2">
+                <Search className="w-4 h-4 text-gray-400" />
+                <input 
+                  type="text" 
+                  placeholder="Search services..."
+                  className="bg-transparent border-none outline-none text-sm w-32 focus:w-48 transition-all duration-200"
+                />
+              </div>
+              <a href="/schedule-consultation" className="text-primary hover:text-primary/80 font-medium">
+                Free Consultation →
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -216,29 +245,47 @@ const Header = () => {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="lg:hidden bg-background border-t border-border">
+            {/* Mobile Quick Access */}
+            <div className="bg-gray-50 px-4 py-3 border-b border-gray-200">
+              <div className="flex items-center justify-between text-sm">
+                <div className="flex items-center space-x-2 text-gray-600">
+                  <Phone className="w-4 h-4" />
+                  <span>+1 212.233.0300</span>
+                </div>
+                <a href="/schedule-consultation" className="text-primary font-medium">
+                  Free Consultation
+                </a>
+              </div>
+            </div>
+            
             <div className="py-4 space-y-4">
-              <a href="/" className="block px-4 py-2 hover:text-primary">Home</a>
+              <a href="/" className="block px-4 py-2 hover:text-primary font-medium">🏠 Home</a>
               
               {menuItems.map((item) => (
                 <div key={item.title}>
                   <button
                     onClick={() => setActiveDropdown(activeDropdown === item.title ? null : item.title)}
-                    className="flex items-center justify-between w-full px-4 py-2 text-left"
+                    className="flex items-center justify-between w-full px-4 py-2 text-left font-medium"
                   >
-                    <span>{item.title}</span>
+                    <span>
+                      {item.title === 'Consulting' && '🤖 '}
+                      {item.title === 'Industries' && '🏢 '}
+                      {item.title === 'Resources' && '📚 '}
+                      {item.title}
+                    </span>
                     <ChevronDown className={`w-4 h-4 transition-transform ${activeDropdown === item.title ? 'rotate-180' : ''}`} />
                   </button>
                   
                   {activeDropdown === item.title && (
-                    <div className="px-4 pb-4">
+                    <div className="px-4 pb-4 bg-gray-50/50">
                       {item.items.map((category) => (
                         <div key={category.category} className="mb-4">
-                          <h4 className="font-medium text-primary mb-2">{category.category}</h4>
-                          <ul className="space-y-1 ml-4">
+                          <h4 className="font-medium text-primary mb-2 text-sm uppercase tracking-wide">{category.category}</h4>
+                          <ul className="space-y-2 ml-4">
                             {category.services.map((service) => (
                               <li key={service.name}>
-                                <a href={service.url} className="text-sm text-muted-foreground hover:text-primary">
-                                  {service.name}
+                                <a href={service.url} className="text-sm text-muted-foreground hover:text-primary block py-1 transition-colors">
+                                  • {service.name}
                                 </a>
                               </li>
                             ))}
@@ -249,13 +296,16 @@ const Header = () => {
                   )}
                 </div>
               ))}
-              <a href="/schedule-consultation" className="block px-4 py-2 hover:text-primary">Contact</a>
-              <div className="px-4 pt-4">
-                <a href="/schedule-consultation?source=header-mobile&button=schedule-consultation">
-                  <Button variant="corporate" className="w-full">
-                    Schedule Consultation
-                  </Button>
-                </a>
+              
+              <div className="border-t border-gray-200 pt-4">
+                <a href="/schedule-consultation" className="block px-4 py-2 hover:text-primary font-medium">📞 Contact</a>
+                <div className="px-4 pt-4">
+                  <a href="/schedule-consultation?source=header-mobile&button=schedule-consultation">
+                    <Button variant="corporate" className="w-full">
+                      🚀 Schedule Consultation
+                    </Button>
+                  </a>
+                </div>
               </div>
             </div>
           </div>

@@ -3,21 +3,30 @@ import { MapPin, Phone, Mail, Globe } from "lucide-react";
 
 const Footer = () => {
   const services = [
-    "Artificial Intelligence",
-    "Machine Learning",
-    "Process Automation",
-    "Data Analytics",
-    "Business Intelligence",
-    "Digital Transformation"
+    { name: "AI Development Services", url: "/ai-development-services" },
+    { name: "Machine Learning", url: "/machine-learning-development" },
+    { name: "Process Automation", url: "/process-automation" },
+    { name: "Data Analytics", url: "/data-analytics" },
+    { name: "Business Intelligence", url: "/business-intelligence" },
+    { name: "Predictive Analytics", url: "/predictive-analytics" }
   ];
 
   const industries = [
-    "Financial Services",
-    "Healthcare",
-    "Real Estate",
-    "Banking & Finance",
-    "Investment Management",
-    "Insurance"
+    { name: "Banking Solutions", url: "/banking-solutions" },
+    { name: "Healthcare", url: "/revenue-cycle-management" },
+    { name: "Real Estate", url: "/real-estate-software" },
+    { name: "Investment Management", url: "/investment-management" },
+    { name: "Risk Assessment", url: "/risk-assessment" },
+    { name: "Compliance Management", url: "/compliance-management" }
+  ];
+
+  const companyLinks = [
+    { name: "Knowledge Base", url: "/knowledge-base" },
+    { name: "Case Studies", url: "/case-studies" },
+    { name: "Industry Trends", url: "/industry-trends" },
+    { name: "AI Consulting", url: "/ai-consulting" },
+    { name: "Schedule Consultation", url: "/schedule-consultation" },
+    { name: "Contact", url: "/schedule-consultation" }
   ];
 
   return (
@@ -85,8 +94,8 @@ const Footer = () => {
               <ul className="space-y-3">
                 {services.map((service, index) => (
                   <li key={index}>
-                    <a href="#" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm">
-                      {service}
+                    <a href={service.url} className="text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm">
+                      {service.name}
                     </a>
                   </li>
                 ))}
@@ -99,8 +108,8 @@ const Footer = () => {
               <ul className="space-y-3">
                 {industries.map((industry, index) => (
                   <li key={index}>
-                    <a href="#" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm">
-                      {industry}
+                    <a href={industry.url} className="text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm">
+                      {industry.name}
                     </a>
                   </li>
                 ))}
@@ -111,36 +120,13 @@ const Footer = () => {
             <div>
               <h3 className="text-lg font-semibold mb-6">Company</h3>
               <ul className="space-y-3">
-                <li>
-                  <a href="#" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm">
-                    About Us
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm">
-                    Our Team
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm">
-                    Case Studies
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm">
-                    Careers
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm">
-                    News & Insights
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm">
-                    Contact
-                  </a>
-                </li>
+                {companyLinks.map((link, index) => (
+                  <li key={index}>
+                    <a href={link.url} className="text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm">
+                      {link.name}
+                    </a>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
