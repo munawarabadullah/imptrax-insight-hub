@@ -504,44 +504,106 @@ const DataMigration = () => {
       </section>
 
       {/* Statistics Section */}
-      <section className="py-16 bg-gradient-to-b from-background to-primary/5 relative overflow-hidden">
+      <section className="py-24 bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/20 dark:from-slate-900 dark:via-slate-800/50 dark:to-slate-900 relative overflow-hidden">
+        {/* Enhanced Background Elements */}
+        <div className="absolute inset-0">
+          {/* Animated gradient orbs */}
+          <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full blur-3xl animate-blob"></div>
+          <div className="absolute top-40 right-10 w-72 h-72 bg-gradient-to-r from-purple-400/20 to-pink-400/20 rounded-full blur-3xl animate-blob animation-delay-2"></div>
+          <div className="absolute -bottom-20 left-1/2 transform -translate-x-1/2 w-96 h-96 bg-gradient-to-r from-blue-400/10 to-cyan-400/10 rounded-full blur-3xl animate-blob animation-delay-4"></div>
+          
+          {/* Floating geometric shapes */}
+          <div className="absolute top-1/4 left-1/4 w-4 h-4 bg-blue-500/20 rounded-full animate-float"></div>
+          <div className="absolute top-3/4 right-1/4 w-6 h-6 bg-purple-500/20 rounded-full animate-float animation-delay-2"></div>
+          <div className="absolute top-1/2 left-3/4 w-3 h-3 bg-cyan-500/20 rounded-full animate-float animation-delay-3"></div>
+        </div>
+        
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-12">
-            <Badge variant="outline" className="mb-6 px-4 py-2 bg-background/80 backdrop-blur-sm border-primary/20">
-              <BarChart3 className="w-4 h-4 mr-2 text-primary" />
-              Proven Excellence
-            </Badge>
-            <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-6 tracking-wide">
-              Migration Success
-              <span className="block text-primary">Statistics</span>
+          <div className="text-center mb-20">
+            {/* Modern Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border border-blue-200/50 dark:border-slate-600/50 rounded-full mb-8 shadow-lg">
+              <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+              <BarChart3 className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+              <span className="text-sm font-semibold text-slate-700 dark:text-slate-300">Proven Excellence</span>
+            </div>
+            
+            {/* Enhanced Heading */}
+            <h2 className="text-4xl lg:text-6xl font-bold mb-6 tracking-tight">
+              <span className="bg-gradient-to-r from-slate-900 via-blue-800 to-slate-900 dark:from-white dark:via-blue-200 dark:to-white bg-clip-text text-transparent">
+                Migration Success
+              </span>
+              <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mt-2">
+                Statistics
+              </span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Our track record speaks for itself. With hundreds of successful migrations, we deliver results that exceed expectations.
+            
+            {/* Enhanced Description */}
+            <p className="text-xl lg:text-2xl text-slate-600 dark:text-slate-300 max-w-4xl mx-auto leading-relaxed font-light">
+              Our track record speaks for itself. With 
+              <span className="font-semibold text-blue-700 dark:text-blue-300">hundreds of successful migrations</span>, 
+              we deliver results that exceed expectations.
             </p>
           </div>
+          
+          {/* Enhanced Statistics Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {statistics.map((stat, index) => {
               const IconComponent = stat.icon;
               return (
-                <Card key={index} className="group hover:shadow-lg transition-all duration-300 hover:scale-105 border-border/50 hover:border-primary/30 bg-background/80 backdrop-blur-sm text-center relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <CardHeader className="relative z-10">
-                    <div className="mx-auto mb-4 p-3 bg-primary/10 rounded-full w-fit group-hover:bg-primary/20 transition-colors duration-300">
-                      <IconComponent className="w-8 h-8 text-primary" />
+                <div 
+                  key={index} 
+                  className="group relative"
+                  style={{ animationDelay: `${index * 150}ms` }}
+                >
+                  {/* Card with enhanced styling */}
+                  <div className="relative bg-white/70 dark:bg-slate-800/70 backdrop-blur-xl border border-white/20 dark:border-slate-700/50 rounded-2xl p-8 text-center transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/10 dark:hover:shadow-blue-400/10 group-hover:border-blue-300/50 dark:group-hover:border-blue-500/50">
+                    {/* Hover gradient overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-cyan-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    {/* Icon container with enhanced styling */}
+                    <div className="relative z-10 mx-auto mb-6 w-16 h-16 bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900/50 dark:to-purple-900/50 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                      <IconComponent className="w-8 h-8 text-blue-600 dark:text-blue-400 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors duration-300" />
                     </div>
-                    <div className="text-4xl font-bold text-primary mb-2">{stat.number}</div>
-                    <CardTitle className="text-lg font-medium text-foreground group-hover:text-primary transition-colors duration-300">
+                    
+                    {/* Enhanced number display */}
+                    <div className="relative z-10 text-5xl lg:text-6xl font-bold mb-3 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
+                      {stat.number}
+                    </div>
+                    
+                    {/* Enhanced label */}
+                    <h3 className="relative z-10 text-lg lg:text-xl font-semibold text-slate-800 dark:text-slate-200 mb-3 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors duration-300">
                       {stat.label}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="relative z-10">
-                    <CardDescription className="text-muted-foreground leading-relaxed">
+                    </h3>
+                    
+                    {/* Enhanced description */}
+                    <p className="relative z-10 text-slate-600 dark:text-slate-400 leading-relaxed text-sm lg:text-base">
                       {stat.description}
-                    </CardDescription>
-                  </CardContent>
-                </Card>
+                    </p>
+                    
+                    {/* Subtle bottom accent */}
+                    <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  </div>
+                </div>
               );
             })}
+          </div>
+          
+          {/* Additional trust indicators */}
+          <div className="mt-20 text-center">
+            <div className="inline-flex items-center gap-8 px-8 py-4 bg-white/60 dark:bg-slate-800/60 backdrop-blur-sm rounded-2xl border border-white/30 dark:border-slate-700/30 shadow-lg">
+              <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400">
+                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                <span className="text-sm font-medium">Real-time Monitoring</span>
+              </div>
+              <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400">
+                <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse animation-delay-1"></div>
+                <span className="text-sm font-medium">24/7 Support</span>
+              </div>
+              <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400">
+                <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse animation-delay-2"></div>
+                <span className="text-sm font-medium">Enterprise Grade</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
