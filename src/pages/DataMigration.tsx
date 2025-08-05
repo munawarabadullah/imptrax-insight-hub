@@ -1216,36 +1216,75 @@ const DataMigration = () => {
 
       {/* Migration Approaches Section */}
       <section className="py-20 bg-gradient-to-b from-primary/5 to-background relative overflow-hidden">
+        {/* Enhanced Background Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_30%,rgba(59,130,246,0.15),transparent_70%)] animate-pulse"></div>
+          <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_80%_70%,rgba(147,51,234,0.15),transparent_70%)] animate-pulse delay-1000"></div>
+          <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.02)_50%,transparent_75%)] bg-[length:60px_60px] animate-pulse"></div>
+        </div>
+        
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <Badge variant="outline" className="mb-6 px-4 py-2 bg-background/80 backdrop-blur-sm border-primary/20">
-              <Lightbulb className="w-4 h-4 mr-2 text-primary" />
-              Migration Strategies
+            {/* Enhanced Glass Morphism Badge */}
+            <Badge variant="outline" className="mb-6 px-6 py-3 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-blue-500/10 backdrop-blur-md border-blue-500/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+              <Lightbulb className="w-4 h-4 mr-2 text-blue-600 dark:text-blue-400" />
+              <span className="text-blue-700 dark:text-blue-300 font-medium">Migration Strategies</span>
             </Badge>
-            <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-6 tracking-wide">
-              Flexible Migration
-              <span className="block text-primary">Approaches</span>
+            
+            {/* Enhanced Heading with Gradient */}
+            <h2 className="text-4xl lg:text-6xl font-bold mb-8 tracking-tight">
+              <span className="bg-gradient-to-r from-slate-900 via-slate-700 to-slate-900 dark:from-white dark:via-slate-200 dark:to-white bg-clip-text text-transparent">
+                Flexible Migration
+              </span>
+              <span className="block bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 bg-clip-text text-transparent animate-gradient-x">
+                Approaches
+              </span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            
+            {/* Enhanced Description */}
+            <p className="text-xl lg:text-2xl text-slate-600 dark:text-slate-300 max-w-4xl mx-auto leading-relaxed">
               Choose the optimal migration strategy that aligns with your business objectives and technical requirements.
             </p>
+            
+            {/* Decorative line */}
+            <div className="mt-8 w-32 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-blue-500 mx-auto rounded-full"></div>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Enhanced Cards Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {migrationApproaches.map((approach, index) => (
-              <Card key={index} className="group hover:shadow-lg transition-all duration-300 hover:scale-105 border-border/50 hover:border-primary/30 bg-background/80 backdrop-blur-sm">
-                <CardHeader>
-                  <CardTitle className="text-lg font-medium text-foreground group-hover:text-primary transition-colors duration-300">
+              <Card key={index} className="group hover:shadow-2xl transition-all duration-500 hover:scale-105 border-border/50 hover:border-blue-500/30 bg-background/80 backdrop-blur-md relative overflow-hidden">
+                {/* Enhanced Shimmer Effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-500/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out"></div>
+                
+                <CardHeader className="relative z-10">
+                  <CardTitle className="text-lg font-semibold text-foreground group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
                     {approach.title}
                   </CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-muted-foreground leading-relaxed">
+                <CardContent className="relative z-10">
+                  <CardDescription className="text-muted-foreground leading-relaxed group-hover:text-slate-600 dark:group-hover:text-slate-300 transition-colors duration-300">
                     {approach.description}
                   </CardDescription>
                 </CardContent>
               </Card>
             ))}
+          </div>
+          
+          {/* Additional trust indicators */}
+          <div className="mt-16 flex flex-wrap justify-center items-center gap-8 text-sm text-slate-500 dark:text-slate-400">
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+              <span className="font-medium">Flexible Strategies</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse animation-delay-1"></div>
+              <span className="font-medium">Business Aligned</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse animation-delay-2"></div>
+              <span className="font-medium">Technical Excellence</span>
+            </div>
           </div>
         </div>
       </section>
