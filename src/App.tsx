@@ -18,6 +18,7 @@ import RoboticProcessAutomation from "./pages/RoboticProcessAutomation";
 import WorkflowOptimization from "./pages/WorkflowOptimization";
 import FinancialWorkflowProcess from "./pages/FinancialWorkflowProcess";
 import BusinessIntelligence from "./pages/BusinessIntelligence";
+import DataAnalytics from "./pages/DataAnalytics";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import CookiePolicy from "./pages/CookiePolicy";
@@ -49,6 +50,7 @@ const App = () => (
           <Route path="/workflow-optimization" element={<WorkflowOptimization />} />
           <Route path="/financial-workflow-process" element={<FinancialWorkflowProcess />} />
           <Route path="/business-intelligence" element={<BusinessIntelligence />} />
+          <Route path="/data-analytics" element={<DataAnalytics />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
           <Route path="/cookie-policy" element={<CookiePolicy />} />

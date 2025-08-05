@@ -198,6 +198,141 @@ Four core BI services:
 Four areas of expertise:
 1. **Data Collection & Processing** - ETL pipelines, data lakes, cloud integration
 2. **Advanced Analytics** - Machine learning, statistical analysis, predictive modeling
+
+---
+
+# Data Analytics Page Documentation
+
+## Page Overview
+- **Page Name**: Data Analytics
+- **Route**: `/data-analytics`
+- **File Location**: `src/pages/DataAnalytics.tsx`
+- **Purpose**: Showcase ImpTrax's comprehensive data analytics solutions and drive consultation bookings
+- **Content Source**: Adapted from Systems Limited advanced analytics services content (reference removed as per instructions)
+
+## SEO Implementation
+- **Title**: "Transform Data into Strategic Insights | Data Analytics Solutions | ImpTrax"
+- **Meta Description**: "Unlock the power of your data with ImpTrax's advanced analytics solutions. Drive informed decision-making, optimize performance, and gain competitive advantage through comprehensive data intelligence."
+- **H1 Tag**: "Transform Data into Strategic Insights"
+- **H2 Tags**: 
+  - "Challenges We Solve"
+  - "Our Data Analytics Services"
+  - "Analytics Solutions That Transform"
+  - "Industries We Serve"
+  - "Benefits of Our Data Analytics Solutions"
+  - "Why Choose ImpTrax for Data Analytics?"
+  - "Ready to Transform Your Data into Insights?"
+
+## Content Structure
+
+### Hero Section
+- **Main Headline**: "Transform Data into Strategic Insights"
+- **Data Analytics Solutions Badge**: Indicates analytics services focus
+- **Subheadline**: Emphasizes advanced analytics solutions and strategic insights
+- **Call-to-Action Buttons**: 
+  - "Get Started Today" (primary)
+  - "Learn More" (secondary)
+
+### Challenges We Solve Section
+Three main business challenges:
+1. **Data-Driven Decision Making** - Transform raw data into actionable insights
+2. **Performance Optimization** - Identify bottlenecks and enhance operational efficiency
+3. **Risk Management** - Proactive risk identification through predictive analytics
+
+### Our Data Analytics Services Section
+Four core analytics services:
+1. **Data Warehousing & Integration** - Multi-source data integration and scalable architecture
+2. **Advanced Analytics & Reporting** - Interactive dashboards and automated reporting
+3. **Predictive Analytics & ML** - Forecasting models and pattern recognition
+4. **Real-time Analytics** - Live data streaming and instant alerts
+
+### Analytics Solutions That Transform Section
+Six specialized solutions:
+1. **Supply Chain Optimization** - Predictive analytics for supply chain efficiency
+2. **Customer Behavior Analysis** - Understanding customer patterns and preferences
+3. **Financial Performance Analytics** - Financial metrics monitoring and optimization
+4. **Operational Intelligence** - Process insights for efficiency improvement
+5. **Market Intelligence** - Market trends and competitive landscape analysis
+6. **Risk Assessment & Compliance** - Automated risk monitoring and compliance
+
+### Industries We Serve Section
+Three key industries:
+1. **Financial Services** - Risk management, fraud detection, regulatory compliance
+2. **Healthcare** - Patient analytics, treatment optimization, operational efficiency
+3. **Real Estate** - Market analysis, property valuation, investment tracking
+
+### Benefits Section
+Four key benefits:
+1. **Enhanced Decision Making** - Comprehensive data analysis and insights
+2. **Improved Performance** - Data-driven process improvements
+3. **Competitive Advantage** - Advanced analytics and market intelligence
+4. **Operational Excellence** - Intelligent automation and optimization
+
+### Why Choose ImpTrax Section
+Four value propositions:
+1. **Expert Team** - Certified data scientists with industry experience
+2. **Proven Methodology** - Industry best practices and proven methodologies
+3. **Scalable Solutions** - Solutions that scale from startup to enterprise
+4. **Ongoing Support** - Comprehensive support and maintenance
+
+### Call-to-Action Section
+- **Headline**: "Ready to Transform Your Data into Insights?"
+- **Button**: "Schedule Free Consultation"
+
+## Design Elements
+- **Color Scheme**: ImpTrax brand guidelines with gradient backgrounds
+- **Icons**: Lucide React icons (BarChart3, Brain, Database, TrendingUp, Zap, Target, Shield, Users, Building2, Heart, Home, CheckCircle, ArrowRight, Lightbulb, Settings, Globe)
+- **Layout**: Responsive grid layouts with cards and gradient sections
+- **Visual Effects**: Hover animations, gradient text, shadow effects
+
+## Technical Implementation
+- **Framework**: React with TypeScript
+- **Styling**: Tailwind CSS with custom gradient classes
+- **Components**: shadcn/ui components (Button, Card, Badge)
+- **Navigation**: useNavigate hook for consultation page routing
+- **Responsive**: Mobile-first responsive design
+
+## Navigation Integration
+- Updated Header.tsx to link Data Analytics menu item to `/data-analytics`
+- Added route in App.tsx with proper import
+- Positioned under Services > Data Services category
+
+## Brand Compliance
+- All content rewritten for ImpTrax branding
+- Removed all external references and company names
+- Consistent use of "ImpTrax" throughout
+- Professional enterprise tone
+- No trademark information included
+
+## Consultation Integration
+- All CTA buttons route to `/schedule-consultation`
+- Proper source and button tracking parameters:
+  - `source=data-analytics`
+  - `button=hero-get-started|hero-learn-more|why-choose-cta|final-cta`
+- Strategic placement of consultation calls throughout the page
+
+## Content Quality
+- Elegant rewriting of reference materials
+- Focus on ImpTrax's unique value propositions
+- Clear, professional, and engaging copy
+- Industry-appropriate terminology
+- Comprehensive service coverage
+- Strategic business focus
+
+## Accessibility Features
+- Semantic HTML structure
+- Proper heading hierarchy (H1, H2, H3)
+- Alt text considerations for icons
+- Keyboard navigation support
+- Screen reader friendly content
+- High contrast design elements
+
+## Performance Considerations
+- Optimized component structure
+- Efficient CSS classes
+- Minimal external dependencies
+- Fast loading design
+- Responsive images and icons
 3. **Data Visualization** - Interactive dashboards, custom charts, mobile responsive
 4. **Business Intelligence Strategy** - BI roadmapping, ROI analysis, change management
 
