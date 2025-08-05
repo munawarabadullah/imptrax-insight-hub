@@ -1065,54 +1065,126 @@ const DataMigration = () => {
       </section>
 
       {/* Migration Process Section */}
-      <section className="py-20 bg-background relative overflow-hidden">
-        {/* Decorative Elements */}
+      <section className="py-20 bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-800 relative overflow-hidden">
+        {/* Enhanced Background Elements */}
         <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-1/4 right-0 w-64 h-64 bg-accent/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          {/* Animated gradient orbs */}
+          <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-blue-400/20 to-purple-500/20 rounded-full blur-3xl animate-float"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-r from-emerald-400/15 to-cyan-500/15 rounded-full blur-3xl animate-float-delayed"></div>
+          
+          {/* Floating geometric shapes */}
+          <div className="absolute top-1/3 left-1/4 w-4 h-4 bg-blue-500/30 rounded-full animate-bounce-slow"></div>
+          <div className="absolute top-2/3 right-1/3 w-6 h-6 bg-purple-500/30 rotate-45 animate-spin-slow"></div>
+          <div className="absolute bottom-1/3 left-2/3 w-3 h-3 bg-emerald-500/30 rounded-full animate-pulse"></div>
+          
+          {/* Grid pattern overlay */}
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(120,119,198,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(120,119,198,0.03)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-16">
-            <Badge variant="outline" className="mb-6 px-4 py-2 bg-background/80 backdrop-blur-sm border-primary/20">
-              <RefreshCw className="w-4 h-4 mr-2 text-primary" />
-              Migration Process
+          <div className="text-center mb-20">
+            {/* Enhanced Badge */}
+            <Badge variant="outline" className="mb-8 px-6 py-3 bg-white/70 dark:bg-slate-800/70 backdrop-blur-md border-blue-200/50 dark:border-blue-400/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+              <RefreshCw className="w-5 h-5 mr-3 text-blue-600 dark:text-blue-400" />
+              <span className="text-blue-700 dark:text-blue-300 font-medium">Migration Process</span>
             </Badge>
-            <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-6 tracking-wide">
-              Our Proven Migration
-              <span className="block text-primary">Methodology</span>
+            
+            {/* Enhanced Heading */}
+            <h2 className="text-4xl lg:text-6xl font-bold mb-8 tracking-tight">
+              <span className="bg-gradient-to-r from-slate-900 via-slate-700 to-slate-900 dark:from-white dark:via-slate-200 dark:to-white bg-clip-text text-transparent">
+                Our Proven Migration
+              </span>
+              <span className="block bg-gradient-to-r from-blue-600 via-purple-600 to-emerald-600 bg-clip-text text-transparent animate-gradient-x">
+                Methodology
+              </span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              A systematic approach ensuring successful data migration with minimal risk and maximum efficiency.
+            
+            {/* Enhanced Description */}
+            <p className="text-xl lg:text-2xl text-slate-600 dark:text-slate-300 max-w-4xl mx-auto leading-relaxed">
+              A systematic approach ensuring successful data migration with minimal risk and maximum efficiency through proven methodologies.
             </p>
+            
+            {/* Decorative line */}
+            <div className="mt-8 w-32 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-emerald-500 mx-auto rounded-full"></div>
           </div>
           
+          {/* Enhanced Cards Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {migrationProcess.map((process, index) => {
               const IconComponent = process.icon;
               return (
-                <Card key={index} className="group hover:shadow-lg transition-all duration-300 hover:scale-105 border-border/50 hover:border-primary/30 bg-background/50 backdrop-blur-sm relative overflow-hidden">
-                  {/* Step Number */}
-                  <div className="absolute top-4 right-4 w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
-                    <span className="text-primary font-bold text-sm">{process.step}</span>
+                <Card 
+                  key={index} 
+                  className={`group hover:shadow-2xl transition-all duration-500 hover:scale-105 border-0 bg-white/80 dark:bg-slate-800/80 backdrop-blur-md overflow-hidden relative animate-fade-in-up`}
+                  style={{ animationDelay: `${index * 150}ms` }}
+                >
+                  {/* Card background gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white via-blue-50/30 to-purple-50/30 dark:from-slate-800 dark:via-slate-700/30 dark:to-slate-600/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  
+                  {/* Glass morphism effect */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-white/10 dark:from-slate-700/40 dark:to-slate-800/10 backdrop-blur-sm border border-white/20 dark:border-slate-600/20 rounded-lg"></div>
+                  
+                  {/* Enhanced Step Number Badge */}
+                  <div className="absolute top-4 right-4 w-12 h-12 bg-gradient-to-br from-blue-500/20 to-purple-500/20 dark:from-blue-400/30 dark:to-purple-400/30 rounded-full flex items-center justify-center group-hover:from-blue-500/30 group-hover:to-purple-500/30 transition-all duration-300 group-hover:scale-110 shadow-lg">
+                    <span className="text-blue-700 dark:text-blue-300 font-bold text-sm group-hover:text-purple-700 dark:group-hover:text-purple-300 transition-colors duration-300">{process.step}</span>
                   </div>
                   
-                  <CardHeader className="pb-4">
-                    <div className="mb-4 p-3 bg-primary/10 rounded-full w-fit group-hover:bg-primary/20 transition-colors duration-300">
-                      <IconComponent className="w-8 h-8 text-primary" />
+                  <CardHeader className="relative z-10 pb-4">
+                    {/* Enhanced Icon Container */}
+                    <div className="relative mb-6">
+                      <div className="p-4 bg-gradient-to-br from-blue-500/10 to-purple-500/10 dark:from-blue-400/20 dark:to-purple-400/20 rounded-xl group-hover:from-blue-500/20 group-hover:to-purple-500/20 transition-all duration-300 group-hover:scale-110 w-fit">
+                        <IconComponent className="w-8 h-8 text-blue-600 dark:text-blue-400 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors duration-300" />
+                      </div>
+                      {/* Icon glow effect */}
+                      <div className="absolute inset-0 bg-blue-500/20 rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     </div>
-                    <CardTitle className="text-xl font-medium text-foreground group-hover:text-primary transition-colors duration-300">
+                    
+                    {/* Enhanced Title */}
+                    <CardTitle className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 leading-tight mb-3">
                       {process.title}
                     </CardTitle>
                   </CardHeader>
-                  <CardContent>
-                    <CardDescription className="text-muted-foreground leading-relaxed">
+                  
+                  <CardContent className="relative z-10 pt-0">
+                    {/* Enhanced Description */}
+                    <CardDescription className="text-slate-600 dark:text-slate-300 leading-relaxed text-base group-hover:text-slate-700 dark:group-hover:text-slate-200 transition-colors duration-300">
                       {process.description}
                     </CardDescription>
+                    
+                    {/* Process Flow Indicator */}
+                    <div className="mt-4 flex items-center gap-2">
+                      <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                      <div className="flex-1 h-0.5 bg-gradient-to-r from-blue-500/50 to-purple-500/50 rounded-full"></div>
+                      <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+                    </div>
+                    
+                    {/* Subtle bottom accent */}
+                    <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   </CardContent>
+                  
+                  {/* Hover shimmer effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out"></div>
                 </Card>
               );
             })}
+          </div>
+          
+          {/* Additional trust indicators */}
+          <div className="mt-20 text-center">
+            <div className="inline-flex items-center gap-8 px-8 py-4 bg-white/60 dark:bg-slate-800/60 backdrop-blur-sm rounded-2xl border border-white/30 dark:border-slate-700/30 shadow-lg">
+              <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400">
+                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                <span className="text-sm font-medium">Systematic Approach</span>
+              </div>
+              <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400">
+                <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse animation-delay-1"></div>
+                <span className="text-sm font-medium">Risk Mitigation</span>
+              </div>
+              <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400">
+                <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse animation-delay-2"></div>
+                <span className="text-sm font-medium">Proven Methodology</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
