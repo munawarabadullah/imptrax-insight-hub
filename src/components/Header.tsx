@@ -45,11 +45,10 @@ const Header = () => {
         {
           category: "Data Services",
           services: [
+            { name: "Real-time Analytics", url: "#" },
             { name: "Data Analytics", url: "/data-analytics" },
             { name: "Data Migration", url: "#" },
-            { name: "Data Warehousing", url: "#" },
-            { name: "Real Estate Software", url: "/real-estate-software" },
-            { name: "Real-time Analytics", url: "#" }
+            { name: "Data Warehousing", url: "#" }
           ]
         }
       ]
