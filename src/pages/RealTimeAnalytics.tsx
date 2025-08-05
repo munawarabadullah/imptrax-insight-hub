@@ -224,77 +224,129 @@ const RealTimeAnalytics = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 bg-gradient-to-br from-primary/5 via-background to-accent/5 overflow-hidden">
-        {/* Animated Background Elements */}
+      <section className="relative py-24 lg:py-40 bg-gradient-to-br from-primary/5 via-background to-accent/5 overflow-hidden">
+        {/* Enhanced Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-accent/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-primary/5 to-accent/5 rounded-full blur-3xl animate-spin-slow"></div>
+          <div className="absolute -top-40 -right-40 w-96 h-96 bg-primary/8 rounded-full blur-3xl animate-pulse opacity-60"></div>
+          <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-accent/8 rounded-full blur-3xl animate-pulse delay-1000 opacity-60"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[32rem] h-[32rem] bg-gradient-to-r from-primary/3 to-accent/3 rounded-full blur-3xl animate-spin-slow opacity-40"></div>
           
-          {/* Floating Analytics Icons */}
-          <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-primary/20 rounded-full animate-ping delay-500"></div>
-          <div className="absolute top-3/4 right-1/4 w-1 h-1 bg-accent/30 rounded-full animate-ping delay-1000"></div>
-          <div className="absolute top-1/2 right-1/3 w-1.5 h-1.5 bg-primary/15 rounded-full animate-ping delay-1500"></div>
+          {/* Enhanced Floating Analytics Particles */}
+          <div className="absolute top-1/4 left-1/4 w-3 h-3 bg-primary/25 rounded-full animate-ping delay-500"></div>
+          <div className="absolute top-3/4 right-1/4 w-2 h-2 bg-accent/30 rounded-full animate-ping delay-1000"></div>
+          <div className="absolute top-1/2 right-1/3 w-2.5 h-2.5 bg-primary/20 rounded-full animate-ping delay-1500"></div>
+          <div className="absolute top-1/3 left-1/2 w-1.5 h-1.5 bg-accent/25 rounded-full animate-ping delay-2000"></div>
+          <div className="absolute bottom-1/3 left-1/5 w-2 h-2 bg-primary/15 rounded-full animate-ping delay-2500"></div>
         </div>
         
         {/* Enhanced Floating Data Visualization Elements */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-20 left-10 animate-float group cursor-pointer">
-            <Activity className="w-8 h-8 text-primary/30 hover:text-primary/50 hover:scale-110 transition-all duration-300" />
+          <div className="absolute top-16 left-8 animate-float opacity-40 hover:opacity-70 transition-opacity duration-500">
+            <div className="relative">
+              <Activity className="w-10 h-10 text-primary/40 drop-shadow-lg" />
+              <div className="absolute -inset-2 bg-primary/5 rounded-full blur-md"></div>
+            </div>
           </div>
-          <div className="absolute top-40 right-20 animate-float-delayed group cursor-pointer">
-            <Gauge className="w-6 h-6 text-accent/30 hover:text-accent/50 hover:scale-110 hover:rotate-12 transition-all duration-300" />
+          <div className="absolute top-32 right-16 animate-float-delayed opacity-40 hover:opacity-70 transition-opacity duration-500">
+            <div className="relative">
+              <Gauge className="w-8 h-8 text-accent/40 drop-shadow-lg" />
+              <div className="absolute -inset-2 bg-accent/5 rounded-full blur-md"></div>
+            </div>
           </div>
-          <div className="absolute bottom-40 left-20 animate-float group cursor-pointer">
-            <Zap className="w-7 h-7 text-primary/20 hover:text-primary/40 hover:scale-110 transition-all duration-300" />
+          <div className="absolute bottom-32 left-16 animate-float opacity-40 hover:opacity-70 transition-opacity duration-500">
+            <div className="relative">
+              <Zap className="w-9 h-9 text-primary/35 drop-shadow-lg" />
+              <div className="absolute -inset-2 bg-primary/5 rounded-full blur-md"></div>
+            </div>
           </div>
-          <div className="absolute bottom-20 right-10 animate-float-delayed group cursor-pointer">
-            <Clock className="w-8 h-8 text-accent/25 hover:text-accent/45 hover:scale-110 hover:rotate-6 transition-all duration-300" />
+          <div className="absolute bottom-16 right-8 animate-float-delayed opacity-40 hover:opacity-70 transition-opacity duration-500">
+            <div className="relative">
+              <Clock className="w-10 h-10 text-accent/35 drop-shadow-lg" />
+              <div className="absolute -inset-2 bg-accent/5 rounded-full blur-md"></div>
+            </div>
+          </div>
+          <div className="absolute top-1/2 left-12 animate-float opacity-30 hover:opacity-60 transition-opacity duration-500">
+            <div className="relative">
+              <BarChart3 className="w-7 h-7 text-primary/30 drop-shadow-lg" />
+              <div className="absolute -inset-2 bg-primary/5 rounded-full blur-md"></div>
+            </div>
+          </div>
+          <div className="absolute top-1/3 right-12 animate-float-delayed opacity-30 hover:opacity-60 transition-opacity duration-500">
+            <div className="relative">
+              <TrendingUp className="w-8 h-8 text-accent/30 drop-shadow-lg" />
+              <div className="absolute -inset-2 bg-accent/5 rounded-full blur-md"></div>
+            </div>
           </div>
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-5xl mx-auto text-center">
-            {/* Enhanced Badge */}
-            <div className="inline-flex items-center justify-center mb-8">
-              <Badge variant="outline" className="mb-0 px-6 py-3 text-sm font-medium bg-background/80 backdrop-blur-sm border-primary/20 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 animate-fade-in">
-                <Activity className="w-4 h-4 mr-2 text-primary" />
-                Real-time Analytics Solutions
+          <div className="max-w-6xl mx-auto text-center">
+            {/* Enhanced Badge with Glow Effect */}
+            <div className="inline-flex items-center justify-center mb-12 animate-fade-in">
+              <Badge variant="outline" className="mb-0 px-8 py-4 text-base font-medium bg-background/90 backdrop-blur-md border-primary/30 hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500 group relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <Activity className="w-5 h-5 mr-3 text-primary relative z-10 group-hover:scale-110 transition-transform duration-300" />
+                <span className="relative z-10">Real-time Analytics Solutions</span>
               </Badge>
             </div>
             
-            {/* Enhanced Heading */}
-            <h1 className="text-4xl lg:text-7xl font-bold text-foreground mb-8 animate-fade-in-up tracking-wide leading-tight">
-              Harness the Power of<br/>
-              <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-gradient-x drop-shadow-sm animate-pulse-subtle">
+            {/* Enhanced Heading with Better Typography */}
+            <h1 className="text-5xl md:text-6xl lg:text-8xl font-extrabold text-foreground mb-12 animate-fade-in-up tracking-tight leading-[0.9] relative">
+              <span className="block mb-4">Harness the Power of</span>
+              <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-gradient-x drop-shadow-2xl relative inline-block">
                 Real-time Insights
+                <div className="absolute -inset-4 bg-gradient-to-r from-primary/10 to-accent/10 blur-2xl opacity-30 animate-pulse"></div>
               </span>
             </h1>
             
-            {/* Enhanced Description */}
-            <p className="text-xl lg:text-2xl text-muted-foreground mb-10 max-w-4xl mx-auto leading-loose animate-fade-in-up delay-150 tracking-wide">
-              Transform your business with instant data processing, live dashboards, and real-time decision-making capabilities. 
-              <span className="text-primary font-medium">Make every moment count</span> with ImpTrax's cutting-edge real-time analytics platform.
-            </p>
+            {/* Enhanced Description with Better Spacing */}
+            <div className="mb-16 animate-fade-in-up delay-150">
+              <p className="text-xl md:text-2xl lg:text-3xl text-muted-foreground mb-6 max-w-5xl mx-auto leading-relaxed font-light">
+                Transform your business with instant data processing, live dashboards, and real-time decision-making capabilities.
+              </p>
+              <p className="text-lg md:text-xl text-muted-foreground/80 max-w-4xl mx-auto leading-relaxed">
+                <span className="text-primary font-semibold bg-primary/10 px-3 py-1 rounded-full">Make every moment count</span> with ImpTrax's cutting-edge real-time analytics platform.
+              </p>
+            </div>
             
-            {/* Enhanced CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up delay-300">
+            {/* Enhanced CTA Buttons with Better Styling */}
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-in-up delay-300">
               <Button 
                 size="lg" 
-                className="bg-primary hover:bg-primary/90 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl hover:shadow-primary/25 transition-all duration-300 hover:scale-105 group"
+                className="bg-primary hover:bg-primary/90 text-white px-10 py-5 text-xl font-bold shadow-2xl hover:shadow-3xl hover:shadow-primary/30 transition-all duration-500 hover:scale-110 group relative overflow-hidden min-w-[280px]"
                 onClick={() => handleConsultationClick('get-started')}
               >
-                Start Real-time Analytics
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <span className="relative z-10 flex items-center">
+                  Start Real-time Analytics
+                  <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" />
+                </span>
               </Button>
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="border-primary/20 hover:border-primary hover:bg-primary/5 px-8 py-4 text-lg font-semibold backdrop-blur-sm transition-all duration-300 hover:scale-105"
+                className="border-2 border-primary/30 hover:border-primary hover:bg-primary/10 px-10 py-5 text-xl font-bold backdrop-blur-md transition-all duration-500 hover:scale-110 hover:shadow-xl min-w-[200px] group relative overflow-hidden"
                 onClick={() => handleConsultationClick('learn-more')}
               >
-                Learn More
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <span className="relative z-10">Learn More</span>
               </Button>
+            </div>
+            
+            {/* Enhanced Stats Preview */}
+             <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto animate-fade-in-up delay-500">
+               <div className="text-center group">
+                 <div className="text-3xl md:text-4xl font-bold text-primary mb-2 group-hover:scale-110 transition-transform duration-300">&lt;1 ms</div>
+                 <div className="text-sm md:text-base text-muted-foreground font-medium">Response Time</div>
+               </div>
+              <div className="text-center group">
+                <div className="text-3xl md:text-4xl font-bold text-primary mb-2 group-hover:scale-110 transition-transform duration-300">99.9%</div>
+                <div className="text-sm md:text-base text-muted-foreground font-medium">Uptime Guarantee</div>
+              </div>
+              <div className="text-center group">
+                <div className="text-3xl md:text-4xl font-bold text-primary mb-2 group-hover:scale-110 transition-transform duration-300">24/7</div>
+                <div className="text-sm md:text-base text-muted-foreground font-medium">Real-time Monitoring</div>
+              </div>
             </div>
           </div>
         </div>
