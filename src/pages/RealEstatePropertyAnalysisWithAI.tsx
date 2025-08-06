@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -8,8 +9,13 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const RealEstatePropertyAnalysisWithAI = () => {
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("overview");
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
+
+  const handleConsultationClick = (buttonType: string) => {
+    navigate(`/schedule-consultation?source=real-estate-property-analysis&button=${buttonType}`);
+  };
 
   const solutions = [
     {
@@ -165,12 +171,12 @@ const RealEstatePropertyAnalysisWithAI = () => {
               Transform your real estate investment decisions with advanced AI analytics, automated valuations, and data-driven market insights for maximum ROI and minimized risk.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg" onClick={() => handleConsultationClick('start-analysis')}>
                 Start Analysis
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
-              <Button size="lg" variant="outline" className="border-blue-300 text-blue-300 hover:bg-blue-300 hover:text-blue-900 px-8 py-4 text-lg">
-                View Demo
+              <Button size="lg" variant="outline" className="border-blue-300 text-blue-300 hover:bg-blue-300 hover:text-blue-900 px-8 py-4 text-lg" onClick={() => handleConsultationClick('schedule-demo')}>
+                Schedule Demo
               </Button>
             </div>
           </div>
@@ -639,11 +645,11 @@ const RealEstatePropertyAnalysisWithAI = () => {
             Partner with ImpTrax to leverage AI-powered property analysis, maximize your investment returns, and make data-driven real estate decisions with confidence.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-4 text-lg">
+            <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-4 text-lg" onClick={() => handleConsultationClick('start-free-analysis')}>
               Start Free Analysis
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 text-lg">
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 text-lg" onClick={() => handleConsultationClick('schedule-demo')}>
               Schedule Demo
             </Button>
           </div>

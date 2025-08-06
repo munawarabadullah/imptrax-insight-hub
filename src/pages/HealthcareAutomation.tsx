@@ -603,8 +603,8 @@ const HealthcareAutomation = () => {
               Schedule Consultation
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600" onClick={() => handleConsultationClick('download-case-studies')}>
-              Download Case Studies
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600" onClick={() => navigate('/case-studies')}>
+              Review Case Studies
             </Button>
           </div>
         </div>

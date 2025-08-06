@@ -568,8 +568,8 @@ const BankingSolutions = () => {
               Schedule Consultation
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 text-lg" onClick={() => handleConsultationClick('download-case-studies')}>
-              Download Case Studies
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 text-lg" onClick={() => navigate('/case-studies')}>
+              Review Case Studies
             </Button>
           </div>
         </div>

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -8,8 +9,13 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const RealEstateMarketAnalysis = () => {
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("overview");
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
+
+  const handleConsultationClick = (buttonType: string) => {
+    navigate(`/schedule-consultation?source=real-estate-market-analysis&button=${buttonType}`);
+  };
 
   const toggleFAQ = (index: number) => {
     setOpenFAQ(openFAQ === index ? null : index);
@@ -694,7 +700,10 @@ const RealEstateMarketAnalysis = () => {
               <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
                 Our market intelligence experts are here to help you understand how our platform can transform your real estate business.
               </p>
-              <Button className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 text-lg font-semibold transform hover:scale-105 transition-all duration-300">
+              <Button 
+                className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 text-lg font-semibold transform hover:scale-105 transition-all duration-300"
+                onClick={() => handleConsultationClick('Schedule Expert Consultation')}
+              >
                 Schedule Expert Consultation
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
@@ -718,11 +727,20 @@ const RealEstateMarketAnalysis = () => {
             Transform your real estate business with AI-powered market intelligence. Start identifying opportunities before your competition.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-blue-900 hover:bg-gray-100 px-8 py-4 text-lg transform hover:scale-105 transition-all duration-300">
+            <Button 
+              size="lg" 
+              className="bg-white text-blue-900 hover:bg-gray-100 px-8 py-4 text-lg transform hover:scale-105 transition-all duration-300"
+              onClick={() => handleConsultationClick('Start Free Market Analysis')}
+            >
               Start Free Market Analysis
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-900 px-8 py-4 text-lg transform hover:scale-105 transition-all duration-300">
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="border-white text-white hover:bg-white hover:text-blue-900 px-8 py-4 text-lg transform hover:scale-105 transition-all duration-300"
+              onClick={() => handleConsultationClick('Schedule Demo')}
+            >
               Schedule Demo
             </Button>
           </div>

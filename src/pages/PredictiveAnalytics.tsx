@@ -21,7 +21,7 @@ const PredictiveAnalytics = () => {
   };
 
   const handleViewCaseStudiesClick = () => {
-    navigate('/schedule-consultation?source=predictive-analytics&button=view-case-studies');
+    navigate('/case-studies');
   };
 
   useEffect(() => {
@@ -438,7 +438,7 @@ const PredictiveAnalytics = () => {
                 className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
                 onClick={handleViewCaseStudiesClick}
               >
-                View Case Studies
+                Review Case Studies
               </Button>
             </div>
           </div>

@@ -1021,8 +1021,11 @@ const DataWarehouseServices = () => {
                 <button className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-blue-700 hover:to-cyan-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105">
                   Start Your Transformation
                 </button>
-                <button className="bg-white text-slate-800 px-8 py-4 rounded-xl font-semibold border border-blue-200 hover:bg-blue-50 transition-all duration-300 shadow-lg hover:shadow-xl">
-                  View Case Studies
+                <button 
+                  className="bg-white text-slate-800 px-8 py-4 rounded-xl font-semibold border border-blue-200 hover:bg-blue-50 transition-all duration-300 shadow-lg hover:shadow-xl"
+                  onClick={() => navigate('/case-studies')}
+                >
+                  Review Case Studies
                 </button>
               </div>
             </div>

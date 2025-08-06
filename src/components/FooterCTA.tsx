@@ -10,7 +10,7 @@ const FooterCTA = () => {
   };
 
   const handleCaseStudiesClick = () => {
-    navigate('/schedule-consultation?source=footer&button=view-case-studies');
+    navigate('/case-studies');
   };
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-[#977DFF] via-[#0033FF] to-[#0600AB] text-white">
@@ -88,7 +88,7 @@ const FooterCTA = () => {
                 onClick={handleCaseStudiesClick}
               >
                 <span className="flex items-center text-lg font-semibold">
-                  View Case Studies
+                  Review Case Studies
                   <TrendingUp className="ml-2 w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
                 </span>
               </Button>

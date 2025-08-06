@@ -664,7 +664,7 @@ const BusinessIntelligence = () => {
                   <Button 
                     size="lg" 
                     variant="outline" 
-                    onClick={handleScheduleConsultationClick}
+                    onClick={() => navigate('/schedule-consultation?source=business-intelligence&button=Schedule Demo')}
                     className="px-8 py-4 border-2 border-primary/30 hover:bg-primary/5 transition-all duration-300"
                   >
                     Schedule Demo
@@ -757,9 +757,10 @@ const BusinessIntelligence = () => {
                   <Button 
                     size="lg" 
                     variant="outline" 
+                    onClick={() => navigate('/case-studies')}
                     className="px-8 py-4 border-2 border-primary/30 hover:bg-primary/5 transition-all duration-300"
                   >
-                    View Case Studies
+                    Review Case Studies
                   </Button>
                 </div>
               </div>

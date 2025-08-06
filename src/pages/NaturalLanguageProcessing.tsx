@@ -355,7 +355,7 @@ const NaturalLanguageProcessing: React.FC = () => {
               <span className="text-lg font-medium text-gray-700 mr-4">Ready to transform your text data?</span>
               <Button 
                 className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:from-blue-700 hover:via-indigo-700 hover:to-purple-700 text-white px-8 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
-                onClick={handleStartNLPProjectClick}
+                onClick={() => navigate('/schedule-consultation?source=natural-language-processing&button=Explore Solutions')}
               >
                 Explore Solutions
                 <span className="ml-2">→</span>

@@ -2,8 +2,11 @@ import { useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
+import { useNavigate } from "react-router-dom";
 
 const Clients = () => {
+  const navigate = useNavigate();
+  
   useEffect(() => {
     // SEO Meta Tags
     document.title = "Our Clients - ImpTrax | Trusted by Leading Global Companies";
@@ -218,18 +221,18 @@ const Clients = () => {
               Discover how ImpTrax can transform your organization with cutting-edge AI and automation solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
-                href="/schedule-consultation" 
+              <button 
+                onClick={() => navigate('/schedule-consultation')}
                 className="bg-purple-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors"
               >
                 Schedule Consultation
-              </a>
-              <a 
-                href="/case-studies" 
+              </button>
+              <button 
+                onClick={() => navigate('/case-studies')}
                 className="border border-purple-600 text-purple-600 px-8 py-3 rounded-lg font-semibold hover:bg-purple-50 transition-colors"
               >
-                View Case Studies
-              </a>
+                Review Case Studies
+              </button>
             </div>
           </div>
         </section>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -35,7 +36,21 @@ import {
 } from 'lucide-react';
 
 const InvestmentManagement = () => {
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState('overview');
+
+  const handleScheduleDemo = () => {
+    navigate('/schedule-consultation', { 
+      state: { 
+        source: 'investment-management',
+        button: 'schedule-demo'
+      }
+    });
+  };
+
+  const handleViewSolutions = () => {
+    navigate('/ai-consulting-services');
+  };
 
   const solutions = [
     {
@@ -109,11 +124,11 @@ const InvestmentManagement = () => {
             Streamline operations, enhance investor relations, and maximize returns with our integrated platform.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
+            <Button size="lg" className="bg-blue-600 hover:bg-blue-700" onClick={handleScheduleDemo}>
               Schedule Demo
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-            <Button size="lg" variant="outline">
+            <Button size="lg" variant="outline" onClick={handleViewSolutions}>
               View Solutions
             </Button>
           </div>

@@ -454,9 +454,10 @@ const KnowledgeBase: React.FC = () => {
                 <Button 
                   variant="outline" 
                   size="lg"
+                  onClick={() => navigate('/case-studies')}
                   className="hover:scale-105 transition-all duration-300 hover:bg-primary hover:text-primary-foreground hover:border-primary"
                 >
-                  Download Case Studies
+                  Review Case Studies
                 </Button>
               </div>
             </div>
