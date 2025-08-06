@@ -1,7 +1,17 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, Zap, TrendingUp } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const FooterCTA = () => {
+  const navigate = useNavigate();
+
+  const handleConsultationClick = () => {
+    navigate('/schedule-consultation?source=footer&button=get-free-consultation');
+  };
+
+  const handleCaseStudiesClick = () => {
+    navigate('/schedule-consultation?source=footer&button=view-case-studies');
+  };
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-[#977DFF] via-[#0033FF] to-[#0600AB] text-white">
       {/* Animated Background Elements */}
@@ -60,22 +70,22 @@ const FooterCTA = () => {
             
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in-up animation-delay-800">
-              <a href="/schedule-consultation?source=footer&button=get-free-consultation">
-                <Button 
-                  variant="accent" 
-                  size="xl"
-                  className="group bg-white text-blue-600 hover:bg-blue-50 border-0 shadow-2xl hover:shadow-white/25 transform hover:scale-105 transition-all duration-300 px-8 py-4"
-                >
-                  <span className="flex items-center text-lg font-semibold">
-                    Get Free Consultation
-                    <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                  </span>
-                </Button>
-              </a>
+              <Button 
+                variant="accent" 
+                size="xl"
+                className="group bg-white text-blue-600 hover:bg-blue-50 border-0 shadow-2xl hover:shadow-white/25 transform hover:scale-105 transition-all duration-300 px-8 py-4"
+                onClick={handleConsultationClick}
+              >
+                <span className="flex items-center text-lg font-semibold">
+                  Get Free Consultation
+                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                </span>
+              </Button>
               <Button 
                 variant="outline" 
                 size="xl"
                 className="group border-2 border-white/30 text-white hover:bg-white hover:text-blue-600 hover:border-white backdrop-blur-sm transition-all duration-300 px-8 py-4"
+                onClick={handleCaseStudiesClick}
               >
                 <span className="flex items-center text-lg font-semibold">
                   View Case Studies

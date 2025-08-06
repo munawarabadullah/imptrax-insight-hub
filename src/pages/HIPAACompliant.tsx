@@ -40,7 +40,11 @@ const HIPAACompliant: React.FC = () => {
             <p className="text-xl text-gray-700 mb-8 leading-relaxed">
               ImpTrax is a leading provider of HIPAA Compliance Services and Solutions. We offer a full suite of tailored HIPAA Compliance Services to help organizations effectively navigate complex regulations and protect sensitive patient data.
             </p>
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3">
+            <Button 
+              size="lg" 
+              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3"
+              onClick={handleStartComplianceJourneyClick}
+            >
               Get HIPAA Compliant Today
             </Button>
           </div>

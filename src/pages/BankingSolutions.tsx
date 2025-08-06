@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -8,7 +9,12 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const BankingSolutions = () => {
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("overview");
+
+  const handleConsultationClick = (buttonType: string) => {
+    navigate(`/schedule-consultation?source=banking-solutions&button=${buttonType}`);
+  };
 
 
 
@@ -123,11 +129,11 @@ const BankingSolutions = () => {
               Modernize your banking operations with comprehensive solutions for open banking, core system transformation, payment processing, and digital customer experiences.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg" onClick={() => handleConsultationClick('explore-solutions')}>
                 Explore Solutions
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
-              <Button size="lg" variant="outline" className="border-blue-300 text-blue-300 hover:bg-blue-300 hover:text-blue-900 px-8 py-4 text-lg">
+              <Button size="lg" variant="outline" className="border-blue-300 text-blue-300 hover:bg-blue-300 hover:text-blue-900 px-8 py-4 text-lg" onClick={() => handleConsultationClick('schedule-consultation')}>
                 Schedule Consultation
               </Button>
             </div>
@@ -558,11 +564,11 @@ const BankingSolutions = () => {
             Partner with ImpTrax to modernize your banking infrastructure, enhance customer experiences, and drive digital innovation in financial services.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-4 text-lg">
+            <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-4 text-lg" onClick={() => handleConsultationClick('cta-schedule-consultation')}>
               Schedule Consultation
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 text-lg">
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 text-lg" onClick={() => handleConsultationClick('download-case-studies')}>
               Download Case Studies
             </Button>
           </div>
