@@ -75,7 +75,7 @@ const FooterCTA = () => {
               <Button 
                 variant="outline" 
                 size="xl"
-                className="group border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50 backdrop-blur-sm transition-all duration-300 px-8 py-4"
+                className="group border-2 border-white/30 text-white hover:bg-white hover:text-blue-600 hover:border-white backdrop-blur-sm transition-all duration-300 px-8 py-4"
               >
                 <span className="flex items-center text-lg font-semibold">
                   View Case Studies

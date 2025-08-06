@@ -4,7 +4,7 @@ import Header from '@/components/Header';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ArrowRight, BookOpen, Lightbulb, TrendingUp, Users, Brain, Zap, BarChart3, Building2, FileText, Newspaper, GraduationCap } from 'lucide-react';
+import { ArrowRight, BookOpen, Lightbulb, TrendingUp, Users, Brain, Zap, BarChart3, Building2, FileText, Newspaper, GraduationCap, DollarSign, Heart, Home } from 'lucide-react';
 
 const KnowledgeBase = () => {
   const navigate = useNavigate();
@@ -74,17 +74,43 @@ const KnowledgeBase = () => {
       description: "Industry-specific expertise",
       color: "bg-green-500/10 text-green-600",
       items: [
-        { name: "Healthcare", url: "/hipaa-compliant", description: "HIPAA-compliant solutions and healthcare technology" },
-        { name: "Healthcare Automation", url: "/healthcare-automation", description: "Automated healthcare workflows and processes" },
-        { name: "Real Estate", url: "/real-estate-software", description: "Property management and real estate software" },
-        { name: "Real Estate Market Analysis", url: "/real-estate-market-analysis", description: "Advanced market analysis for real estate professionals" },
-        { name: "Real Estate Investment Analysis", url: "/real-estate-investment-analysis", description: "Comprehensive investment analysis and portfolio management for real estate" },
-        { name: "Property Analysis with AI", url: "/real-estate-Property-Analysis-With-AI", description: "AI-powered property analysis and valuation for accurate investment decisions" },
+        { name: "Compliance Management", url: "/compliance-management", description: "Regulatory compliance and risk management solutions" }
+      ]
+    },
+    {
+      icon: DollarSign,
+      title: "Financial Services",
+      description: "Financial technology and banking solutions",
+      color: "bg-emerald-500/10 text-emerald-600",
+      items: [
         { name: "Financial Services", url: "/financial-workflow-process", description: "Financial workflow optimization and automation" },
         { name: "Banking Solutions", url: "/banking-solutions", description: "Comprehensive banking technology solutions" },
         { name: "Investment Management", url: "/investment-management", description: "Investment portfolio management and analytics" },
-        { name: "Revenue Cycle Management", url: "/revenue-cycle-management", description: "Optimize revenue cycles and financial processes" },
-        { name: "Compliance Management", url: "/compliance-management", description: "Regulatory compliance and risk management solutions" }
+        { name: "Revenue Cycle Management", url: "/revenue-cycle-management", description: "Optimize revenue cycles and financial processes" }
+      ]
+    },
+    {
+      icon: Heart,
+      title: "Healthcare",
+      description: "Healthcare technology and compliance solutions",
+      color: "bg-red-500/10 text-red-600",
+      items: [
+        { name: "HIPAA Compliant Solutions", url: "/hipaa-compliant", description: "HIPAA-compliant solutions and healthcare technology" },
+        { name: "Healthcare Automation", url: "/healthcare-automation", description: "Automated healthcare workflows and processes" },
+        { name: "AI-Driven Transformation", url: "/ai-driven-transformation", description: "Transform healthcare operations with AI-powered solutions and intelligent automation" },
+        { name: "Revenue Cycle Management", url: "/revenue-cycle-management", description: "Optimize healthcare revenue cycles and financial processes for improved efficiency" }
+      ]
+    },
+    {
+      icon: Home,
+      title: "Real Estate",
+      description: "Real estate technology and market analysis",
+      color: "bg-orange-500/10 text-orange-600",
+      items: [
+        { name: "Real Estate Software", url: "/real-estate-software", description: "Property management and real estate software" },
+        { name: "Real Estate Market Analysis", url: "/real-estate-market-analysis", description: "Advanced market analysis for real estate professionals" },
+        { name: "Real Estate Investment Analysis", url: "/real-estate-investment-analysis", description: "Comprehensive investment analysis and portfolio management for real estate" },
+        { name: "Property Analysis with AI", url: "/real-estate-Property-Analysis-With-AI", description: "AI-powered property analysis and valuation for accurate investment decisions" }
       ]
     },
     {
@@ -160,7 +186,7 @@ const KnowledgeBase = () => {
             {knowledgeCategories.map((category, index) => {
               const IconComponent = category.icon;
               return (
-                <div key={index} className="">
+                <div key={index} className="" id={category.title.toLowerCase().replace(/\s+/g, '-')}>
                   {/* Category Header */}
                   <div className="flex items-center gap-4 mb-8">
                     <div className={`p-3 rounded-xl ${category.color}`}>

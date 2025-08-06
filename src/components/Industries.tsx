@@ -6,8 +6,16 @@ import { useNavigate } from "react-router-dom";
 const Industries = () => {
   const navigate = useNavigate();
 
-  const handleViewCaseStudiesClick = (industryTitle: string) => {
-    navigate(`/schedule-consultation?source=industries&button=view-case-studies&industry=${encodeURIComponent(industryTitle)}`);
+  const handleExploreMoreClick = (industryTitle: string) => {
+    if (industryTitle === "Financial Services") {
+      navigate('/knowledge-base#financial-services');
+    } else if (industryTitle === "Healthcare") {
+      navigate('/knowledge-base#healthcare');
+    } else if (industryTitle === "Real Estate") {
+      navigate('/knowledge-base#real-estate');
+    } else {
+      navigate('/knowledge-base');
+    }
   };
 
   const handleScheduleConsultationClick = () => {
@@ -118,9 +126,9 @@ const Industries = () => {
                   <Button 
                     variant="outline" 
                     className="w-full group-hover:bg-primary group-hover:text-primary-foreground"
-                    onClick={() => handleViewCaseStudiesClick(industry.title)}
+                    onClick={() => handleExploreMoreClick(industry.title)}
                   >
-                    View Case Studies
+                    Explore More
                   </Button>
                 </CardContent>
               </Card>
