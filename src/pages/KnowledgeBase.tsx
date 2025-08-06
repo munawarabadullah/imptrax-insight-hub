@@ -79,6 +79,7 @@ const KnowledgeBase = () => {
         { name: "Real Estate", url: "/real-estate-software", description: "Property management and real estate software" },
         { name: "Real Estate Market Analysis", url: "/real-estate-market-analysis", description: "Advanced market analysis for real estate professionals" },
         { name: "Real Estate Investment Analysis", url: "/real-estate-investment-analysis", description: "Comprehensive investment analysis and portfolio management for real estate" },
+        { name: "Property Analysis with AI", url: "/real-estate-Property-Analysis-With-AI", description: "AI-powered property analysis and valuation for accurate investment decisions" },
         { name: "Financial Services", url: "/financial-workflow-process", description: "Financial workflow optimization and automation" },
         { name: "Banking Solutions", url: "/banking-solutions", description: "Comprehensive banking technology solutions" },
         { name: "Investment Management", url: "/investment-management", description: "Investment portfolio management and analytics" },
