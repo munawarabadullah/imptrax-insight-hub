@@ -24,7 +24,7 @@ const OurHistory = () => {
     {
       year: "2003",
       title: "Foundation in Innovation",
-      description: "ImpTrax was born in the heart of New York City with a vision to revolutionize business through cutting-edge technology and AI-driven solutions.",
+      description: "ImpTrax was born in the heart of New York City with a vision to revolutionize business through cutting-edge technology and Business Intelligence (BI) solutions.",
       icon: <Rocket className="w-6 h-6 text-blue-600" />
     },
     {
@@ -35,8 +35,8 @@ const OurHistory = () => {
     },
     {
       year: "2011-2015",
-      title: "AI & Automation Era",
-      description: "Embraced artificial intelligence and automation technologies, delivering intelligent systems that streamline operations and boost productivity.",
+      title: "Machine Learning & Automation Era",
+      description: "Embraced, earlier version of artificial intelligence, Machine Learning and automation technologies, delivering intelligent systems that streamline operations and boost productivity.",
       icon: <Brain className="w-6 h-6 text-cyan-600" />
     },
     {
@@ -91,8 +91,18 @@ const OurHistory = () => {
       <main>
         {/* Hero Section */}
         <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-purple-50 relative overflow-hidden">
+          {/* Background image */}
+          <div className="absolute inset-0 opacity-60">
+            <img 
+              src="/resources/ImpTrax-History.png" 
+              alt="ImpTrax History" 
+              className="w-full h-full object-cover"
+            />
+          </div>
+          {/* Background overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-50/40 via-white/60 to-purple-50/40"></div>
           {/* Background decorative elements */}
-          <div className="absolute inset-0 opacity-20">
+          <div className="absolute inset-0 opacity-10">
             <div className="absolute top-20 left-10 w-64 h-64 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
             <div className="absolute top-40 right-10 w-64 h-64 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-1000"></div>
             <div className="absolute bottom-20 left-1/2 w-64 h-64 bg-cyan-200 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-2000"></div>
@@ -107,7 +117,7 @@ const OurHistory = () => {
                 Pioneering <span className="text-blue-600">Technology</span> for Business Success
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed max-w-3xl mx-auto">
-                Since 2003, ImpTrax has been at the forefront of technology innovation, delivering AI-powered solutions 
+                Since 2003, ImpTrax has been at the forefront of technology innovation, delivering Business Intelligence (BI) solutions 
                 and data-driven systems that create synergies, drive revenue growth, and transform businesses globally.
               </p>
               <div className="flex flex-wrap justify-center gap-3">

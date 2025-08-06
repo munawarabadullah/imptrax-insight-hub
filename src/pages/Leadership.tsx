@@ -57,7 +57,7 @@ const Leadership = () => {
     "Columbia Business School",
     "Stanford University",
     "Stanford Business School",
-    "Lahore University of Management Services"
+    "Harvard Business School"
   ];
 
   const globalExperience = [
@@ -112,18 +112,16 @@ const Leadership = () => {
                   </div>
                 </div>
                 
-                {/* Right Column - Profile Image Placeholder */}
+                {/* Right Column - Profile Image */}
                 <div className="relative">
                   <div className="w-full max-w-md mx-auto">
                     <div className="relative bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl p-8 shadow-2xl">
-                      <div className="w-full h-96 bg-gradient-to-br from-blue-200 to-purple-200 rounded-xl flex items-center justify-center">
-                        <div className="text-center">
-                          <div className="w-32 h-32 bg-white rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg">
-                            <Users className="w-16 h-16 text-blue-600" />
-                          </div>
-                          <p className="text-gray-600 font-medium">Munawar Abadullah</p>
-                          <p className="text-gray-500 text-sm">Chief Executive Officer</p>
-                        </div>
+                      <div className="w-full h-96 rounded-xl overflow-hidden">
+                        <img 
+                          src="/resources/Munawar-Abadullah.jpg" 
+                          alt="Munawar Abadullah - Chief Executive Officer" 
+                          className="w-full h-full object-cover object-center"
+                        />
                       </div>
                       <div className="absolute -top-4 -right-4 w-8 h-8 bg-blue-500 rounded-full"></div>
                       <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-purple-500 rounded-full"></div>
