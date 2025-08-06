@@ -204,7 +204,7 @@ const MachineLearningDevelopment: React.FC = () => {
     <>
       <Header />
       <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
+        {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-purple-900 text-white py-24 md:py-32 overflow-hidden">
         {/* Subtle background pattern */}
         <div className="absolute inset-0 opacity-10">

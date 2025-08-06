@@ -1,9 +1,42 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { ArrowRight, Brain, TrendingUp, Shield, Zap, Target, Users, BarChart3, Clock, DollarSign, Heart, Stethoscope, FileText, Database, Cpu, CheckCircle, Star, Award, Globe } from 'lucide-react';
 
 const AIDrivenTransformation = () => {
+  const navigate = useNavigate();
+
+  const handleExploreAISolutionsClick = () => {
+    navigate('/knowledge-base');
+  };
+
+  const handleStartAIJourneyClick = () => {
+    navigate('/schedule-consultation', {
+      state: {
+        source: 'AI-Driven Transformation',
+        button: 'Start Your AI Journey'
+      }
+    });
+  };
+
+  const handleScheduleAIReadinessAssessmentClick = () => {
+    navigate('/schedule-consultation', {
+      state: {
+        source: 'AI-Driven Transformation',
+        button: 'Schedule AI Readiness Assessment'
+      }
+    });
+  };
+
+  const handleScheduleConsultationClick = () => {
+    navigate('/schedule-consultation', {
+      state: {
+        source: 'AI-Driven Transformation',
+        button: 'Schedule Consultation'
+      }
+    });
+  };
   return (
     <div className="min-h-screen bg-white">
       <Header />
@@ -24,10 +57,16 @@ const AIDrivenTransformation = () => {
               that transform patient care, optimize revenue cycles, and drive value-based outcomes across the entire healthcare ecosystem.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors flex items-center justify-center">
+              <button 
+                onClick={handleExploreAISolutionsClick}
+                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors flex items-center justify-center"
+              >
                 Explore AI Solutions <ArrowRight className="ml-2 h-5 w-5" />
               </button>
-              <button className="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
+              <button 
+                onClick={handleScheduleConsultationClick}
+                className="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-8 py-4 rounded-lg font-semibold text-lg transition-colors"
+              >
                 Schedule Consultation
               </button>
             </div>
@@ -626,11 +665,17 @@ const AIDrivenTransformation = () => {
             optimize operations, and drive sustainable financial performance.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-blue-900 hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
+            <button 
+              onClick={handleStartAIJourneyClick}
+              className="bg-white text-blue-900 hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold text-lg transition-colors"
+            >
               Start Your AI Journey
             </button>
-            <button className="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
-              Download AI Readiness Assessment
+            <button 
+              onClick={handleScheduleAIReadinessAssessmentClick}
+              className="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-8 py-4 rounded-lg font-semibold text-lg transition-colors"
+            >
+              Schedule AI Readiness Assessment
             </button>
           </div>
         </div>
