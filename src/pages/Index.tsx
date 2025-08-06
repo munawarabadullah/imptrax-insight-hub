@@ -295,83 +295,187 @@ const Index = () => {
          </section>
          
          {/* Technologies and Platforms We Use Section */}
-         <section className="py-20 bg-white">
-           <div className="container mx-auto px-4">
-             <div className="text-center mb-16">
-               <h2 className="text-4xl font-bold text-gray-900 mb-6">Technologies and Platforms We Use</h2>
-               <p className="text-xl text-gray-600 max-w-3xl mx-auto">We leverage cutting-edge technologies and industry-leading platforms to deliver robust, scalable solutions that drive business transformation.</p>
+         <section className="py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50 relative overflow-hidden">
+           {/* Background Elements */}
+           <div className="absolute inset-0">
+             <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-purple-400/10 to-blue-400/10 rounded-full blur-3xl"></div>
+             <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-r from-blue-400/10 to-purple-400/10 rounded-full blur-3xl"></div>
+             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-purple-300/5 to-blue-300/5 rounded-full blur-3xl"></div>
+           </div>
+           
+           <div className="container mx-auto px-4 relative z-10">
+             <div className="text-center mb-20">
+               <div className="inline-flex items-center justify-center px-4 py-2 bg-gradient-to-r from-purple-100 to-blue-100 rounded-full mb-6">
+                 <span className="text-sm font-semibold text-purple-700">🚀 Tech Stack Excellence</span>
+               </div>
+               <h2 className="text-5xl font-bold bg-gradient-to-r from-gray-900 via-purple-800 to-blue-800 bg-clip-text text-transparent mb-6">
+                 Technologies and Platforms We Use
+               </h2>
+               <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                 We leverage cutting-edge technologies and industry-leading platforms to deliver robust, scalable solutions that drive business transformation and innovation.
+               </p>
              </div>
              
              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-               <Card className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg hover:border-purple-200">
-                 <CardHeader className="pb-4">
-                   <div className="mb-4 group-hover:scale-110 transition-transform duration-300">
-                     <Code className="w-8 h-8 text-purple-600" />
+               <Card className="group hover:shadow-2xl transition-all duration-500 border-0 shadow-lg bg-white/70 backdrop-blur-sm hover:bg-white hover:-translate-y-3 relative overflow-hidden">
+                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                 <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-bl-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                 <CardHeader className="pb-6 relative z-10">
+                   <div className="mb-6 group-hover:scale-110 transition-transform duration-500">
+                     <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-500">
+                       <Code className="w-8 h-8 text-white" />
+                     </div>
                    </div>
-                   <CardTitle className="text-xl font-bold text-gray-900 mb-3">Development Frameworks</CardTitle>
-                   <CardContent className="p-0">
-                     <p className="text-gray-600 text-sm leading-relaxed">React, Angular, Vue.js, Node.js, .NET Core, Spring Boot, Django, Laravel</p>
-                   </CardContent>
+                   <CardTitle className="text-xl font-bold text-gray-900 mb-4 group-hover:text-blue-700 transition-colors duration-300">
+                     Development Frameworks
+                   </CardTitle>
+                   <div className="space-y-3">
+                     <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                       Modern, scalable frameworks for robust application development
+                     </p>
+                     <div className="flex flex-wrap gap-2">
+                       {['React', 'Angular', 'Vue.js', 'Node.js', '.NET Core', 'Spring Boot'].map((tech, index) => (
+                         <span key={index} className="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-700 text-xs font-medium rounded-full hover:scale-105 transition-transform duration-200">
+                           {tech}
+                         </span>
+                       ))}
+                     </div>
+                   </div>
                  </CardHeader>
                </Card>
                
-               <Card className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg hover:border-purple-200">
-                 <CardHeader className="pb-4">
-                   <div className="mb-4 group-hover:scale-110 transition-transform duration-300">
-                     <Database className="w-8 h-8 text-purple-600" />
+               <Card className="group hover:shadow-2xl transition-all duration-500 border-0 shadow-lg bg-white/70 backdrop-blur-sm hover:bg-white hover:-translate-y-3 relative overflow-hidden">
+                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                 <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-purple-400/20 to-blue-400/20 rounded-bl-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                 <CardHeader className="pb-6 relative z-10">
+                   <div className="mb-6 group-hover:scale-110 transition-transform duration-500">
+                     <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-500">
+                       <Database className="w-8 h-8 text-white" />
+                     </div>
                    </div>
-                   <CardTitle className="text-xl font-bold text-gray-900 mb-3">Database Technologies</CardTitle>
-                   <CardContent className="p-0">
-                     <p className="text-gray-600 text-sm leading-relaxed">PostgreSQL, MongoDB, MySQL, Redis, Elasticsearch, Apache Cassandra, Oracle</p>
-                   </CardContent>
+                   <CardTitle className="text-xl font-bold text-gray-900 mb-4 group-hover:text-purple-700 transition-colors duration-300">
+                     Database Technologies
+                   </CardTitle>
+                   <div className="space-y-3">
+                     <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                       High-performance databases for reliable data management
+                     </p>
+                     <div className="flex flex-wrap gap-2">
+                       {['PostgreSQL', 'MongoDB', 'MySQL', 'Redis', 'Elasticsearch', 'Cassandra'].map((tech, index) => (
+                         <span key={index} className="px-3 py-1 bg-gradient-to-r from-purple-100 to-blue-100 text-purple-700 text-xs font-medium rounded-full hover:scale-105 transition-transform duration-200">
+                           {tech}
+                         </span>
+                       ))}
+                     </div>
+                   </div>
                  </CardHeader>
                </Card>
                
-               <Card className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg hover:border-purple-200">
-                 <CardHeader className="pb-4">
-                   <div className="mb-4 group-hover:scale-110 transition-transform duration-300">
-                     <Cloud className="w-8 h-8 text-purple-600" />
+               <Card className="group hover:shadow-2xl transition-all duration-500 border-0 shadow-lg bg-white/70 backdrop-blur-sm hover:bg-white hover:-translate-y-3 relative overflow-hidden">
+                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                 <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-bl-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                 <CardHeader className="pb-6 relative z-10">
+                   <div className="mb-6 group-hover:scale-110 transition-transform duration-500">
+                     <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-purple-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-500">
+                       <Cloud className="w-8 h-8 text-white" />
+                     </div>
                    </div>
-                   <CardTitle className="text-xl font-bold text-gray-900 mb-3">Cloud Platforms</CardTitle>
-                   <CardContent className="p-0">
-                     <p className="text-gray-600 text-sm leading-relaxed">AWS, Microsoft Azure, Google Cloud Platform, Docker, Kubernetes, Terraform</p>
-                   </CardContent>
+                   <CardTitle className="text-xl font-bold text-gray-900 mb-4 group-hover:text-blue-700 transition-colors duration-300">
+                     Cloud Platforms
+                   </CardTitle>
+                   <div className="space-y-3">
+                     <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                       Enterprise-grade cloud infrastructure for scalable solutions
+                     </p>
+                     <div className="flex flex-wrap gap-2">
+                       {['AWS', 'Azure', 'GCP', 'Docker', 'Kubernetes', 'Terraform'].map((tech, index) => (
+                         <span key={index} className="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-700 text-xs font-medium rounded-full hover:scale-105 transition-transform duration-200">
+                           {tech}
+                         </span>
+                       ))}
+                     </div>
+                   </div>
                  </CardHeader>
                </Card>
                
-               <Card className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg hover:border-purple-200">
-                 <CardHeader className="pb-4">
-                   <div className="mb-4 group-hover:scale-110 transition-transform duration-300">
-                     <Smartphone className="w-8 h-8 text-purple-600" />
+               <Card className="group hover:shadow-2xl transition-all duration-500 border-0 shadow-lg bg-white/70 backdrop-blur-sm hover:bg-white hover:-translate-y-3 relative overflow-hidden">
+                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                 <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-purple-400/20 to-blue-400/20 rounded-bl-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                 <CardHeader className="pb-6 relative z-10">
+                   <div className="mb-6 group-hover:scale-110 transition-transform duration-500">
+                     <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-blue-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-500">
+                       <Smartphone className="w-8 h-8 text-white" />
+                     </div>
                    </div>
-                   <CardTitle className="text-xl font-bold text-gray-900 mb-3">Mobile Development</CardTitle>
-                   <CardContent className="p-0">
-                     <p className="text-gray-600 text-sm leading-relaxed">React Native, Flutter, Swift, Kotlin, Xamarin, Ionic, Progressive Web Apps</p>
-                   </CardContent>
+                   <CardTitle className="text-xl font-bold text-gray-900 mb-4 group-hover:text-purple-700 transition-colors duration-300">
+                     Mobile Development
+                   </CardTitle>
+                   <div className="space-y-3">
+                     <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                       Cross-platform mobile solutions for seamless user experiences
+                     </p>
+                     <div className="flex flex-wrap gap-2">
+                       {['React Native', 'Flutter', 'Swift', 'Kotlin', 'Xamarin', 'PWA'].map((tech, index) => (
+                         <span key={index} className="px-3 py-1 bg-gradient-to-r from-purple-100 to-blue-100 text-purple-700 text-xs font-medium rounded-full hover:scale-105 transition-transform duration-200">
+                           {tech}
+                         </span>
+                       ))}
+                     </div>
+                   </div>
                  </CardHeader>
                </Card>
                
-               <Card className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg hover:border-purple-200">
-                 <CardHeader className="pb-4">
-                   <div className="mb-4 group-hover:scale-110 transition-transform duration-300">
-                     <Globe className="w-8 h-8 text-purple-600" />
+               <Card className="group hover:shadow-2xl transition-all duration-500 border-0 shadow-lg bg-white/70 backdrop-blur-sm hover:bg-white hover:-translate-y-3 relative overflow-hidden">
+                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                 <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-bl-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                 <CardHeader className="pb-6 relative z-10">
+                   <div className="mb-6 group-hover:scale-110 transition-transform duration-500">
+                     <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-500">
+                       <Globe className="w-8 h-8 text-white" />
+                     </div>
                    </div>
-                   <CardTitle className="text-xl font-bold text-gray-900 mb-3">Integration & APIs</CardTitle>
-                   <CardContent className="p-0">
-                     <p className="text-gray-600 text-sm leading-relaxed">REST APIs, GraphQL, Microservices, Apache Kafka, RabbitMQ, API Gateway</p>
-                   </CardContent>
+                   <CardTitle className="text-xl font-bold text-gray-900 mb-4 group-hover:text-blue-700 transition-colors duration-300">
+                     Integration & APIs
+                   </CardTitle>
+                   <div className="space-y-3">
+                     <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                       Seamless connectivity and data exchange solutions
+                     </p>
+                     <div className="flex flex-wrap gap-2">
+                       {['REST APIs', 'GraphQL', 'Microservices', 'Kafka', 'RabbitMQ', 'Gateway'].map((tech, index) => (
+                         <span key={index} className="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-700 text-xs font-medium rounded-full hover:scale-105 transition-transform duration-200">
+                           {tech}
+                         </span>
+                       ))}
+                     </div>
+                   </div>
                  </CardHeader>
                </Card>
                
-               <Card className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg hover:border-purple-200">
-                 <CardHeader className="pb-4">
-                   <div className="mb-4 group-hover:scale-110 transition-transform duration-300">
-                     <Cpu className="w-8 h-8 text-purple-600" />
+               <Card className="group hover:shadow-2xl transition-all duration-500 border-0 shadow-lg bg-white/70 backdrop-blur-sm hover:bg-white hover:-translate-y-3 relative overflow-hidden">
+                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                 <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-purple-400/20 to-blue-400/20 rounded-bl-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                 <CardHeader className="pb-6 relative z-10">
+                   <div className="mb-6 group-hover:scale-110 transition-transform duration-500">
+                     <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-500">
+                       <Cpu className="w-8 h-8 text-white" />
+                     </div>
                    </div>
-                   <CardTitle className="text-xl font-bold text-gray-900 mb-3">AI & Machine Learning</CardTitle>
-                   <CardContent className="p-0">
-                     <p className="text-gray-600 text-sm leading-relaxed">TensorFlow, PyTorch, Scikit-learn, OpenAI, Hugging Face, Apache Spark, MLflow</p>
-                   </CardContent>
+                   <CardTitle className="text-xl font-bold text-gray-900 mb-4 group-hover:text-purple-700 transition-colors duration-300">
+                     AI & Machine Learning
+                   </CardTitle>
+                   <div className="space-y-3">
+                     <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                       Intelligent solutions powered by advanced AI and ML technologies
+                     </p>
+                     <div className="flex flex-wrap gap-2">
+                       {['TensorFlow', 'PyTorch', 'OpenAI', 'Hugging Face', 'Spark', 'MLflow'].map((tech, index) => (
+                         <span key={index} className="px-3 py-1 bg-gradient-to-r from-purple-100 to-blue-100 text-purple-700 text-xs font-medium rounded-full hover:scale-105 transition-transform duration-200">
+                           {tech}
+                         </span>
+                       ))}
+                     </div>
+                   </div>
                  </CardHeader>
                </Card>
              </div>
