@@ -159,26 +159,87 @@ const RealEstateSoftware = () => {
       <Header />
       {/* Hero Section */}
       <section className="relative bg-gradient-hero text-primary-foreground py-20 lg:py-32 overflow-hidden">
+        {/* Animated Background Elements */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0 bg-grid-pattern"></div>
         </div>
         
+        {/* Floating Elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-20 left-10 w-32 h-32 bg-primary-foreground/5 rounded-full blur-xl animate-pulse"></div>
+          <div className="absolute top-40 right-20 w-24 h-24 bg-primary-foreground/5 rounded-full blur-lg animate-pulse delay-1000"></div>
+          <div className="absolute bottom-32 left-1/4 w-40 h-40 bg-primary-foreground/5 rounded-full blur-2xl animate-pulse delay-2000"></div>
+          <div className="absolute bottom-20 right-1/3 w-28 h-28 bg-primary-foreground/5 rounded-full blur-xl animate-pulse delay-500"></div>
+        </div>
+        
+        {/* Geometric Shapes */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-1/4 left-8 w-2 h-16 bg-primary-foreground/10 rotate-45 animate-pulse"></div>
+          <div className="absolute top-1/3 right-12 w-2 h-12 bg-primary-foreground/10 rotate-12 animate-pulse delay-700"></div>
+          <div className="absolute bottom-1/4 left-1/5 w-1 h-20 bg-primary-foreground/10 -rotate-45 animate-pulse delay-1500"></div>
+        </div>
+        
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center space-y-8">
-            <h1 className="text-4xl lg:text-6xl font-bold leading-tight">
-              Real Estate Software
-              <span className="bg-gradient-light bg-clip-text text-transparent"> Development Services</span>
-            </h1>
-            <p className="text-xl lg:text-2xl text-primary-foreground/90 leading-relaxed max-w-3xl mx-auto">
-              ImpTrax delivers cutting-edge real estate software solutions that transform how property professionals operate. From property management systems to mobile applications, we create digital experiences that drive business growth and enhance client satisfaction.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="accent" size="xl" className="group" onClick={handleStartProjectClick}>
-                Start Your Project
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          <div className="max-w-5xl mx-auto text-center space-y-10">
+            {/* Enhanced Title with Better Typography */}
+            <div className="space-y-4">
+              <div className="inline-flex items-center px-4 py-2 bg-primary-foreground/10 rounded-full border border-primary-foreground/20 backdrop-blur-sm mb-6">
+                <Home className="w-4 h-4 mr-2" />
+                <span className="text-sm font-medium tracking-wide">Real Estate Technology Solutions</span>
+              </div>
+              <h1 className="text-4xl lg:text-7xl font-bold leading-tight tracking-tight">
+                <span className="block mb-2">Real Estate Software</span>
+                <span className="bg-gradient-light bg-clip-text text-transparent block">Development Services</span>
+              </h1>
+            </div>
+            
+            {/* Enhanced Description */}
+            <div className="max-w-4xl mx-auto">
+              <p className="text-xl lg:text-2xl text-primary-foreground/90 leading-relaxed font-light">
+                ImpTrax delivers cutting-edge real estate software solutions that transform how property professionals operate. From property management systems to mobile applications, we create digital experiences that drive business growth and enhance client satisfaction.
+              </p>
+            </div>
+            
+            {/* Enhanced Stats/Features Row */}
+            <div className="flex flex-wrap justify-center gap-8 py-6">
+              <div className="flex items-center space-x-2 text-primary-foreground/80">
+                <div className="w-2 h-2 bg-primary-foreground rounded-full animate-pulse"></div>
+                <span className="text-sm font-medium">Custom Development</span>
+              </div>
+              <div className="flex items-center space-x-2 text-primary-foreground/80">
+                <div className="w-2 h-2 bg-primary-foreground rounded-full animate-pulse delay-300"></div>
+                <span className="text-sm font-medium">Mobile & Web Solutions</span>
+              </div>
+              <div className="flex items-center space-x-2 text-primary-foreground/80">
+                <div className="w-2 h-2 bg-primary-foreground rounded-full animate-pulse delay-600"></div>
+                <span className="text-sm font-medium">Enterprise Ready</span>
+              </div>
+            </div>
+            
+            {/* Enhanced CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-6 justify-center pt-4">
+              <Button 
+                variant="accent" 
+                size="xl" 
+                className="group relative overflow-hidden bg-accent hover:bg-accent/90 transform hover:scale-105 transition-all duration-300 shadow-2xl" 
+                onClick={handleStartProjectClick}
+              >
+                <span className="relative z-10 flex items-center">
+                  Start Your Project
+                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-accent to-accent/80 opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </Button>
-              <Button variant="outline" size="xl" className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary" onClick={handleConsultExpertsClick}>
-                Consult Our Experts
+              <Button 
+                variant="outline" 
+                size="xl" 
+                className="group bg-transparent border-2 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:border-primary-foreground/50 backdrop-blur-sm transform hover:scale-105 transition-all duration-300" 
+                onClick={handleConsultExpertsClick}
+              >
+                <span className="flex items-center">
+                  Consult Our Experts
+                  <Users className="w-5 h-5 ml-2 group-hover:rotate-12 transition-transform" />
+                </span>
               </Button>
             </div>
           </div>
