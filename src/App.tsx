@@ -39,6 +39,7 @@ import HealthcareAutomation from "./pages/HealthcareAutomation";
 import AIDrivenTransformation from "./pages/AIDrivenTransformation";
 import RealEstateMarketAnalysis from "./pages/RealEstateMarketAnalysis";
 import SoftwareDevelopmentServices from "./pages/SoftwareDevelopmentServices";
+import AIPromptLibrary from "./pages/AIPromptLibrary";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -86,6 +87,7 @@ const App = () => (
           <Route path="/ai-driven-transformation" element={<AIDrivenTransformation />} />
           <Route path="/real-estate-market-analysis" element={<RealEstateMarketAnalysis />} />
           <Route path="/software-development-services" element={<SoftwareDevelopmentServices />} />
+          <Route path="/ai-pluse/ai-prompts-library" element={<AIPromptLibrary />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
