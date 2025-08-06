@@ -361,7 +361,7 @@ const Index = () => {
                        High-performance databases for reliable data management
                      </p>
                      <div className="flex flex-wrap gap-2">
-                       {['PostgreSQL', 'MongoDB', 'MySQL', 'Redis', 'Elasticsearch', 'Cassandra'].map((tech, index) => (
+                       {['PostgreSQL', 'MongoDB', 'MySQL', 'MS SQL Server', 'Oracle', 'Redis', 'Elasticsearch', 'Cassandra'].map((tech, index) => (
                          <span key={index} className="px-3 py-1 bg-gradient-to-r from-purple-100 to-blue-100 text-purple-700 text-xs font-medium rounded-full hover:scale-105 transition-transform duration-200">
                            {tech}
                          </span>
