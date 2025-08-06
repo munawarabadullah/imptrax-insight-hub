@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { CheckCircle, ArrowRight, Shield, Zap, Globe, Users, TrendingUp, Lock, Cloud, Smartphone, BarChart3, Code, Database, Settings, Workflow, Brain, Target, Award, Clock, DollarSign, Layers, Monitor, Cog, Plus, Minus } from "lucide-react";
 import Header from "@/components/Header";
+import FooterCTA from "@/components/FooterCTA";
 import Footer from "@/components/Footer";
 
 const SoftwareDevelopmentServices = () => {
@@ -689,25 +690,7 @@ const SoftwareDevelopmentServices = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-purple-900 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-6">Ready to Transform Your Business?</h2>
-          <p className="text-xl mb-8 text-blue-100 max-w-3xl mx-auto">
-            Let's discuss your software development needs and create a solution that drives real business results. Schedule a free consultation with our experts today.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-blue-900 hover:bg-gray-100 px-8 py-4 text-lg">
-              Schedule Free Consultation
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
-            <Button size="lg" variant="outline" className="border-blue-300 text-blue-300 hover:bg-blue-300 hover:text-blue-900 px-8 py-4 text-lg">
-              View Our Portfolio
-            </Button>
-          </div>
-        </div>
-      </section>
-
+      <FooterCTA />
       <Footer />
     </div>
   );

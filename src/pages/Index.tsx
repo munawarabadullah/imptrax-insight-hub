@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import Industries from "@/components/Industries";
+import FooterCTA from "@/components/FooterCTA";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Target, CheckSquare, Users, Settings, Package, Palette, Code, Database, Cloud, Smartphone, Globe, Cpu } from "lucide-react";
@@ -180,6 +181,7 @@ const Index = () => {
            </div>
          </section>
        </main>
+       <FooterCTA />
        <Footer />
     </div>
   );
