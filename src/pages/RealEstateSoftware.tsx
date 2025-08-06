@@ -1,12 +1,17 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Home, Search, Users, BarChart3, Shield, Smartphone, Globe, MapPin, Calendar, DollarSign, FileText, Camera, MessageSquare, Zap, Target, CheckCircle, TrendingUp, Building2, Key, Database } from "lucide-react";
-import { useEffect } from "react";
+import { ArrowRight, Home, Search, Users, BarChart3, Shield, Smartphone, Globe, MapPin, Calendar, DollarSign, FileText, Camera, MessageSquare, Zap, Target, CheckCircle, TrendingUp, Building2, Key, Database, Plus, Minus, HelpCircle } from "lucide-react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const RealEstateSoftware = () => {
   const navigate = useNavigate();
+  const [openFAQ, setOpenFAQ] = useState<number | null>(null);
+
+  const toggleFAQ = (index: number) => {
+    setOpenFAQ(openFAQ === index ? null : index);
+  };
 
   useEffect(() => {
     // SEO Meta Tags
@@ -152,6 +157,49 @@ const RealEstateSoftware = () => {
     { name: "Residential Real Estate", icon: Home },
     { name: "Commercial Properties", icon: Building2 },
     { name: "Property Management", icon: Key }
+  ];
+
+  const faqs = [
+    {
+      question: "How long does it take to develop a custom real estate software solution?",
+      answer: "Development timelines vary based on complexity and requirements. A basic property management system typically takes 3-6 months, while comprehensive platforms with advanced features like AI-powered analytics, CRM integration, and mobile apps can take 6-12 months. We provide detailed project timelines during our initial consultation phase."
+    },
+    {
+      question: "What technologies do you use for real estate software development?",
+      answer: "We leverage modern technology stacks including React/Angular for frontend, Node.js/Python for backend, cloud platforms like AWS/Azure, and databases like PostgreSQL/MongoDB. We also integrate AI/ML capabilities, blockchain for secure transactions, and mobile-first responsive designs to ensure optimal performance across all devices."
+    },
+    {
+      question: "Can you integrate with existing real estate platforms and MLS systems?",
+      answer: "Absolutely! We specialize in seamless integrations with popular real estate platforms including MLS systems, Zillow, Realtor.com, CRM tools like Salesforce, accounting software like QuickBooks, and payment gateways. Our API-first approach ensures smooth data synchronization and workflow automation."
+    },
+    {
+      question: "Do you provide ongoing support and maintenance after development?",
+      answer: "Yes, we offer comprehensive post-launch support including 24/7 monitoring, regular updates, security patches, performance optimization, and feature enhancements. Our support packages range from basic maintenance to full-service managed solutions with dedicated account managers."
+    },
+    {
+      question: "How do you ensure data security and compliance in real estate software?",
+      answer: "We implement enterprise-grade security measures including end-to-end encryption, secure authentication protocols, regular security audits, and compliance with regulations like GDPR, CCPA, and industry standards. All sensitive data is protected with multi-layer security and regular backup systems."
+    },
+    {
+      question: "What is the cost range for developing real estate software?",
+      answer: "Costs vary significantly based on features, complexity, and scale. Basic property listing platforms start from $50,000, while comprehensive real estate management systems with advanced features can range from $100,000 to $500,000+. We provide detailed cost estimates after understanding your specific requirements."
+    },
+    {
+      question: "Can you develop mobile apps for real estate businesses?",
+      answer: "Yes, we develop native iOS and Android apps as well as cross-platform solutions using React Native and Flutter. Our mobile apps include features like property search, virtual tours, document management, client communication, and real-time notifications, all optimized for mobile user experience."
+    },
+    {
+      question: "Do you offer white-label real estate software solutions?",
+      answer: "Yes, we provide white-label solutions that can be customized with your branding, domain, and specific features. These solutions include property management systems, agent portals, client dashboards, and mobile applications that can be quickly deployed and scaled for your business needs."
+    },
+    {
+      question: "How do you handle scalability as our real estate business grows?",
+      answer: "We design all our solutions with scalability in mind using cloud-native architectures, microservices, and auto-scaling capabilities. Our systems can handle growing user bases, increasing property listings, and expanding geographical coverage without performance degradation or major infrastructure changes."
+    },
+    {
+      question: "What kind of analytics and reporting features do you include?",
+      answer: "Our solutions include comprehensive analytics dashboards with real-time reporting, market trend analysis, lead tracking, conversion metrics, financial reporting, and predictive analytics. We also provide custom reporting tools and data visualization features to help you make informed business decisions."
+    }
   ];
 
   return (
@@ -422,6 +470,102 @@ const RealEstateSoftware = () => {
                 </div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 lg:py-32 bg-secondary/20 relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-10 right-10 w-64 h-64 bg-secondary/10 rounded-full blur-2xl animate-pulse delay-1000"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          {/* Enhanced Header */}
+          <div className="text-center space-y-6 mb-16">
+            <div className="inline-flex items-center px-4 py-2 bg-primary/10 rounded-full border border-primary/20 backdrop-blur-sm mb-4">
+              <HelpCircle className="w-4 h-4 mr-2 text-primary" />
+              <span className="text-sm font-medium text-primary tracking-wide">Frequently Asked Questions</span>
+            </div>
+            <h2 className="text-3xl lg:text-5xl font-bold text-foreground leading-tight">
+              <span className="block mb-2">Common Questions About</span>
+              <span className="bg-gradient-primary bg-clip-text text-transparent">Real Estate Software Development</span>
+            </h2>
+            <div className="max-w-3xl mx-auto">
+              <p className="text-xl text-muted-foreground leading-relaxed">
+                Get answers to the most frequently asked questions about our real estate software development services and solutions.
+              </p>
+            </div>
+          </div>
+
+          {/* FAQ Items */}
+          <div className="max-w-4xl mx-auto space-y-4">
+            {faqs.map((faq, index) => (
+              <div 
+                key={index} 
+                className="group bg-card/80 backdrop-blur-sm rounded-2xl border border-border/50 hover:border-primary/30 transition-all duration-300 shadow-elegant hover:shadow-2xl overflow-hidden"
+                style={{
+                  animationDelay: `${index * 50}ms`
+                }}
+              >
+                <button
+                  onClick={() => toggleFAQ(index)}
+                  className="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-primary/5 transition-all duration-300 group"
+                >
+                  <div className="flex items-center gap-4 flex-1">
+                    <div className="w-12 h-12 bg-gradient-primary rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg">
+                      <HelpCircle className="w-6 h-6 text-primary-foreground" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-card-foreground pr-4 group-hover:text-primary transition-colors duration-300 leading-relaxed">
+                      {faq.question}
+                    </h3>
+                  </div>
+                  <div className="flex-shrink-0 ml-4">
+                    <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary/20 transition-all duration-300">
+                      {openFAQ === index ? (
+                        <Minus className="w-5 h-5 text-primary transition-transform duration-300" />
+                      ) : (
+                        <Plus className="w-5 h-5 text-primary transition-transform duration-300" />
+                      )}
+                    </div>
+                  </div>
+                </button>
+                
+                {openFAQ === index && (
+                  <div className="px-8 pb-6 animate-fade-in-up">
+                    <div className="border-t border-border/30 pt-6">
+                      <div className="bg-primary/5 rounded-xl p-6 ml-16">
+                        <p className="text-muted-foreground leading-relaxed text-base">
+                          {faq.answer}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+          
+          {/* Bottom CTA */}
+          <div className="text-center mt-16">
+            <div className="bg-card/60 backdrop-blur-sm rounded-3xl p-8 border border-border/50 max-w-2xl mx-auto">
+              <h3 className="text-2xl font-bold text-card-foreground mb-4">Still Have Questions?</h3>
+              <p className="text-muted-foreground mb-6 leading-relaxed">
+                Our real estate software experts are here to help. Schedule a free consultation to discuss your specific requirements.
+              </p>
+              <Button 
+                variant="accent" 
+                size="lg" 
+                className="group shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                onClick={handleScheduleConsultationClick}
+              >
+                <HelpCircle className="w-5 h-5 mr-2" />
+                Get Expert Consultation
+                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </div>
           </div>
         </div>
       </section>
