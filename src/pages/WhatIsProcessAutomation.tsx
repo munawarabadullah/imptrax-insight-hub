@@ -11,7 +11,21 @@ const WhatIsProcessAutomation = () => {
   const navigate = useNavigate();
 
   const handleConsultation = (buttonType: string) => {
-    navigate('/schedule-consultation?source=what-is-process-automation&button=' + buttonType);
+    if (buttonType === 'get-started') {
+      navigate('/schedule-consultation', {
+        state: {
+          source: 'What Is Process Automation',
+          button: 'Tell Us About Your Project'
+        }
+      });
+    } else {
+      navigate('/schedule-consultation', {
+      state: {
+        source: 'What Is Process Automation',
+        button: buttonType
+      }
+    });
+    }
   };
 
   const benefits = [
@@ -113,7 +127,7 @@ const WhatIsProcessAutomation = () => {
               onClick={() => handleConsultation('get-started')}
               className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
             >
-              Get Started Today
+              Tell Us About Your Project
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             <Button 

@@ -106,15 +106,30 @@ const WorkflowOptimization = () => {
   }, []);
 
   const handleGetStartedClick = () => {
-    navigate("/schedule-consultation?source=workflow-optimization&button=get-started");
+    navigate('/schedule-consultation', {
+      state: {
+        source: 'workflow-optimization',
+        button: 'get-started'
+      }
+    });
   };
 
   const handleScheduleConsultationClick = () => {
-    navigate("/schedule-consultation?source=workflow-optimization&button=schedule-consultation");
+    navigate('/schedule-consultation', {
+      state: {
+        source: 'workflow-optimization',
+        button: 'schedule-consultation'
+      }
+    });
   };
 
   const handleLearnMoreClick = () => {
-    navigate("/schedule-consultation?source=workflow-optimization&button=learn-more");
+    navigate('/schedule-consultation', {
+      state: {
+        source: 'workflow-optimization',
+        button: 'learn-more'
+      }
+    });
   };
 
   const benefits = [
@@ -252,7 +267,7 @@ const WorkflowOptimization = () => {
                   className="text-lg px-8 py-6 font-semibold shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 relative overflow-hidden group"
                 >
                   <span className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <span className="relative z-10">Get Started Today</span>
+                  <span className="relative z-10">Tell Us About Your Project</span>
                   <ArrowRight className="ml-2 w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform duration-300" />
                 </Button>
                 <Button 

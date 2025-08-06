@@ -15,7 +15,12 @@ const RealEstateInvestmentAnalysis = () => {
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
 
   const handleConsultationClick = (buttonType: string) => {
-    navigate(`/schedule-consultation?source=real-estate-investment-analysis&button=${buttonType}`);
+    navigate('/schedule-consultation', {
+      state: {
+        source: 'Real Estate Investment Analysis',
+        button: buttonType
+      }
+    });
   };
 
   const solutions = [
@@ -176,8 +181,8 @@ const RealEstateInvestmentAnalysis = () => {
                 Start Analysis
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
-              <Button size="lg" variant="outline" className="border-blue-300 text-blue-300 hover:bg-blue-300 hover:text-blue-900 px-8 py-4 text-lg" onClick={() => handleConsultationClick('schedule-demo')}>
-                Schedule Demo
+              <Button size="lg" variant="outline" className="border-blue-300 text-blue-300 hover:bg-blue-300 hover:text-blue-900 px-8 py-4 text-lg" onClick={() => handleConsultationClick('Tell Us About Your Project')}>
+                Tell Us About Your Project
               </Button>
             </div>
           </div>

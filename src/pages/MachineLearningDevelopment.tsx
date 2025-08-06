@@ -1,11 +1,57 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { ArrowRight, Brain, BarChart3, Eye, Mic, Zap, Cloud, Cpu, RefreshCw, Database, Target, CheckCircle, Users, Building2, TrendingUp, Shield, Plus, Minus } from 'lucide-react';
 
 const MachineLearningDevelopment: React.FC = () => {
+  const navigate = useNavigate();
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
+
+  const handleGetStartedTodayClick = () => {
+    navigate('/schedule-consultation', {
+      state: {
+        source: 'Machine Learning Development',
+        button: 'Tell Us About Your Project'
+      }
+    });
+  };
+
+  const handleStartMLProjectClick = () => {
+    navigate('/schedule-consultation', {
+      state: {
+        source: 'Machine Learning Development',
+        button: 'start-ml-project'
+      }
+    });
+  };
+
+  const handleExploreAIConsultingClick = () => {
+    navigate('/schedule-consultation', {
+      state: {
+        source: 'Machine Learning Development',
+        button: 'explore-ai-consulting'
+      }
+    });
+  };
+
+  const handleScheduleConsultationClick = () => {
+    navigate('/schedule-consultation', {
+      state: {
+        source: 'Machine Learning Development',
+        button: 'schedule-consultation'
+      }
+    });
+  };
+
+  const handleLearnMoreClick = () => {
+    navigate('/schedule-consultation', {
+      state: {
+        source: 'Machine Learning Development',
+        button: 'learn-more'
+      }
+    });
+  };
 
   const toggleFAQ = (index: number) => {
     setOpenFAQ(openFAQ === index ? null : index);
@@ -184,19 +230,19 @@ const MachineLearningDevelopment: React.FC = () => {
             </div>
             
             <div className="animate-fade-in-up flex flex-col sm:flex-row gap-6 justify-center" style={{animationDelay: '0.4s'}}>
-              <Link
-                to="/schedule-consultation?source=machine-learning&button=start-ml-project"
+              <button
+                onClick={handleStartMLProjectClick}
                 className="group bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               >
                 Start Your ML Project
                 <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
-              </Link>
-              <Link
-                to="/schedule-consultation?source=machine-learning&button=explore-ai-consulting"
+              </button>
+              <button
+                onClick={handleExploreAIConsultingClick}
                 className="group border-2 border-blue-300 text-blue-300 hover:bg-blue-300 hover:text-blue-900 px-10 py-5 rounded-xl font-semibold transition-all duration-300 backdrop-blur-sm hover:backdrop-blur-none"
               >
                 Explore AI Consulting
-              </Link>
+              </button>
             </div>
           </div>
         </div>
@@ -309,13 +355,13 @@ const MachineLearningDevelopment: React.FC = () => {
               <p className="mb-6">
                 Let's discuss how our machine learning expertise can transform your business operations and drive growth.
               </p>
-              <Link
-                to="/schedule-consultation?source=machine-learning&button=schedule-consultation"
+              <button
+                onClick={handleScheduleConsultationClick}
                 className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200 inline-flex items-center"
               >
                 Schedule Consultation
                 <ArrowRight className="ml-2 w-5 h-5" />
-              </Link>
+              </button>
             </div>
           </div>
         </div>
@@ -393,19 +439,19 @@ const MachineLearningDevelopment: React.FC = () => {
             efficiency, and competitive advantage for your enterprise.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              to="/schedule-consultation?source=machine-learning&button=get-started-today"
+            <button
+              onClick={handleGetStartedTodayClick}
               className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200 flex items-center justify-center"
             >
-              Get Started Today
+              Tell Us About Your Project
               <ArrowRight className="ml-2 w-5 h-5" />
-            </Link>
-            <Link
-              to="/schedule-consultation?source=machine-learning&button=learn-more"
+            </button>
+            <button
+              onClick={handleLearnMoreClick}
               className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 rounded-lg font-semibold transition-colors duration-200"
             >
               Learn More
-            </Link>
+            </button>
           </div>
         </div>
       </section>

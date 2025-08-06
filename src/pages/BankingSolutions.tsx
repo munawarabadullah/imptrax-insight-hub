@@ -13,7 +13,12 @@ const BankingSolutions = () => {
   const [activeTab, setActiveTab] = useState("overview");
 
   const handleConsultationClick = (buttonType: string) => {
-    navigate(`/schedule-consultation?source=banking-solutions&button=${buttonType}`);
+    navigate('/schedule-consultation', {
+      state: {
+        source: 'Banking Solutions',
+        button: buttonType
+      }
+    });
   };
 
 

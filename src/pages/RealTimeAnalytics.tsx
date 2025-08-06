@@ -65,7 +65,12 @@ const RealTimeAnalytics = () => {
   }, []);
 
   const handleConsultationClick = (source: string) => {
-    navigate(`/schedule-consultation?source=real-time-analytics&button=${source}`);
+    navigate('/schedule-consultation', {
+      state: {
+        source: 'Real-time Analytics',
+        button: source
+      }
+    });
   };
 
   const challenges = [

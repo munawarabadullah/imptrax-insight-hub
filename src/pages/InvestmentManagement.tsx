@@ -42,8 +42,8 @@ const InvestmentManagement = () => {
   const handleScheduleDemo = () => {
     navigate('/schedule-consultation', { 
       state: { 
-        source: 'investment-management',
-        button: 'schedule-demo'
+        source: 'Investment Management',
+        button: 'Tell Us About Your Project'
       }
     });
   };
@@ -125,7 +125,7 @@ const InvestmentManagement = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-blue-600 hover:bg-blue-700" onClick={handleScheduleDemo}>
-              Schedule Demo
+              Tell Us About Your Project
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             <Button size="lg" variant="outline" onClick={handleViewSolutions}>

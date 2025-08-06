@@ -12,11 +12,21 @@ const FinancialWorkflowProcess = () => {
   const [activeTab, setActiveTab] = useState("overview");
 
   const handleGetStartedClick = () => {
-    navigate("/schedule-consultation?source=financial-workflow&button=get-started");
+    navigate('/schedule-consultation', {
+      state: {
+        source: 'Financial Workflow Process',
+        button: 'get-started'
+      }
+    });
   };
 
   const handleScheduleConsultationClick = () => {
-    navigate("/schedule-consultation?source=financial-workflow&button=schedule-consultation");
+    navigate('/schedule-consultation', {
+      state: {
+        source: 'Financial Workflow Process',
+        button: 'schedule-consultation'
+      }
+    });
   };
 
   const benefits = [

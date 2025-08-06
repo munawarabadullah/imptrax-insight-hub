@@ -16,7 +16,16 @@ const KnowledgeBase: React.FC = () => {
   };
 
   const handleGetStarted = () => {
-    navigate('/contact');
+    navigate('/schedule-consultation', {
+      state: {
+        source: 'AI Consulting Services',
+        button: 'Tell Us About Your Project'
+      }
+    });
+  };
+
+  const handleViewOurWork = () => {
+    navigate('/case-studies');
   };
 
   useEffect(() => {
@@ -157,11 +166,12 @@ const KnowledgeBase: React.FC = () => {
                   <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
                 <Button 
+                  onClick={handleViewOurWork}
                   variant="outline" 
                   size="lg"
                   className="hover:scale-105 transition-all duration-300 hover:bg-primary hover:text-primary-foreground"
                 >
-                  View Our Work
+                  Review Success Stories
                 </Button>
               </div>
             </div>
@@ -448,7 +458,7 @@ const KnowledgeBase: React.FC = () => {
                   size="lg" 
                   className="group hover:scale-105 transition-all duration-300 hover:shadow-lg hover:bg-blue-600"
                 >
-                  Get Started Today
+                  Tell Us About Your Project
                   <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
                 <Button 

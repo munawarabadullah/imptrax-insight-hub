@@ -64,7 +64,12 @@ const DataMigration = () => {
   }, []);
 
   const handleConsultationClick = (source: string) => {
-    navigate(`/schedule-consultation?source=data-migration&button=${source}`);
+    navigate('/schedule-consultation', {
+      state: {
+        source: 'Data Migration',
+        button: source
+      }
+    });
   };
 
   // Key Statistics

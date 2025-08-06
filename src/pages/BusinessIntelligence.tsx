@@ -49,11 +49,21 @@ const BusinessIntelligence = () => {
   }, []);
 
   const handleGetStartedClick = () => {
-    navigate("/schedule-consultation?source=business-intelligence&button=get-started");
+    navigate('/schedule-consultation', {
+      state: {
+        source: 'business-intelligence',
+        button: 'Tell Us About Your Project'
+      }
+    });
   };
 
   const handleScheduleConsultationClick = () => {
-    navigate("/schedule-consultation?source=business-intelligence&button=schedule-consultation");
+    navigate('/schedule-consultation', {
+      state: {
+        source: 'business-intelligence',
+        button: 'Tell Us About Your Project'
+      }
+    });
   };
 
   const challenges = [
@@ -664,10 +674,15 @@ const BusinessIntelligence = () => {
                   <Button 
                     size="lg" 
                     variant="outline" 
-                    onClick={() => navigate('/schedule-consultation?source=business-intelligence&button=Schedule Demo')}
+                    onClick={() => navigate('/schedule-consultation', {
+                      state: {
+                        source: 'business-intelligence',
+                        button: 'Tell Us About Your Project'
+                      }
+                    })}
                     className="px-8 py-4 border-2 border-primary/30 hover:bg-primary/5 transition-all duration-300"
                   >
-                    Schedule Demo
+                    Tell Us About Your Project
                   </Button>
                 </div>
               </div>

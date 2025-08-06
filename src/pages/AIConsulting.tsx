@@ -29,15 +29,30 @@ const AIConsulting = () => {
   }, []);
 
   const handleGetAIConsultationClick = () => {
-    navigate('/schedule-consultation?source=ai-consulting&button=get-ai-consultation');
+    navigate('/schedule-consultation', {
+      state: {
+        source: 'AI Consulting',
+        button: 'get-ai-consultation'
+      }
+    });
   };
 
   const handleScheduleConsultationClick = () => {
-    navigate('/schedule-consultation?source=ai-consulting&button=schedule-consultation');
+    navigate('/schedule-consultation', {
+      state: {
+        source: 'AI Consulting',
+        button: 'schedule-consultation'
+      }
+    });
   };
 
   const handleDownloadAIGuideClick = () => {
-    navigate('/schedule-consultation?source=ai-consulting&button=download-ai-guide');
+    navigate('/schedule-consultation', {
+      state: {
+        source: 'AI Consulting',
+        button: 'download-ai-guide'
+      }
+    });
   };
 
   const stats = [

@@ -104,15 +104,30 @@ const ProcessAutomation = () => {
   }, []);
 
   const handleGetStartedClick = () => {
-    navigate("/schedule-consultation?source=process-automation&button=get-started");
+    navigate('/schedule-consultation', {
+      state: {
+        source: 'Process Automation',
+        button: 'Tell Us About Your Project'
+      }
+    });
   };
 
   const handleScheduleConsultationClick = () => {
-    navigate("/schedule-consultation?source=process-automation&button=schedule-consultation");
+    navigate('/schedule-consultation', {
+      state: {
+        source: 'Process Automation',
+        button: 'schedule-consultation'
+      }
+    });
   };
 
   const handleLearnMoreClick = () => {
-    navigate("/schedule-consultation?source=process-automation&button=learn-more");
+    navigate('/schedule-consultation', {
+      state: {
+        source: 'Process Automation',
+        button: 'learn-more'
+      }
+    });
   };
 
   const benefits = [
@@ -211,7 +226,7 @@ const ProcessAutomation = () => {
                   onClick={handleGetStartedClick}
                   className="text-lg px-8 py-6 transform hover:scale-105 transition-all duration-300 hover:shadow-lg group"
                 >
-                  Get Started Today
+                  Tell Us About Your Project
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                 </Button>
                 <Button 

@@ -9,19 +9,39 @@ const NaturalLanguageProcessing: React.FC = () => {
   const navigate = useNavigate();
 
   const handleStartNLPProjectClick = () => {
-    navigate('/schedule-consultation?source=nlp&button=start-nlp-project');
+    navigate('/schedule-consultation', {
+      state: {
+        source: 'nlp',
+        button: 'start-nlp-project'
+      }
+    });
   };
 
   const handleConsultExpertsClick = () => {
-    navigate('/schedule-consultation?source=nlp&button=consult-experts');
+    navigate('/schedule-consultation', {
+      state: {
+        source: 'nlp',
+        button: 'consult-experts'
+      }
+    });
   };
 
   const handleGetStartedTodayClick = () => {
-    navigate('/schedule-consultation?source=nlp&button=get-started-today');
+    navigate('/schedule-consultation', {
+      state: {
+        source: 'Natural Language Processing',
+        button: 'Tell Us About Your Project'
+      }
+    });
   };
 
   const handleScheduleConsultationClick = () => {
-    navigate('/schedule-consultation?source=nlp&button=schedule-consultation');
+    navigate('/schedule-consultation', {
+      state: {
+        source: 'nlp',
+        button: 'schedule-consultation'
+      }
+    });
   };
 
   useEffect(() => {
@@ -355,7 +375,12 @@ const NaturalLanguageProcessing: React.FC = () => {
               <span className="text-lg font-medium text-gray-700 mr-4">Ready to transform your text data?</span>
               <Button 
                 className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:from-blue-700 hover:via-indigo-700 hover:to-purple-700 text-white px-8 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
-                onClick={() => navigate('/schedule-consultation?source=natural-language-processing&button=Explore Solutions')}
+                onClick={() => navigate('/schedule-consultation', {
+                  state: {
+                    source: 'Natural Language Processing',
+                    button: 'Explore Solutions'
+                  }
+                })}
               >
                 Explore Solutions
                 <span className="ml-2">→</span>
@@ -569,7 +594,7 @@ const NaturalLanguageProcessing: React.FC = () => {
               className="bg-white text-blue-600 hover:bg-gray-100"
               onClick={handleGetStartedTodayClick}
             >
-              Get Started Today
+              Tell Us About Your Project
             </Button>
             <Button 
               size="lg" 

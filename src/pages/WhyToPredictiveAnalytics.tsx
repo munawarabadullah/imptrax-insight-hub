@@ -9,15 +9,30 @@ const WhyToPredictiveAnalytics = () => {
   const navigate = useNavigate();
 
   const handleStartAnalyticsJourneyClick = () => {
-    navigate('/schedule-consultation?source=why-predictive-analytics&button=start-analytics-journey');
+    navigate('/schedule-consultation', {
+      state: {
+        source: 'Why Predictive Analytics',
+        button: 'start-analytics-journey'
+      }
+    });
   };
 
   const handleGetStartedTodayClick = () => {
-    navigate('/schedule-consultation?source=why-predictive-analytics&button=get-started-today');
+    navigate('/schedule-consultation', {
+      state: {
+        source: 'Why To Predictive Analytics',
+        button: 'Tell Us About Your Project'
+      }
+    });
   };
 
   const handleScheduleConsultationClick = () => {
-    navigate('/schedule-consultation?source=why-predictive-analytics&button=schedule-consultation');
+    navigate('/schedule-consultation', {
+      state: {
+        source: 'Why Predictive Analytics',
+        button: 'schedule-consultation'
+      }
+    });
   };
 
   useEffect(() => {
@@ -321,7 +336,7 @@ const WhyToPredictiveAnalytics = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-primary hover:bg-primary/90" onClick={handleGetStartedTodayClick}>
-                Get Started Today
+                Tell Us About Your Project
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
               <Button size="lg" variant="outline" onClick={handleScheduleConsultationClick}>

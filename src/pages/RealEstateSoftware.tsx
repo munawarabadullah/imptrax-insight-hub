@@ -29,19 +29,39 @@ const RealEstateSoftware = () => {
   }, []);
 
   const handleStartProjectClick = () => {
-    navigate('/schedule-consultation?source=real-estate&button=start-project');
+    navigate('/schedule-consultation', {
+      state: {
+        source: 'Real Estate Software',
+        button: 'start-project'
+      }
+    });
   };
 
   const handleConsultExpertsClick = () => {
-    navigate('/schedule-consultation?source=real-estate&button=consult-experts');
+    navigate('/schedule-consultation', {
+      state: {
+        source: 'Real Estate Software',
+        button: 'consult-experts'
+      }
+    });
   };
 
   const handleGetStartedTodayClick = () => {
-    navigate('/schedule-consultation?source=real-estate&button=get-started-today');
+    navigate('/schedule-consultation', {
+      state: {
+        source: 'Real Estate Software',
+        button: 'Tell Us About Your Project'
+      }
+    });
   };
 
   const handleScheduleConsultationClick = () => {
-    navigate('/schedule-consultation?source=real-estate&button=schedule-consultation');
+    navigate('/schedule-consultation', {
+      state: {
+        source: 'Real Estate Software',
+        button: 'schedule-consultation'
+      }
+    });
   };
 
   const services = [
@@ -582,7 +602,7 @@ const RealEstateSoftware = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="accent" size="xl" className="group" onClick={handleGetStartedTodayClick}>
-                Get Started Today
+                Tell Us About Your Project
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button variant="outline" size="xl" className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary" onClick={handleScheduleConsultationClick}>

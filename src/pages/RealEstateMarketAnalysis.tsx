@@ -14,7 +14,16 @@ const RealEstateMarketAnalysis = () => {
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
 
   const handleConsultationClick = (buttonType: string) => {
-    navigate(`/schedule-consultation?source=real-estate-market-analysis&button=${buttonType}`);
+    navigate('/schedule-consultation', {
+      state: {
+        source: 'real-estate-market-analysis',
+        button: buttonType
+      }
+    });
+  };
+
+  const handleCaseStudiesClick = () => {
+    navigate('/case-studies');
   };
 
   const toggleFAQ = (index: number) => {
@@ -231,12 +240,12 @@ const RealEstateMarketAnalysis = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-500">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg transform hover:scale-105 transition-all duration-300">
-                Explore Intelligence Platform
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg transform hover:scale-105 transition-all duration-300" onClick={() => handleConsultationClick('Tell Us About Your Project')}>
+                  Tell Us About Your Project
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
-              <Button size="lg" variant="outline" className="border-blue-300 text-blue-300 hover:bg-blue-300 hover:text-blue-900 px-8 py-4 text-lg transform hover:scale-105 transition-all duration-300">
-                Schedule Market Analysis
+              <Button size="lg" variant="outline" className="border-blue-300 text-blue-300 hover:bg-blue-300 hover:text-blue-900 px-8 py-4 text-lg transform hover:scale-105 transition-all duration-300" onClick={() => handleConsultationClick('Tell Us About Your Project')}>
+                  Tell Us About Your Project
               </Button>
             </div>
           </div>
@@ -312,8 +321,8 @@ const RealEstateMarketAnalysis = () => {
           
           {/* Bottom CTA */}
           <div className="text-center mt-16">
-            <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg transform hover:scale-105 transition-all duration-300">
-              Explore All Intelligence Solutions
+            <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg transform hover:scale-105 transition-all duration-300" onClick={() => navigate('/knowledge-base')}>
+              Knowledge Base
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
           </div>
@@ -739,9 +748,9 @@ const RealEstateMarketAnalysis = () => {
               size="lg" 
               variant="outline" 
               className="border-white text-white hover:bg-white hover:text-blue-900 px-8 py-4 text-lg transform hover:scale-105 transition-all duration-300"
-              onClick={() => handleConsultationClick('Schedule Demo')}
+              onClick={() => handleConsultationClick('Tell Us About Your Project')}
             >
-              Schedule Demo
+              Tell Us About Your Project
             </Button>
           </div>
         </div>

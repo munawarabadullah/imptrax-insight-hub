@@ -9,19 +9,43 @@ const PredictiveAnalytics = () => {
   const navigate = useNavigate();
 
   const handleExploreCustomSolutionsClick = () => {
-    navigate('/schedule-consultation?source=predictive-analytics&button=explore-custom-solutions');
+    navigate('/schedule-consultation', {
+      state: {
+        source: 'Predictive Analytics',
+        button: 'explore-custom-solutions'
+      }
+    });
   };
 
   const handleViewSuccessStoriesClick = () => {
-    navigate('/schedule-consultation?source=predictive-analytics&button=view-success-stories');
+    navigate('/schedule-consultation', {
+      state: {
+        source: 'Predictive Analytics',
+        button: 'view-success-stories'
+      }
+    });
   };
 
   const handleStartProjectClick = () => {
-    navigate('/schedule-consultation?source=predictive-analytics&button=start-project');
+    navigate('/schedule-consultation', {
+      state: {
+        source: 'Predictive Analytics',
+        button: 'start-project'
+      }
+    });
   };
 
   const handleViewCaseStudiesClick = () => {
     navigate('/case-studies');
+  };
+
+  const handleGetAnalyticsConsultationClick = () => {
+    navigate('/schedule-consultation', {
+      state: {
+        source: 'Predictive Analytics',
+        button: 'Tell Us About Your Project'
+      }
+    });
   };
 
   useEffect(() => {
@@ -149,8 +173,8 @@ const PredictiveAnalytics = () => {
               that transform raw data into actionable insights for strategic decision-making.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up" style={{animationDelay: '0.6s'}}>
-              <Button size="lg" className="bg-primary hover:bg-primary/90 hover:scale-105 transition-all duration-300">
-                Get Analytics Consultation
+              <Button size="lg" className="bg-primary hover:bg-primary/90 hover:scale-105 transition-all duration-300" onClick={handleGetAnalyticsConsultationClick}>
+                Tell Us About Your Project
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
             </div>

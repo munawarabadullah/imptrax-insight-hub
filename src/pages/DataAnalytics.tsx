@@ -66,7 +66,12 @@ const DataAnalytics = () => {
   }, []);
 
   const handleConsultationClick = (source: string) => {
-    navigate(`/schedule-consultation?source=data-analytics&button=${source}`);
+    navigate('/schedule-consultation', {
+      state: {
+        source: 'data-analytics',
+        button: source
+      }
+    });
   };
 
   const challenges = [
@@ -267,7 +272,7 @@ const DataAnalytics = () => {
                 onClick={() => handleConsultationClick('hero-get-started')}
               >
                 <span className="relative z-10 flex items-center">
-                  Get Started Today
+                  Tell Us About Your Project
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-accent to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

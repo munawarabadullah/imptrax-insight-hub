@@ -24,19 +24,39 @@ const AIDevelopmentServices = () => {
   }, []);
 
   const handleStartAIJourneyClick = () => {
-    navigate('/schedule-consultation?source=ai-development&button=start-ai-journey');
+    navigate('/schedule-consultation', {
+      state: {
+        source: 'AI Development Services',
+        button: 'start-ai-journey'
+      }
+    });
   };
 
   const handleConsultExpertsClick = () => {
-    navigate('/schedule-consultation?source=ai-development&button=consult-experts');
+    navigate('/schedule-consultation', {
+      state: {
+        source: 'AI Development Services',
+        button: 'consult-experts'
+      }
+    });
   };
 
   const handleGetStartedTodayClick = () => {
-    navigate('/schedule-consultation?source=ai-development&button=get-started-today');
+    navigate('/schedule-consultation', {
+      state: {
+        source: 'AI Development Services',
+        button: 'Tell Us About Your Project'
+      }
+    });
   };
 
   const handleScheduleConsultationClick = () => {
-    navigate('/schedule-consultation?source=ai-development&button=schedule-consultation');
+    navigate('/schedule-consultation', {
+      state: {
+        source: 'AI Development Services',
+        button: 'schedule-consultation'
+      }
+    });
   };
 
   const services = [
@@ -403,7 +423,7 @@ const AIDevelopmentServices = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="accent" size="xl" className="group" onClick={handleGetStartedTodayClick}>
-                Get Started Today
+                Tell Us About Your Project
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button variant="outline" size="xl" className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary" onClick={handleScheduleConsultationClick}>

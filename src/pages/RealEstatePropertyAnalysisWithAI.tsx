@@ -14,7 +14,12 @@ const RealEstatePropertyAnalysisWithAI = () => {
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
 
   const handleConsultationClick = (buttonType: string) => {
-    navigate(`/schedule-consultation?source=real-estate-property-analysis&button=${buttonType}`);
+    navigate('/schedule-consultation', {
+      state: {
+        source: 'Real Estate Property Analysis with AI',
+        button: buttonType
+      }
+    });
   };
 
   const solutions = [
@@ -175,8 +180,8 @@ const RealEstatePropertyAnalysisWithAI = () => {
                 Start Analysis
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
-              <Button size="lg" variant="outline" className="border-blue-300 text-blue-300 hover:bg-blue-300 hover:text-blue-900 px-8 py-4 text-lg" onClick={() => handleConsultationClick('schedule-demo')}>
-                Schedule Demo
+              <Button size="lg" variant="outline" className="border-blue-300 text-blue-300 hover:bg-blue-300 hover:text-blue-900 px-8 py-4 text-lg" onClick={() => handleConsultationClick('Tell Us About Your Project')}>
+                Tell Us About Your Project
               </Button>
             </div>
           </div>
@@ -649,8 +654,8 @@ const RealEstatePropertyAnalysisWithAI = () => {
               Start Free Analysis
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 text-lg" onClick={() => handleConsultationClick('schedule-demo')}>
-              Schedule Demo
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 text-lg" onClick={() => handleConsultationClick('Tell Us About Your Project')}>
+              Tell Us About Your Project
             </Button>
           </div>
         </div>

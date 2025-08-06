@@ -29,15 +29,30 @@ const DataWarehouseServices = () => {
   }, []);
 
   const handleGetConsultationClick = () => {
-    navigate('/schedule-consultation?source=data-warehouse&button=get-consultation');
+    navigate('/schedule-consultation', {
+      state: {
+        source: 'Data Warehouse Services',
+        button: 'get-consultation'
+      }
+    });
   };
 
   const handleScheduleConsultationClick = () => {
-    navigate('/schedule-consultation?source=data-warehouse&button=schedule-consultation');
+    navigate('/schedule-consultation', {
+      state: {
+        source: 'Data Warehouse Services',
+        button: 'schedule-consultation'
+      }
+    });
   };
 
   const handleDownloadGuideClick = () => {
-    navigate('/schedule-consultation?source=data-warehouse&button=download-guide');
+    navigate('/schedule-consultation', {
+      state: {
+        source: 'Data Warehouse Services',
+        button: 'download-guide'
+      }
+    });
   };
 
   const stats = [
@@ -1300,7 +1315,7 @@ const DataWarehouseServices = () => {
                   Our data warehouse experts are here to help. Get personalized answers to your specific questions.
                 </p>
                 
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <div className="flex justify-center">
                   <Button 
                     onClick={handleScheduleConsultationClick} 
                     className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
@@ -1311,13 +1326,6 @@ const DataWarehouseServices = () => {
                     Schedule a Consultation
                     <ArrowRight className="w-5 h-5 ml-2" />
                   </Button>
-                  
-                  <button className="bg-white text-slate-800 px-8 py-4 rounded-xl font-semibold border border-blue-200 hover:bg-blue-50 transition-all duration-300 shadow-lg hover:shadow-xl">
-                    <svg className="w-5 h-5 mr-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                    Contact Support
-                  </button>
                 </div>
                 
                 {/* Quick contact */}

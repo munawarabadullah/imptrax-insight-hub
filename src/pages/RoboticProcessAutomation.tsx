@@ -19,8 +19,23 @@ const RoboticProcessAutomation = () => {
       page: 'robotic-process-automation'
     });
     
-    // Navigate to contact page with parameters
-    navigate(`/schedule-consultation?source=robotic-process-automation&button=${button}&section=${source}`);
+    if (button === 'get-started') {
+      navigate('/schedule-consultation', {
+        state: {
+          source: 'Robotic Process Automation',
+          button: 'Tell Us About Your Project'
+        }
+      });
+    } else {
+      // Navigate to contact page with parameters
+      navigate('/schedule-consultation', {
+      state: {
+        source: 'Robotic Process Automation',
+        button: button,
+        section: source
+      }
+    });
+    }
   };
 
   const benefits = [
@@ -165,7 +180,7 @@ const RoboticProcessAutomation = () => {
                 className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105 transition-all duration-300 backdrop-blur-sm"
                 onClick={() => handleCTAClick('hero', 'get-started')}
               >
-                Get Started Today
+                Tell Us About Your Project
                 <ArrowRight className="ml-2 h-5 w-5 animate-bounce-x" />
               </Button>
               <Button 

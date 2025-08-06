@@ -12,7 +12,12 @@ const HealthcareAutomation = () => {
   const navigate = useNavigate();
 
   const handleConsultationClick = (buttonType: string) => {
-    navigate(`/schedule-consultation?source=healthcare-automation&button=${buttonType}`);
+    navigate('/schedule-consultation', {
+      state: {
+        source: 'Healthcare Automation',
+        button: buttonType
+      }
+    });
   };
   const coreProcesses = [
     {

@@ -8,7 +8,12 @@ const HIPAACompliant: React.FC = () => {
   const navigate = useNavigate();
 
   const handleStartComplianceJourneyClick = () => {
-    navigate('/schedule-consultation?source=hipaa-compliance&button=start-compliance-journey');
+    navigate('/schedule-consultation', {
+      state: {
+        source: 'HIPAA Compliance',
+        button: 'start-compliance-journey'
+      }
+    });
   };
 
   useEffect(() => {

@@ -6,7 +6,12 @@ const FooterCTA = () => {
   const navigate = useNavigate();
 
   const handleConsultationClick = () => {
-    navigate('/schedule-consultation?source=footer&button=get-free-consultation');
+    navigate('/schedule-consultation', {
+      state: {
+        source: 'Footer',
+        button: 'get-free-consultation'
+      }
+    });
   };
 
   const handleCaseStudiesClick = () => {

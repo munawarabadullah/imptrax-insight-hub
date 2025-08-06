@@ -6,11 +6,21 @@ const Hero = () => {
   const navigate = useNavigate();
 
   const handleConsultNowClick = () => {
-    navigate('/schedule-consultation?source=home&button=consult-now');
+    navigate('/schedule-consultation', {
+      state: {
+        source: 'Home',
+        button: 'consult-now'
+      }
+    });
   };
 
   const handleStartTransformationClick = () => {
-    navigate('/schedule-consultation?source=home&button=start-transformation');
+    navigate('/schedule-consultation', {
+      state: {
+        source: 'Home',
+        button: 'start-transformation'
+      }
+    });
   };
 
   return (
