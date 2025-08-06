@@ -147,7 +147,13 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <div className="text-2xl font-bold text-primary">ImpTrax</div>
+            <a href="/" className="flex items-center">
+              <img 
+                src="/ImpTrax-Header-Logo.png" 
+                alt="ImpTrax - AI, Automation & Data Solutions" 
+                className="h-10 w-auto"
+              />
+            </a>
           </div>
 
           {/* Desktop Navigation */}
