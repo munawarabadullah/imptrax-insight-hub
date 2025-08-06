@@ -80,7 +80,7 @@ const Header = () => {
             { name: "Market Intelligence", url: "/real-estate-market-analysis" },
             { name: "Real Estate Software", url: "/real-estate-software" },
             { name: "Property Analytics", url: "/real-estate-software#analytics" },
-            { name: "Investment Analysis", url: "/real-estate-software#investment" }
+            { name: "Investment Analysis", url: "/real-estate-investment-analysis" }
           ]
         }
       ]
@@ -182,9 +182,9 @@ const Header = () => {
                     </div>
                     
                     <div className="p-6">
-                      <div className={`grid ${item.title === 'Resources' ? 'grid-cols-3 gap-6' : item.title === 'Industries' ? 'grid-cols-[1fr_1.4fr_1fr] gap-6' : 'grid-cols-3 gap-8'}`}>
+                      <div className={`grid ${item.title === 'Resources' ? 'grid-cols-3 gap-6' : item.title === 'Industries' ? 'grid-cols-3 gap-6' : 'grid-cols-3 gap-8'}`}>
                         {item.items.map((category, categoryIndex) => (
-                          <div key={category.category} className={`relative ${item.title === 'Resources' && categoryIndex > 0 ? 'border-l border-gray-200 pl-6' : ''} ${item.title === 'Industries' && categoryIndex === 1 ? 'border-l border-r border-gray-200 px-6' : item.title === 'Industries' && categoryIndex === 2 ? 'border-l border-gray-200 pl-6' : item.title !== 'Resources' && item.title !== 'Industries' && categoryIndex > 0 ? 'border-l border-gray-200 pl-8' : ''}`}>
+                          <div key={category.category} className={`relative ${item.title === 'Resources' && categoryIndex > 0 ? 'border-l border-gray-200 pl-6' : ''} ${item.title === 'Industries' && categoryIndex > 0 ? 'border-l border-gray-200 pl-6' : ''} ${item.title !== 'Resources' && item.title !== 'Industries' && categoryIndex > 0 ? 'border-l border-gray-200 pl-8' : ''}`}>
                             <div className="bg-gradient-to-br from-blue-50/50 to-purple-50/50 rounded-lg p-4 mb-4 border border-blue-100/30">
                               <h3 className="font-semibold text-blue-900 mb-1 text-sm uppercase tracking-wide">
                                 {category.category}

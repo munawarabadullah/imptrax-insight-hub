@@ -78,6 +78,7 @@ const KnowledgeBase = () => {
         { name: "Healthcare Automation", url: "/healthcare-automation", description: "Automated healthcare workflows and processes" },
         { name: "Real Estate", url: "/real-estate-software", description: "Property management and real estate software" },
         { name: "Real Estate Market Analysis", url: "/real-estate-market-analysis", description: "Advanced market analysis for real estate professionals" },
+        { name: "Real Estate Investment Analysis", url: "/real-estate-investment-analysis", description: "Comprehensive investment analysis and portfolio management for real estate" },
         { name: "Financial Services", url: "/financial-workflow-process", description: "Financial workflow optimization and automation" },
         { name: "Banking Solutions", url: "/banking-solutions", description: "Comprehensive banking technology solutions" },
         { name: "Investment Management", url: "/investment-management", description: "Investment portfolio management and analytics" },

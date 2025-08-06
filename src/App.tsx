@@ -38,6 +38,7 @@ import RevenueCycleManagement from "./pages/RevenueCycleManagement";
 import HealthcareAutomation from "./pages/HealthcareAutomation";
 import AIDrivenTransformation from "./pages/AIDrivenTransformation";
 import RealEstateMarketAnalysis from "./pages/RealEstateMarketAnalysis";
+import RealEstateInvestmentAnalysis from "./pages/RealEstateInvestmentAnalysis";
 import SoftwareDevelopmentServices from "./pages/SoftwareDevelopmentServices";
 import AIPromptLibrary from "./pages/AIPromptLibrary";
 import NotFound from "./pages/NotFound";
@@ -86,6 +87,7 @@ const App = () => (
           <Route path="/healthcare-automation" element={<HealthcareAutomation />} />
           <Route path="/ai-driven-transformation" element={<AIDrivenTransformation />} />
           <Route path="/real-estate-market-analysis" element={<RealEstateMarketAnalysis />} />
+          <Route path="/real-estate-investment-analysis" element={<RealEstateInvestmentAnalysis />} />
           <Route path="/software-development-services" element={<SoftwareDevelopmentServices />} />
           <Route path="/ai-pluse/ai-prompts-library" element={<AIPromptLibrary />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
