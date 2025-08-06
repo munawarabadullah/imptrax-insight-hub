@@ -47,6 +47,62 @@ const CaseStudies = () => {
       image: "/api/placeholder/600/400"
     },
     {
+      id: 7,
+      title: "Healthcare Eligibility Verification Automation",
+      client: "Large New York Hospital System",
+      industry: "Healthcare",
+      challenge: "Manual eligibility verification processes were causing significant claim denials and revenue loss. The hospital needed to verify 250,000+ patient eligibilities daily for next-day visits, consuming excessive human resources.",
+      solution: "Developed an automated eligibility verification system that performs preemptive eligibility checks overnight for the entire next week. The AI-powered solution integrates with insurance databases and automatically validates patient coverage before appointments.",
+      results: [
+        "Reduced claim denials by 37%",
+        "Increased revenue by 13.7% ($7.5M annually)",
+        "Processes 250,000 daily eligibility verifications",
+        "Reduced human work by 80 hours per month",
+        "Automated overnight processing for next-week eligibility"
+      ],
+      technologies: [".Net", "Microsoft Azure", "Oracle DB", "HL7", "EDI", "X12 270/271", "SOAP"],
+      duration: "3 months",
+      roi: "450%",
+      image: "/api/placeholder/600/400"
+    },
+    {
+      id: 5,
+      title: "Automated Claim Status Notification & Payment Processing",
+      client: "Large Healthcare Billing Company",
+      industry: "Healthcare",
+      challenge: "Manual payment processing and claim status verification were consuming 300+ hours monthly. The company needed automated solutions for payment reconciliation, claim status notifications using X12 277 format, and payment verification using X12 837 format.",
+      solution: "Developed an AI-integrated automated system for payment notification, claim status processing, and payment reconciliation. The solution uses X12 parsers to handle 277 and 837 formats, consolidating payment verification statuses and streamlining the entire billing workflow.",
+      results: [
+        "Reduced monthly manual work by 300 hours",
+        "Automated payment reconciliation process",
+        "Consolidated payment verification statuses",
+        "Streamlined claim status notifications",
+        "Integrated AI for intelligent payment processing"
+      ],
+      technologies: ["X12 Parser", ".Net", "Microsoft Azure", "Oracle DB", "HL7", "EDI", "X12 277/837", "SOAP"],
+      duration: "4 months",
+      roi: "380%"
+    },
+    {
+      id: 10,
+      title: "Multi-Channel Marketing Data Consolidation Platform",
+      client: "Large Bank Credit Card Issuer",
+      industry: "Financial Services",
+      challenge: "Managing 23 diverse channel partners created fragmented marketing data, leading to information silos, missed revenue opportunities, and 160+ hours of monthly manual reporting work. The lack of real-time campaign tracking resulted in suboptimal marketing performance and strategic blind spots.",
+      solution: "Developed a comprehensive data consolidation platform using Amazon Web Services to integrate all 23 channel partners into a unified environment. The solution provides real-time campaign tracking, automated marketing report generation, and eliminates data fragmentation across the entire partner ecosystem.",
+      results: [
+        "Reduced manual workload by 160 hours per month",
+        "Improved overall program efficiency by 170%",
+        "Eliminated data fragmentation across 23 channel partners",
+        "Enabled real-time campaign tracking and analytics",
+        "Recovered lost revenue and marketing opportunities",
+        "Consolidated marketing reporting into unified dashboard"
+      ],
+      technologies: ["Amazon Web Services", "Data Integration", "Real-time Analytics", "ETL Pipelines", "Business Intelligence"],
+      duration: "6 months",
+      roi: "290%"
+    },
+    {
       id: 2,
       title: "Financial Process Automation",
       client: "Global Investment Firm",
@@ -83,7 +139,7 @@ const CaseStudies = () => {
       image: "/api/placeholder/600/400"
     },
     {
-      id: 4,
+      id: 6,
       title: "Manufacturing Quality Control",
       client: "Automotive Parts Manufacturer",
       industry: "Manufacturing",
@@ -101,7 +157,7 @@ const CaseStudies = () => {
       image: "/api/placeholder/600/400"
     },
     {
-      id: 5,
+      id: 8,
       title: "Customer Service AI Assistant",
       client: "E-commerce Platform",
       industry: "Retail",
@@ -119,7 +175,7 @@ const CaseStudies = () => {
       image: "/api/placeholder/600/400"
     },
     {
-      id: 6,
+      id: 9,
       title: "Supply Chain Optimization",
       client: "Global Logistics Company",
       industry: "Logistics",
