@@ -7,11 +7,25 @@ const Services = () => {
   const navigate = useNavigate();
 
   const handleLearnMoreClick = (serviceTitle: string) => {
-    navigate(`/schedule-consultation?source=consulting&button=learn-more&service=${encodeURIComponent(serviceTitle)}`);
+    if (serviceTitle === "Artificial Intelligence") {
+      navigate('/ai-consulting-services');
+    } else if (serviceTitle === "Intelligent Automation") {
+      navigate('/process-automation');
+    } else if (serviceTitle === "Data Analytics & Insights") {
+      navigate('/data-analytics');
+    } else if (serviceTitle === "Business Intelligence") {
+      navigate('/business-intelligence');
+    } else if (serviceTitle === "Digital Transformation") {
+      navigate('/ai-driven-transformation');
+    } else if (serviceTitle === "Compliance & Security") {
+      navigate('/compliance-management');
+    } else {
+      navigate(`/schedule-consultation?source=consulting&button=learn-more&service=${encodeURIComponent(serviceTitle)}`);
+    }
   };
 
   const handleExploreAllClick = () => {
-    navigate('/schedule-consultation?source=services&button=explore-all');
+    navigate('/knowledge-base');
   };
   const services = [
     {
