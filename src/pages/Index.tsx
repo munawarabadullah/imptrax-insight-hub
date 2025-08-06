@@ -52,7 +52,7 @@ const Index = () => {
                 <span className="text-purple-600">Leading Companies</span>
               </h2>
               <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light">
-                Join the ranks of industry leaders who trust ImpTrax to deliver exceptional digital solutions 
+                Join the ranks of industry leaders who trust ImpTrax to deliver exceptional digital solutions{' '}
                 <span className="text-purple-600 font-medium">that drive growth and innovation</span> across the globe.
               </p>
             </div>
