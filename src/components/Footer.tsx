@@ -37,9 +37,11 @@ const Footer = () => {
             {/* Company Info */}
             <div className="lg:col-span-1 space-y-4">
               <div>
-                <h2 className="text-2xl font-bold text-primary-foreground mb-2">
-                  ImpTrax
-                </h2>
+                <img 
+                  src="/ImpTrax-Footer-Logo.png" 
+                  alt="ImpTrax" 
+                  className="h-8 w-auto mb-2"
+                />
                 <p className="text-primary-foreground/80 text-sm leading-relaxed max-w-sm">
                   Leading provider of AI, automation, and data analytics solutions for enterprise clients across America.
                 </p>
