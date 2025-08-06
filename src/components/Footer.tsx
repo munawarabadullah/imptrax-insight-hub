@@ -82,7 +82,7 @@ const Footer = () => {
                   <a href="#" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors">
                     <Twitter className="w-5 h-5" />
                   </a>
-                  <a href="#" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors">
+                  <a href="https://www.facebook.com/ImpTrax/" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors">
                     <Facebook className="w-5 h-5" />
                   </a>
                 </div>
