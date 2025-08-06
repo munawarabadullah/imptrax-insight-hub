@@ -19,63 +19,23 @@ const Clients = () => {
     }
   }, []);
 
-  // Company logos data with categories
+  // Company logos data with categories and website URLs
   const companies = {
     finance: [
-      { name: "JPMorgan Chase", category: "Investment Banking" },
-      { name: "Bank of America", category: "Commercial Banking" },
-      { name: "Wells Fargo", category: "Financial Services" },
-      { name: "Citigroup", category: "Global Banking" },
-      { name: "Goldman Sachs", category: "Investment Banking" },
-      { name: "Morgan Stanley", category: "Investment Banking" },
-      { name: "American Express", category: "Financial Services" },
-      { name: "Capital One", category: "Banking" },
-      { name: "Charles Schwab", category: "Investment Services" },
-      { name: "Fidelity Investments", category: "Asset Management" },
-      { name: "BlackRock", category: "Asset Management" },
-      { name: "Vanguard", category: "Investment Management" },
-      { name: "State Street", category: "Financial Services" },
-      { name: "Northern Trust", category: "Wealth Management" },
-      { name: "PNC Financial", category: "Banking" },
-      { name: "U.S. Bancorp", category: "Banking" },
-      { name: "Truist Financial", category: "Banking" },
-      { name: "TD Bank", category: "Banking" }
+      { name: "JPMorgan Chase", category: "Investment Banking", website: "https://www.jpmorganchase.com" },
+      { name: "Bank of America", category: "Commercial Banking", website: "https://www.bankofamerica.com" },
+      { name: "Citigroup", category: "Global Banking", website: "https://www.citigroup.com" },
+      { name: "American Express", category: "Financial Services", website: "https://www.americanexpress.com" }
     ],
     healthcare: [
-      { name: "Siemens Healthineers", category: "Medical Technology" },
-      { name: "Bayer Healthcare", category: "Pharmaceuticals" },
-      { name: "Johnson & Johnson", category: "Healthcare" },
-      { name: "Pfizer", category: "Pharmaceuticals" },
-      { name: "Roche", category: "Pharmaceuticals" },
-      { name: "Novartis", category: "Pharmaceuticals" },
-      { name: "Merck & Co", category: "Pharmaceuticals" },
-      { name: "AbbVie", category: "Biopharmaceuticals" },
-      { name: "Bristol Myers Squibb", category: "Pharmaceuticals" },
-      { name: "Eli Lilly", category: "Pharmaceuticals" },
-      { name: "Amgen", category: "Biotechnology" },
-      { name: "Gilead Sciences", category: "Biopharmaceuticals" },
-      { name: "Biogen", category: "Biotechnology" },
-      { name: "Regeneron", category: "Biotechnology" }
+      { name: "Siemens Healthineers", category: "Medical Technology", website: "https://www.siemens-healthineers.com/en" },
+      { name: "Bayer Healthcare", category: "Pharmaceuticals", website: "https://www.bayer.com/en" }
     ],
     asian: [
-      { name: "Honda", category: "Automotive - Japan" },
-      { name: "Toyota", category: "Automotive - Japan" },
-      { name: "Sony", category: "Technology - Japan" },
-      { name: "Samsung", category: "Technology - South Korea" },
-      { name: "LG Electronics", category: "Electronics - South Korea" },
-      { name: "Hyundai", category: "Automotive - South Korea" },
-      { name: "Alibaba", category: "E-commerce - China" },
-      { name: "Tencent", category: "Technology - China" },
-      { name: "TSMC", category: "Semiconductors - Taiwan" },
-      { name: "Infosys", category: "IT Services - India" },
-      { name: "TCS", category: "IT Services - India" },
-      { name: "Wipro", category: "IT Services - India" },
-      { name: "Reliance Industries", category: "Conglomerate - India" },
-      { name: "SoftBank", category: "Technology - Japan" },
-      { name: "Rakuten", category: "E-commerce - Japan" },
-      { name: "Baidu", category: "Technology - China" },
-      { name: "JD.com", category: "E-commerce - China" },
-      { name: "Xiaomi", category: "Technology - China" }
+      { name: "Honda", category: "Automotive - Malaysia", website: "https://www.honda.com.my/en" },
+      { name: "Toyota", category: "Automotive - Japan", website: "https://global.toyota/en" },
+      { name: "Hyundai", category: "Automotive - South Korea", website: "https://www.hyundai.com/worldwide/en" },
+      { name: "IHH Healthcare", category: "Healthcare Services - Malaysia", website: "https://www.ihhhealthcare.com" }
     ]
   };
 
@@ -100,7 +60,7 @@ const Clients = () => {
                 Trusted by <span className="text-purple-600">Global Leaders</span>
               </h1>
               <p className="text-xl text-gray-600 mb-8">
-                Join 50+ world-class organizations who have transformed their operations with ImpTrax's AI and automation solutions
+                Join world-class organizations who have transformed their operations with ImpTrax's AI and automation solutions
               </p>
               <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-500">
                 <span className="bg-white px-4 py-2 rounded-full shadow-sm">Fortune 500 Companies</span>
@@ -124,16 +84,24 @@ const Clients = () => {
             
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
               {companies.finance.map((company, index) => (
-                <Card key={index} className="group hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-purple-300">
-                  <CardContent className="p-4 text-center">
-                    <img 
-                      src={generateLogoSVG(company.name)} 
-                      alt={company.name} 
-                      className="w-full h-16 object-contain mb-3 group-hover:scale-105 transition-transform duration-300"
-                    />
-                    <p className="text-xs text-gray-500 font-medium">{company.category}</p>
-                  </CardContent>
-                </Card>
+                <a 
+                  key={index} 
+                  href={company.website} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="block"
+                >
+                  <Card className="group hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-purple-300 cursor-pointer">
+                    <CardContent className="p-4 text-center">
+                      <img 
+                        src={generateLogoSVG(company.name)} 
+                        alt={company.name} 
+                        className="w-full h-16 object-contain mb-3 group-hover:scale-105 transition-transform duration-300"
+                      />
+                      <p className="text-xs text-gray-500 font-medium">{company.category}</p>
+                    </CardContent>
+                  </Card>
+                </a>
               ))}
             </div>
           </div>
@@ -151,16 +119,24 @@ const Clients = () => {
             
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
               {companies.healthcare.map((company, index) => (
-                <Card key={index} className="group hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-purple-300">
-                  <CardContent className="p-4 text-center">
-                    <img 
-                      src={generateLogoSVG(company.name)} 
-                      alt={company.name} 
-                      className="w-full h-16 object-contain mb-3 group-hover:scale-105 transition-transform duration-300"
-                    />
-                    <p className="text-xs text-gray-500 font-medium">{company.category}</p>
-                  </CardContent>
-                </Card>
+                <a 
+                  key={index} 
+                  href={company.website} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="block"
+                >
+                  <Card className="group hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-purple-300 cursor-pointer">
+                    <CardContent className="p-4 text-center">
+                      <img 
+                        src={generateLogoSVG(company.name)} 
+                        alt={company.name} 
+                        className="w-full h-16 object-contain mb-3 group-hover:scale-105 transition-transform duration-300"
+                      />
+                      <p className="text-xs text-gray-500 font-medium">{company.category}</p>
+                    </CardContent>
+                  </Card>
+                </a>
               ))}
             </div>
           </div>
@@ -170,24 +146,32 @@ const Clients = () => {
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Asian Market Leaders</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">International Market Leaders</h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Major Asian corporations across automotive, technology, and manufacturing sectors rely on ImpTrax for digital transformation and operational excellence.
+                Major international corporations across automotive, technology, and manufacturing sectors rely on ImpTrax for digital transformation and operational excellence.
               </p>
             </div>
             
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
               {companies.asian.map((company, index) => (
-                <Card key={index} className="group hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-purple-300">
-                  <CardContent className="p-4 text-center">
-                    <img 
-                      src={generateLogoSVG(company.name)} 
-                      alt={company.name} 
-                      className="w-full h-16 object-contain mb-3 group-hover:scale-105 transition-transform duration-300"
-                    />
-                    <p className="text-xs text-gray-500 font-medium">{company.category}</p>
-                  </CardContent>
-                </Card>
+                <a 
+                  key={index} 
+                  href={company.website} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="block"
+                >
+                  <Card className="group hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-purple-300 cursor-pointer">
+                    <CardContent className="p-4 text-center">
+                      <img 
+                        src={generateLogoSVG(company.name)} 
+                        alt={company.name} 
+                        className="w-full h-16 object-contain mb-3 group-hover:scale-105 transition-transform duration-300"
+                      />
+                      <p className="text-xs text-gray-500 font-medium">{company.category}</p>
+                    </CardContent>
+                  </Card>
+                </a>
               ))}
             </div>
           </div>
@@ -205,7 +189,7 @@ const Clients = () => {
             
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               <div className="text-center">
-                <div className="text-4xl font-bold mb-2">50+</div>
+                <div className="text-4xl font-bold mb-2">100+</div>
                 <div className="text-lg opacity-90">Global Clients</div>
               </div>
               <div className="text-center">
@@ -217,7 +201,7 @@ const Clients = () => {
                 <div className="text-lg opacity-90">Client Satisfaction Rate</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold mb-2">200+</div>
+                <div className="text-4xl font-bold mb-2">500+</div>
                 <div className="text-lg opacity-90">Successful Projects</div>
               </div>
             </div>
