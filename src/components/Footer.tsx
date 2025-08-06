@@ -76,7 +76,7 @@ const Footer = () => {
               {/* Social Media */}
               <div className="pt-4">
                 <div className="flex space-x-3">
-                  <a href="#" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors">
+                  <a href="https://www.linkedin.com/company/imptrax-corporation" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors">
                     <Linkedin className="w-5 h-5" />
                   </a>
                   <a href="#" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors">
