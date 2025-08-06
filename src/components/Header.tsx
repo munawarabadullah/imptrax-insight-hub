@@ -79,7 +79,7 @@ const Header = () => {
           services: [
             { name: "Real Estate Software", url: "/real-estate-software" },
             { name: "Property Analytics", url: "/real-estate-software#analytics" },
-            { name: "Market Intelligence", url: "/real-estate-software#intelligence" },
+            { name: "Market Intelligence", url: "/real-estate-market-analysis" },
             { name: "Investment Analysis", url: "/real-estate-software#investment" }
           ]
         }
