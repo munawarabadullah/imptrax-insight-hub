@@ -32,6 +32,54 @@ const Index = () => {
         <Services />
         <Industries />
         
+        {/* Trusted by Leading Companies Section */}
+        <section className="py-16 bg-white border-b border-gray-100">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">Trusted by the World's Leading Companies</h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">Join thousands of organizations worldwide who trust ImpTrax for their digital transformation journey</p>
+            </div>
+            
+            {/* Scrolling Logos */}
+            <div className="relative overflow-hidden">
+              <div className="flex animate-scroll space-x-12 items-center">
+                {/* First set of logos */}
+                <div className="flex space-x-12 items-center min-w-max">
+                  <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8dGV4dCB4PSI2MCIgeT0iMjQiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiM2MzY2RjEiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkpQTW9yZ2FuIENoYXNlPC90ZXh0Pgo8L3N2Zz4K" alt="JPMorgan Chase" className="h-8 opacity-60 hover:opacity-100 transition-opacity" />
+                  <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8dGV4dCB4PSI2MCIgeT0iMjQiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiM2MzY2RjEiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkJhbmsgb2YgQW1lcmljYTwvdGV4dD4KPC9zdmc+Cg==" alt="Bank of America" className="h-8 opacity-60 hover:opacity-100 transition-opacity" />
+                  <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8dGV4dCB4PSI2MCIgeT0iMjQiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiM2MzY2RjEiIHRleHQtYW5jaG9yPSJtaWRkbGUiPldlbGxzIEZhcmdvPC90ZXh0Pgo8L3N2Zz4K" alt="Wells Fargo" className="h-8 opacity-60 hover:opacity-100 transition-opacity" />
+                  <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8dGV4dCB4PSI2MCIgeT0iMjQiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiM2MzY2RjEiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkNpdGlncm91cDwvdGV4dD4KPC9zdmc+Cg==" alt="Citigroup" className="h-8 opacity-60 hover:opacity-100 transition-opacity" />
+                  <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8dGV4dCB4PSI2MCIgeT0iMjQiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiM2MzY2RjEiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlNpZW1lbnM8L3RleHQ+Cjwvc3ZnPgo=" alt="Siemens" className="h-8 opacity-60 hover:opacity-100 transition-opacity" />
+                  <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8dGV4dCB4PSI2MCIgeT0iMjQiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiM2MzY2RjEiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkJheWVyPC90ZXh0Pgo8L3N2Zz4K" alt="Bayer" className="h-8 opacity-60 hover:opacity-100 transition-opacity" />
+                  <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8dGV4dCB4PSI2MCIgeT0iMjQiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiM2MzY2RjEiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkhvbmRhPC90ZXh0Pgo8L3N2Zz4K" alt="Honda" className="h-8 opacity-60 hover:opacity-100 transition-opacity" />
+                  <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8dGV4dCB4PSI2MCIgeT0iMjQiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiM2MzY2RjEiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlRveW90YTwvdGV4dD4KPC9zdmc+Cg==" alt="Toyota" className="h-8 opacity-60 hover:opacity-100 transition-opacity" />
+                </div>
+                
+                {/* Duplicate set for seamless scrolling */}
+                <div className="flex space-x-12 items-center min-w-max">
+                  <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8dGV4dCB4PSI2MCIgeT0iMjQiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiM2MzY2RjEiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkpQTW9yZ2FuIENoYXNlPC90ZXh0Pgo8L3N2Zz4K" alt="JPMorgan Chase" className="h-8 opacity-60 hover:opacity-100 transition-opacity" />
+                  <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8dGV4dCB4PSI2MCIgeT0iMjQiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiM2MzY2RjEiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkJhbmsgb2YgQW1lcmljYTwvdGV4dD4KPC9zdmc+Cg==" alt="Bank of America" className="h-8 opacity-60 hover:opacity-100 transition-opacity" />
+                  <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8dGV4dCB4PSI2MCIgeT0iMjQiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiM2MzY2RjEiIHRleHQtYW5jaG9yPSJtaWRkbGUiPldlbGxzIEZhcmdvPC90ZXh0Pgo8L3N2Zz4K" alt="Wells Fargo" className="h-8 opacity-60 hover:opacity-100 transition-opacity" />
+                  <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8dGV4dCB4PSI2MCIgeT0iMjQiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiM2MzY2RjEiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkNpdGlncm91cDwvdGV4dD4KPC9zdmc+Cg==" alt="Citigroup" className="h-8 opacity-60 hover:opacity-100 transition-opacity" />
+                  <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8dGV4dCB4PSI2MCIgeT0iMjQiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiM2MzY2RjEiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlNpZW1lbnM8L3RleHQ+Cjwvc3ZnPgo=" alt="Siemens" className="h-8 opacity-60 hover:opacity-100 transition-opacity" />
+                  <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8dGV4dCB4PSI2MCIgeT0iMjQiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiM2MzY2RjEiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkJheWVyPC90ZXh0Pgo8L3N2Zz4K" alt="Bayer" className="h-8 opacity-60 hover:opacity-100 transition-opacity" />
+                  <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8dGV4dCB4PSI2MCIgeT0iMjQiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiM2MzY2RjEiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkhvbmRhPC90ZXh0Pgo8L3N2Zz4K" alt="Honda" className="h-8 opacity-60 hover:opacity-100 transition-opacity" />
+                  <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8dGV4dCB4PSI2MCIgeT0iMjQiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiM2MzY2RjEiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlRveW90YTwvdGV4dD4KPC9zdmc+Cg==" alt="Toyota" className="h-8 opacity-60 hover:opacity-100 transition-opacity" />
+                </div>
+              </div>
+            </div>
+            
+            <div className="text-center mt-8">
+              <a href="/clients" className="inline-flex items-center text-purple-600 hover:text-purple-700 font-medium transition-colors">
+                View All Our Clients
+                <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </section>
+        
         {/* What Makes Us the Top Choice Section */}
         <section className="py-20 bg-gray-50">
           <div className="container mx-auto px-4">

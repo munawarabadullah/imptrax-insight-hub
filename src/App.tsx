@@ -42,6 +42,7 @@ import RealEstateInvestmentAnalysis from "./pages/RealEstateInvestmentAnalysis";
 import RealEstatePropertyAnalysisWithAI from "./pages/RealEstatePropertyAnalysisWithAI";
 import SoftwareDevelopmentServices from "./pages/SoftwareDevelopmentServices";
 import AIPromptLibrary from "./pages/AIPromptLibrary";
+import Clients from "./pages/Clients";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -92,6 +93,7 @@ const App = () => (
           <Route path="/real-estate-Property-Analysis-With-AI" element={<RealEstatePropertyAnalysisWithAI />} />
           <Route path="/software-development-services" element={<SoftwareDevelopmentServices />} />
           <Route path="/ai-pluse/ai-prompts-library" element={<AIPromptLibrary />} />
+          <Route path="/clients" element={<Clients />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
