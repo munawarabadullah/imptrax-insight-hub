@@ -379,7 +379,7 @@ const auditPerformanceSEO = async (issues: SEOIssue[], recommendations: string[]
     const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
     if (navigation) {
       coreWebVitals.ttfb = navigation.responseStart - navigation.requestStart;
-      coreWebVitals.loadTime = navigation.loadEventEnd - navigation.navigationStart;
+      coreWebVitals.loadTime = navigation.loadEventEnd - navigation.fetchStart;
     }
   }
 

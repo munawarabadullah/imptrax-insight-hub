@@ -97,8 +97,8 @@ export class WebVitalsMonitor {
                     value <= threshold.needsImprovement ? 'needs-improvement' : 'poor';
       
       // Send to analytics (replace with your analytics service)
-      if (typeof gtag !== 'undefined') {
-        gtag('event', name, {
+      if (typeof window !== 'undefined' && 'gtag' in window) {
+        (window as any).gtag('event', name, {
           event_category: 'Web Vitals',
           value: Math.round(value),
           custom_parameter_1: rating,
@@ -260,8 +260,8 @@ export const initializePerformanceMonitoring = () => {
       if (navigation) {
         const metrics = {
           TTFB: navigation.responseStart - navigation.requestStart,
-          DOMContentLoaded: navigation.domContentLoadedEventEnd - navigation.navigationStart,
-          LoadComplete: navigation.loadEventEnd - navigation.navigationStart
+          DOMContentLoaded: navigation.domContentLoadedEventEnd - navigation.fetchStart,
+          LoadComplete: navigation.loadEventEnd - navigation.fetchStart
         };
         
         console.log('Page Load Metrics:', metrics);
