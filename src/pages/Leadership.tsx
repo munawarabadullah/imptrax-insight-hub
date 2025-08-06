@@ -28,6 +28,12 @@ const Leadership = () => {
       description: "Leading strategic direction and growth of AI and automation solutions"
     },
     {
+      company: "JPMorgan Chase",
+      role: "Senior Executive",
+      period: "Previous",
+      description: "Financial services technology and risk management"
+    },
+    {
       company: "RTech Healthcare Revenue, Inc.",
       role: "Chief Information Officer",
       period: "Until 2016",
@@ -44,12 +50,6 @@ const Leadership = () => {
       role: "Senior Executive",
       period: "Previous",
       description: "Pharmaceutical technology and digital transformation"
-    },
-    {
-      company: "JPMorgan Chase",
-      role: "Senior Executive",
-      period: "Previous",
-      description: "Financial services technology and risk management"
     }
   ];
 
