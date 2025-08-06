@@ -43,6 +43,9 @@ const KnowledgeBase = () => {
       items: [
         { name: "AI Consulting", url: "/ai-consulting", description: "Strategic AI implementation and optimization guidance" },
         { name: "AI Development", url: "/ai-development-services", description: "Custom AI and automation solutions" },
+        { name: "AI Consulting Services", url: "/ai-consulting-services", description: "Comprehensive AI consulting and strategy services" },
+        { name: "AI-Driven Transformation", url: "/ai-driven-transformation", description: "Transform your business with AI-powered solutions" },
+        { name: "Software Development", url: "/software-development-services", description: "Custom software development and engineering services" },
         { name: "Business Intelligence", url: "/business-intelligence", description: "Data-driven insights and analytics" }
       ]
     },
@@ -53,8 +56,16 @@ const KnowledgeBase = () => {
       color: "bg-yellow-500/10 text-yellow-600",
       items: [
         { name: "Process Automation", url: "/process-automation", description: "Streamline operations with intelligent automation" },
+        { name: "Robotic Process Automation", url: "/robotic-process-automation", description: "Automate repetitive tasks with RPA technology" },
+        { name: "Workflow Optimization", url: "/workflow-optimization", description: "Optimize business workflows for maximum efficiency" },
         { name: "Data Analytics", url: "/data-analytics", description: "Advanced data analysis and visualization" },
-        { name: "Machine Learning", url: "/machine-learning-development", description: "Custom ML models and predictive analytics" }
+        { name: "Data Migration", url: "/data-migration", description: "Seamless data migration and integration services" },
+        { name: "Data Warehouse Services", url: "/data-warehouse-services", description: "Enterprise data warehousing solutions" },
+        { name: "Machine Learning", url: "/machine-learning-development", description: "Custom ML models and predictive analytics" },
+        { name: "Natural Language Processing", url: "/natural-language-processing", description: "NLP solutions for text analysis and understanding" },
+        { name: "Predictive Analytics", url: "/predictive-analytics", description: "Forecast trends and outcomes with advanced analytics" },
+        { name: "Real-Time Analytics", url: "/real-time-analytics", description: "Live data processing and real-time insights" },
+        { name: "Risk Assessment", url: "/risk-assessment", description: "Comprehensive risk analysis and management solutions" }
       ]
     },
     {
@@ -64,8 +75,14 @@ const KnowledgeBase = () => {
       color: "bg-green-500/10 text-green-600",
       items: [
         { name: "Healthcare", url: "/hipaa-compliant", description: "HIPAA-compliant solutions and healthcare technology" },
+        { name: "Healthcare Automation", url: "/healthcare-automation", description: "Automated healthcare workflows and processes" },
         { name: "Real Estate", url: "/real-estate-software", description: "Property management and real estate software" },
-        { name: "Financial Services", url: "/financial-workflow-process", description: "Financial workflow optimization and automation" }
+        { name: "Real Estate Market Analysis", url: "/real-estate-market-analysis", description: "Advanced market analysis for real estate professionals" },
+        { name: "Financial Services", url: "/financial-workflow-process", description: "Financial workflow optimization and automation" },
+        { name: "Banking Solutions", url: "/banking-solutions", description: "Comprehensive banking technology solutions" },
+        { name: "Investment Management", url: "/investment-management", description: "Investment portfolio management and analytics" },
+        { name: "Revenue Cycle Management", url: "/revenue-cycle-management", description: "Optimize revenue cycles and financial processes" },
+        { name: "Compliance Management", url: "/compliance-management", description: "Regulatory compliance and risk management solutions" }
       ]
     },
     {
@@ -76,7 +93,18 @@ const KnowledgeBase = () => {
       items: [
         { name: "Case Studies", url: "/case-studies", description: "Real-world success stories and implementations" },
         { name: "Industry Trends", url: "/industry-trends", description: "Latest insights and market developments" },
-        { name: "Educational Resources", url: "/what-is-process-automation", description: "Learn about automation and AI technologies" }
+        { name: "Educational Resources", url: "/what-is-process-automation", description: "Learn about automation and AI technologies" },
+        { name: "Why Predictive Analytics", url: "/why-to-predictive-analytics", description: "Understanding the value of predictive analytics" },
+        { name: "AI Prompt Library", url: "/ai-pluse/ai-prompts-library", description: "Collection of AI prompts for business development" }
+      ]
+    },
+    {
+      icon: FileText,
+      title: "Misc.",
+      description: "Additional resources and services",
+      color: "bg-gray-500/10 text-gray-600",
+      items: [
+        { name: "Schedule Consultation", url: "/schedule-consultation", description: "Book a consultation with our experts" }
       ]
     }
   ];
