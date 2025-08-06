@@ -87,7 +87,7 @@ const Team = () => {
       title: "Executive Vice President",
       subtitle: "GLOBAL BUSINESS DEVELOPMENT",
       image: "/placeholder.svg",
-      description: "Mubasher Abadullah leads the Global Business Development Division. He is overseeing various corporate functions as well as having P&L responsibility for international businesses. He brings considerable depth and a range of experience from his roles in technology-driven ventures. He has held previous positions as Executive Vice President of Technology.",
+      description: "Mubasher Abadullah leads the Global Business Development Division. He is overseeing various corporate functions as well as having P&L responsibility for international businesses. He brings considerable depth and a range of experience from his roles in technology-driven ventures.",
       experiences: [
         {
           company: "ImpTrax",
@@ -120,18 +120,12 @@ const Team = () => {
         {
           company: "ImpTrax",
           role: "Marketing Director",
-          period: "2020 - Present",
+          period: "Present",
           description: "Leading comprehensive marketing strategies and brand communications for AI and automation solutions across global markets."
-        },
-        {
-          company: "Digital Marketing Solutions",
-          role: "Senior Marketing Manager",
-          period: "2018 - 2020",
-          description: "Developed and executed digital marketing campaigns for technology companies, focusing on B2B lead generation and brand awareness."
         }
       ],
       education: [
-        "University of California, Berkeley - Master of Marketing (2018)",
+        "University of California, Berkeley - Master of Marketing",
         "Google Digital Marketing Certification",
         "HubSpot Content Marketing Certification"
       ],
@@ -215,18 +209,12 @@ const Team = () => {
         {
           company: "ImpTrax",
           role: "Technology Lead",
-          period: "2020 - Present",
+          period: "Present",
           description: "Leading software development initiatives and AI implementation projects for enterprise clients."
-        },
-        {
-          company: "Tech Solutions Inc",
-          role: "Senior Developer",
-          period: "2018 - 2020",
-          description: "Developed scalable web applications and machine learning solutions."
         }
       ],
       education: [
-        "Stanford University - Master of Computer Science (2018)",
+        "Stanford University - Master of Computer Science",
         "Specialized in Artificial Intelligence and Machine Learning"
       ],
       globalExperience: ["United States", "Canada", "United Kingdom"],
@@ -243,18 +231,12 @@ const Team = () => {
         {
           company: "ImpTrax",
           role: "Business Analyst",
-          period: "2021 - Present",
+          period: "Present",
           description: "Analyzing business requirements and developing data-driven solutions for enterprise clients."
-        },
-        {
-          company: "Analytics Pro",
-          role: "Data Analyst",
-          period: "2019 - 2021",
-          description: "Created comprehensive business intelligence reports and predictive models."
         }
       ],
       education: [
-        "University of Chicago - Master of Business Administration (2019)",
+        "University of Chicago - Master of Business Administration",
         "Specialized in Business Analytics and Strategic Management"
       ],
       globalExperience: ["United States", "Canada", "Australia"],
@@ -270,18 +252,12 @@ const Team = () => {
         {
           company: "ImpTrax",
           role: "Project Manager",
-          period: "2020 - Present",
+          period: "Present",
           description: "Managing complex AI and automation projects, ensuring timely delivery and client satisfaction."
-        },
-        {
-          company: "Global Tech Solutions",
-          role: "Senior Project Coordinator",
-          period: "2018 - 2020",
-          description: "Coordinated cross-functional teams for software development and implementation projects."
         }
       ],
       education: [
-        "Northwestern University - Master of Project Management (2018)",
+        "Northwestern University - Master of Project Management",
         "Focus on Agile Methodologies and Digital Transformation"
       ],
       globalExperience: ["United States", "United Kingdom", "Netherlands"],
@@ -297,25 +273,13 @@ const Team = () => {
         {
           company: "ImpTrax",
           role: "Client Relations Manager",
-          period: "2019 - Present",
+          period: "Present",
           description: "Leading client relationship management and business development initiatives, ensuring exceptional client satisfaction and identifying new growth opportunities across healthcare and finance sectors."
-        },
-        {
-          company: "DataTech Corp",
-          role: "Technical Account Manager",
-          period: "2017 - 2019",
-          description: "Managed key client accounts and served as technical liaison, bridging the gap between complex technical solutions and business requirements."
-        },
-        {
-          company: "Business Solutions Inc",
-          role: "Client Success Specialist",
-          period: "2015 - 2017",
-          description: "Focused on client onboarding, relationship building, and ensuring successful implementation of technology solutions."
         }
       ],
       education: [
-        "MIT - Bachelor of Computer Science (2017)",
-        "Harvard Business School - Certificate in Business Development (2020)",
+        "MIT - Bachelor of Computer Science",
+        "Harvard Business School - Certificate in Business Development",
         "Specialized training in Client Relationship Management and Strategic Communications"
       ],
       globalExperience: ["United States", "Germany", "Singapore", "United Kingdom", "Canada"],

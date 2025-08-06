@@ -3,10 +3,10 @@ import { ArrowRight, Sparkles, Zap, TrendingUp } from "lucide-react";
 
 const FooterCTA = () => {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700 text-white">
+    <section className="relative overflow-hidden bg-gradient-to-br from-[#977DFF] via-[#0033FF] to-[#0600AB] text-white">
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-blue-600/20 to-purple-600/20 animate-pulse"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-[#977DFF]/20 to-[#0033FF]/20 animate-pulse"></div>
         <div className="absolute top-10 left-10 w-32 h-32 bg-white/5 rounded-full blur-xl animate-float"></div>
         <div className="absolute bottom-20 right-20 w-48 h-48 bg-purple-400/10 rounded-full blur-2xl animate-float-delayed"></div>
         <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-cyan-400/10 rounded-full blur-lg animate-bounce-slow"></div>
