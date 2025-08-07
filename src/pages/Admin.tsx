@@ -6,50 +6,18 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { toast } from "sonner";
 import { useAuth } from "../contexts/AuthContext";
 
-interface ContactSubmission {
-  id: string;
-  first_name: string;
-  last_name: string;
-  email: string;
-  phone?: string;
-  company?: string;
-  job_title?: string;
-  website?: string;
-  company_size?: string;
-  industry?: string;
-  services_interested?: string[];
-  project_description?: string;
-  timeline?: string;
-  budget_range?: string;
-  urgency?: string;
-  preferred_contact_method?: string;
-  best_time_to_call?: string;
-  meeting_type?: string;
-  additional_notes?: string;
-  city?: string;
-  state?: string;
-  country?: string;
-  cta_source?: string;
-  lead_score?: number;
-  lead_status?: string;
-  assigned_to?: string;
-  notes?: string;
-  follow_up_date?: string;
-  created_at: string;
-  updated_at: string;
-}
-
 const Admin = () => {
   const navigate = useNavigate();
   const { user, userRole, loading, signIn, signOut } = useAuth();
   const [loginForm, setLoginForm] = useState({ email: "", password: "" });
   const [isLoggingIn, setIsLoggingIn] = useState(false);
 
-  // Redirect authenticated users with proper roles to Dashboard
+  // Redirect authenticated users with proper roles to Dashboard immediately
   useEffect(() => {
     if (!loading && user && userRole) {
       if (userRole === 'Admin' || userRole === 'Executive' || userRole === 'Director') {
         navigate('/dashboard', { replace: true });
+        return;
       }
     }
   }, [user, userRole, loading, navigate]);
@@ -62,14 +30,11 @@ const Admin = () => {
       const { error } = await signIn(loginForm.email, loginForm.password);
       
       if (error) {
-        console.error('Login error:', error);
         toast.error(error.message || "Invalid credentials");
       } else {
         toast.success("Successfully logged in");
-        // Navigation will happen automatically via useEffect when auth state changes
       }
     } catch (error) {
-      console.error('Login exception:', error);
       toast.error("Login failed. Please try again.");
     } finally {
       setIsLoggingIn(false);
@@ -82,18 +47,29 @@ const Admin = () => {
       toast.success("Successfully logged out");
       navigate('/admin');
     } catch (error) {
-      console.error('Logout error:', error);
       toast.error("Logout failed");
     }
   };
-  if (loading) {
+
+  // Show loading state
+  if (loading || isLoggingIn) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 flex items-center justify-center">
-        <div className="text-lg">Loading...</div>
+      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+          <p className="text-gray-600">Loading...</p>
+        </div>
       </div>
     );
   }
 
+  // If user is authenticated with proper role, redirect immediately (this should not render)
+  if (!loading && user && userRole && (userRole === 'Admin' || userRole === 'Executive' || userRole === 'Director')) {
+    navigate('/dashboard', { replace: true });
+    return null;
+  }
+
+  // Show login form for unauthenticated users
   if (!user) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 flex items-center justify-center">
@@ -157,13 +133,8 @@ const Admin = () => {
     );
   }
 
-  // If user is authenticated with proper role, they will be redirected via useEffect
-  // This component should only show login form for unauthenticated users
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 flex items-center justify-center">
-      <div className="text-lg">Redirecting to Dashboard...</div>
-    </div>
-  );
+  // This should never be reached - fallback
+  return null;
 };
 
 export default Admin;

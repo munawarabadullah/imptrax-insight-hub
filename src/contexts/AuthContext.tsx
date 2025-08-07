@@ -56,13 +56,28 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   useEffect(() => {
+    console.log('AuthContext: Starting initialization');
+    
+    // Timeout fallback to prevent infinite loading
+    const timeoutId = setTimeout(() => {
+      console.warn('AuthContext: Timeout reached, forcing loading to false');
+      setLoading(false);
+    }, 5000);
+    
     // Get initial session
     supabase.auth.getSession().then(({ data: { session } }) => {
+      console.log('AuthContext: Got session:', session?.user?.email || 'No user');
+      clearTimeout(timeoutId);
       setSession(session);
       setUser(session?.user ?? null);
       if (session?.user) {
         getUserRole(session.user.id).then(setUserRole);
       }
+      console.log('AuthContext: Setting loading to false');
+      setLoading(false);
+    }).catch(error => {
+      console.error('AuthContext: Error getting session:', error);
+      clearTimeout(timeoutId);
       setLoading(false);
     });
 
@@ -84,7 +99,10 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       setLoading(false);
     });
 
-    return () => subscription.unsubscribe();
+    return () => {
+      clearTimeout(timeoutId);
+      subscription.unsubscribe();
+    };
   }, []);
 
   const signIn = async (email: string, password: string) => {
