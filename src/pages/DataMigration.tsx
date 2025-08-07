@@ -1649,9 +1649,9 @@ const DataMigration = () => {
               size="lg" 
               variant="outline"
               className="px-8 py-4 text-lg font-medium border-2 border-primary-foreground/20 hover:border-primary-foreground/40 hover:bg-primary-foreground/10 text-primary-foreground transition-all duration-300 hover:scale-105"
-              onClick={() => handleConsultationClick('cta-secondary')}
+              onClick={() => navigate('/case-studies')}
             >
-              Learn More
+              View Case Studies
             </Button>
           </div>
         </div>
