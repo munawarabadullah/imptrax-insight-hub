@@ -21,21 +21,75 @@ const Header = () => {
     }, 150);
   };
 
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (searchQuery.trim()) {
-      // Use Google site search to search within imptrax.com
-      const searchUrl = `https://www.google.com/search?q=site:imptrax.com ${encodeURIComponent(searchQuery.trim())}`;
-      window.open(searchUrl, '_blank');
-      setSearchQuery(''); // Clear search after submission
+  const [searchResults, setSearchResults] = useState<Array<{name: string, url: string, category: string, description?: string}>>([]);
+  const [showSearchResults, setShowSearchResults] = useState(false);
+
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const query = e.target.value;
+    setSearchQuery(query);
+    
+    if (query.trim().length >= 2) {
+      // Create comprehensive searchable content
+      const searchableContent = [
+        { name: 'Home', url: '/', category: 'Navigation', description: 'Main homepage' },
+        { name: 'Contact Us', url: '/schedule-consultation', category: 'Navigation', description: 'Get in touch with our team' },
+        { name: 'Case Studies', url: '/case-studies', category: 'Navigation', description: 'View our success stories' },
+        { name: 'Knowledge Base', url: '/knowledge-base', category: 'Resources', description: 'Browse our articles and insights' },
+        { name: 'Our Team', url: '/team', category: 'About', description: 'Meet our experts' },
+        { name: 'Leadership', url: '/leadership', category: 'About', description: 'Our company leadership' },
+        { name: 'Our History', url: '/our-history', category: 'About', description: 'Learn about our journey' },
+        ...menuItems.flatMap(item => 
+          item.items.flatMap(category => 
+            category.services.map(service => ({
+              name: service.name,
+              url: service.url,
+              category: category.category,
+              description: `${category.category} service`
+            }))
+          )
+        )
+      ];
+      
+      // Enhanced search with multiple criteria
+      const queryLower = query.toLowerCase();
+      const filtered = searchableContent
+        .filter(item => {
+          const nameMatch = item.name.toLowerCase().includes(queryLower);
+          const categoryMatch = item.category.toLowerCase().includes(queryLower);
+          const descMatch = item.description?.toLowerCase().includes(queryLower);
+          return nameMatch || categoryMatch || descMatch;
+        })
+        .sort((a, b) => {
+          // Prioritize exact name matches
+          const aNameMatch = a.name.toLowerCase().startsWith(queryLower);
+          const bNameMatch = b.name.toLowerCase().startsWith(queryLower);
+          if (aNameMatch && !bNameMatch) return -1;
+          if (!aNameMatch && bNameMatch) return 1;
+          return a.name.localeCompare(b.name);
+        })
+        .slice(0, 6); // Limit to 6 results for better UX
+      
+      setSearchResults(filtered);
+      setShowSearchResults(true);
+    } else {
+      setSearchResults([]);
+      setShowSearchResults(false);
     }
   };
 
+  const handleSearchSelect = (url: string) => {
+    window.location.href = url;
+    setSearchQuery('');
+    setShowSearchResults(false);
+  };
+
   const handleSearchKeyPress = (e: React.KeyboardEvent) => {
-     if (e.key === 'Enter') {
-       handleSearch(e as any);
-     }
-   };
+    if (e.key === 'Enter' && searchResults.length > 0) {
+      handleSearchSelect(searchResults[0].url);
+    } else if (e.key === 'Escape') {
+      setShowSearchResults(false);
+    }
+  };
 
   const menuItems = [
     {
@@ -144,16 +198,72 @@ const Header = () => {
               </div>
             </div>
             <div className="flex items-center space-x-4">
-              <div className="flex items-center space-x-2">
-                <Search className="w-4 h-4 text-gray-400 cursor-pointer" onClick={handleSearch} />
+              <div className="relative flex items-center space-x-2">
+                <Search className="w-4 h-4 text-gray-400" />
                 <input 
                   type="text" 
                   placeholder="Search services..."
                   value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  onKeyPress={handleSearchKeyPress}
+                  onChange={handleSearchChange}
+                  onKeyDown={handleSearchKeyPress}
+                  onFocus={() => searchQuery && setShowSearchResults(true)}
+                  onBlur={() => setTimeout(() => setShowSearchResults(false), 200)}
                   className="bg-transparent border-none outline-none text-sm w-32 focus:w-48 transition-all duration-200"
                 />
+                
+                {/* Enhanced Search Results Dropdown */}
+                 {showSearchResults && (
+                   <div className="absolute top-full right-0 mt-2 w-96 bg-white/95 backdrop-blur-sm border border-gray-200/50 rounded-xl shadow-2xl z-50 max-h-80 overflow-y-auto">
+                     {searchResults.length > 0 ? (
+                       <div className="p-3">
+                         <div className="flex items-center justify-between mb-3 px-2">
+                           <div className="text-xs font-medium text-gray-600 uppercase tracking-wide">Search Results</div>
+                           <div className="text-xs text-gray-400">{searchResults.length} found</div>
+                         </div>
+                         <div className="space-y-1">
+                           {searchResults.map((result, index) => (
+                             <button
+                               key={`${result.url}-${index}`}
+                               onClick={() => handleSearchSelect(result.url)}
+                               className="w-full text-left px-3 py-3 hover:bg-blue-50/50 rounded-lg transition-all duration-200 group border border-transparent hover:border-blue-100"
+                             >
+                               <div className="flex items-start justify-between">
+                                 <div className="flex-1 min-w-0">
+                                   <div className="text-sm font-medium text-gray-900 group-hover:text-blue-700 truncate">
+                                     {result.name}
+                                   </div>
+                                   <div className="text-xs text-gray-500 mt-0.5">
+                                     {result.category}
+                                   </div>
+                                   {result.description && (
+                                     <div className="text-xs text-gray-400 mt-1 line-clamp-1">
+                                       {result.description}
+                                     </div>
+                                   )}
+                                 </div>
+                                 <div className="ml-3 flex-shrink-0">
+                                   <div className="w-6 h-6 rounded-full bg-gray-100 group-hover:bg-blue-100 flex items-center justify-center transition-colors">
+                                     <div className="text-xs text-gray-400 group-hover:text-blue-600">→</div>
+                                   </div>
+                                 </div>
+                               </div>
+                             </button>
+                           ))}
+                         </div>
+                         <div className="mt-3 pt-3 border-t border-gray-100">
+                           <div className="text-xs text-gray-400 px-2">
+                             Press <kbd className="px-1.5 py-0.5 text-xs font-mono bg-gray-100 rounded">Enter</kbd> to select first result
+                           </div>
+                         </div>
+                       </div>
+                     ) : searchQuery.length >= 2 ? (
+                       <div className="p-4 text-center">
+                         <div className="text-sm text-gray-500">No results found for "{searchQuery}"</div>
+                         <div className="text-xs text-gray-400 mt-1">Try different keywords or browse our services</div>
+                       </div>
+                     ) : null}
+                   </div>
+                 )}
               </div>
               <a href="/schedule-consultation" className="text-primary hover:text-primary/80 font-medium">
                 Free Consultation →
