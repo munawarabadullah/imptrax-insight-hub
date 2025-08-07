@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { supabase } from "@/integrations/supabase/client";
 import { 
   Menu, 
   X, 
@@ -23,10 +25,24 @@ import {
 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 
+interface ContactSubmission {
+  id: string;
+  first_name: string;
+  last_name: string;
+  email: string;
+  company?: string;
+  created_at: string;
+  lead_status?: string;
+  urgency?: string;
+}
+
 const Dashboard = () => {
+  const navigate = useNavigate();
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [activeMenu, setActiveMenu] = useState("dashboard");
   const [crmExpanded, setCrmExpanded] = useState(false);
+  const [submissions, setSubmissions] = useState<ContactSubmission[]>([]);
+  const [loading, setLoading] = useState(true);
 
   const menuItems = [
     { id: "dashboard", label: "Dashboard", icon: Home },
@@ -38,36 +54,71 @@ const Dashboard = () => {
     { id: "leads", label: "Leads", icon: Users },
   ];
 
+  useEffect(() => {
+    loadSubmissions();
+  }, []);
+
+  const loadSubmissions = async () => {
+    setLoading(true);
+    try {
+      const { data, error } = await supabase
+        .from('contact_submissions')
+        .select('*')
+        .order('created_at', { ascending: false });
+
+      if (error) throw error;
+      setSubmissions(data || []);
+    } catch (error) {
+      console.error('Error loading submissions:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Calculate statistics from real data
+  const totalLeads = submissions.length;
+  const today = new Date();
+  const oneWeekAgo = new Date(today.getTime() - 7 * 24 * 60 * 60 * 1000);
+  const newLeadsThisWeek = submissions.filter(sub => 
+    new Date(sub.created_at) >= oneWeekAgo
+  ).length;
+  const vipLeads = submissions.filter(sub => 
+    sub.urgency === 'High' || sub.urgency === 'Immediate'
+  ).length;
+  const convertedLeads = submissions.filter(sub => 
+    sub.lead_status === 'converted'
+  ).length;
+
   const stats = [
     {
       title: "Total Leads",
-      value: "5",
-      change: "0 new this week",
-      changeType: "neutral",
+      value: totalLeads.toString(),
+      change: `${newLeadsThisWeek} new this week`,
+      changeType: newLeadsThisWeek > 0 ? "positive" : "neutral",
       icon: Users,
       color: "bg-blue-500"
     },
     {
       title: "New Leads",
-      value: "0",
-      change: "0 high priority",
-      changeType: "neutral",
+      value: newLeadsThisWeek.toString(),
+      change: `${vipLeads} high priority`,
+      changeType: vipLeads > 0 ? "positive" : "neutral",
       icon: Activity,
       color: "bg-green-500"
     },
     {
       title: "VIP Leads",
-      value: "0",
-      change: "Premium clients",
+      value: vipLeads.toString(),
+      change: "High priority clients",
       changeType: "neutral",
       icon: Building,
       color: "bg-purple-500"
     },
     {
-      title: "Invested",
-      value: "0",
+      title: "Converted",
+      value: convertedLeads.toString(),
       change: "Successful conversions",
-      changeType: "neutral",
+      changeType: convertedLeads > 0 ? "positive" : "neutral",
       icon: DollarSign,
       color: "bg-orange-500"
     },
@@ -102,6 +153,9 @@ const Dashboard = () => {
                         setCrmExpanded(!crmExpanded);
                       } else {
                         setActiveMenu(item.id);
+                        if (item.id === 'dashboard') {
+                          // Already on dashboard, no navigation needed
+                        }
                       }
                     }}
                     className={`w-full flex items-center space-x-3 px-3 py-2 rounded-lg transition-colors ${
@@ -121,7 +175,12 @@ const Dashboard = () => {
                         return (
                           <li key={subItem.id}>
                             <button
-                              onClick={() => setActiveMenu(subItem.id)}
+                              onClick={() => {
+                                setActiveMenu(subItem.id);
+                                if (subItem.id === 'leads') {
+                                  navigate('/leads');
+                                }
+                              }}
                               className={`w-full flex items-center space-x-3 px-3 py-2 rounded-lg transition-colors text-sm ${
                                 activeMenu === subItem.id
                                   ? 'bg-blue-50 text-blue-600'
@@ -281,50 +340,55 @@ const Dashboard = () => {
           <Card>
             <CardHeader>
               <CardTitle>Recent Activity</CardTitle>
+              <CardDescription>Latest inquiries from contact form</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="space-y-4">
-                <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
-                  <Users className="w-5 h-5 text-blue-500" />
-                  <div>
-                    <p className="font-medium">New lead: Rahimullah Haqyar</p>
-                    <p className="text-sm text-gray-500">STANDARD profile, contacted stage</p>
-                    <p className="text-xs text-gray-400">7/30/2025 - low</p>
-                  </div>
+              {loading ? (
+                <div className="text-center py-4">
+                  <p className="text-gray-500">Loading recent activity...</p>
                 </div>
-                <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
-                  <Users className="w-5 h-5 text-blue-500" />
-                  <div>
-                    <p className="font-medium">New lead: Nasir Iqbal</p>
-                    <p className="text-sm text-gray-500">STANDARD profile, contacted stage</p>
-                    <p className="text-xs text-gray-400">7/27/2025 - low</p>
-                  </div>
+              ) : submissions.length === 0 ? (
+                <div className="text-center py-4">
+                  <p className="text-gray-500">No recent inquiries found</p>
                 </div>
-                <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
-                  <Users className="w-5 h-5 text-blue-500" />
-                  <div>
-                    <p className="font-medium">New lead: Fahad Saeed</p>
-                    <p className="text-sm text-gray-500">STANDARD profile, contacted stage</p>
-                    <p className="text-xs text-gray-400">7/26/2025 - low</p>
-                  </div>
+              ) : (
+                <div className="space-y-4">
+                  {submissions.slice(0, 5).map((submission) => {
+                    const urgencyColor = submission.urgency === 'Immediate' ? 'text-red-600' :
+                                       submission.urgency === 'High' ? 'text-orange-600' :
+                                       submission.urgency === 'Medium' ? 'text-yellow-600' : 'text-green-600';
+                    
+                    return (
+                      <div key={submission.id} className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
+                        <Users className="w-5 h-5 text-blue-500" />
+                        <div className="flex-1">
+                          <p className="font-medium">
+                            New inquiry: {submission.first_name} {submission.last_name}
+                          </p>
+                          <p className="text-sm text-gray-500">
+                            {submission.email} {submission.company && `• ${submission.company}`}
+                          </p>
+                          <div className="flex items-center space-x-2">
+                            <p className="text-xs text-gray-400">
+                              {new Date(submission.created_at).toLocaleDateString()}
+                            </p>
+                            {submission.urgency && (
+                              <span className={`text-xs ${urgencyColor}`}>
+                                • {submission.urgency.toLowerCase()}
+                              </span>
+                            )}
+                            {submission.lead_status && (
+                              <Badge variant="outline" className="text-xs">
+                                {submission.lead_status}
+                              </Badge>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
-                <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
-                  <Users className="w-5 h-5 text-blue-500" />
-                  <div>
-                    <p className="font-medium">New lead: Zeeshan Raza</p>
-                    <p className="text-sm text-gray-500">STANDARD profile, contacted stage</p>
-                    <p className="text-xs text-gray-400">7/26/2025 - low</p>
-                  </div>
-                </div>
-                <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
-                  <Users className="w-5 h-5 text-blue-500" />
-                  <div>
-                    <p className="font-medium">New lead: Asad Zulfiqar</p>
-                    <p className="text-sm text-gray-500">STANDARD profile, contacted stage</p>
-                    <p className="text-xs text-gray-400">7/26/2025 - low</p>
-                  </div>
-                </div>
-              </div>
+              )}
             </CardContent>
           </Card>
         </main>
