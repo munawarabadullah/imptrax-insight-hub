@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -38,6 +39,7 @@ interface ContactSubmission {
 }
 
 const Admin = () => {
+  const navigate = useNavigate();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [loginForm, setLoginForm] = useState({ email: "", password: "" });
 
@@ -49,6 +51,8 @@ const Admin = () => {
       setIsAuthenticated(true);
       sessionStorage.setItem('adminAuthenticated', 'true');
       toast.success("Successfully logged in");
+      // Redirect to dashboard after successful login
+      navigate('/dashboard');
     } else {
       toast.error("Invalid credentials");
     }
