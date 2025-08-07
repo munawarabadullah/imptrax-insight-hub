@@ -1,10 +1,11 @@
-import { useState, useRef } from "react";
+import React, { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, Menu, X, Search, Phone } from "lucide-react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [searchQuery, setSearchQuery] = useState('');
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const handleMouseEnter = (title: string) => {
@@ -17,8 +18,24 @@ const Header = () => {
   const handleMouseLeave = () => {
     timeoutRef.current = setTimeout(() => {
       setActiveDropdown(null);
-    }, 300); // 300ms delay before hiding
+    }, 150);
   };
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      // Use Google site search to search within imptrax.com
+      const searchUrl = `https://www.google.com/search?q=site:imptrax.com ${encodeURIComponent(searchQuery.trim())}`;
+      window.open(searchUrl, '_blank');
+      setSearchQuery(''); // Clear search after submission
+    }
+  };
+
+  const handleSearchKeyPress = (e: React.KeyboardEvent) => {
+     if (e.key === 'Enter') {
+       handleSearch(e as any);
+     }
+   };
 
   const menuItems = [
     {
@@ -128,10 +145,13 @@ const Header = () => {
             </div>
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-2">
-                <Search className="w-4 h-4 text-gray-400" />
+                <Search className="w-4 h-4 text-gray-400 cursor-pointer" onClick={handleSearch} />
                 <input 
                   type="text" 
                   placeholder="Search services..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  onKeyPress={handleSearchKeyPress}
                   className="bg-transparent border-none outline-none text-sm w-32 focus:w-48 transition-all duration-200"
                 />
               </div>
