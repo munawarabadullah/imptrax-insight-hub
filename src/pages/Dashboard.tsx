@@ -199,18 +199,26 @@ const Dashboard = () => {
 
   const loadSubmissions = async () => {
     setLoading(true);
+    console.log('Starting to load submissions...');
     try {
+      console.log('Making Supabase request...');
       const { data, error } = await supabase
         .from('contact_submissions')
         .select('*')
         .order('created_at', { ascending: false });
 
-      if (error) throw error;
+      console.log('Supabase response:', { data, error });
+      if (error) {
+        console.error('Supabase error:', error);
+        throw error;
+      }
+      console.log('Setting submissions data:', data);
       setSubmissions(data || []);
     } catch (error) {
       console.error('Error loading submissions:', error);
     } finally {
       setLoading(false);
+      console.log('Loading finished');
     }
   };
 
@@ -264,7 +272,8 @@ const Dashboard = () => {
   ];
 
   return (
-    <div className="flex h-screen bg-gray-50"> {/* Workbench - Overall Dashboard Screen */}
+    // Workbench - Overall Dashboard Screen
+    <div className="flex h-screen bg-gray-50">
       {/* Sidebar */}
       <div className={`${sidebarCollapsed ? 'w-16' : 'w-64'} bg-white shadow-lg transition-all duration-300 flex flex-col`}>
         {/* Logo */}
