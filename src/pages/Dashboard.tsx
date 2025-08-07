@@ -25,6 +25,7 @@ import {
 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import Leads from './Leads';
+import { calculateTotalBudgetPipeline, formatCurrency, calculateLeadStatusBreakdown } from '@/utils/budgetCalculations';
 
 interface ContactSubmission {
   id: string;
@@ -39,6 +40,96 @@ interface ContactSubmission {
 
 const Dashboard = () => {
   const navigate = useNavigate();
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  const [activeMenu, setActiveMenu] = useState("dashboard");
+  const [activeView, setActiveView] = useState("dashboard");
+  const [crmExpanded, setCrmExpanded] = useState(false);
+  const [submissions, setSubmissions] = useState<ContactSubmission[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  const menuItems = [
+    { id: "dashboard", label: "Dashboard", icon: Home },
+    { id: "crm", label: "CRM", icon: Users, hasSubmenu: true },
+    { id: "settings", label: "Settings", icon: Settings },
+  ];
+
+  const crmSubItems = [
+    { id: "leads", label: "Leads", icon: Users },
+  ];
+
+  useEffect(() => {
+    loadSubmissions();
+  }, []);
+
+  const loadSubmissions = async () => {
+    setLoading(true);
+    console.log('Starting to load submissions...');
+    try {
+      console.log('Making Supabase request...');
+      const { data, error } = await supabase
+        .from('contact_submissions')
+        .select('*')
+        .order('created_at', { ascending: false });
+
+      console.log('Supabase response:', { data, error });
+      if (error) {
+        console.error('Supabase error:', error);
+        throw error;
+      }
+      console.log('Setting submissions data:', data);
+      setSubmissions(data || []);
+    } catch (error) {
+      console.error('Error loading submissions:', error);
+    } finally {
+      setLoading(false);
+      console.log('Loading finished');
+    }
+  };
+
+  // Calculate statistics from real data using utility functions
+  const leadStatusBreakdown = calculateLeadStatusBreakdown(submissions);
+  const totalBudgetPipeline = calculateTotalBudgetPipeline(submissions);
+  
+  const today = new Date();
+  const oneWeekAgo = new Date(today.getTime() - 7 * 24 * 60 * 60 * 1000);
+  const newLeadsThisWeek = submissions.filter(sub => 
+    new Date(sub.created_at) >= oneWeekAgo
+  ).length;
+
+  const stats = [
+    {
+      title: "Total Leads",
+      value: leadStatusBreakdown.total.toString(),
+      change: `${newLeadsThisWeek} new this week`,
+      changeType: newLeadsThisWeek > 0 ? "positive" : "neutral",
+      icon: Users,
+      color: "bg-blue-500"
+    },
+    {
+      title: "New Leads",
+      value: leadStatusBreakdown.new.toString(),
+      change: `${leadStatusBreakdown.highPriority} high priority`,
+      changeType: leadStatusBreakdown.highPriority > 0 ? "positive" : "neutral",
+      icon: Activity,
+      color: "bg-green-500"
+    },
+    {
+      title: "VIP Leads",
+      value: leadStatusBreakdown.highPriority.toString(),
+      change: "High priority clients",
+      changeType: "neutral",
+      icon: Building,
+      color: "bg-purple-500"
+    },
+    {
+      title: "Converted",
+      value: leadStatusBreakdown.converted.toString(),
+      change: "Successful conversions",
+      changeType: leadStatusBreakdown.converted > 0 ? "positive" : "neutral",
+      icon: DollarSign,
+      color: "bg-orange-500"
+    },
+  ];
 
   // Function to render content based on active view
   const renderMainContent = () => {
@@ -91,11 +182,11 @@ const Dashboard = () => {
 
             {/* CRM Analytics Row */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-              {/* Total Investment Pipeline */}
+              {/* Total Budget Pipeline */}
               <Card>
                 <CardHeader>
-                  <CardTitle>Total Investment Pipeline</CardTitle>
-                  <CardDescription>$16,500</CardDescription>
+                  <CardTitle>Total Budget Pipeline</CardTitle>
+                  <CardDescription>{formatCurrency(totalBudgetPipeline)}</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="text-sm text-gray-600">Across all active leads</div>
@@ -140,18 +231,27 @@ const Dashboard = () => {
                                          submission.urgency === 'Medium' ? 'text-yellow-600' : 'text-green-600';
                       
                       return (
-                        <div key={submission.id} className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
+                        <div key={submission.id} className={`flex items-center space-x-3 p-3 rounded-lg ${
+                          // Check if inquiry is new (created within last 24 hours) or updated
+                          new Date(submission.created_at) > new Date(Date.now() - 24 * 60 * 60 * 1000)
+                            ? 'bg-green-100' // Light green for new inquiries
+                            : 'bg-blue-100'  // Light blue for updated/older inquiries
+                        }`}>
                           <Users className="w-5 h-5 text-blue-500" />
                           <div className="flex-1">
                             <p className="font-medium">
-                              New inquiry: {submission.first_name} {submission.last_name}
+                              {submission.first_name} {submission.last_name}
                             </p>
                             <p className="text-sm text-gray-500">
-                              {submission.email} {submission.company && `• ${submission.company}`}
+                              {submission.city && `${submission.city}`}{submission.state && ` ${submission.state}`} - {submission.company && `${submission.company}`} - {submission.country && `${submission.country}`}
                             </p>
                             <div className="flex items-center space-x-2">
                               <p className="text-xs text-gray-400">
-                                {new Date(submission.created_at).toLocaleDateString()}
+                                {new Date(submission.created_at).toLocaleDateString('en-US', { 
+                                  month: 'short', 
+                                  day: 'numeric', 
+                                  year: 'numeric' 
+                                }).toUpperCase()}
                               </p>
                               {submission.urgency && (
                                 <span className={`text-xs ${urgencyColor}`}>
@@ -176,100 +276,6 @@ const Dashboard = () => {
         );
     }
   };
-  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
-  const [activeMenu, setActiveMenu] = useState("dashboard");
-  const [activeView, setActiveView] = useState("dashboard");
-  const [crmExpanded, setCrmExpanded] = useState(false);
-  const [submissions, setSubmissions] = useState<ContactSubmission[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  const menuItems = [
-    { id: "dashboard", label: "Dashboard", icon: Home },
-    { id: "crm", label: "CRM", icon: Users, hasSubmenu: true },
-    { id: "settings", label: "Settings", icon: Settings },
-  ];
-
-  const crmSubItems = [
-    { id: "leads", label: "Leads", icon: Users },
-  ];
-
-  useEffect(() => {
-    loadSubmissions();
-  }, []);
-
-  const loadSubmissions = async () => {
-    setLoading(true);
-    console.log('Starting to load submissions...');
-    try {
-      console.log('Making Supabase request...');
-      const { data, error } = await supabase
-        .from('contact_submissions')
-        .select('*')
-        .order('created_at', { ascending: false });
-
-      console.log('Supabase response:', { data, error });
-      if (error) {
-        console.error('Supabase error:', error);
-        throw error;
-      }
-      console.log('Setting submissions data:', data);
-      setSubmissions(data || []);
-    } catch (error) {
-      console.error('Error loading submissions:', error);
-    } finally {
-      setLoading(false);
-      console.log('Loading finished');
-    }
-  };
-
-  // Calculate statistics from real data
-  const totalLeads = submissions.length;
-  const today = new Date();
-  const oneWeekAgo = new Date(today.getTime() - 7 * 24 * 60 * 60 * 1000);
-  const newLeadsThisWeek = submissions.filter(sub => 
-    new Date(sub.created_at) >= oneWeekAgo
-  ).length;
-  const vipLeads = submissions.filter(sub => 
-    sub.urgency === 'High' || sub.urgency === 'Immediate'
-  ).length;
-  const convertedLeads = submissions.filter(sub => 
-    sub.lead_status === 'converted'
-  ).length;
-
-  const stats = [
-    {
-      title: "Total Leads",
-      value: totalLeads.toString(),
-      change: `${newLeadsThisWeek} new this week`,
-      changeType: newLeadsThisWeek > 0 ? "positive" : "neutral",
-      icon: Users,
-      color: "bg-blue-500"
-    },
-    {
-      title: "New Leads",
-      value: newLeadsThisWeek.toString(),
-      change: `${vipLeads} high priority`,
-      changeType: vipLeads > 0 ? "positive" : "neutral",
-      icon: Activity,
-      color: "bg-green-500"
-    },
-    {
-      title: "VIP Leads",
-      value: vipLeads.toString(),
-      change: "High priority clients",
-      changeType: "neutral",
-      icon: Building,
-      color: "bg-purple-500"
-    },
-    {
-      title: "Converted",
-      value: convertedLeads.toString(),
-      change: "Successful conversions",
-      changeType: convertedLeads > 0 ? "positive" : "neutral",
-      icon: DollarSign,
-      color: "bg-orange-500"
-    },
-  ];
 
   return (
     // Workbench - Overall Dashboard Screen
@@ -299,15 +305,15 @@ const Dashboard = () => {
                     onClick={() => {
                       if (item.hasSubmenu) {
                         setCrmExpanded(!crmExpanded);
+                        setActiveMenu('crm');
                       } else {
                         setActiveMenu(item.id);
-                        if (item.id === 'dashboard') {
-                          setActiveView('dashboard');
-                        }
+                        setActiveView(item.id);
+                        setCrmExpanded(false); // Close CRM submenu when clicking other items
                       }
                     }}
                     className={`w-full flex items-center space-x-3 px-3 py-2 rounded-lg transition-colors ${
-                      activeMenu === item.id
+                      (activeMenu === item.id || (item.hasSubmenu && (activeMenu === 'crm' || activeView === 'leads')))
                         ? 'bg-blue-50 text-blue-600 border-r-2 border-blue-600'
                         : 'text-gray-600 hover:bg-gray-50'
                     }`}
@@ -324,11 +330,11 @@ const Dashboard = () => {
                           <li key={subItem.id}>
                             <button
                               onClick={() => {
-                                setActiveMenu(subItem.id);
                                 setActiveView(subItem.id);
+                                setActiveMenu('crm'); // Ensure CRM remains active when clicking submenu
                               }}
                               className={`w-full flex items-center space-x-3 px-3 py-2 rounded-lg transition-colors text-sm ${
-                                activeMenu === subItem.id
+                                activeView === subItem.id
                                   ? 'bg-blue-50 text-blue-600'
                                   : 'text-gray-500 hover:bg-gray-50'
                               }`}

@@ -1,0 +1,21 @@
+{
+  "backup_timestamp": "2025-08-07T07:41:31.566Z",
+  "table_name": "user_roles",
+  "record_count": 2,
+  "data": [
+    {
+      "id": "648dda61-34e9-40dc-b7d4-e88891aaad98",
+      "user_id": "1bcbf850-6096-4b33-bb84-a4eb21e671dd",
+      "role": "air manager",
+      "created_at": "2025-08-07T07:10:03.721203+00:00",
+      "updated_at": "2025-08-07T07:10:03.721203+00:00"
+    },
+    {
+      "id": "398a0e41-a6b6-4a28-ad5a-641cbe6ee7f1",
+      "user_id": "f555b812-8e4a-4268-87f4-8f4da1f7f25b",
+      "role": "admin",
+      "created_at": "2025-08-07T07:33:58.486+00:00",
+      "updated_at": "2025-08-07T07:33:58.487+00:00"
+    }
+  ]
+}
