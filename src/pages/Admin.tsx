@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -45,6 +45,15 @@ const Admin = () => {
   const [loginForm, setLoginForm] = useState({ email: "", password: "" });
   const [isLoggingIn, setIsLoggingIn] = useState(false);
 
+  // Redirect authenticated users with proper roles to Dashboard
+  useEffect(() => {
+    if (!loading && user && userRole) {
+      if (userRole === 'Admin' || userRole === 'Executive' || userRole === 'Director') {
+        navigate('/dashboard', { replace: true });
+      }
+    }
+  }, [user, userRole, loading, navigate]);
+
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoggingIn(true);
@@ -57,7 +66,7 @@ const Admin = () => {
         toast.error(error.message || "Invalid credentials");
       } else {
         toast.success("Successfully logged in");
-        // Navigation will happen automatically via auth state change
+        // Navigation will happen automatically via useEffect when auth state changes
       }
     } catch (error) {
       console.error('Login exception:', error);
@@ -125,8 +134,8 @@ const Admin = () => {
     );
   }
 
-  // Check if user has proper role
-  if (userRole !== 'air manager' && userRole !== 'admin') {
+  // Check if user has proper role - if not, show access denied
+  if (user && userRole && userRole !== 'Admin' && userRole !== 'Executive' && userRole !== 'Director') {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 flex items-center justify-center">
         <Card className="w-full max-w-md">
@@ -148,24 +157,11 @@ const Admin = () => {
     );
   }
 
+  // If user is authenticated with proper role, they will be redirected via useEffect
+  // This component should only show login form for unauthenticated users
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 p-6">
-      <div className="max-w-7xl mx-auto">
-        <h1 className="text-3xl font-bold text-foreground">ImpTrax CRM Dashboard</h1>
-        <p className="text-muted-foreground mt-2">
-          Welcome to the admin panel! 
-          <br />Logged in as: {user?.email} 
-          <br />Role: {userRole}
-          <br />User ID: {user?.id}
-        </p>
-        <Button 
-          onClick={handleLogout}
-          variant="outline"
-          className="mt-4"
-        >
-          Logout
-        </Button>
-      </div>
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 flex items-center justify-center">
+      <div className="text-lg">Redirecting to Dashboard...</div>
     </div>
   );
 };

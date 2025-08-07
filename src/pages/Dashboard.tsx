@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { supabase } from "@/integrations/supabase/client";
+import { useAuth } from "@/contexts/AuthContext";
 import { 
   Menu, 
   X, 
@@ -21,10 +22,18 @@ import {
   DollarSign,
   Activity,
   CreditCard,
-  Download
+  Download,
+  User,
+  Lock,
+  Shield,
+  UserCog
 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import Leads from './Leads';
+import ProfileSettings from '@/components/settings/ProfileSettings';
+import PasswordSettings from '@/components/settings/PasswordSettings';
+import RoleManagement from '@/components/settings/RoleManagement';
+import UserManagement from '@/components/settings/UserManagement';
 import { calculateTotalBudgetPipeline, formatCurrency, calculateLeadStatusBreakdown } from '@/utils/budgetCalculations';
 
 interface ContactSubmission {
@@ -40,22 +49,44 @@ interface ContactSubmission {
 
 const Dashboard = () => {
   const navigate = useNavigate();
+  const { user, userRole } = useAuth();
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [activeMenu, setActiveMenu] = useState("dashboard");
   const [activeView, setActiveView] = useState("dashboard");
   const [crmExpanded, setCrmExpanded] = useState(false);
+  const [settingsExpanded, setSettingsExpanded] = useState(false);
   const [submissions, setSubmissions] = useState<ContactSubmission[]>([]);
   const [loading, setLoading] = useState(true);
 
   const menuItems = [
     { id: "dashboard", label: "Dashboard", icon: Home },
     { id: "crm", label: "CRM", icon: Users, hasSubmenu: true },
-    { id: "settings", label: "Settings", icon: Settings },
+    { id: "settings", label: "Settings", icon: Settings, hasSubmenu: true },
   ];
 
   const crmSubItems = [
     { id: "leads", label: "Leads", icon: Users },
   ];
+
+  // Settings submenu items with role-based access control
+  const getSettingsSubItems = () => {
+    const baseItems = [
+      { id: "profile", label: "Profile", icon: User },
+      { id: "password", label: "Password", icon: Lock },
+    ];
+    
+    // Only Admin users can see Roles and Users management
+    if (userRole === 'Admin') {
+      baseItems.push(
+        { id: "roles", label: "Roles", icon: Shield },
+        { id: "users", label: "Users", icon: UserCog }
+      );
+    }
+    
+    return baseItems;
+  };
+
+  const settingsSubItems = getSettingsSubItems();
 
   useEffect(() => {
     loadSubmissions();
@@ -136,6 +167,14 @@ const Dashboard = () => {
     switch (activeView) {
       case 'leads':
         return <Leads />;
+      case 'profile':
+        return <ProfileSettings />;
+      case 'password':
+        return <PasswordSettings />;
+      case 'roles':
+        return userRole === 'Admin' ? <RoleManagement /> : <div className="text-center py-8"><p className="text-gray-500">Access denied. Admin role required.</p></div>;
+      case 'users':
+        return userRole === 'Admin' ? <UserManagement /> : <div className="text-center py-8"><p className="text-gray-500">Access denied. Admin role required.</p></div>;
       case 'dashboard':
       default:
         return (
@@ -304,16 +343,26 @@ const Dashboard = () => {
                   <button
                     onClick={() => {
                       if (item.hasSubmenu) {
-                        setCrmExpanded(!crmExpanded);
-                        setActiveMenu('crm');
+                        if (item.id === 'crm') {
+                          setCrmExpanded(!crmExpanded);
+                          setSettingsExpanded(false);
+                          setActiveMenu('crm');
+                        } else if (item.id === 'settings') {
+                          setSettingsExpanded(!settingsExpanded);
+                          setCrmExpanded(false);
+                          setActiveMenu('settings');
+                        }
                       } else {
                         setActiveMenu(item.id);
                         setActiveView(item.id);
-                        setCrmExpanded(false); // Close CRM submenu when clicking other items
+                        setCrmExpanded(false);
+                        setSettingsExpanded(false);
                       }
                     }}
                     className={`w-full flex items-center space-x-3 px-3 py-2 rounded-lg transition-colors ${
-                      (activeMenu === item.id || (item.hasSubmenu && (activeMenu === 'crm' || activeView === 'leads')))
+                      (activeMenu === item.id || 
+                       (item.hasSubmenu && item.id === 'crm' && (activeMenu === 'crm' || activeView === 'leads')) ||
+                       (item.hasSubmenu && item.id === 'settings' && (activeMenu === 'settings' || ['profile', 'password', 'roles', 'users'].includes(activeView))))
                         ? 'bg-blue-50 text-blue-600 border-r-2 border-blue-600'
                         : 'text-gray-600 hover:bg-gray-50'
                     }`}
@@ -322,7 +371,7 @@ const Dashboard = () => {
                     {!sidebarCollapsed && <span>{item.label}</span>}
                   </button>
                   {/* CRM Submenu */}
-                  {item.hasSubmenu && crmExpanded && !sidebarCollapsed && (
+                  {item.hasSubmenu && item.id === 'crm' && crmExpanded && !sidebarCollapsed && (
                     <ul className="ml-6 mt-2 space-y-1">
                       {crmSubItems.map((subItem) => {
                         const SubIcon = subItem.icon;
@@ -331,7 +380,33 @@ const Dashboard = () => {
                             <button
                               onClick={() => {
                                 setActiveView(subItem.id);
-                                setActiveMenu('crm'); // Ensure CRM remains active when clicking submenu
+                                setActiveMenu('crm');
+                              }}
+                              className={`w-full flex items-center space-x-3 px-3 py-2 rounded-lg transition-colors text-sm ${
+                                activeView === subItem.id
+                                  ? 'bg-blue-50 text-blue-600'
+                                  : 'text-gray-500 hover:bg-gray-50'
+                              }`}
+                            >
+                              <SubIcon className="w-4 h-4" />
+                              <span>{subItem.label}</span>
+                            </button>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  )}
+                  {/* Settings Submenu */}
+                  {item.hasSubmenu && item.id === 'settings' && settingsExpanded && !sidebarCollapsed && (
+                    <ul className="ml-6 mt-2 space-y-1">
+                      {settingsSubItems.map((subItem) => {
+                        const SubIcon = subItem.icon;
+                        return (
+                          <li key={subItem.id}>
+                            <button
+                              onClick={() => {
+                                setActiveView(subItem.id);
+                                setActiveMenu('settings');
                               }}
                               className={`w-full flex items-center space-x-3 px-3 py-2 rounded-lg transition-colors text-sm ${
                                 activeView === subItem.id
