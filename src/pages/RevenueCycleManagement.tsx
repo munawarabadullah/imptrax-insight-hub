@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -29,6 +30,25 @@ import {
 } from 'lucide-react';
 
 const RevenueCycleManagement = () => {
+  const navigate = useNavigate();
+
+  const handleGetStarted = () => {
+    navigate('/schedule-consultation', {
+      state: {
+        source: 'Revenue Cycle Management',
+        button: 'Tell Us About Your Project'
+      }
+    });
+  };
+
+  const handleScheduleConsultation = () => {
+    navigate('/schedule-consultation', {
+      state: {
+        source: 'Revenue Cycle Management',
+        button: 'Schedule Consultation'
+      }
+    });
+  };
   const coreServices = [
     {
       icon: <DollarSign className="w-8 h-8 text-green-600" />,
@@ -155,11 +175,11 @@ const RevenueCycleManagement = () => {
                 reduce administrative burden, and maximize revenue capture through advanced automation and analytics.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
-                  Get Started
+                <Button size="lg" className="bg-blue-600 hover:bg-blue-700" onClick={handleGetStarted}>
+                  Tell Us About Your Project
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
-                <Button size="lg" variant="outline">
+                <Button size="lg" variant="outline" onClick={handleScheduleConsultation}>
                   Schedule Consultation
                 </Button>
               </div>
@@ -524,12 +544,12 @@ const RevenueCycleManagement = () => {
               Partner with us to optimize your healthcare revenue cycle and achieve sustainable financial growth.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100">
-                Schedule Consultation
+              <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100" onClick={handleGetStarted}>
+                Tell Us About Your Project
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600">
-                Download Brochure
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600" onClick={handleScheduleConsultation}>
+                Schedule Consultation
               </Button>
             </div>
           </div>
