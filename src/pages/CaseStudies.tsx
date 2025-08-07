@@ -252,13 +252,6 @@ const CaseStudies = () => {
               Schedule Consultation
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button 
-              onClick={handleGetStarted}
-              variant="outline" 
-              size="lg"
-            >
-              View Our Work
-            </Button>
           </div>
         </div>
       </section>
