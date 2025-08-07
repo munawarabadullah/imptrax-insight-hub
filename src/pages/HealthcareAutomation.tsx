@@ -219,7 +219,7 @@ const HealthcareAutomation = () => {
               healthcare systems through advanced AI and automation solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700" onClick={() => navigate('/knowledge-base')}>
                 Explore Solutions
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
