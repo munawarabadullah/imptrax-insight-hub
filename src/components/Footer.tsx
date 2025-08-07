@@ -79,7 +79,7 @@ const Footer = () => {
                   <a href="https://www.linkedin.com/company/imptrax-corporation" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors">
                     <Linkedin className="w-5 h-5" />
                   </a>
-                  <a href="https://www.linkedin.com/company/imptrax-corporation" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors">
+                  <a href="https://x.com/ImpTrax" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors">
                     <Twitter className="w-5 h-5" />
                   </a>
                   <a href="https://www.facebook.com/ImpTrax/" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors">
