@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -8,7 +9,17 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const RiskAssessment = () => {
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("overview");
+
+  const handleConsultationClick = (buttonText: string) => {
+    navigate('/schedule-consultation', {
+      state: {
+        source: 'Risk Assessment',
+        button: buttonText
+      }
+    });
+  };
 
   const riskCategories = [
     {
@@ -130,11 +141,20 @@ const RiskAssessment = () => {
               Advanced risk management solutions combining regulatory compliance, sophisticated analytics, and real-time monitoring to protect your financial institution from emerging threats and ensure sustainable growth.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 text-lg">
+              <Button 
+                onClick={() => handleConsultationClick('Explore Risk Solutions')}
+                size="lg" 
+                className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 text-lg"
+              >
                 Explore Risk Solutions
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
-              <Button size="lg" variant="outline" className="border-red-300 text-red-300 hover:bg-red-300 hover:text-red-900 px-8 py-4 text-lg">
+              <Button 
+                onClick={() => handleConsultationClick('Schedule Risk Assessment')}
+                size="lg" 
+                variant="outline" 
+                className="border-red-300 text-red-300 hover:bg-red-300 hover:text-red-900 px-8 py-4 text-lg"
+              >
                 Schedule Risk Assessment
               </Button>
             </div>
@@ -596,11 +616,20 @@ const RiskAssessment = () => {
             Partner with COMPANY to implement comprehensive risk assessment solutions that protect your institution, ensure regulatory compliance, and drive sustainable growth in today's complex financial landscape.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-red-600 hover:bg-red-50 px-8 py-4 text-lg">
+            <Button 
+              onClick={() => handleConsultationClick('Schedule Risk Assessment')}
+              size="lg" 
+              className="bg-white text-red-600 hover:bg-red-50 px-8 py-4 text-lg"
+            >
               Schedule Risk Assessment
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-red-600 px-8 py-4 text-lg">
+            <Button 
+              onClick={() => handleConsultationClick('Download Risk Framework')}
+              size="lg" 
+              variant="outline" 
+              className="border-white text-white hover:bg-white hover:text-red-600 px-8 py-4 text-lg"
+            >
               Download Risk Framework
             </Button>
           </div>
