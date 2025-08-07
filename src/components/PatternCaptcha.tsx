@@ -69,7 +69,8 @@ export const PatternCaptcha = ({ onVerify, className }: PatternCaptchaProps) => 
 
     const isCorrect = clickedTargetSquares.length === targetSquares.length && 
                      incorrectClicks.length === 0 &&
-                     targetSquares.length > 0;
+                     targetSquares.length > 0 &&
+                     clickedTargetSquares.length > 0;
 
     setIsVerified(isCorrect);
     setShowResult(true);
@@ -78,6 +79,7 @@ export const PatternCaptcha = ({ onVerify, className }: PatternCaptchaProps) => 
     if (!isCorrect) {
       setTimeout(() => {
         generateGrid();
+        setShowResult(false);
       }, 2000);
     }
   };

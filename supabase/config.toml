@@ -1,0 +1,9 @@
+project_id = "tsfjragjkyjtxkgcrakt"
+
+[auth]
+enabled = true
+site_url = "http://localhost:3000"
+additional_redirect_urls = ["https://tsfjragjkyjtxkgcrakt.supabase.co"]
+
+[functions.submit-contact-form]
+verify_jwt = false

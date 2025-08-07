@@ -46,6 +46,7 @@ import Clients from "./pages/Clients";
 import Leadership from "./pages/Leadership";
 import OurHistory from "./pages/OurHistory";
 import Team from "./pages/Team";
+import Admin from "./pages/Admin";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -100,6 +101,7 @@ const App = () => (
           <Route path="/leadership" element={<Leadership />} />
           <Route path="/our-history" element={<OurHistory />} />
           <Route path="/team" element={<Team />} />
+          <Route path="/admin" element={<Admin />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
