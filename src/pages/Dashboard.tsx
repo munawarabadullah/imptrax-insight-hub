@@ -24,6 +24,7 @@ import {
   Download
 } from "lucide-react";
 import { Input } from "@/components/ui/input";
+import Leads from './Leads';
 
 interface ContactSubmission {
   id: string;
@@ -38,8 +39,146 @@ interface ContactSubmission {
 
 const Dashboard = () => {
   const navigate = useNavigate();
+
+  // Function to render content based on active view
+  const renderMainContent = () => {
+    switch (activeView) {
+      case 'leads':
+        return <Leads />;
+      case 'dashboard':
+      default:
+        return (
+          <>
+            {/* Welcome Banner */}
+            <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg p-6 text-white mb-6">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h2 className="text-2xl font-bold mb-2">Welcome back, System!</h2>
+                  <p className="text-blue-100 mb-4">
+                    Here's what's happening with your leads today.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Stats Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+              {stats.map((stat, index) => {
+                const Icon = stat.icon;
+                return (
+                  <Card key={index}>
+                    <CardContent className="p-6">
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <p className="text-sm font-medium text-gray-600">{stat.title}</p>
+                          <p className="text-2xl font-bold text-gray-900">{stat.value}</p>
+                          <p className={`text-sm ${
+                            stat.changeType === 'positive' ? 'text-green-600' : 
+                            stat.changeType === 'negative' ? 'text-red-600' : 'text-gray-500'
+                          }`}>
+                            {stat.change}
+                          </p>
+                        </div>
+                        <div className={`w-12 h-12 ${stat.color} rounded-lg flex items-center justify-center`}>
+                          <Icon className="w-6 h-6 text-white" />
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                );
+              })}
+            </div>
+
+            {/* CRM Analytics Row */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+              {/* Total Investment Pipeline */}
+              <Card>
+                <CardHeader>
+                  <CardTitle>Total Investment Pipeline</CardTitle>
+                  <CardDescription>$16,500</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="text-sm text-gray-600">Across all active leads</div>
+                </CardContent>
+              </Card>
+
+              {/* Performance Summary */}
+              <Card>
+                <CardHeader>
+                  <CardTitle>Performance Summary</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-2">
+                    <div className="text-sm text-gray-600">Conversion Rate</div>
+                    <div className="text-sm text-gray-600">VIP Ratio</div>
+                    <div className="text-sm text-gray-600">Active Pipeline</div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Recent Activity */}
+            <Card>
+              <CardHeader>
+                <CardTitle>Recent Activity</CardTitle>
+                <CardDescription>Latest inquiries from contact form</CardDescription>
+              </CardHeader>
+              <CardContent>
+                {loading ? (
+                  <div className="text-center py-4">
+                    <p className="text-gray-500">Loading recent activity...</p>
+                  </div>
+                ) : submissions.length === 0 ? (
+                  <div className="text-center py-4">
+                    <p className="text-gray-500">No recent inquiries found</p>
+                  </div>
+                ) : (
+                  <div className="space-y-4">
+                    {submissions.slice(0, 5).map((submission) => {
+                      const urgencyColor = submission.urgency === 'Immediate' ? 'text-red-600' :
+                                         submission.urgency === 'High' ? 'text-orange-600' :
+                                         submission.urgency === 'Medium' ? 'text-yellow-600' : 'text-green-600';
+                      
+                      return (
+                        <div key={submission.id} className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
+                          <Users className="w-5 h-5 text-blue-500" />
+                          <div className="flex-1">
+                            <p className="font-medium">
+                              New inquiry: {submission.first_name} {submission.last_name}
+                            </p>
+                            <p className="text-sm text-gray-500">
+                              {submission.email} {submission.company && `• ${submission.company}`}
+                            </p>
+                            <div className="flex items-center space-x-2">
+                              <p className="text-xs text-gray-400">
+                                {new Date(submission.created_at).toLocaleDateString()}
+                              </p>
+                              {submission.urgency && (
+                                <span className={`text-xs ${urgencyColor}`}>
+                                  • {submission.urgency.toLowerCase()}
+                                </span>
+                              )}
+                              {submission.lead_status && (
+                                <Badge variant="outline" className="text-xs">
+                                  {submission.lead_status}
+                                </Badge>
+                              )}
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                )}
+              </CardContent>
+            </Card>
+          </>
+        );
+    }
+  };
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [activeMenu, setActiveMenu] = useState("dashboard");
+  const [activeView, setActiveView] = useState("dashboard");
   const [crmExpanded, setCrmExpanded] = useState(false);
   const [submissions, setSubmissions] = useState<ContactSubmission[]>([]);
   const [loading, setLoading] = useState(true);
@@ -125,7 +264,7 @@ const Dashboard = () => {
   ];
 
   return (
-    <div className="flex h-screen bg-gray-50">
+    <div className="flex h-screen bg-gray-50"> {/* Workbench - Overall Dashboard Screen */}
       {/* Sidebar */}
       <div className={`${sidebarCollapsed ? 'w-16' : 'w-64'} bg-white shadow-lg transition-all duration-300 flex flex-col`}>
         {/* Logo */}
@@ -154,7 +293,7 @@ const Dashboard = () => {
                       } else {
                         setActiveMenu(item.id);
                         if (item.id === 'dashboard') {
-                          // Already on dashboard, no navigation needed
+                          setActiveView('dashboard');
                         }
                       }
                     }}
@@ -177,9 +316,7 @@ const Dashboard = () => {
                             <button
                               onClick={() => {
                                 setActiveMenu(subItem.id);
-                                if (subItem.id === 'leads') {
-                                  navigate('/leads');
-                                }
+                                setActiveView(subItem.id);
                               }}
                               className={`w-full flex items-center space-x-3 px-3 py-2 rounded-lg transition-colors text-sm ${
                                 activeMenu === subItem.id
@@ -266,131 +403,9 @@ const Dashboard = () => {
           </div>
         </header>
 
-        {/* Main Dashboard Content */}
+        {/* MainPanel - Main Dashboard Content Area */}
         <main className="flex-1 overflow-y-auto p-6">
-          {/* Welcome Banner */}
-          <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg p-6 text-white mb-6">
-            <div className="flex items-center justify-between">
-              <div>
-                <h2 className="text-2xl font-bold mb-2">Welcome back, System!</h2>
-                <p className="text-blue-100 mb-4">
-                  Here's what's happening with your leads today.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Stats Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
-            {stats.map((stat, index) => {
-              const Icon = stat.icon;
-              return (
-                <Card key={index}>
-                  <CardContent className="p-6">
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <p className="text-sm font-medium text-gray-600">{stat.title}</p>
-                        <p className="text-2xl font-bold text-gray-900">{stat.value}</p>
-                        <p className={`text-sm ${
-                          stat.changeType === 'positive' ? 'text-green-600' : 
-                          stat.changeType === 'negative' ? 'text-red-600' : 'text-gray-500'
-                        }`}>
-                          {stat.change}
-                        </p>
-                      </div>
-                      <div className={`w-12 h-12 ${stat.color} rounded-lg flex items-center justify-center`}>
-                        <Icon className="w-6 h-6 text-white" />
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              );
-            })}
-          </div>
-
-          {/* CRM Analytics Row */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-            {/* Total Investment Pipeline */}
-            <Card>
-              <CardHeader>
-                <CardTitle>Total Investment Pipeline</CardTitle>
-                <CardDescription>$16,500</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="text-sm text-gray-600">Across all active leads</div>
-              </CardContent>
-            </Card>
-
-            {/* Performance Summary */}
-            <Card>
-              <CardHeader>
-                <CardTitle>Performance Summary</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-2">
-                  <div className="text-sm text-gray-600">Conversion Rate</div>
-                  <div className="text-sm text-gray-600">VIP Ratio</div>
-                  <div className="text-sm text-gray-600">Active Pipeline</div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Recent Activity */}
-          <Card>
-            <CardHeader>
-              <CardTitle>Recent Activity</CardTitle>
-              <CardDescription>Latest inquiries from contact form</CardDescription>
-            </CardHeader>
-            <CardContent>
-              {loading ? (
-                <div className="text-center py-4">
-                  <p className="text-gray-500">Loading recent activity...</p>
-                </div>
-              ) : submissions.length === 0 ? (
-                <div className="text-center py-4">
-                  <p className="text-gray-500">No recent inquiries found</p>
-                </div>
-              ) : (
-                <div className="space-y-4">
-                  {submissions.slice(0, 5).map((submission) => {
-                    const urgencyColor = submission.urgency === 'Immediate' ? 'text-red-600' :
-                                       submission.urgency === 'High' ? 'text-orange-600' :
-                                       submission.urgency === 'Medium' ? 'text-yellow-600' : 'text-green-600';
-                    
-                    return (
-                      <div key={submission.id} className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
-                        <Users className="w-5 h-5 text-blue-500" />
-                        <div className="flex-1">
-                          <p className="font-medium">
-                            New inquiry: {submission.first_name} {submission.last_name}
-                          </p>
-                          <p className="text-sm text-gray-500">
-                            {submission.email} {submission.company && `• ${submission.company}`}
-                          </p>
-                          <div className="flex items-center space-x-2">
-                            <p className="text-xs text-gray-400">
-                              {new Date(submission.created_at).toLocaleDateString()}
-                            </p>
-                            {submission.urgency && (
-                              <span className={`text-xs ${urgencyColor}`}>
-                                • {submission.urgency.toLowerCase()}
-                              </span>
-                            )}
-                            {submission.lead_status && (
-                              <Badge variant="outline" className="text-xs">
-                                {submission.lead_status}
-                              </Badge>
-                            )}
-                          </div>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              )}
-            </CardContent>
-          </Card>
+          {renderMainContent()}
         </main>
       </div>
     </div>

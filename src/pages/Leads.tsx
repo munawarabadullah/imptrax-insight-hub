@@ -220,7 +220,7 @@ const Leads = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="flex items-center justify-center py-8">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
           <p className="text-gray-600">Loading leads...</p>
@@ -230,25 +230,21 @@ const Leads = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="space-y-6">
       {/* Header */}
-      <div className="bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-6">
-            <div>
-              <h1 className="text-2xl font-bold text-gray-900">Lead Management</h1>
-              <p className="text-gray-600">Manage and track all your leads</p>
-            </div>
-            <Button onClick={handleAddLead} className="bg-blue-600 hover:bg-blue-700">
-              <Plus className="h-4 w-4 mr-2" />
-              Add Lead
-            </Button>
-          </div>
+      <div className="flex justify-between items-center">
+        <div>
+          <h1 className="text-2xl font-bold text-gray-900">Lead Management</h1>
+          <p className="text-gray-600">Manage and track all your leads</p>
         </div>
+        <Button onClick={handleAddLead} className="bg-blue-600 hover:bg-blue-700">
+          <Plus className="h-4 w-4 mr-2" />
+          Add Lead
+        </Button>
       </div>
 
       {/* Filters */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <div>
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
@@ -316,7 +312,7 @@ const Leads = () => {
       </div>
 
       {/* Stats */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-6">
+      <div>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           <Card>
             <CardContent className="p-6">
@@ -352,7 +348,7 @@ const Leads = () => {
       </div>
 
       {/* Leads Table */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
+      <div>
         <Card>
           <CardHeader>
             <CardTitle>Leads Overview</CardTitle>
