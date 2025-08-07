@@ -13,14 +13,15 @@ import { toast } from '@/hooks/use-toast';
 
 interface Lead {
   id: string;
-  name: string;
+  first_name: string;
+  last_name: string;
   email: string;
   phone?: string;
   company?: string;
   message?: string;
   urgency?: string;
   lead_status?: string;
-  investment_amount?: number;
+  budget_range?: string;
   country?: string;
   created_at: string;
   updated_at?: string;
@@ -57,7 +58,7 @@ const Leads = () => {
         .from('contact_submissions')
         .select('*')
         .order('created_at', { ascending: false });
-
+      
       if (error) throw error;
       setLeads(data || []);
     } catch (error) {
@@ -78,7 +79,8 @@ const Leads = () => {
     // Search filter
     if (searchTerm) {
       filtered = filtered.filter(lead => 
-        lead.name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        lead.first_name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        lead.last_name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
         lead.email?.toLowerCase().includes(searchTerm.toLowerCase()) ||
         lead.company?.toLowerCase().includes(searchTerm.toLowerCase())
       );
@@ -133,14 +135,15 @@ const Leads = () => {
   const handleAddLead = () => {
     setSelectedLead(null);
     setEditForm({
-      name: '',
+      first_name: '',
+      last_name: '',
       email: '',
       phone: '',
       company: '',
       message: '',
       urgency: 'medium',
       lead_status: 'new',
-      investment_amount: 0,
+      budget_range: '',
       country: ''
     });
     setIsEditMode(true);
@@ -384,13 +387,13 @@ const Leads = () => {
                         </td>
                         <td className="py-3 px-4">
                           <div>
-                            <div className="font-medium text-blue-600">{lead.name}</div>
+                            <div className="font-medium text-blue-600">{lead.first_name} {lead.last_name}</div>
                             <div className="text-sm text-gray-500">{lead.email}</div>
                           </div>
                         </td>
                         <td className="py-3 px-4 text-gray-900">{lead.phone || 'N/A'}</td>
                         <td className="py-3 px-4 text-gray-900">
-                          {lead.investment_amount ? `$${lead.investment_amount.toLocaleString()}` : 'N/A'}
+                          {lead.budget_range || 'N/A'}
                         </td>
                         <td className="py-3 px-4">
                           <div className="flex items-center gap-2">
@@ -453,24 +456,34 @@ const Leads = () => {
           <div className="mt-6 space-y-4">
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <Label htmlFor="name">Name *</Label>
+                <Label htmlFor="first_name">First Name *</Label>
                 <Input
-                  id="name"
-                  value={isEditMode ? editForm.name || '' : selectedLead?.name || ''}
-                  onChange={(e) => setEditForm({...editForm, name: e.target.value})}
+                  id="first_name"
+                  value={isEditMode ? editForm.first_name || '' : selectedLead?.first_name || ''}
+                  onChange={(e) => setEditForm({...editForm, first_name: e.target.value})}
                   disabled={!isEditMode}
                 />
               </div>
               <div>
-                <Label htmlFor="email">Email *</Label>
+                <Label htmlFor="last_name">Last Name *</Label>
                 <Input
-                  id="email"
-                  type="email"
-                  value={isEditMode ? editForm.email || '' : selectedLead?.email || ''}
-                  onChange={(e) => setEditForm({...editForm, email: e.target.value})}
+                  id="last_name"
+                  value={isEditMode ? editForm.last_name || '' : selectedLead?.last_name || ''}
+                  onChange={(e) => setEditForm({...editForm, last_name: e.target.value})}
                   disabled={!isEditMode}
                 />
               </div>
+            </div>
+            
+            <div>
+              <Label htmlFor="email">Email *</Label>
+              <Input
+                id="email"
+                type="email"
+                value={isEditMode ? editForm.email || '' : selectedLead?.email || ''}
+                onChange={(e) => setEditForm({...editForm, email: e.target.value})}
+                disabled={!isEditMode}
+              />
             </div>
             
             <div className="grid grid-cols-2 gap-4">
@@ -505,12 +518,11 @@ const Leads = () => {
                 />
               </div>
               <div>
-                <Label htmlFor="investment">Investment Amount</Label>
+                <Label htmlFor="budget_range">Budget Range</Label>
                 <Input
-                  id="investment"
-                  type="number"
-                  value={isEditMode ? editForm.investment_amount || '' : selectedLead?.investment_amount || ''}
-                  onChange={(e) => setEditForm({...editForm, investment_amount: Number(e.target.value)})}
+                  id="budget_range"
+                  value={isEditMode ? editForm.budget_range || '' : selectedLead?.budget_range || ''}
+                  onChange={(e) => setEditForm({...editForm, budget_range: e.target.value})}
                   disabled={!isEditMode}
                 />
               </div>
