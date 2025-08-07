@@ -12,7 +12,12 @@ const KnowledgeBase: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   const handleScheduleConsultation = () => {
-    navigate('/contact');
+    navigate('/schedule-consultation', {
+      state: {
+        source: 'AI Consulting Services',
+        button: 'Schedule Consultation'
+      }
+    });
   };
 
   const handleGetStarted = () => {
@@ -297,10 +302,10 @@ const KnowledgeBase: React.FC = () => {
                       <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                     </Button>
                     <Button 
-                      onClick={handleScheduleConsultation}
+                      onClick={handleGetStarted}
                       variant="outline"
                     >
-                      Schedule Consultation
+                      Tell Us About Your Project
                     </Button>
                   </div>
                 </CardContent>
