@@ -62,6 +62,7 @@ export type Database = {
           company: string | null
           company_size: string | null
           country: string | null
+          country_code: string | null
           created_at: string
           cta_source: string | null
           email: string
@@ -72,13 +73,17 @@ export type Database = {
           id: string
           industry: string | null
           ip_address: unknown | null
+          isp: string | null
           job_title: string | null
           last_name: string
+          latitude: number | null
           lead_score: number | null
           lead_status: string | null
+          longitude: number | null
           meeting_type: string | null
           message: string | null
           notes: string | null
+          organization: string | null
           phone: string | null
           preferred_contact_method: string | null
           project_description: string | null
@@ -88,6 +93,7 @@ export type Database = {
           session_data: Json | null
           state: string | null
           timeline: string | null
+          timezone: string | null
           timezone_info: Json | null
           updated_at: string
           urgency: string | null
@@ -105,6 +111,7 @@ export type Database = {
           company?: string | null
           company_size?: string | null
           country?: string | null
+          country_code?: string | null
           created_at?: string
           cta_source?: string | null
           email: string
@@ -115,13 +122,17 @@ export type Database = {
           id?: string
           industry?: string | null
           ip_address?: unknown | null
+          isp?: string | null
           job_title?: string | null
           last_name: string
+          latitude?: number | null
           lead_score?: number | null
           lead_status?: string | null
+          longitude?: number | null
           meeting_type?: string | null
           message?: string | null
           notes?: string | null
+          organization?: string | null
           phone?: string | null
           preferred_contact_method?: string | null
           project_description?: string | null
@@ -131,6 +142,7 @@ export type Database = {
           session_data?: Json | null
           state?: string | null
           timeline?: string | null
+          timezone?: string | null
           timezone_info?: Json | null
           updated_at?: string
           urgency?: string | null
@@ -148,6 +160,7 @@ export type Database = {
           company?: string | null
           company_size?: string | null
           country?: string | null
+          country_code?: string | null
           created_at?: string
           cta_source?: string | null
           email?: string
@@ -158,13 +171,17 @@ export type Database = {
           id?: string
           industry?: string | null
           ip_address?: unknown | null
+          isp?: string | null
           job_title?: string | null
           last_name?: string
+          latitude?: number | null
           lead_score?: number | null
           lead_status?: string | null
+          longitude?: number | null
           meeting_type?: string | null
           message?: string | null
           notes?: string | null
+          organization?: string | null
           phone?: string | null
           preferred_contact_method?: string | null
           project_description?: string | null
@@ -174,6 +191,7 @@ export type Database = {
           session_data?: Json | null
           state?: string | null
           timeline?: string | null
+          timezone?: string | null
           timezone_info?: Json | null
           updated_at?: string
           urgency?: string | null
@@ -182,12 +200,115 @@ export type Database = {
         }
         Relationships: []
       }
+      lead_change_log: {
+        Row: {
+          changed_at: string | null
+          field_name: string | null
+          id: string
+          ip_address: unknown | null
+          lead_id: string | null
+          new_value: string | null
+          old_value: string | null
+          operation_type: string
+          session_id: string | null
+          user_agent: string | null
+          user_email: string | null
+          user_id: string | null
+        }
+        Insert: {
+          changed_at?: string | null
+          field_name?: string | null
+          id?: string
+          ip_address?: unknown | null
+          lead_id?: string | null
+          new_value?: string | null
+          old_value?: string | null
+          operation_type: string
+          session_id?: string | null
+          user_agent?: string | null
+          user_email?: string | null
+          user_id?: string | null
+        }
+        Update: {
+          changed_at?: string | null
+          field_name?: string | null
+          id?: string
+          ip_address?: unknown | null
+          lead_id?: string | null
+          new_value?: string | null
+          old_value?: string | null
+          operation_type?: string
+          session_id?: string | null
+          user_agent?: string | null
+          user_email?: string | null
+          user_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "lead_change_log_lead_id_fkey"
+            columns: ["lead_id"]
+            isOneToOne: false
+            referencedRelation: "contact_submissions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      user_roles: {
+        Row: {
+          created_at: string | null
+          id: string
+          role: string
+          updated_at: string | null
+          user_id: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          id?: string
+          role?: string
+          updated_at?: string | null
+          user_id?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          role?: string
+          updated_at?: string | null
+          user_id?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      get_user_role_safe: {
+        Args: { user_uuid?: string }
+        Returns: string
+      }
+      has_permission: {
+        Args: { required_role: string; user_uuid?: string }
+        Returns: boolean
+      }
+      is_admin: {
+        Args: { user_uuid?: string }
+        Returns: boolean
+      }
+      is_admin_safe: {
+        Args: { user_uuid?: string }
+        Returns: boolean
+      }
+      log_lead_change: {
+        Args: {
+          p_lead_id: string
+          p_operation_type: string
+          p_field_name?: string
+          p_old_value?: string
+          p_new_value?: string
+          p_session_id?: string
+        }
+        Returns: string
+      }
     }
     Enums: {
       [_ in never]: never

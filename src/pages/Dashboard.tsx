@@ -45,6 +45,12 @@ interface ContactSubmission {
   created_at: string;
   lead_status?: string;
   urgency?: string;
+
+  // Added fields used in the UI and calculations
+  city?: string;
+  state?: string;
+  country?: string;
+  budget_range?: string;
 }
 
 const Dashboard = () => {
@@ -68,12 +74,12 @@ const Dashboard = () => {
     { id: "leads", label: "Leads", icon: Users },
   ];
 
-  // Settings submenu items with role-based access control
   const getSettingsSubItems = () => {
     const baseItems = [
       { id: "profile", label: "Profile", icon: User },
       { id: "password", label: "Password", icon: Lock },
     ];
+<<<<<<< HEAD
     
     // Only Admin users can see Roles and Users management
     if (userRole && userRole.toLowerCase() === 'admin') {
@@ -82,7 +88,6 @@ const Dashboard = () => {
         { id: "users", label: "Users", icon: UserCog }
       );
     }
-    
     return baseItems;
   };
 
@@ -162,7 +167,6 @@ const Dashboard = () => {
     },
   ];
 
-  // Function to render content based on active view
   const renderMainContent = () => {
     switch (activeView) {
       case 'leads':
@@ -317,7 +321,6 @@ const Dashboard = () => {
   };
 
   return (
-    // Workbench - Overall Dashboard Screen
     <div className="flex h-screen bg-gray-50">
       {/* Sidebar */}
       <div className={`${sidebarCollapsed ? 'w-16' : 'w-64'} bg-white shadow-lg transition-all duration-300 flex flex-col`}>
