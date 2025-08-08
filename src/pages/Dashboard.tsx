@@ -76,7 +76,7 @@ const Dashboard = () => {
     ];
     
     // Only Admin users can see Roles and Users management
-    if (userRole === 'Admin') {
+    if (userRole && userRole.toLowerCase() === 'admin') {
       baseItems.push(
         { id: "roles", label: "Roles", icon: Shield },
         { id: "users", label: "Users", icon: UserCog }
@@ -172,9 +172,9 @@ const Dashboard = () => {
       case 'password':
         return <PasswordSettings />;
       case 'roles':
-        return userRole === 'Admin' ? <RoleManagement /> : <div className="text-center py-8"><p className="text-gray-500">Access denied. Admin role required.</p></div>;
+        return (userRole && userRole.toLowerCase() === 'admin') ? <RoleManagement /> : <div className="text-center py-8"><p className="text-gray-500">Access denied. Admin role required.</p></div>;
       case 'users':
-        return userRole === 'Admin' ? <UserManagement /> : <div className="text-center py-8"><p className="text-gray-500">Access denied. Admin role required.</p></div>;
+        return (userRole && userRole.toLowerCase() === 'admin') ? <UserManagement /> : <div className="text-center py-8"><p className="text-gray-500">Access denied. Admin role required.</p></div>;
       case 'dashboard':
       default:
         return (

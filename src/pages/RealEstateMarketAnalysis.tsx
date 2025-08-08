@@ -244,7 +244,7 @@ const RealEstateMarketAnalysis = () => {
                   Tell Us About Your Project
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
-              <Button size="lg" variant="outline" className="border-blue-300 text-blue-300 hover:bg-blue-300 hover:text-blue-900 px-8 py-4 text-lg transform hover:scale-105 transition-all duration-300" onClick={() => handleConsultationClick('Tell Us About Your Project')}>
+              <Button size="lg" variant="outline" className="border-gray-700 text-gray-700 hover:bg-gray-700 hover:text-white px-8 py-4 text-lg transform hover:scale-105 transition-all duration-300" onClick={() => handleConsultationClick('Tell Us About Your Project')}>
                   Tell Us About Your Project
               </Button>
             </div>

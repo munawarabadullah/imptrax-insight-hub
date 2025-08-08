@@ -521,7 +521,7 @@ const InvestmentManagement = () => {
               Schedule a Demo
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600">
+            <Button size="lg" variant="outline" className="border-gray-700 text-gray-700 hover:bg-gray-700 hover:text-white">
               Contact Sales
             </Button>
           </div>

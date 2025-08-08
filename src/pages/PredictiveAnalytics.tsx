@@ -459,7 +459,7 @@ const PredictiveAnalytics = () => {
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+                className="border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white"
                 onClick={handleViewCaseStudiesClick}
               >
                 Review Case Studies

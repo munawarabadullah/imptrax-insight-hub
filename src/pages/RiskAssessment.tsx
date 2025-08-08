@@ -628,7 +628,7 @@ const RiskAssessment = () => {
               onClick={() => handleConsultationClick('Download Risk Framework')}
               size="lg" 
               variant="outline" 
-              className="border-white text-white hover:bg-white hover:text-red-600 px-8 py-4 text-lg"
+              className="border-gray-700 text-gray-700 hover:bg-gray-700 hover:text-white px-8 py-4 text-lg"
             >
               Download Risk Framework
             </Button>

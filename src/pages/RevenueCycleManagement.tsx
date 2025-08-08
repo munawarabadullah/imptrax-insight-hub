@@ -548,7 +548,7 @@ const RevenueCycleManagement = () => {
                 Tell Us About Your Project
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600" onClick={handleScheduleConsultation}>
+              <Button size="lg" variant="outline" className="border-gray-700 text-gray-700 hover:bg-gray-700 hover:text-white" onClick={handleScheduleConsultation}>
                 Schedule Consultation
               </Button>
             </div>

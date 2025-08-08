@@ -1648,7 +1648,7 @@ const DataMigration = () => {
             <Button 
               size="lg" 
               variant="outline"
-              className="px-8 py-4 text-lg font-medium border-2 border-primary-foreground/20 hover:border-primary-foreground/40 hover:bg-primary-foreground/10 text-primary-foreground transition-all duration-300 hover:scale-105"
+              className="px-8 py-4 text-lg font-medium border-2 border-gray-800 hover:border-gray-700 hover:bg-gray-800/10 text-gray-800 transition-all duration-300 hover:scale-105"
               onClick={() => navigate('/case-studies')}
             >
               View Case Studies

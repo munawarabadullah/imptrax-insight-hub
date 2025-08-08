@@ -654,7 +654,7 @@ const RealEstatePropertyAnalysisWithAI = () => {
               Start Free Analysis
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 text-lg" onClick={() => handleConsultationClick('Tell Us About Your Project')}>
+            <Button size="lg" variant="outline" className="border-gray-700 text-gray-700 hover:bg-gray-700 hover:text-white px-8 py-4 text-lg" onClick={() => handleConsultationClick('Tell Us About Your Project')}>
               Tell Us About Your Project
             </Button>
           </div>

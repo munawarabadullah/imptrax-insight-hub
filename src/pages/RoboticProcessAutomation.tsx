@@ -361,11 +361,11 @@ const RoboticProcessAutomation = () => {
               Schedule Free Consultation
             </Button>
             <Button 
-              size="lg" 
-              variant="outline"
-              className="border-white text-white hover:bg-white hover:text-blue-600"
-              onClick={() => handleCTAClick('bottom', 'learn-more')}
-            >
+                size="lg" 
+                variant="outline"
+                className="border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white"
+                onClick={() => window.open('/contact', '_blank')}
+              >
               Learn More About RPA
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
@@ -450,7 +450,7 @@ const RoboticProcessAutomation = () => {
               <Button 
                 size="lg" 
                 variant="outline"
-                className="border-white text-white hover:bg-white hover:text-blue-600 hover:scale-105 px-8 py-3 text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white hover:scale-105 px-8 py-3 text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
                 onClick={() => handleCTAClick('final', 'contact-expert')}
               >
                 <Users className="mr-2 h-5 w-5" />

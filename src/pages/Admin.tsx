@@ -15,7 +15,8 @@ const Admin = () => {
   // Redirect authenticated users with proper roles to Dashboard immediately
   useEffect(() => {
     if (!loading && user && userRole) {
-      if (userRole === 'Admin' || userRole === 'Executive' || userRole === 'Director') {
+      const normalizedRole = userRole.toLowerCase();
+      if (normalizedRole === 'admin' || normalizedRole === 'executive' || normalizedRole === 'director') {
         navigate('/dashboard', { replace: true });
         return;
       }
@@ -64,9 +65,12 @@ const Admin = () => {
   }
 
   // If user is authenticated with proper role, redirect immediately (this should not render)
-  if (!loading && user && userRole && (userRole === 'Admin' || userRole === 'Executive' || userRole === 'Director')) {
-    navigate('/dashboard', { replace: true });
-    return null;
+  if (!loading && user && userRole) {
+    const normalizedRole = userRole.toLowerCase();
+    if (normalizedRole === 'admin' || normalizedRole === 'executive' || normalizedRole === 'director') {
+      navigate('/dashboard', { replace: true });
+      return null;
+    }
   }
 
   // Show login form for unauthenticated users
@@ -111,26 +115,29 @@ const Admin = () => {
   }
 
   // Check if user has proper role - if not, show access denied
-  if (user && userRole && userRole !== 'Admin' && userRole !== 'Executive' && userRole !== 'Director') {
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 flex items-center justify-center">
-        <Card className="w-full max-w-md">
-          <CardHeader>
-            <CardTitle className="text-2xl text-center text-red-600">Access Denied</CardTitle>
-            <CardDescription className="text-center">
-              You don't have permission to access this area.
-              <br />Your role: {userRole || 'No role assigned'}
-              <br />User ID: {user?.id}
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <Button onClick={handleLogout} className="w-full">
-              Logout
-            </Button>
-          </CardContent>
-        </Card>
-      </div>
-    );
+  if (user && userRole) {
+    const normalizedRole = userRole.toLowerCase();
+    if (normalizedRole !== 'admin' && normalizedRole !== 'executive' && normalizedRole !== 'director') {
+      return (
+        <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 flex items-center justify-center">
+          <Card className="w-full max-w-md">
+            <CardHeader>
+              <CardTitle className="text-2xl text-center text-red-600">Access Denied</CardTitle>
+              <CardDescription className="text-center">
+                You don't have permission to access this area.
+                <br />Your role: {userRole || 'No role assigned'}
+                <br />User ID: {user?.id}
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Button onClick={handleLogout} className="w-full">
+                Logout
+              </Button>
+            </CardContent>
+          </Card>
+        </div>
+      );
+    }
   }
 
   // This should never be reached - fallback
