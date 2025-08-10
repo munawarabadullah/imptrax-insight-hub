@@ -75,7 +75,27 @@ const articles = [
     readTime: "12 min read",
     publishDate: "2025-08-10"
   },
-  {    id: 8,    title: "AI in Healthcare RCM: How Intelligent Automation Revolutionizes Revenue Cycles",    category: "Healthcare Technology",    excerpt: "Discover how AI-powered automation is transforming healthcare revenue cycle management, reducing claim denials by 40% and accelerating payment cycles for medical practices nationwide.",    image: "/images/ai-healthcare-rcm-automation.svg",    slug: "ai-healthcare-revenue-cycle-management-automation",    readTime: "12 min read",    publishDate: "2025-08-09"  },  {    id: 9,    title: "AI Transforms Healthcare RCM: 2025 Revolution in Revenue Cycles",    category: "Healthcare Technology",    excerpt: "Discover how AI revolutionizes healthcare revenue cycle management in 2025, reducing errors by 85%, accelerating claims processing, and boosting financial performance through intelligent automation.",    image: "/images/ai-healthcare-rcm-2025-transformation.svg",    slug: "ai-transforming-healthcare-rcm-2025",    readTime: "30 min read",    publishDate: "2025-08-12"  }
+  {    id: 8,    title: "AI in Healthcare RCM: How Intelligent Automation Revolutionizes Revenue Cycles",    category: "Healthcare Technology",    excerpt: "Discover how AI-powered automation is transforming healthcare revenue cycle management, reducing claim denials by 40% and accelerating payment cycles for medical practices nationwide.",    image: "/images/ai-healthcare-rcm-automation.svg",    slug: "ai-healthcare-revenue-cycle-management-automation",    readTime: "12 min read",    publishDate: "2025-08-09"  },  {    id: 9,    title: "AI Transforms Healthcare RCM: 2025 Revolution in Revenue Cycles",    category: "Healthcare Technology",    excerpt: "Discover how AI revolutionizes healthcare revenue cycle management in 2025, reducing errors by 85%, accelerating claims processing, and boosting financial performance through intelligent automation.",    image: "/images/ai-healthcare-rcm-2025-transformation.svg",    slug: "ai-transforming-healthcare-rcm-2025",    readTime: "30 min read",    publishDate: "2025-08-12"  },
+  {
+    id: 10,
+    title: "AI & Automation in Healthcare RCM: Benefits, Challenges & Implementation",
+    category: "Healthcare Technology",
+    excerpt: "Explore the transformative benefits of AI in healthcare revenue cycle management, from faster claims processing to improved accuracy, while addressing key implementation challenges including compliance and workforce considerations.",
+    image: "/images/ai-automation-healthcare-rcm-benefits-challenges.svg",
+    slug: "ai-automation-benefits-challenges-healthcare-revenue-cycle-management",
+    readTime: "18 min read",
+    publishDate: "2025-08-20"
+  },
+  {
+    id: 11,
+    title: "Modern Application Development: Best Practices and Methodologies",
+    category: "Software Development",
+    excerpt: "Modern application development has evolved significantly from traditional waterfall methodologies. Today's development landscape demands agility, scalability, and continuous delivery.",
+    image: "/articles/modern-application-development-best-practices-methodologies.svg",
+    slug: "modern-application-development-best-practices-methodologies",
+    readTime: "9 min read",
+    publishDate: "2024-01-14"
+  }
 ];
 
 const Insight = () => {

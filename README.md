@@ -101,9 +101,11 @@ Read Actionable.MD file and follow the instructions.
    - Use theme colors: #1e40af (blue), #7c3aed (purple), #059669 (green), #dc2626 (red)
 
 3. **Article Listing** (`/src/pages/Insight.tsx`):
-   - Each article must be added to the `articles` array
+   - **CRITICAL**: Each article must be manually added to the `articles` array in Insight.tsx
+   - The system does NOT automatically detect new markdown files
    - Required fields: id, title, category, excerpt, image, slug, readTime, publishDate
    - Slug must match the markdown filename (without .md extension)
+   - **WARNING**: Articles will NOT appear on the /insight page until added to this array
 
 #### Article Routing Configuration:
 
@@ -127,6 +129,10 @@ Read Actionable.MD file and follow the instructions.
 - `life-at-imptrax-building-innovation-through-collaboration.md`
 - `modern-application-development-best-practices-methodologies.md`
 - `future-of-ai-in-healthcare.md`
+- `ai-healthcare-revenue-cycle-management-automation.md`
+- `ai-transforming-healthcare-rcm-2025.md`
+- `predictive-analytics-ai-reduce-revenue-cycle-denials-improve-cash-flow.md`
+- `ai-automation-benefits-challenges-healthcare-revenue-cycle-management.md`
 
 #### Common Mistakes to Avoid:
 
