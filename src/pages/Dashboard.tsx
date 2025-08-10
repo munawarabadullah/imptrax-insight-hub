@@ -79,7 +79,6 @@ const Dashboard = () => {
       { id: "profile", label: "Profile", icon: User },
       { id: "password", label: "Password", icon: Lock },
     ];
-<<<<<<< HEAD
     
     // Only Admin users can see Roles and Users management
     if (userRole && userRole.toLowerCase() === 'admin') {

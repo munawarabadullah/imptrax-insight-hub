@@ -49,6 +49,8 @@ import OurHistory from "./pages/OurHistory";
 import Team from "./pages/Team";
 import Admin from "./pages/Admin";
 import Dashboard from "./pages/Dashboard";
+import Insight from "./pages/Insight";
+import ArticleTemplate from "./pages/articles/ArticleTemplate";
 
 import NotFound from "./pages/NotFound";
 
@@ -107,6 +109,8 @@ const App = () => (
           <Route path="/team" element={<Team />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/insight" element={<Insight />} />
+          <Route path="/insight/articles/:slug" element={<ArticleTemplate />} />
 
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

@@ -377,3 +377,47 @@ All colors MUST be HSL.
     background: radial-gradient(circle, var(--tw-gradient-stops));
   }
 }
+
+/* Article Content Styles */
+.article-content h2 {
+  @apply text-3xl font-bold text-gray-900 mt-8 mb-4;
+}
+
+.article-content h3 {
+  @apply text-2xl font-semibold text-gray-800 mt-6 mb-3;
+}
+
+.article-content p {
+  @apply mb-6;
+}
+
+.article-content ul {
+  @apply mb-6 pl-6;
+}
+
+.article-content li {
+  @apply mb-2 list-disc;
+}
+
+.article-content strong {
+  @apply font-semibold text-gray-900;
+}
+
+.article-content blockquote {
+  @apply border-l-4 border-blue-500 pl-6 my-8 italic text-xl text-gray-600 bg-gray-50 p-6 rounded-r-lg;
+}
+
+/* Line clamp utilities */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

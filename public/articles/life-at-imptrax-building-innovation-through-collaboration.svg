@@ -1,0 +1,161 @@
+<svg width="800" height="400" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e40af;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#60a5fa;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="teamGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#dbeafe;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#93c5fd;stop-opacity:0.6" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="400" fill="url(#bgGradient5)"/>
+  
+  <!-- Central collaboration hub -->
+  <g transform="translate(400, 200)">
+    <!-- Central innovation core -->
+    <circle cx="0" cy="0" r="40" fill="url(#teamGradient)"/>
+    <circle cx="0" cy="0" r="25" fill="#3b82f6" opacity="0.8"/>
+    <circle cx="0" cy="0" r="12" fill="#dbeafe" opacity="0.9"/>
+    
+    <!-- Team member nodes around the center -->
+    <g fill="#60a5fa" opacity="0.8">
+      <!-- Top team members -->
+      <circle cx="0" cy="-80" r="18" fill="#93c5fd"/>
+      <circle cx="-60" cy="-60" r="18" fill="#93c5fd"/>
+      <circle cx="60" cy="-60" r="18" fill="#93c5fd"/>
+      
+      <!-- Side team members -->
+      <circle cx="-90" cy="0" r="18" fill="#60a5fa"/>
+      <circle cx="90" cy="0" r="18" fill="#60a5fa"/>
+      
+      <!-- Bottom team members -->
+      <circle cx="-60" cy="60" r="18" fill="#93c5fd"/>
+      <circle cx="60" cy="60" r="18" fill="#93c5fd"/>
+      <circle cx="0" cy="80" r="18" fill="#93c5fd"/>
+    </g>
+    
+    <!-- Connection lines showing collaboration -->
+    <g stroke="#dbeafe" stroke-width="2" opacity="0.7">
+      <line x1="0" y1="0" x2="0" y2="-80"/>
+      <line x1="0" y1="0" x2="-60" y2="-60"/>
+      <line x1="0" y1="0" x2="60" y2="-60"/>
+      <line x1="0" y1="0" x2="-90" y2="0"/>
+      <line x1="0" y1="0" x2="90" y2="0"/>
+      <line x1="0" y1="0" x2="-60" y2="60"/>
+      <line x1="0" y1="0" x2="60" y2="60"/>
+      <line x1="0" y1="0" x2="0" y2="80"/>
+      
+      <!-- Inter-team connections -->
+      <line x1="-60" y1="-60" x2="60" y2="-60" opacity="0.5"/>
+      <line x1="-90" y1="0" x2="90" y2="0" opacity="0.5"/>
+      <line x1="-60" y1="60" x2="60" y2="60" opacity="0.5"/>
+    </g>
+    
+    <!-- Innovation sparks -->
+    <g fill="#dbeafe" opacity="0.8">
+      <circle cx="-30" cy="-30" r="3"/>
+      <circle cx="30" cy="-30" r="3"/>
+      <circle cx="-30" cy="30" r="3"/>
+      <circle cx="30" cy="30" r="3"/>
+    </g>
+  </g>
+  
+  <!-- Idea generation areas -->
+  <g transform="translate(150, 100)">
+    <!-- Lightbulb representation -->
+    <ellipse cx="0" cy="0" rx="20" ry="25" fill="#dbeafe" opacity="0.8"/>
+    <rect x="-8" y="20" width="16" height="8" fill="#93c5fd" opacity="0.7" rx="2"/>
+    <rect x="-6" y="28" width="12" height="4" fill="#93c5fd" opacity="0.7" rx="1"/>
+    
+    <!-- Idea sparks -->
+    <g stroke="#dbeafe" stroke-width="2" opacity="0.6">
+      <line x1="-30" y1="-15" x2="-25" y2="-20"/>
+      <line x1="-30" y1="0" x2="-35" y2="0"/>
+      <line x1="-30" y1="15" x2="-25" y2="20"/>
+      <line x1="30" y1="-15" x2="25" y2="-20"/>
+      <line x1="30" y1="0" x2="35" y2="0"/>
+      <line x1="30" y1="15" x2="25" y2="20"/>
+    </g>
+  </g>
+  
+  <g transform="translate(650, 300)">
+    <!-- Another lightbulb -->
+    <ellipse cx="0" cy="0" rx="18" ry="22" fill="#dbeafe" opacity="0.8"/>
+    <rect x="-7" y="18" width="14" height="7" fill="#93c5fd" opacity="0.7" rx="2"/>
+    <rect x="-5" y="25" width="10" height="3" fill="#93c5fd" opacity="0.7" rx="1"/>
+    
+    <!-- Idea sparks -->
+    <g stroke="#dbeafe" stroke-width="2" opacity="0.6">
+      <line x1="-25" y1="-12" x2="-20" y2="-17"/>
+      <line x1="-25" y1="0" x2="-30" y2="0"/>
+      <line x1="-25" y1="12" x2="-20" y2="17"/>
+      <line x1="25" y1="-12" x2="20" y2="-17"/>
+      <line x1="25" y1="0" x2="30" y2="0"/>
+      <line x1="25" y1="12" x2="20" y2="17"/>
+    </g>
+  </g>
+  
+  <!-- Communication flow -->
+  <g stroke="#93c5fd" stroke-width="2" fill="none" opacity="0.6">
+    <path d="M170 120 Q250 150 320 140 Q350 135 380 160">
+      <animate attributeName="stroke-dasharray" values="0,15;15,0" dur="2s" repeatCount="indefinite"/>
+    </path>
+    <path d="M420 240 Q500 270 580 260 Q620 255 630 280">
+      <animate attributeName="stroke-dasharray" values="15,0;0,15" dur="2s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  
+  <!-- Technology tools for collaboration -->
+  <g transform="translate(100, 300)">
+    <!-- Laptop/computer -->
+    <rect x="0" y="0" width="60" height="35" fill="#60a5fa" opacity="0.8" rx="3"/>
+    <rect x="5" y="5" width="50" height="25" fill="#1e40af" opacity="0.9" rx="2"/>
+    <rect x="20" y="35" width="20" height="8" fill="#60a5fa" opacity="0.8" rx="1"/>
+    <rect x="10" y="43" width="40" height="3" fill="#60a5fa" opacity="0.8" rx="1"/>
+  </g>
+  
+  <g transform="translate(700, 100)">
+    <!-- Mobile device -->
+    <rect x="0" y="0" width="25" height="45" fill="#93c5fd" opacity="0.8" rx="5"/>
+    <rect x="3" y="5" width="19" height="30" fill="#1e40af" opacity="0.9" rx="2"/>
+    <circle cx="12.5" cy="40" r="3" fill="#dbeafe" opacity="0.8"/>
+  </g>
+  
+  <!-- Innovation symbols -->
+  <g fill="#dbeafe" opacity="0.6">
+    <!-- Gear for process innovation -->
+    <g transform="translate(50, 150)">
+      <circle cx="0" cy="0" r="12" fill="none" stroke="#dbeafe" stroke-width="2"/>
+      <circle cx="0" cy="0" r="5" fill="#dbeafe"/>
+      <rect x="-1" y="-15" width="2" height="6" fill="#dbeafe"/>
+      <rect x="-1" y="9" width="2" height="6" fill="#dbeafe"/>
+      <rect x="-15" y="-1" width="6" height="2" fill="#dbeafe"/>
+      <rect x="9" y="-1" width="6" height="2" fill="#dbeafe"/>
+    </g>
+    
+    <!-- Puzzle pieces for collaboration -->
+    <g transform="translate(750, 250)">
+      <path d="M0,0 L15,0 Q20,5 15,10 L0,10 Q-5,5 0,0 Z" fill="#93c5fd" opacity="0.7"/>
+      <path d="M15,0 L30,0 L30,15 Q25,20 20,15 L15,15 Q10,10 15,0 Z" fill="#60a5fa" opacity="0.7"/>
+    </g>
+  </g>
+  
+  <!-- Floating collaboration particles -->
+  <g fill="#93c5fd" opacity="0.5">
+    <circle cx="250" cy="50" r="2"/>
+    <circle cx="550" cy="70" r="2"/>
+    <circle cx="300" cy="350" r="2"/>
+    <circle cx="500" cy="370" r="2"/>
+    <circle cx="80" cy="250" r="2"/>
+    <circle cx="720" cy="180" r="2"/>
+  </g>
+  
+  <!-- ImpTrax branding element -->
+  <g fill="#dbeafe" opacity="0.8" font-family="Arial, sans-serif" font-size="16" font-weight="bold">
+    <text x="400" y="380" text-anchor="middle">COLLABORATION</text>
+  </g>
+</svg>

@@ -175,7 +175,8 @@ const Header = () => {
         {
           category: "News & Media",
           services: [
-            { name: "Industry Trends", url: "/industry-trends" }
+            { name: "Industry Trends", url: "/industry-trends" },
+            { name: "Insight", url: "/insight" }
           ]
         }
       ]
