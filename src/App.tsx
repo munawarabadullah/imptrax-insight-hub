@@ -52,6 +52,7 @@ import Dashboard from "./pages/Dashboard";
 import Insight from "./pages/Insight";
 import ArticleTemplate from "./pages/articles/ArticleTemplate";
 import ImpTraxHealth from "./pages/ImpTraxHealth";
+import ImpTraxTechnology from "./pages/ImpTraxTechnology";
 
 import NotFound from "./pages/NotFound";
 
@@ -114,6 +115,7 @@ const App = () => (
           <Route path="/insight" element={<Insight />} />
           <Route path="/insight/articles/:slug" element={<ArticleTemplate />} />
           <Route path="/imptrax-health" element={<ImpTraxHealth />} />
+          <Route path="/imptrax-technology" element={<ImpTraxTechnology />} />
 
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
