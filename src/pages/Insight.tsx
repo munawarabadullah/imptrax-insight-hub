@@ -81,13 +81,23 @@ const articles = [
     title: "AI & Automation in Healthcare RCM: Benefits, Challenges & Implementation",
     category: "Healthcare Technology",
     excerpt: "Explore the transformative benefits of AI in healthcare revenue cycle management, from faster claims processing to improved accuracy, while addressing key implementation challenges including compliance and workforce considerations.",
-    image: "/images/ai-automation-healthcare-rcm-benefits-challenges.svg",
+    image: "/articles/ai-automation-healthcare-rcm-benefits-challenges.svg",
     slug: "ai-automation-benefits-challenges-healthcare-revenue-cycle-management",
     readTime: "18 min read",
     publishDate: "2025-08-20"
   },
   {
     id: 11,
+    title: "Predictive Analytics & AI: Reduce Revenue Cycle Denials & Improve Cash Flow",
+    category: "Healthcare Technology",
+    excerpt: "Discover how predictive analytics and AI technologies are revolutionizing healthcare revenue cycle management by reducing claim denials, accelerating payment cycles, and improving cash flow for medical practices.",
+    image: "/images/ai-predictive-analytics-revenue-cycle.svg",
+    slug: "predictive-analytics-ai-reduce-revenue-cycle-denials-improve-cash-flow",
+    readTime: "15 min read",
+    publishDate: "2025-08-18"
+  },
+  {
+    id: 12,
     title: "Modern Application Development: Best Practices and Methodologies",
     category: "Software Development",
     excerpt: "Modern application development has evolved significantly from traditional waterfall methodologies. Today's development landscape demands agility, scalability, and continuous delivery.",

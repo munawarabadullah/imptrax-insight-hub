@@ -31,7 +31,7 @@ DROP FUNCTION IF EXISTS public.get_user_role(UUID);
 CREATE OR REPLACE FUNCTION public.get_user_role_safe(user_uuid UUID DEFAULT auth.uid())
 RETURNS TEXT
 LANGUAGE plpgsql
-SECURITY DEFINER
+SECURITY DEFINER SET search_path = 'public'
 AS $$
 DECLARE
     user_role TEXT;
@@ -50,7 +50,7 @@ $$;
 CREATE OR REPLACE FUNCTION public.is_admin_safe(user_uuid UUID DEFAULT auth.uid())
 RETURNS BOOLEAN
 LANGUAGE plpgsql
-SECURITY DEFINER
+SECURITY DEFINER SET search_path = 'public'
 AS $$
 BEGIN
     -- Direct query with security definer to bypass RLS
@@ -68,18 +68,21 @@ $$;
 -- =============================================================================
 
 -- Simple policy: Users can view their own role
+DROP POLICY IF EXISTS "user_can_view_own_role" ON public.user_roles;
 CREATE POLICY "user_can_view_own_role" ON public.user_roles
     FOR SELECT 
     TO authenticated
     USING (auth.uid() = user_id);
 
 -- Simple policy: Allow all authenticated users to read roles (for role checking)
+DROP POLICY IF EXISTS "authenticated_can_read_roles" ON public.user_roles;
 CREATE POLICY "authenticated_can_read_roles" ON public.user_roles
     FOR SELECT 
     TO authenticated
     USING (true);
 
 -- Admin policies using the safe function
+DROP POLICY IF EXISTS "admin_can_manage_roles" ON public.user_roles;
 CREATE POLICY "admin_can_manage_roles" ON public.user_roles
     FOR ALL 
     TO authenticated

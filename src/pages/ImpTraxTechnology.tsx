@@ -168,11 +168,11 @@ const ImpTraxTechnology = () => {
               Harness the power of AI, machine learning, automation, and advanced analytics to transform your business operations and drive unprecedented growth in the digital era.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg" onClick={() => handleConsultationClick('explore-technology')}>>
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg" onClick={() => handleConsultationClick('explore-technology')}>
                 Explore Technology Solutions
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
-              <Button size="lg" variant="outline" className="border-blue-300 text-blue-300 hover:bg-blue-300 hover:text-blue-900 px-8 py-4 text-lg" onClick={() => handleConsultationClick('schedule-consultation')}>>
+              <Button size="lg" variant="outline" className="border-blue-300 text-blue-300 hover:bg-blue-300 hover:text-blue-900 px-8 py-4 text-lg" onClick={() => handleConsultationClick('schedule-consultation')}>
                 Schedule Technology Consultation
               </Button>
             </div>
@@ -502,11 +502,11 @@ const ImpTraxTechnology = () => {
             Partner with ImpTrax to leverage cutting-edge technology solutions that drive innovation, efficiency, and growth. Our expert team is ready to help you navigate the digital transformation journey.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 text-lg" onClick={() => handleConsultationClick('start-transformation')}>>
+            <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 text-lg" onClick={() => handleConsultationClick('start-transformation')}>
               Start Your Digital Transformation
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 text-lg" onClick={() => handleConsultationClick('schedule-consultation')}>>
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 text-lg" onClick={() => handleConsultationClick('schedule-consultation')}>
               Schedule Technology Consultation
             </Button>
           </div>

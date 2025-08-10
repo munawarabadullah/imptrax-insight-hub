@@ -24,8 +24,12 @@ INSERT INTO user_roles (user_id, role, created_at, updated_at) VALUES
 ALTER TABLE user_roles ALTER COLUMN role SET DEFAULT 'Sales';
 
 -- Add a check constraint to ensure only valid roles are used
-ALTER TABLE user_roles ADD CONSTRAINT valid_roles_check 
-CHECK (role IN ('Admin', 'Executive', 'Director', 'Manager', 'Sales'));
+DO $$
+BEGIN
+    IF NOT EXISTS (SELECT 1 FROM pg_constraint WHERE conname = 'valid_roles_check' AND conrelid = 'user_roles'::regclass) THEN
+        ALTER TABLE user_roles ADD CONSTRAINT valid_roles_check CHECK (role IN ('Admin', 'Executive', 'Director', 'Manager', 'Sales'));
+    END IF;
+END $$;
 
 -- Create or replace RLS policies for the new role system
 
@@ -49,6 +53,7 @@ FOR ALL USING (
 );
 
 -- Policy 3: Executives can view all roles but only update non-Admin roles
+DROP POLICY IF EXISTS "Executives can view all roles" ON user_roles;
 CREATE POLICY "Executives can view all roles" ON user_roles
 FOR SELECT USING (
   EXISTS (
@@ -58,6 +63,7 @@ FOR SELECT USING (
   )
 );
 
+DROP POLICY IF EXISTS "Executives can update non-Admin roles" ON user_roles;
 CREATE POLICY "Executives can update non-Admin roles" ON user_roles
 FOR UPDATE USING (
   EXISTS (
@@ -163,7 +169,7 @@ BEGIN
     ELSE 0
   END;
 END;
-$$ LANGUAGE plpgsql SECURITY DEFINER;
+$$ LANGUAGE plpgsql SECURITY DEFINER SET search_path = 'public';
 
 -- Grant execute permission on the permission function
 GRANT EXECUTE ON FUNCTION has_permission TO authenticated, anon;
