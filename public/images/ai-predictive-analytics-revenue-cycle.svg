@@ -1,0 +1,157 @@
+<svg width="800" height="450" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8fafc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e2e8f0;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1d4ed8;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="lightBlueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#dbeafe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#bfdbfe;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="#1e293b" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="450" fill="url(#bgGradient)"/>
+  
+  <!-- Grid Pattern -->
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e2e8f0" stroke-width="1" opacity="0.3"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="450" fill="url(#grid)"/>
+  
+  <!-- Main AI Brain/Network Center -->
+  <g transform="translate(400,225)">
+    <!-- Central AI Node -->
+    <circle cx="0" cy="0" r="45" fill="url(#blueGradient)" filter="url(#shadow)"/>
+    <circle cx="0" cy="0" r="35" fill="#ffffff" opacity="0.9"/>
+    
+    <!-- AI Symbol -->
+    <g transform="scale(0.8)">
+      <path d="M-15,-10 L-5,-10 L-5,-20 L5,-20 L5,-10 L15,-10 L15,0 L5,0 L5,10 L15,10 L15,20 L5,20 L5,10 L-5,10 L-5,20 L-15,20 L-15,10 L-15,0 Z" fill="#3b82f6"/>
+      <circle cx="0" cy="0" r="3" fill="#ffffff"/>
+    </g>
+    
+    <!-- Connecting Lines to Surrounding Elements -->
+    <line x1="0" y1="0" x2="-120" y2="-80" stroke="#3b82f6" stroke-width="2" opacity="0.6"/>
+    <line x1="0" y1="0" x2="120" y2="-80" stroke="#3b82f6" stroke-width="2" opacity="0.6"/>
+    <line x1="0" y1="0" x2="-120" y2="80" stroke="#3b82f6" stroke-width="2" opacity="0.6"/>
+    <line x1="0" y1="0" x2="120" y2="80" stroke="#3b82f6" stroke-width="2" opacity="0.6"/>
+    <line x1="0" y1="0" x2="-180" y2="0" stroke="#3b82f6" stroke-width="2" opacity="0.6"/>
+    <line x1="0" y1="0" x2="180" y2="0" stroke="#3b82f6" stroke-width="2" opacity="0.6"/>
+  </g>
+  
+  <!-- Healthcare Icons -->
+  <!-- Medical Cross (Top Left) -->
+  <g transform="translate(280,145)">
+    <circle cx="0" cy="0" r="25" fill="url(#lightBlueGradient)" filter="url(#shadow)"/>
+    <path d="M-8,-15 L8,-15 L8,-5 L15,-5 L15,5 L8,5 L8,15 L-8,15 L-8,5 L-15,5 L-15,-5 L-8,-5 Z" fill="#ef4444"/>
+  </g>
+  
+  <!-- Dollar Sign (Top Right) -->
+  <g transform="translate(520,145)">
+    <circle cx="0" cy="0" r="25" fill="url(#lightBlueGradient)" filter="url(#shadow)"/>
+    <path d="M-2,-18 L2,-18 L2,-12 L8,-12 C12,-12 15,-9 15,-5 C15,-1 12,2 8,2 L2,2 L2,8 L8,8 C10,8 12,10 12,12 C12,14 10,16 8,16 L2,16 L2,18 L-2,18 L-2,16 L-8,16 C-10,16 -12,14 -12,12 C-12,10 -10,8 -8,8 L-2,8 L-2,2 L-8,2 C-12,2 -15,-1 -15,-5 C-15,-9 -12,-12 -8,-12 L-2,-12 Z" fill="#10b981"/>
+  </g>
+  
+  <!-- Chart/Analytics (Bottom Left) -->
+  <g transform="translate(280,305)">
+    <circle cx="0" cy="0" r="25" fill="url(#lightBlueGradient)" filter="url(#shadow)"/>
+    <rect x="-12" y="-8" width="4" height="16" fill="#3b82f6"/>
+    <rect x="-4" y="-12" width="4" height="20" fill="#3b82f6"/>
+    <rect x="4" y="-6" width="4" height="14" fill="#3b82f6"/>
+    <rect x="12" y="-10" width="4" height="18" fill="#3b82f6"/>
+  </g>
+  
+  <!-- Clock/Time (Bottom Right) -->
+  <g transform="translate(520,305)">
+    <circle cx="0" cy="0" r="25" fill="url(#lightBlueGradient)" filter="url(#shadow)"/>
+    <circle cx="0" cy="0" r="12" fill="none" stroke="#3b82f6" stroke-width="2"/>
+    <line x1="0" y1="0" x2="0" y2="-8" stroke="#3b82f6" stroke-width="2"/>
+    <line x1="0" y1="0" x2="6" y2="0" stroke="#3b82f6" stroke-width="2"/>
+    <circle cx="0" cy="0" r="1" fill="#3b82f6"/>
+  </g>
+  
+  <!-- Document/Claims (Left) -->
+  <g transform="translate(220,225)">
+    <circle cx="0" cy="0" r="25" fill="url(#lightBlueGradient)" filter="url(#shadow)"/>
+    <rect x="-8" y="-12" width="16" height="20" rx="2" fill="#ffffff" stroke="#3b82f6" stroke-width="2"/>
+    <line x1="-5" y1="-8" x2="5" y2="-8" stroke="#3b82f6" stroke-width="1"/>
+    <line x1="-5" y1="-4" x2="5" y2="-4" stroke="#3b82f6" stroke-width="1"/>
+    <line x1="-5" y1="0" x2="5" y2="0" stroke="#3b82f6" stroke-width="1"/>
+    <line x1="-5" y1="4" x2="2" y2="4" stroke="#3b82f6" stroke-width="1"/>
+  </g>
+  
+  <!-- Shield/Security (Right) -->
+  <g transform="translate(580,225)">
+    <circle cx="0" cy="0" r="25" fill="url(#lightBlueGradient)" filter="url(#shadow)"/>
+    <path d="M0,-12 L8,-8 L8,4 C8,8 4,12 0,12 C-4,12 -8,8 -8,4 L-8,-8 Z" fill="#10b981"/>
+    <path d="M-3,0 L0,3 L6,-3" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  
+  <!-- Data Flow Arrows -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#3b82f6" opacity="0.7"/>
+    </marker>
+  </defs>
+  
+  <!-- Flowing data particles -->
+  <g opacity="0.6">
+    <circle cx="150" cy="100" r="3" fill="#3b82f6">
+      <animateMotion dur="4s" repeatCount="indefinite">
+        <path d="M0,0 Q100,50 200,0 T400,0"/>
+      </animateMotion>
+    </circle>
+    <circle cx="650" cy="350" r="3" fill="#10b981">
+      <animateMotion dur="5s" repeatCount="indefinite">
+        <path d="M0,0 Q-100,-50 -200,0 T-400,0"/>
+      </animateMotion>
+    </circle>
+    <circle cx="100" cy="300" r="3" fill="#ef4444">
+      <animateMotion dur="3s" repeatCount="indefinite">
+        <path d="M0,0 Q150,-100 300,0 T600,0"/>
+      </animateMotion>
+    </circle>
+  </g>
+  
+  <!-- Title Text -->
+  <text x="400" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1e293b">AI-Powered Predictive Analytics</text>
+  <text x="400" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#64748b">Transforming Healthcare Revenue Cycle Management</text>
+  
+  <!-- Bottom Labels -->
+  <text x="280" y="380" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#64748b">Predictive</text>
+  <text x="280" y="395" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#64748b">Insights</text>
+  
+  <text x="520" y="380" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#64748b">Faster</text>
+  <text x="520" y="395" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#64748b">Cash Flow</text>
+  
+  <text x="220" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#64748b">Claims</text>
+  <text x="220" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#64748b">Processing</text>
+  
+  <text x="580" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#64748b">Secure &amp;</text>
+  <text x="580" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#64748b">Compliant</text>
+  
+  <!-- Performance Indicators -->
+  <g transform="translate(50,350)">
+    <rect x="0" y="0" width="120" height="60" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1" filter="url(#shadow)"/>
+    <text x="60" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#10b981">-58%</text>
+    <text x="60" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#64748b">Denial Rate</text>
+    <text x="60" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#64748b">Reduction</text>
+  </g>
+  
+  <g transform="translate(630,350)">
+    <rect x="0" y="0" width="120" height="60" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1" filter="url(#shadow)"/>
+    <text x="60" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#3b82f6">+420%</text>
+    <text x="60" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#64748b">ROI in</text>
+    <text x="60" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#64748b">18 Months</text>
+  </g>
+</svg>
