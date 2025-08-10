@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider } from "./contexts/AuthContext";
 import Index from "./pages/Index";
 import AIDevelopmentServices from "./pages/AIDevelopmentServices";
@@ -51,6 +51,7 @@ import Admin from "./pages/Admin";
 import Dashboard from "./pages/Dashboard";
 import Insight from "./pages/Insight";
 import ArticleTemplate from "./pages/articles/ArticleTemplate";
+import ImpTraxHealth from "./pages/ImpTraxHealth";
 
 import NotFound from "./pages/NotFound";
 
@@ -91,6 +92,7 @@ const App = () => (
           <Route path="/industry-trends" element={<IndustryTrends />} />
           <Route path="/knowledge-base" element={<KnowledgeBase />} />
           <Route path="/schedule-consultation" element={<ScheduleConsultation />} />
+          <Route path="/contact" element={<Navigate to="/schedule-consultation" replace />} />
           <Route path="/banking-solutions" element={<BankingSolutions />} />
           <Route path="/investment-management" element={<InvestmentManagement />} />
           <Route path="/risk-assessment" element={<RiskAssessment />} />
@@ -111,6 +113,7 @@ const App = () => (
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/insight" element={<Insight />} />
           <Route path="/insight/articles/:slug" element={<ArticleTemplate />} />
+          <Route path="/imptrax-health" element={<ImpTraxHealth />} />
 
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

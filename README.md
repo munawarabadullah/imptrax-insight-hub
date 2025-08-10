@@ -76,3 +76,72 @@ Read Instructions form Instructions.MD file if there is any URL in instructions.
 
 Read Instruction.MD file nd follow the instructions. 
 Read Actionable.MD file and follow the instructions.
+
+## Article Management Guidelines
+
+### Article Structure and Location
+
+**IMPORTANT**: All articles must follow this exact structure to prevent broken links and ensure proper functionality.
+
+#### Article File Locations:
+- **Article Content**: All article markdown files must be placed in `/src/content/articles/`
+- **Article Images**: All article SVG images must be placed in `/public/articles/`
+- **Article Routing**: Articles are accessible via `/insight/articles/{slug}` URL pattern
+
+#### Required Article Structure:
+
+1. **Article Markdown Files** (`/src/content/articles/`):
+   - File naming: Use kebab-case (e.g., `future-of-ai-in-healthcare.md`)
+   - Must include frontmatter with: title, author, date, category, readTime, image, excerpt
+   - Content should be SEO-optimized with proper headings and structure
+
+2. **Article Images** (`/public/articles/`):
+   - Must be SVG format for scalability and performance
+   - File naming should match article slug (e.g., `future-of-ai-in-healthcare.svg`)
+   - Use theme colors: #1e40af (blue), #7c3aed (purple), #059669 (green), #dc2626 (red)
+
+3. **Article Listing** (`/src/pages/Insight.tsx`):
+   - Each article must be added to the `articles` array
+   - Required fields: id, title, category, excerpt, image, slug, readTime, publishDate
+   - Slug must match the markdown filename (without .md extension)
+
+#### Article Routing Configuration:
+
+- **Main Insight Page**: `/insight` - Lists all articles
+- **Individual Articles**: `/insight/articles/{slug}` - Displays specific article
+- **Route Handler**: Defined in `/src/App.tsx` as `<Route path="/insight/articles/:slug" element={<ArticleTemplate />} />`
+
+#### Adding New Articles Checklist:
+
+1. ✅ Create markdown file in `/src/content/articles/`
+2. ✅ Create corresponding SVG image in `/public/articles/`
+3. ✅ Add article metadata to `articles` array in `/src/pages/Insight.tsx`
+4. ✅ Ensure slug matches filename (without extension)
+5. ✅ Test article accessibility via `/insight/articles/{slug}` URL
+
+#### Current Articles:
+- `mid-market-firms-ai-competitive-advantage.md`
+- `digital-transformation-mid-market-companies.md`
+- `data-analytics-business-intelligence-insights.md`
+- `future-cloud-computing-trends-predictions-2024.md`
+- `life-at-imptrax-building-innovation-through-collaboration.md`
+- `modern-application-development-best-practices-methodologies.md`
+- `future-of-ai-in-healthcare.md`
+
+#### Common Mistakes to Avoid:
+
+❌ **DO NOT**:
+- Place articles outside `/src/content/articles/` folder
+- Use different image paths than `/public/articles/`
+- Forget to add article to Insight.tsx articles array
+- Use mismatched slugs between filename and articles array
+- Create articles without corresponding images
+
+✅ **DO**:
+- Follow the exact folder structure outlined above
+- Use consistent naming conventions
+- Test all article links after creation
+- Ensure all images are SVG format
+- Include proper SEO metadata in frontmatter
+
+This structure ensures all articles are properly routed, displayed on the Insight page, and accessible via clean URLs without broken links.

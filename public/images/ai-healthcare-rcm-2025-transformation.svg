@@ -1,0 +1,188 @@
+<svg width="800" height="450" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8fafc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e2e8f0;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- AI Core Gradient -->
+    <radialGradient id="aiCoreGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0.9" />
+      <stop offset="70%" style="stop-color:#1e40af;stop-opacity:0.7" />
+      <stop offset="100%" style="stop-color:#1e3a8a;stop-opacity:0.5" />
+    </radialGradient>
+    
+    <!-- Data Flow Gradient -->
+    <linearGradient id="dataFlowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#60a5fa;stop-opacity:0.8" />
+      <stop offset="50%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1d4ed8;stop-opacity:0.8" />
+    </linearGradient>
+    
+    <!-- Healthcare Icon Gradient -->
+    <linearGradient id="healthcareGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0891b2;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- RCM Process Gradient -->
+    <linearGradient id="rcmGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Grid Pattern -->
+    <pattern id="gridPattern" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#cbd5e1" stroke-width="0.5" opacity="0.3"/>
+    </pattern>
+    
+    <!-- Glow Filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="450" fill="url(#bgGradient)"/>
+  
+  <!-- Grid Pattern Overlay -->
+  <rect width="800" height="450" fill="url(#gridPattern)" opacity="0.4"/>
+  
+  <!-- Central AI Core -->
+  <circle cx="400" cy="225" r="60" fill="url(#aiCoreGradient)" filter="url(#glow)"/>
+  
+  <!-- AI Core Inner Elements -->
+  <circle cx="400" cy="225" r="35" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.8"/>
+  <circle cx="400" cy="225" r="20" fill="none" stroke="#ffffff" stroke-width="1.5" opacity="0.6"/>
+  
+  <!-- Neural Network Nodes -->
+  <circle cx="370" cy="195" r="4" fill="#ffffff" opacity="0.9"/>
+  <circle cx="430" cy="195" r="4" fill="#ffffff" opacity="0.9"/>
+  <circle cx="370" cy="255" r="4" fill="#ffffff" opacity="0.9"/>
+  <circle cx="430" cy="255" r="4" fill="#ffffff" opacity="0.9"/>
+  <circle cx="385" cy="210" r="3" fill="#ffffff" opacity="0.7"/>
+  <circle cx="415" cy="210" r="3" fill="#ffffff" opacity="0.7"/>
+  <circle cx="385" cy="240" r="3" fill="#ffffff" opacity="0.7"/>
+  <circle cx="415" cy="240" r="3" fill="#ffffff" opacity="0.7"/>
+  
+  <!-- Neural Connections -->
+  <line x1="370" y1="195" x2="415" y2="210" stroke="#ffffff" stroke-width="1" opacity="0.6"/>
+  <line x1="430" y1="195" x2="385" y2="210" stroke="#ffffff" stroke-width="1" opacity="0.6"/>
+  <line x1="385" y1="210" x2="415" y2="240" stroke="#ffffff" stroke-width="1" opacity="0.6"/>
+  <line x1="415" y1="210" x2="385" y2="240" stroke="#ffffff" stroke-width="1" opacity="0.6"/>
+  <line x1="370" y1="255" x2="415" y2="240" stroke="#ffffff" stroke-width="1" opacity="0.6"/>
+  <line x1="430" y1="255" x2="385" y2="240" stroke="#ffffff" stroke-width="1" opacity="0.6"/>
+  
+  <!-- Healthcare Icons -->
+  <!-- Stethoscope -->
+  <g transform="translate(150, 120)">
+    <circle cx="0" cy="0" r="25" fill="url(#healthcareGradient)" opacity="0.9"/>
+    <path d="M-8,-10 Q-8,-15 -3,-15 Q2,-15 2,-10 L2,5 Q2,10 -3,10 Q-8,10 -8,5 Z" fill="#ffffff"/>
+    <circle cx="-3" cy="12" r="3" fill="#ffffff"/>
+    <path d="M2,5 Q8,5 12,10" stroke="#ffffff" stroke-width="2" fill="none"/>
+  </g>
+  
+  <!-- Heart Monitor -->
+  <g transform="translate(650, 120)">
+    <circle cx="0" cy="0" r="25" fill="url(#healthcareGradient)" opacity="0.9"/>
+    <path d="M-12,0 L-8,-5 L-4,8 L0,-8 L4,5 L8,-2 L12,0" stroke="#ffffff" stroke-width="2" fill="none"/>
+  </g>
+  
+  <!-- Medical Chart -->
+  <g transform="translate(150, 330)">
+    <circle cx="0" cy="0" r="25" fill="url(#healthcareGradient)" opacity="0.9"/>
+    <rect x="-8" y="-10" width="16" height="20" rx="2" fill="#ffffff"/>
+    <line x1="-5" y1="-6" x2="5" y2="-6" stroke="#06b6d4" stroke-width="1"/>
+    <line x1="-5" y1="-2" x2="5" y2="-2" stroke="#06b6d4" stroke-width="1"/>
+    <line x1="-5" y1="2" x2="5" y2="2" stroke="#06b6d4" stroke-width="1"/>
+    <line x1="-5" y1="6" x2="5" y2="6" stroke="#06b6d4" stroke-width="1"/>
+  </g>
+  
+  <!-- DNA Helix -->
+  <g transform="translate(650, 330)">
+    <circle cx="0" cy="0" r="25" fill="url(#healthcareGradient)" opacity="0.9"/>
+    <path d="M-8,-10 Q0,-5 8,0 Q0,5 -8,10" stroke="#ffffff" stroke-width="2" fill="none"/>
+    <path d="M8,-10 Q0,-5 -8,0 Q0,5 8,10" stroke="#ffffff" stroke-width="2" fill="none"/>
+    <circle cx="-4" cy="-5" r="1" fill="#ffffff"/>
+    <circle cx="4" cy="-5" r="1" fill="#ffffff"/>
+    <circle cx="0" cy="0" r="1" fill="#ffffff"/>
+    <circle cx="-4" cy="5" r="1" fill="#ffffff"/>
+    <circle cx="4" cy="5" r="1" fill="#ffffff"/>
+  </g>
+  
+  <!-- RCM Process Icons -->
+  <!-- Claims Processing -->
+  <g transform="translate(250, 180)">
+    <circle cx="0" cy="0" r="20" fill="url(#rcmGradient)" opacity="0.8"/>
+    <rect x="-8" y="-6" width="16" height="12" rx="1" fill="#ffffff"/>
+    <path d="M-6,-2 L6,-2 M-6,2 L6,2" stroke="#8b5cf6" stroke-width="1"/>
+  </g>
+  
+  <!-- Coding Automation -->
+  <g transform="translate(550, 180)">
+    <circle cx="0" cy="0" r="20" fill="url(#rcmGradient)" opacity="0.8"/>
+    <text x="0" y="3" text-anchor="middle" font-family="monospace" font-size="12" fill="#ffffff">&lt;/&gt;</text>
+  </g>
+  
+  <!-- Payment Processing -->
+  <g transform="translate(250, 270)">
+    <circle cx="0" cy="0" r="20" fill="url(#rcmGradient)" opacity="0.8"/>
+    <rect x="-8" y="-4" width="16" height="8" rx="2" fill="#ffffff"/>
+    <circle cx="0" cy="0" r="2" fill="#8b5cf6"/>
+  </g>
+  
+  <!-- Analytics Dashboard -->
+  <g transform="translate(550, 270)">
+    <circle cx="0" cy="0" r="20" fill="url(#rcmGradient)" opacity="0.8"/>
+    <rect x="-6" y="-4" width="3" height="8" fill="#ffffff"/>
+    <rect x="-1" y="-2" width="3" height="6" fill="#ffffff"/>
+    <rect x="4" y="-6" width="3" height="10" fill="#ffffff"/>
+  </g>
+  
+  <!-- Data Flow Lines -->
+  <path d="M175,145 Q300,180 340,200" stroke="url(#dataFlowGradient)" stroke-width="3" fill="none" opacity="0.7"/>
+  <path d="M625,145 Q500,180 460,200" stroke="url(#dataFlowGradient)" stroke-width="3" fill="none" opacity="0.7"/>
+  <path d="M175,305 Q300,270 340,250" stroke="url(#dataFlowGradient)" stroke-width="3" fill="none" opacity="0.7"/>
+  <path d="M625,305 Q500,270 460,250" stroke="url(#dataFlowGradient)" stroke-width="3" fill="none" opacity="0.7"/>
+  
+  <!-- Process Flow Connections -->
+  <path d="M270,180 Q350,180 360,200" stroke="#8b5cf6" stroke-width="2" fill="none" opacity="0.6"/>
+  <path d="M530,180 Q450,180 440,200" stroke="#8b5cf6" stroke-width="2" fill="none" opacity="0.6"/>
+  <path d="M270,270 Q350,270 360,250" stroke="#8b5cf6" stroke-width="2" fill="none" opacity="0.6"/>
+  <path d="M530,270 Q450,270 440,250" stroke="#8b5cf6" stroke-width="2" fill="none" opacity="0.6"/>
+  
+  <!-- Title Text -->
+  <text x="400" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#1e40af">
+    AI Transforms Healthcare RCM
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="400" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#475569">
+    2025 Revolution in Revenue Cycle Management
+  </text>
+  
+  <!-- Floating Data Particles -->
+  <circle cx="120" cy="200" r="2" fill="#3b82f6" opacity="0.6">
+    <animate attributeName="cy" values="200;190;200" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="680" cy="250" r="2" fill="#06b6d4" opacity="0.6">
+    <animate attributeName="cy" values="250;240;250" dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="100" cy="300" r="1.5" fill="#8b5cf6" opacity="0.5">
+    <animate attributeName="cy" values="300;290;300" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="700" cy="180" r="1.5" fill="#3b82f6" opacity="0.5">
+    <animate attributeName="cy" values="180;170;180" dur="3.5s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Bottom Branding Area -->
+  <rect x="0" y="400" width="800" height="50" fill="#1e40af" opacity="0.1"/>
+  <text x="400" y="430" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1e40af" opacity="0.8">
+    Intelligent Automation • Predictive Analytics • Enhanced Efficiency
+  </text>
+</svg>
