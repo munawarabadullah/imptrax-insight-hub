@@ -1,0 +1,177 @@
+<svg width="800" height="450" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8faff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e8f2ff;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Primary Blue Gradient -->
+    <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1d4ed8;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Secondary Blue Gradient -->
+    <linearGradient id="lightBlueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#60a5fa;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:0.6" />
+    </linearGradient>
+    
+    <!-- Green Success Gradient -->
+    <linearGradient id="greenGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Data Flow Animation -->
+    <linearGradient id="dataFlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0.2" />
+      <stop offset="50%" style="stop-color:#3b82f6;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:0.2" />
+      <animateTransform attributeName="gradientTransform" type="translate" values="-100 0;800 0;-100 0" dur="3s" repeatCount="indefinite"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="450" fill="url(#bgGradient)"/>
+  
+  <!-- Abstract Medical Cross Background Pattern -->
+  <g opacity="0.05">
+    <rect x="50" y="50" width="20" height="60" fill="#3b82f6"/>
+    <rect x="40" y="60" width="40" height="20" fill="#3b82f6"/>
+    <rect x="650" y="80" width="15" height="45" fill="#3b82f6"/>
+    <rect x="642" y="92" width="30" height="15" fill="#3b82f6"/>
+    <rect x="120" y="350" width="12" height="36" fill="#3b82f6"/>
+    <rect x="114" y="359" width="24" height="12" fill="#3b82f6"/>
+  </g>
+  
+  <!-- Main Title Area -->
+  <rect x="50" y="30" width="700" height="80" rx="12" fill="url(#blueGradient)" opacity="0.9"/>
+  <text x="400" y="60" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="28" font-weight="bold">
+    Real-Time Eligibility &amp; Authorization
+  </text>
+  <text x="400" y="90" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="18" opacity="0.9">
+    EHR Integration for Streamlined Healthcare Revenue Cycles
+  </text>
+  
+  <!-- Central EHR System -->
+  <g transform="translate(350, 180)">
+    <rect x="0" y="0" width="100" height="80" rx="8" fill="url(#blueGradient)"/>
+    <rect x="5" y="5" width="90" height="70" rx="5" fill="white" opacity="0.95"/>
+    
+    <!-- EHR Icon -->
+    <rect x="15" y="15" width="70" height="8" rx="2" fill="#3b82f6" opacity="0.7"/>
+    <rect x="15" y="28" width="50" height="6" rx="1" fill="#6b7280" opacity="0.6"/>
+    <rect x="15" y="38" width="60" height="6" rx="1" fill="#6b7280" opacity="0.6"/>
+    <rect x="15" y="48" width="40" height="6" rx="1" fill="#6b7280" opacity="0.6"/>
+    <rect x="15" y="58" width="55" height="6" rx="1" fill="#6b7280" opacity="0.6"/>
+    
+    <text x="50" y="72" text-anchor="middle" fill="#1f2937" font-family="Arial, sans-serif" font-size="10" font-weight="bold">
+      EHR SYSTEM
+    </text>
+  </g>
+  
+  <!-- Patient Data Input (Left) -->
+  <g transform="translate(80, 200)">
+    <rect x="0" y="0" width="80" height="60" rx="8" fill="white" stroke="url(#blueGradient)" stroke-width="2"/>
+    <circle cx="25" cy="25" r="15" fill="url(#lightBlueGradient)"/>
+    <circle cx="25" cy="20" r="6" fill="white"/>
+    <ellipse cx="25" cy="32" rx="8" ry="5" fill="white"/>
+    <text x="40" y="25" fill="#1f2937" font-family="Arial, sans-serif" font-size="9">Patient</text>
+    <text x="40" y="35" fill="#1f2937" font-family="Arial, sans-serif" font-size="9">Data</text>
+    <text x="40" y="50" fill="#3b82f6" font-family="Arial, sans-serif" font-size="8" font-weight="bold">REAL-TIME</text>
+  </g>
+  
+  <!-- Payer Systems (Right) -->
+  <g transform="translate(640, 180)">
+    <rect x="0" y="0" width="100" height="100" rx="8" fill="white" stroke="url(#blueGradient)" stroke-width="2"/>
+    
+    <!-- Multiple Payer Icons -->
+    <rect x="10" y="15" width="35" height="25" rx="3" fill="url(#lightBlueGradient)"/>
+    <rect x="55" y="15" width="35" height="25" rx="3" fill="url(#lightBlueGradient)"/>
+    <rect x="10" y="50" width="35" height="25" rx="3" fill="url(#lightBlueGradient)"/>
+    <rect x="55" y="50" width="35" height="25" rx="3" fill="url(#lightBlueGradient)"/>
+    
+    <!-- Dollar signs -->
+    <text x="27" y="30" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">$</text>
+    <text x="72" y="30" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">$</text>
+    <text x="27" y="65" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">$</text>
+    <text x="72" y="65" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">$</text>
+    
+    <text x="50" y="90" text-anchor="middle" fill="#1f2937" font-family="Arial, sans-serif" font-size="10" font-weight="bold">
+      PAYER SYSTEMS
+    </text>
+  </g>
+  
+  <!-- Verification Process (Top) -->
+  <g transform="translate(300, 130)">
+    <rect x="0" y="0" width="200" height="35" rx="17" fill="url(#greenGradient)"/>
+    <circle cx="25" cy="17" r="10" fill="white"/>
+    <path d="M20 17 L24 21 L30 13" stroke="url(#greenGradient)" stroke-width="2" fill="none"/>
+    <text x="45" y="22" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">
+      ELIGIBILITY VERIFIED
+    </text>
+  </g>
+  
+  <!-- Authorization Process (Bottom) -->
+  <g transform="translate(300, 310)">
+    <rect x="0" y="0" width="200" height="35" rx="17" fill="url(#greenGradient)"/>
+    <circle cx="25" cy="17" r="10" fill="white"/>
+    <path d="M20 17 L24 21 L30 13" stroke="url(#greenGradient)" stroke-width="2" fill="none"/>
+    <text x="45" y="22" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">
+      AUTHORIZATION APPROVED
+    </text>
+  </g>
+  
+  <!-- Data Flow Lines with Animation -->
+  <g stroke="url(#dataFlow)" stroke-width="3" fill="none" opacity="0.8">
+    <!-- Patient to EHR -->
+    <path d="M160 230 Q250 210 350 220"/>
+    <!-- EHR to Payers -->
+    <path d="M450 220 Q550 210 640 230"/>
+    <!-- Verification flows -->
+    <path d="M400 180 L400 165"/>
+    <path d="M400 260 L400 310"/>
+  </g>
+  
+  <!-- AI Processing Indicators -->
+  <g transform="translate(520, 140)">
+    <circle cx="0" cy="0" r="8" fill="url(#blueGradient)">
+      <animate attributeName="r" values="8;12;8" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <text x="0" y="20" text-anchor="middle" fill="#3b82f6" font-family="Arial, sans-serif" font-size="8" font-weight="bold">
+      AI PROCESSING
+    </text>
+  </g>
+  
+  <!-- Benefits Metrics -->
+  <g transform="translate(50, 350)">
+    <rect x="0" y="0" width="200" height="80" rx="8" fill="white" stroke="#e5e7eb" stroke-width="1"/>
+    <text x="100" y="20" text-anchor="middle" fill="#1f2937" font-family="Arial, sans-serif" font-size="12" font-weight="bold">
+      PROVEN RESULTS
+    </text>
+    <text x="20" y="40" fill="#059669" font-family="Arial, sans-serif" font-size="10" font-weight="bold">• 40% Fewer Denials</text>
+    <text x="20" y="55" fill="#059669" font-family="Arial, sans-serif" font-size="10" font-weight="bold">• 60% Faster Processing</text>
+    <text x="20" y="70" fill="#059669" font-family="Arial, sans-serif" font-size="10" font-weight="bold">• 99% Accuracy Rate</text>
+  </g>
+  
+  <!-- Technology Stack -->
+  <g transform="translate(550, 350)">
+    <rect x="0" y="0" width="200" height="80" rx="8" fill="white" stroke="#e5e7eb" stroke-width="1"/>
+    <text x="100" y="20" text-anchor="middle" fill="#1f2937" font-family="Arial, sans-serif" font-size="12" font-weight="bold">
+      POWERED BY AI
+    </text>
+    <text x="20" y="40" fill="#3b82f6" font-family="Arial, sans-serif" font-size="10" font-weight="bold">• Machine Learning</text>
+    <text x="20" y="55" fill="#3b82f6" font-family="Arial, sans-serif" font-size="10" font-weight="bold">• Predictive Analytics</text>
+    <text x="20" y="70" fill="#3b82f6" font-family="Arial, sans-serif" font-size="10" font-weight="bold">• Real-Time Processing</text>
+  </g>
+  
+  <!-- Decorative Circuit Pattern -->
+  <g stroke="#3b82f6" stroke-width="1" fill="none" opacity="0.2">
+    <path d="M100 120 L130 120 L130 100 L160 100"/>
+    <path d="M600 320 L630 320 L630 340 L660 340"/>
+    <circle cx="130" cy="120" r="3" fill="#3b82f6"/>
+    <circle cx="630" cy="320" r="3" fill="#3b82f6"/>
+  </g>
+</svg>

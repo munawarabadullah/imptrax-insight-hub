@@ -7,6 +7,26 @@ import Footer from '@/components/Footer';
 const articles = [
   {
     id: 1,
+    title: "Real-Time Eligibility & Authorization: AI-Powered Revenue Protection",
+    category: "Revenue Cycle Management",
+    excerpt: "Discover how AI-powered real-time verification systems are revolutionizing healthcare revenue protection, reducing claim denials, and improving patient access to care.",
+    image: "/images/real-time-eligibility-authorization-verification.svg",
+    slug: "real-time-eligibility-authorization-verification",
+    readTime: "20 min read",
+    publishDate: "2025-08-22"
+  },
+  {
+    id: 2,
+    title: "The Future of AI in Healthcare: Revolutionizing Diagnosis, RCM, and Patient Care",
+    category: "Healthcare Technology",
+    excerpt: "Explore how artificial intelligence is transforming healthcare delivery, from diagnostic accuracy to revenue cycle optimization, creating unprecedented opportunities for improved patient outcomes and operational efficiency.",
+    image: "/images/ai-healthcare-future.svg",
+    slug: "future-of-ai-in-healthcare",
+    readTime: "25 min read",
+    publishDate: "2025-08-10"
+  },
+  {
+    id: 3,
     title: "Mid-Market Firms Can Punch Above Their Weight with AI - Our COO Explains How",
     category: "Software Development",
     excerpt: "Discover how mid-market companies can leverage AI technologies to compete with larger enterprises and drive significant business growth.",
@@ -16,7 +36,7 @@ const articles = [
     publishDate: "2024-01-15"
   },
   {
-    id: 2,
+    id: 4,
     title: "Digital Transformation Strategies for Mid-Market Companies",
     category: "Digital Transformation",
     excerpt: "Learn proven strategies and frameworks that mid-market companies can use to successfully navigate their digital transformation journey.",
@@ -259,7 +279,7 @@ const Insight = () => {
             <div className="max-w-7xl mx-auto">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {currentArticles.map((article) => (
-                  <article key={article.id} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300" itemScope itemType="https://schema.org/BlogPosting">
+                  <article key={article.slug} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300" itemScope itemType="https://schema.org/BlogPosting">
                     {/* Article Image */}
                     <div className="aspect-video bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center overflow-hidden">
                       <img 

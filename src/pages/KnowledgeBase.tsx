@@ -110,7 +110,7 @@ const KnowledgeBase = () => {
         { name: "Real Estate Software", url: "/real-estate-software", description: "Property management and real estate software" },
         { name: "Real Estate Market Analysis", url: "/real-estate-market-analysis", description: "Advanced market analysis for real estate professionals" },
         { name: "Real Estate Investment Analysis", url: "/real-estate-investment-analysis", description: "Comprehensive investment analysis and portfolio management for real estate" },
-        { name: "Property Analysis with AI", url: "/real-estate-Property-Analysis-With-AI", description: "AI-powered property analysis and valuation for accurate investment decisions" }
+        { name: "Property Analysis with AI", url: "/real-estate-property-analysis-with-ai", description: "AI-powered property analysis and valuation for accurate investment decisions" }
       ]
     },
     {
@@ -123,7 +123,7 @@ const KnowledgeBase = () => {
         { name: "Industry Trends", url: "/industry-trends", description: "Latest insights and market developments" },
         { name: "Educational Resources", url: "/what-is-process-automation", description: "Learn about automation and AI technologies" },
         { name: "Why Predictive Analytics", url: "/why-to-predictive-analytics", description: "Understanding the value of predictive analytics" },
-        { name: "AI Prompt Library", url: "/ai-pluse/ai-prompts-library", description: "Collection of AI prompts for business development" }
+        { name: "AI Prompt Library", url: "/ai-plus/ai-prompts-library", description: "Collection of AI prompts for business development" }
       ]
     },
     {

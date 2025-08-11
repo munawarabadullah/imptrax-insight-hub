@@ -151,7 +151,7 @@ const Header = () => {
             { name: "Market Intelligence", url: "/real-estate-market-analysis" },
             { name: "Real Estate Software", url: "/real-estate-software" },
             { name: "Investment Analysis", url: "/real-estate-investment-analysis" },
-            { name: "Property Analysis", url: "/real-estate-Property-Analysis-With-AI" }
+            { name: "Property Analysis", url: "/real-estate-property-analysis-with-ai" }
           ]
         }
       ]
@@ -169,7 +169,7 @@ const Header = () => {
         {
           category: "AI Pulse",
           services: [
-            { name: "AI Prompt Library", url: "/ai-pluse/ai-prompts-library" }
+            { name: "AI Prompt Library", url: "/ai-plus/ai-prompts-library" }
           ]
         },
         {
