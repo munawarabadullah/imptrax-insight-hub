@@ -158,7 +158,7 @@ const Insight = () => {
     }
     
     // Set meta keywords
-    let keywordsMeta = document.querySelector('meta[name="keywords"]');
+    let keywordsMeta = document.querySelector('meta[name="keywords"]') as HTMLMetaElement;
     if (keywordsMeta) {
       keywordsMeta.setAttribute('content', 'AI insights, automation trends, digital transformation, business intelligence, technology analysis, ImpTrax blog, enterprise solutions, machine learning, data analytics');
     } else {
@@ -169,7 +169,7 @@ const Insight = () => {
     }
     
     // Set canonical URL
-    let canonicalLink = document.querySelector('link[rel="canonical"]');
+    let canonicalLink = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
     if (canonicalLink) {
       canonicalLink.setAttribute('href', window.location.origin + '/insight');
     } else {
@@ -243,7 +243,7 @@ const Insight = () => {
       }
     };
     
-    let jsonLdScript = document.querySelector('script[type="application/ld+json"]');
+    let jsonLdScript = document.querySelector('script[type="application/ld+json"]') as HTMLScriptElement;
     if (jsonLdScript) {
       jsonLdScript.textContent = JSON.stringify(structuredData);
     } else {
