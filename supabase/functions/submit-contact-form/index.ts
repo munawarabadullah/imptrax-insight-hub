@@ -143,7 +143,22 @@ serve(async (req) => {
     // Calculate lead score
     const leadScore = calculateLeadScore(formData)
     
-    // Prepare submission data
+    // SECURITY: Validate captcha is verified before processing
+    if (!formData.captchaVerified) {
+      console.error('Captcha verification failed - submission blocked')
+      return new Response(
+        JSON.stringify({ 
+          success: false, 
+          error: 'Captcha verification required' 
+        }),
+        { 
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+          status: 400 
+        }
+      )
+    }
+
+    // Prepare submission data with enhanced validation
     const submissionData = {
       first_name: formData.firstName,
       last_name: formData.lastName,
@@ -167,6 +182,9 @@ serve(async (req) => {
       city: locationData.city,
       state: locationData.state,
       country: locationData.country,
+      country_code: locationData.countryCode,
+      timezone: locationData.timezone,
+      isp: locationData.isp,
       browser_info: formData.browserInfo,
       screen_info: formData.screenInfo,
       timezone_info: formData.timezoneInfo,
@@ -181,7 +199,7 @@ serve(async (req) => {
         referralInfo: formData.referralInfo,
         locationData: locationData
       },
-      captcha_verified: formData.captchaVerified,
+      captcha_verified: true, // Explicitly set to true since we validated above
       lead_score: leadScore,
       lead_status: leadScore >= 70 ? 'hot' : leadScore >= 40 ? 'warm' : 'cold'
     }
