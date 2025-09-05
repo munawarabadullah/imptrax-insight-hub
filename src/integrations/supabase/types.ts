@@ -14,42 +14,6 @@ export type Database = {
   }
   public: {
     Tables: {
-      admin_users: {
-        Row: {
-          created_at: string
-          email: string
-          id: string
-          is_active: boolean | null
-          last_login: string | null
-          name: string
-          password_hash: string
-          role: string | null
-          updated_at: string
-        }
-        Insert: {
-          created_at?: string
-          email: string
-          id?: string
-          is_active?: boolean | null
-          last_login?: string | null
-          name: string
-          password_hash: string
-          role?: string | null
-          updated_at?: string
-        }
-        Update: {
-          created_at?: string
-          email?: string
-          id?: string
-          is_active?: boolean | null
-          last_login?: string | null
-          name?: string
-          password_hash?: string
-          role?: string | null
-          updated_at?: string
-        }
-        Relationships: []
-      }
       contact_submissions: {
         Row: {
           additional_notes: string | null
@@ -265,6 +229,45 @@ export type Database = {
           },
         ]
       }
+      security_audit_log: {
+        Row: {
+          action: string
+          created_at: string | null
+          details: Json | null
+          id: string
+          ip_address: unknown | null
+          resource_id: string | null
+          resource_type: string | null
+          user_agent: string | null
+          user_email: string | null
+          user_id: string | null
+        }
+        Insert: {
+          action: string
+          created_at?: string | null
+          details?: Json | null
+          id?: string
+          ip_address?: unknown | null
+          resource_id?: string | null
+          resource_type?: string | null
+          user_agent?: string | null
+          user_email?: string | null
+          user_id?: string | null
+        }
+        Update: {
+          action?: string
+          created_at?: string | null
+          details?: Json | null
+          id?: string
+          ip_address?: unknown | null
+          resource_id?: string | null
+          resource_type?: string | null
+          user_agent?: string | null
+          user_email?: string | null
+          user_id?: string | null
+        }
+        Relationships: []
+      }
       user_roles: {
         Row: {
           created_at: string | null
@@ -294,6 +297,10 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      cleanup_old_contact_submissions: {
+        Args: Record<PropertyKey, never>
+        Returns: undefined
+      }
       get_user_role_safe: {
         Args: { user_uuid?: string }
         Returns: string
